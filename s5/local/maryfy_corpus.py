@@ -37,7 +37,7 @@ def processLine(line,mary,scriptpath):
         proc_num = multiprocessing.current_process()._identity[0]-1
         tokens,phonemes = common_utils.getCleanTokensAndPhonemes(line,mary,proc_num)
     except Exception as err:
-        print 'Error, omitting', line
+        print '[',proc_num,']','Error, omitting', line
         print err
         if scriptpath != '' and ('Read timed out' in str(err)):
             print 'restarting maryServer'
@@ -119,4 +119,4 @@ if __name__ == '__main__':
 
         #process any outstanding elements        
         if len(mybuffer)>0:
-            processBuffer(workerpool,mybuffer,outputfile,scriptpath)
+            processBuffer(workerpool,mary,mybuffer,outputfile,scriptpath)
