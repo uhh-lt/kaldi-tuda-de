@@ -48,6 +48,6 @@ if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
     make_sure_path_exists(mfcc_dir_src)
     make_sure_path_exists(exp_dir_src)
 
-    os.link(mfcc_dir_src,'mfcc/')
-    os.link(exp_dir_src,'exp/')
+    os.symlink(mfcc_dir_src,'./mfcc')
+    os.symlink(exp_dir_src,'./exp')
 
