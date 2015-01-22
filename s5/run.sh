@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#adapt this to the Sprachdatenaufnahmen2014 folder on your disk
+RAWDATA=/srv/data/Sprachdatenaufnahmen2014
+
 #adapted from gale_arabic run.sh
 
 if [ -f cmd.sh ]; then
@@ -12,7 +15,9 @@ if [ -f path.sh ]; then
          echo "missing path.sh"; exit 1;
 fi
 
-RAWDATA=/srv/data/Sprachdatenaufnahmen2014
+[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
+
+[ ! -L "utils" ] && ln -s ../../wsj/s5/utils
 
 # mfccdir should be some place with a largish disk where you
 # want to store MFCC features.
@@ -24,9 +29,10 @@ FILTERBYNAME="*-kinect-.wav"
 find $RAWDATA/$FILTERBYNAME -type f > data/waveIDs.txt
 python local/data_prepare.py -f data/waveIDs.txt -r="-kinect-.wav"
 
+# Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
 python local/prepare_dir_structure.py
 
-#Get freely available phoneme dictionaries, if they are not already downloaded
+# Get freely available phoneme dictionaries, if they are not already downloaded
 if [ ! -f data/lexicon/de.txt ]
 then
     wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt 
