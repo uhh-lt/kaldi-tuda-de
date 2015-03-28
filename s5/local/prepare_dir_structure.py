@@ -25,10 +25,11 @@ if not os.path.exists('run.sh'):
 print 'Creating data dir(s)...'
 make_sure_path_exists('data/lexicon/')
 make_sure_path_exists('data/local/')
+#make_sure_path_exists('data/wav/')
 make_sure_path_exists('data/local/dict/')
-make_sure_path_exists('data/local/lang/')
-make_sure_path_exists('data/local/lm/')
-make_sure_path_exists('data/local/lm/3gram-mincount/')
+#make_sure_path_exists('data/local/lang/')
+#make_sure_path_exists('data/local/lm/')
+#make_sure_path_exists('data/local/lm/3gram-mincount/')
 
 #if exp and mfcc don't exist locally, create them as link to some other directory on a larger disk
 if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
@@ -42,12 +43,28 @@ if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
 
     mfcc_dir_src = data_dir + '/mfcc/'
     exp_dir_src = data_dir + '/exp/'
+    lm_dir_src = data_dir + '/lm/'
+    lm_dir_3gram_src = data_dir + '/lm/3gram-mincount/'
+    lang_dir_src = data_dir + '/lang/'
+    wav_dir_src = data_dir + '/wav/'
 
     print 'Mfcc source dir: ',mfcc_dir_src,' model (exp) dir: ', exp_dir_src
 
+    print mfcc_dir_src
     make_sure_path_exists(mfcc_dir_src)
+    print exp_dir_src
     make_sure_path_exists(exp_dir_src)
+    print lm_dir_src
+    make_sure_path_exists(lm_dir_src)
+    print lm_dir_3gram_src
+    make_sure_path_exists(lm_dir_3gram_src)
+    print lang_dir_src
+    make_sure_path_exists(lang_dir_src)
+    print wav_dir_src 
+    make_sure_path_exists(wav_dir_src)
 
     os.symlink(mfcc_dir_src,'./mfcc')
     os.symlink(exp_dir_src,'./exp')
-
+    os.symlink(lm_dir_src,'./data/local/lm')
+    os.symlink(lang_dir_src,'./data/local/lang')
+    os.symlink(wav_dir_src,'./data/wav')

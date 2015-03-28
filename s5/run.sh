@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#adapt this to the Sprachdatenaufnahmen2014 folder on your disk
-RAWDATA=/srv/data/Sprachdatenaufnahmen2014
 
 #adapted from gale_arabic run.sh
 
@@ -23,14 +21,31 @@ fi
 # want to store MFCC features.
 mfccdir=mfcc
 
-# Filter by name
-FILTERBYNAME="*-kinect-.wav"
-
-find $RAWDATA/$FILTERBYNAME -type f > data/waveIDs.txt
-python local/data_prepare.py -f data/waveIDs.txt -r="-kinect-.wav"
+utf8()
+{
+    iconv -f ISO-8859-1 -t UTF-8 $1 > $1.tmp
+    mv $1.tmp $1
+}
 
 # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
 python local/prepare_dir_structure.py
+
+if [ ! -f data/wav/german-speechdata-TUDa-2015.tar.gz ]
+then
+    wget --directory-prefix=data/wav/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-TUDa-2015.tar.gz
+    cd data/wav/
+    tar xvfz german-speechdata-TUDa-2015.tar.gz
+    cd ../../
+fi
+
+#adapt this to the Sprachdatenaufnahmen2014 folder on your disk
+RAWDATA=data/wav
+
+# Filter by name
+FILTERBYNAME="*.xml"
+
+find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
+python local/data_prepare.py -f data/waveIDs.txt
 
 # Get freely available phoneme dictionaries, if they are not already downloaded
 if [ ! -f data/lexicon/de.txt ]
@@ -56,15 +71,20 @@ fi
 if [ ! -f data/lexicon/LEXICON.TBL ]
 then
     wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL
+    utf8 data/lexicon/LEXICON.TBL
 fi
+
 
 #Transform freely available dictionaries into lexiconp.txt file + extra files 
 mkdir -p data/local/dict/
 python local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict 
 python local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/lexiconp.txt 
 
+exit
+
 #Move old lang dir if it exists
-mv data/lang data/lang_old
+mkdir data/lang/old
+mv data/lang/* data/lang/old
 
 #Prepare phoneme data for Kaldi
 utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang

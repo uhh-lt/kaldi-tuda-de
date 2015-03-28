@@ -21,9 +21,11 @@ import traceback
 import datetime
 import maryclient
 import StringIO
+import os
 
 from bs4 import BeautifulSoup
 
+from common_utils import make_sure_path_exists
 import collections
 import itertools
 
@@ -63,6 +65,8 @@ def writeKaldiDataFolder(dest_dir, utts, wavextension):
 
     #All files need to be sorted by key value!
 
+    make_sure_path_exists(dest_dir)
+
     with open(dest_dir+'wav.scp','w') as wavscp, open(dest_dir+'utt2spk','w') as utt2spk, open(dest_dir+'spk2gender','w') as spk2gender, codecs.open(dest_dir+'text','w','utf-8') as text:
         speaker2gender = {}
         
@@ -88,7 +92,7 @@ def writeKaldiDataFolder(dest_dir, utts, wavextension):
         for speaker,gender in speaker2gender.iteritems():
             spk2gender.write(speaker+' '+('f' if gender=='female' else 'm')+'\n')
 
-# Simple train test split that ignores speaker ids (it would be better to have unkown speakers in the test set!)
+# Simple train test split that ignores speaker ids (dont use this one!)
 def simpleTrainTestSplit(utts):
     train, test = [],[]
     for i,utt in enumerate(utts):
@@ -98,19 +102,37 @@ def simpleTrainTestSplit(utts):
             train.append(utt)
     return train, test
 
+#detect train/dev/test in the filenames of the ids. 
+def filenameSplit(utts):
+    train = [utt for utt in utts if 'train' in utt['fileid']]
+    dev = [utt for utt in utts if 'dev' in utt['fileid']]
+    test = [utt for utt in utts if 'test' in utt['fileid']]
+    #sanity checks
+    for utt in test:
+        if utt in train:
+            print 'WARNING overlapping test/train IDs. This is bad, check your filenaming scheme, no file should have both test and train in the name.'
+
+    for utt in dev:
+        if utt in train:
+            print 'WARNING overlapping dev/train IDs. This is bad, check your filenaming scheme, no file should have both dev and train in the name.'
+    return train, test, dev
+
 # Extract date as best as possible from filename
 def getDateFromID(myid):
-    rawdate = myid.split('aufnahme-Corpus-')[1]
+    if '/' in myid:
+        rawdate = myid.split('/')[-1]
+    else:
+        rawdate = myid
+
     split = rawdate.split('-')
 
     #some files prefix the corpus before the date, if thats the case irgnore first element
     if not split[0].isdigit():
         split = split[1:]
 
-    #date format is e.g. '13-5--10-12-31', d-m--h-m-s
-    #                     split index:     0 1  3 4 5
+    #e.g. train/2014-05-13-10-15-35-
 
-    date = datetime.datetime(2014,int(split[1]),int(split[0]),int(split[3]),int(split[4]),int(split[5]))
+    date = datetime.datetime(int(split[0]),int(split[1]),int(split[2]),int(split[3]),int(split[4]),int(split[5]))
     return date
 
 
@@ -130,7 +152,6 @@ def filterRepeatUtterances(utts):
                     print old_utt['sentence'], 'vs', utt['sentence']
                     print old_utt['fileid'], 'vs', utt['fileid']
         old_utt = utt
-
     return reversed(filtered_utt)
 
 #find_sublists and replace_sublist from http://stackoverflow.com/questions/12898023/replacing-a-sublist-with-another-sublist-in-python
@@ -157,16 +178,20 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
     cleaned_sentences_cache = {}
     utts_phoneme_dict = {}
 
+    print 'Reading corpus transcriptions and producing automatic corpus phoneme dict for OOV words (you need MARY running in the background!)'
+
     lastutt = None
     speakerid = 0
     for myid in ids:
-        #if 1==1:
-        try:
-            with codecs.open(myid+'.wav.xml','r','utf-8') as myfile:
+        print '.',
+        if 1==1:
+        #try:
+            with codecs.open(myid+'.xml','r','utf-8') as myfile:
                 #extract xml meta 
                 xml = myfile.read()
                 soup = BeautifulSoup(xml)
                 sentence = soup.recording.sentence.string
+                cleaned_sentence = soup.recording.cleaned_sentence.string
                 gender = soup.recording.gender.string
                 age = soup.recording.ageclass.string
                 corpus = soup.recording.corpus.string
@@ -176,9 +201,9 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 date = getDateFromID(myid)
 
                 if cache_cleaned_sentences and (sentence not in cleaned_sentences_cache):
-                    clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(sentence,mary)
+                    clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(cleaned_sentence,mary)
                     cleaned_sentences_cache[sentence] = (clean_sentence_tokens,token_phonemes)
-                    print 'cleaning ', sentence, ' -> ', clean_sentence_tokens , ' phonemes:', token_phonemes
+                    #print 'cleaning ', cleaned_sentence, ' -> ', clean_sentence_tokens , ' phonemes:', token_phonemes
                 else:
                     clean_sentence_tokens,token_phonemes = cleaned_sentences_cache[sentence]
 
@@ -192,31 +217,34 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 utt = {'id':myid.split('/')[-1],'fileid':myid,'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,'speakerid':'s'+('%04d'%speakerid),'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
                 utts.append(utt)
 
-        except Exception as err:
-            print 'Error in file, omitting', myid
-            print err
+        #except Exception as err:
+        #    print 'Error in file, omitting', myid
+        #    print err
 
     #Sort utterances by date
     utts = sorted(utts,key=lambda utt:utt['date'])
 
     #Unfortunately, the xmls dont have speaker meta-information, we try to guess it here
-    for i,utt in enumerate(utts):
-        if lastutt is not None:
-            delta = utt['date'] - lastutt['date']
-            diff = abs(delta.total_seconds())
-            #Heuristic: either a enough time passed between this and the last recording, or speaker meta information (gender,age,region) changed
-            if diff > speakerid_diff_heuristic or lastutt['gender'] != utt['gender'] or lastutt['age'] != utt['age'] or lastutt['region'] != utt['region']:
-                print 'probable new speaker',speakerid
-                if diff > speakerid_diff_heuristic:
-                    print 'based on time diff',diff
-                else:
-                    print 'based on meta', 'diff:',diff, lastutt['gender'],utt['gender'],lastutt['age'],utt['age'],lastutt['region'],utt['region']
-                speakerid += 1
-        utt['speakerid'] = 's'+('%04d'%speakerid)+postfix_speaker
-        utt['kaldi_id'] = utt['speakerid']+'_'+utt['id']
-        utts[i] = utt
+    #for i,utt in enumerate(utts):
+    #    if lastutt is not None:
+    #        delta = utt['date'] - lastutt['date']
+    #        diff = abs(delta.total_seconds())
+    #        #Heuristic: either a enough time passed between this and the last recording, or speaker meta information (gender,age,region) changed
+    #        if diff > speakerid_diff_heuristic or lastutt['gender'] != utt['gender'] or lastutt['age'] != utt['age'] or lastutt['region'] != utt['region']:
+    #            print 'probable new speaker',speakerid
+    #            if diff > speakerid_diff_heuristic:
+    #                print 'based on time diff',diff
+    #            else:
+    #                print 'based on meta', 'diff:',diff, lastutt['gender'],utt['gender'],lastutt['age'],utt['age'],lastutt['region'],utt['region']
+    #            speakerid += 1
+    #    utt['speakerid'] = 's'+('%04d'%speakerid)+postfix_speaker
         
-        lastutt = utt
+    for utt in utts:    
+        utt['kaldi_id'] = utt['speakerid']+'_'+utt['id']
+        
+        #utts[i] = utt
+        
+        #lastutt = utt
 
     #Filter utterances with repeat in file name (recording was repeated after a wrong utterance)
     #utts = filterRepeatUtterances(utts)
@@ -226,8 +254,9 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Prepares the files from the TUDA corpus (XML) into text transcriptions for KALDI')
     parser.add_argument('-f', '--filelist', dest='filelist', help='process this file list', type=str, default = '')
-    parser.add_argument('-r', '--remove_extension', dest='remove_extension', help='remove this extension, to get plain file id', type=str, default='.wav')
-    parser.add_argument('-p', '--utterance-postfix-name', dest='postfix', help='--utterance-postfix-name', type=str, default='_mic0')
+    parser.add_argument('-r', '--remove_extension', dest='remove_extension', help='remove this extension, to get plain file id', type=str, default='.xml')
+    parser.add_argument('-w', '--audio-file-extension', dest='wav_extension', help='extension for audio files', type=str, default='.wav')
+    parser.add_argument('-p', '--utterance-postfix-name', dest='postfix', help='--utterance-postfix-name', type=str, default='-beamformedSignal')
 
     args = parser.parse_args()
 
@@ -237,22 +266,37 @@ if __name__ == '__main__':
 
         print 'Load ', args.filelist, ', ommit ', args.remove_extension
 
-        ids = common_utils.loadIdFile(args.filelist,remove_extension=args.remove_extension)
+        ids_raw = common_utils.loadIdFile(args.filelist,remove_extension=args.remove_extension)
+        print 'I have',len(ids_raw),'files. Some may have their audio missing, I\'ll check that for you...'
+        ids = []
+        #check for missing wav files:
+        
+        for myid in ids_raw:
+            check = myid+args.postfix+args.wav_extension
+            if os.path.isfile(check):
+                ids.append(myid)
+            else:
+                print 'Warning, omitting',myid,'because I can\'t find',check
+        
+        print 'Found',len(ids),'files.'
+
         utterances,utterances_phoneme_dict = getUtterances(ids,args.postfix)
         
         print 'Done. Some example utterances:'
         
         for utt in utterances[:10]:
-            print utt['sentence'],utt
+            print utt['sentence'].encode('utf-8'),utt
             #print utt.sentence,utt.speakerid,utt.gender,utt.age,utt.corpus,utt.nativespeaker,utt.region,utt.date
 
         print 'Export to kaldi train/test dirs...'
 
-        train, test = simpleTrainTestSplit(utterances)
-
-        writeKaldiDataFolder('data/train/', train, args.remove_extension)
-        writeKaldiDataFolder('data/test/', test, args.remove_extension)
-        writeKaldiDataFolder('data/all/', utterances, args.remove_extension)
+        #train, test = simpleTrainTestSplit(utterances)
+        train, test, dev = filenameSplit(utterances)
+    
+        writeKaldiDataFolder('data/train/', train, args.wav_extension)
+        writeKaldiDataFolder('data/dev/', test, args.wav_extension)
+        writeKaldiDataFolder('data/test/', test, args.wav_extension)
+        writeKaldiDataFolder('data/all/', utterances, args.wav_extension)
 
         exportDict('data/lexicon/train.txt',utterances_phoneme_dict)
 
