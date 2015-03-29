@@ -51,27 +51,32 @@ python local/data_prepare.py -f data/waveIDs.txt
 if [ ! -f data/lexicon/de.txt ]
 then
     wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt 
+    echo "data/lexicon/de.txt\n">> data/lexicon_ids.txt
 fi
 
 if [ ! -f data/lexicon/VM.German.Wordforms ]
 then
     wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms
+    echo "data/lexicon/VM.German.Wordforms\n">> data/lexicon_ids.txt
 fi
 
 if [ ! -f data/lexicon/RVG1_read.lex ]
 then
     wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex
+    echo "data/lexicon/RVG1_read.lex\n">> data/lexicon_ids.txt
 fi
 
 if [ ! -f data/lexicon/RVG1_trl.lex ]
 then
     wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex
+    echo "data/lexicon/RVG1_trl.lex\n">> data/lexicon_ids.txt
 fi
 
 if [ ! -f data/lexicon/LEXICON.TBL ]
 then
     wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL
     utf8 data/lexicon/LEXICON.TBL
+    echo "data/lexicon/LEXICON.TBL\n">> data/lexicon_ids.txt
 fi
 
 

@@ -62,8 +62,8 @@ BAS_German_trans = {'o~':'O~', 'e~':'E~', 'Q':'', '#':'','+':'','-':'','?':'','w
 latex_to_unicode = {u'"U':u'Ü',u'"A':u'Ä',u'"O':u'Ö',u'"u':u'ü',u'"a':u'ä',u'"o':u'ö',u'"s':u'ß',u'-$':u'',u'$':u'',u'’':u"'"}
 ascii_umlaute_to_unicode = {u'ue':u'ü',u'ae':u'ä',u'oe':u'ö',u'Ue':u'Ü',u'Ae':u'Ä',u'Oe':u'Ö'}
 
-#German alphabet for words. Special chars - ' and . can also appear in words. 
-alphabet_de = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜöäüß-'."
+#German alphabet for words (+ some extra chars from other languages). Special chars - ' and . can also appear in words. 
+alphabet_de = u"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜöäüß-'.1234567890éèçàáíōšțúłėčęαβγććâêó"
 
 #Frequency of manual entries. Manual entries are usually better than automatic ones. 100 is a good starting point, but this variable is not tuned - experiment with it if you want.
 manual_freq = 100
@@ -342,7 +342,7 @@ if __name__ == '__main__':
 
     variants = 0
     for key in sorted(combinedDict.iterkeys()):
-        print 'Word:',key,combinedDict[key]
+        #print 'Word:',key,combinedDict[key]
         variants += len(combinedDict[key])
         
     print 'Dictionary size is ', len(combinedDict), ' pronounciation variants ', variants

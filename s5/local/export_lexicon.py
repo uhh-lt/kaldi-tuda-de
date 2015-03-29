@@ -19,7 +19,7 @@ import cPickle as pickle
 import codecs
 
 #generate string for one entry of the dictionary
-def generateEntry(word,entry):
+def generateEntry(word,entry,sphinx_format=False):
     freqMult = 0.0
     #find most frequent entry
     freqs = [pron['freq'] for pron in entry]
@@ -27,14 +27,19 @@ def generateEntry(word,entry):
     freqs = [float(pron['freq'])*freqMult for pron in entry]
     
     txt = ''
-    for freq,elem in sorted(zip(freqs,entry),reverse=True):
-        txt += word + ' ' + str(freq) + ' ' + ' '.join(elem['pron']) + '\n'
+    for i,(freq,elem) in enumerate(sorted(zip(freqs,entry),reverse=True)):
+        if sphinx_format:
+            txt += word + ('('+str(i)+')' if i>0 else '') + '  ' + ' '.join(elem['pron']) + '\n'
+        else:
+            #Kaldi probabilty format <word> <freq> <pronounciation>
+            txt += word + ' ' + str(freq) + ' ' + ' '.join(elem['pron']) + '\n'
     return txt
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Prepares the files from the TUDA corpus (XML) into text transcriptions for KALDI')
     parser.add_argument('-f', '--file', dest='file', help='process this (python pickle) lexicon file', type=str)
     parser.add_argument('-o', '--outfile', dest='outfile', help='lexicon out file', type=str, default='lexiconp.txt')
+    parser.add_argument('-sph', '--sphinx-format', dest='sphinx_format', help='export lexicon in sphinx format', action='store_true', default=False)
 
     args = parser.parse_args()
 
@@ -51,6 +56,6 @@ if __name__ == '__main__':
             'Warning!: No % entry found! Will add <UNK> -> usb mapping manually.'
             combinedDict['<UNK>'] = [{'pron': ['usb'], 'freq': 100, 'manual': True}]
         for key in sorted(combinedDict.iterkeys()):
-            txt = generateEntry(key,combinedDict[key])
+            txt = generateEntry(key,combinedDict[key],args.sphinx_format)
             outfile.write(txt)
 
