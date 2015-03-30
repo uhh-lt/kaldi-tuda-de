@@ -66,7 +66,7 @@ time steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
 steps/train_lda_mllt.sh --cmd "$train_cmd" 4000 50000 \
   data/train data/lang exp/tri1_ali exp/tri2b || exit 1;
 time utils/mkgraph.sh data/lang_test exp/tri2b exp/tri2b/graph || exit 1;
-time steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph data/test exp/tri2b/decode
+time steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph data/$testDir exp/tri2b/decode
 
 # Align all data with LDA+MLLT system (tri2b)
 steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
@@ -123,7 +123,7 @@ steps/train_sgmm2.sh --cmd "$train_cmd" 5000 20000 data/train data/lang exp/tri3
 utils/mkgraph.sh data/lang_test exp/sgmm_5a exp/sgmm_5a/graph || exit 1;
 
 steps/decode_sgmm2.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
-  --transform-dir exp/tri3b/decode exp/sgmm_5a/graph data/test exp/sgmm_5a/decode
+  --transform-dir exp/tri3b/decode exp/sgmm_5a/graph data/$testDir exp/sgmm_5a/decode
 
 steps/align_sgmm2.sh --nj $nJobs --cmd "$train_cmd" --transform-dir exp/tri3b_ali \
   --use-graphs true --use-gselect true data/train data/lang exp/sgmm_5a exp/sgmm_5a_ali || exit 1;

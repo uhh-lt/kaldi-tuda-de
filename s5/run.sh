@@ -111,6 +111,14 @@ done
 
 #Todo: download source sentence archive for LM building
 
+mkdir -p data/local/lm/
+
+if [ ! -f data/local/lm/cleaned.gz ]
+then
+    wget --directory-prefix=data/local/lm/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/all_corpora_filtered_maryfied.txt.gz
+    mv data/local/lm/all_corpora_filtered_maryfied.txt.gz data/local/lm/cleaned.gz
+fi
+
 #Prepare ARPA LM
 
 #If you wont to build your own:

@@ -17,6 +17,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+if [ -f cmd.sh ]; then
+    . cmd.sh; else
+    echo "missing cmd.sh"; exit 1;
+fi
+
 if [ -f path.sh ]; then
   . path.sh; else
    echo "missing path.sh"; exit 1;
