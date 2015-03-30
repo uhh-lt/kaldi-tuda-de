@@ -16,4 +16,4 @@ export decode_cmd="utils/run.pl"
 export cuda_cmd="utils/run.pl -l gpu=1"
 
 export nJobs=16
-export nDecodeJobs=16
+export nDecodeJobs=5

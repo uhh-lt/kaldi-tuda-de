@@ -23,8 +23,12 @@ if [ -f path.sh ]; then
          echo "missing path.sh"; exit 1;
 fi
 
+export LC_ALL=C
+
 echo "training jobs: $nJobs"
 echo "decode jobs: $nDecodeJobs"
+
+testDir=dev
 
 # Here we start the AM
 
@@ -44,7 +48,7 @@ steps/train_deltas.sh --cmd "$train_cmd" \
 # First triphone decoding
 time utils/mkgraph.sh data/lang_test exp/tri1 exp/tri1/graph || exit 1;
 time steps/decode.sh  --nj $nDecodeJobs --cmd "$decode_cmd" \
-  exp/tri1/graph data/test exp/tri1/decode
+  exp/tri1/graph data/$testDir exp/tri1/decode
 
 steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
   data/train data/lang exp/tri1 exp/tri1_ali || exit 1;
@@ -56,7 +60,7 @@ steps/train_deltas.sh --cmd "$train_cmd" \
 # tri2a decoding
 time utils/mkgraph.sh data/lang_test exp/tri2a exp/tri2a/graph || exit 1;
 time steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
-  exp/tri2a/graph data/test exp/tri2a/decode
+  exp/tri2a/graph data/$testDir exp/tri2a/decode
 
 # train and decode tri2b [LDA+MLLT]
 steps/train_lda_mllt.sh --cmd "$train_cmd" 4000 50000 \
@@ -74,27 +78,27 @@ steps/make_denlats.sh --nj $nJobs --cmd "$train_cmd" \
 steps/train_mmi.sh --cmd "$train_cmd" data/train data/lang exp/tri2b_ali \
  exp/tri2b_denlats exp/tri2b_mmi || exit 1;
 
-steps/decode.sh  --iter 4 --nj $nJobs --cmd "$decode_cmd"  exp/tri2b/graph \
- data/test exp/tri2b_mmi/decode_it4
-steps/decode.sh  --iter 3 --nj $nJobs --cmd "$decode_cmd" exp/tri2b/graph \
- data/test exp/tri2b_mmi/decode_it3 # Do the same with boosting.
+steps/decode.sh  --iter 4 --nj $nDecodeJobs --cmd "$decode_cmd"  exp/tri2b/graph \
+ data/$testDir exp/tri2b_mmi/decode_it4
+steps/decode.sh  --iter 3 --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph \
+ data/$testDir exp/tri2b_mmi/decode_it3 # Do the same with boosting.
 
 steps/train_mmi.sh --cmd "$train_cmd" --boost 0.05 data/train data/lang exp/tri2b_ali \
 exp/tri2b_denlats exp/tri2b_mmi_b0.05 || exit 1;
 
-steps/decode.sh  --iter 4 --nj $nJobs --cmd "$decode_cmd" exp/tri2b/graph \
- data/test exp/tri2b_mmi_b0.05/decode_it4 || exit 1;
-steps/decode.sh  --iter 3 --nj $nJobs --cmd "$decode_cmd" exp/tri2b/graph \
- data/test exp/tri2b_mmi_b0.05/decode_it3 || exit 1;
+steps/decode.sh  --iter 4 --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph \
+ data/$testDir exp/tri2b_mmi_b0.05/decode_it4 || exit 1;
+steps/decode.sh  --iter 3 --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph \
+ data/$testDir exp/tri2b_mmi_b0.05/decode_it3 || exit 1;
 
 # Do MPE.
 steps/train_mpe.sh --cmd "$train_cmd" data/train data/lang exp/tri2b_ali exp/tri2b_denlats exp/tri2b_mpe || exit 1;
 
 steps/decode.sh  --iter 4 --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph \
- data/test exp/tri2b_mpe/decode_it4 || exit 1;
+ data/$testDir exp/tri2b_mpe/decode_it4 || exit 1;
 
 steps/decode.sh  --iter 3 --nj $nDecodeJobs --cmd "$decode_cmd" exp/tri2b/graph \
- data/test exp/tri2b_mpe/decode_it3 || exit 1;
+ data/$testDir exp/tri2b_mpe/decode_it3 || exit 1;
 
 
 # From 2b system, train 3b which is LDA + MLLT + SAT.
@@ -102,7 +106,7 @@ steps/train_sat.sh --cmd "$train_cmd" \
   5000 100000 data/train data/lang exp/tri2b_ali exp/tri3b || exit 1;
 utils/mkgraph.sh data/lang_test exp/tri3b exp/tri3b/graph|| exit 1;
 steps/decode_fmllr.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
-  exp/tri3b/graph data/test exp/tri3b/decode || exit 1;
+  exp/tri3b/graph data/$testDir exp/tri3b/decode || exit 1;
 
 # From 3b system, align all data.
 steps/align_fmllr.sh --nj $nJobs --cmd "$train_cmd" \
@@ -136,14 +140,14 @@ steps/train_mmi_sgmm2.sh --cmd "$train_cmd" --num-iters 8 --transform-dir exp/tr
 utils/mkgraph.sh data/lang_test exp/sgmm_5a_mmi_b0.1 exp/sgmm_5a_mmi_b0.1/graph || exit 1;
 
 steps/decode_sgmm2.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
-  --transform-dir exp/tri3b/decode exp/sgmm_5a_mmi_b0.1/graph data/test exp/sgmm_5a_mmi_b0.1/decode
+  --transform-dir exp/tri3b/decode exp/sgmm_5a_mmi_b0.1/graph data/$testDir exp/sgmm_5a_mmi_b0.1/decode
 
 for n in 1 2 3 4; do
   steps/decode_sgmm2_rescore.sh --cmd "$decode_cmd" --iter $n --transform-dir exp/tri3b/decode data/lang_test \
-    data/test exp/sgmm_5a_mmi_b0.1/decode exp/sgmm_5a_mmi_b0.1/decode$n
+    data/$testDir exp/sgmm_5a_mmi_b0.1/decode exp/sgmm_5a_mmi_b0.1/decode$n
 
   steps/decode_sgmm_rescore.sh --cmd "$decode_cmd" --iter $n --transform-dir exp/tri3b/decode data/lang_test \
-    data/test exp/sgmm_5a/decode exp/sgmm_5a_mmi_onlyRescoreb0.1/decode$n
+    data/$testDir exp/sgmm_5a/decode exp/sgmm_5a_mmi_onlyRescoreb0.1/decode$n
 done
 
 #todo

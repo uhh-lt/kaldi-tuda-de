@@ -3,16 +3,6 @@
 
 #adapted from gale_arabic run.sh
 
-if [ -f cmd.sh ]; then
-      . cmd.sh; else
-         echo "missing cmd.sh"; exit 1;
-fi
-
-if [ -f path.sh ]; then
-      . path.sh; else
-         echo "missing path.sh"; exit 1;
-fi
-
 [ ! -L "steps" ] && ln -s ../../wsj/s5/steps
 
 [ ! -L "utils" ] && ln -s ../../wsj/s5/utils
@@ -90,6 +80,18 @@ python local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/le
 mkdir data/lang/old
 mv data/lang/* data/lang/old
 
+#Now start preprocessing with KALDI scripts
+
+if [ -f cmd.sh ]; then
+      . cmd.sh; else
+         echo "missing cmd.sh"; exit 1;
+fi
+
+if [ -f path.sh ]; then
+      . path.sh; else
+         echo "missing path.sh"; exit 1;
+fi
+
 export LC_ALL=C
 
 #Sort the lexicon with C-encoding
@@ -107,27 +109,18 @@ for x in train dev test ; do
     utils/fix_data_dir.sh data/$x
 done
 
-#for x in train dev test ; do
-#    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-#    steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs \
-#    data/$x exp/make_mfcc/$x $mfccdir
-#    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-#    steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
-#    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-#done
-
 #Todo: download source sentence archive for LM building
 
 #Prepare ARPA LM
 
 #If you wont to build your own:
-#local/build_lm.sh
+local/build_lm.sh
 
 #Otherwise you can also use the supplied LM:
 #wget speechdata-LM.arpa
 
 #Transform LM into Kaldi LM format 
-#local/format_data.sh
+local/format_data.sh
 
 # Here we start the AM
 

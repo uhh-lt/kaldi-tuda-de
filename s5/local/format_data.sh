@@ -22,6 +22,8 @@ if [ -f path.sh ]; then
    echo "missing path.sh"; exit 1;
 fi 
 
+export LC_ALL=C
+
 #for dir in test train; do 
 #   cp -pr data/local/$dir data/$dir
 #done

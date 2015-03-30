@@ -198,6 +198,9 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 region = soup.recording.bundesland.string
                 speakerid= soup.recording.speaker_id.string
 
+                if speakerid is None or speakerid == '':
+                    print 'ERROR, speakerid not found for', myid
+
                 date = getDateFromID(myid)
 
                 if cache_cleaned_sentences and (cleaned_sentence not in cleaned_sentences_cache):
@@ -292,12 +295,17 @@ if __name__ == '__main__':
 
         #train, test = simpleTrainTestSplit(utterances)
         train, test, dev = filenameSplit(utterances)
-    
+ 
+        print 'Writing train...'
         writeKaldiDataFolder('data/train/', train,args.postfix, args.wav_extension)
+        print 'Writing dev...'
         writeKaldiDataFolder('data/dev/', dev, args.postfix, args.wav_extension)
+        print 'Writing test...'
         writeKaldiDataFolder('data/test/', test, args.postfix, args.wav_extension)
+        print 'Writing all...'
         writeKaldiDataFolder('data/all/', utterances, args.postfix, args.wav_extension)
 
+        print 'Writing phoneme dictionary for words in train/test/dev...'
         exportDict('data/lexicon/train.txt',utterances_phoneme_dict)
 
         print 'Done!'
