@@ -21,7 +21,31 @@ if [ -f path.sh ]; then
          echo "missing path.sh"; exit 1;
 fi
 
-train_lm.sh
+export LC_ALL=C
+
+#train_lm.sh
+
+mkdir -p $dir
+. ./path.sh || exit 1; # for KALDI_ROOT
+export PATH=$KALDI_ROOT/tools/kaldi_lm:$PATH
+( # First make sure the kaldi_lm toolkit is installed.
+ cd $KALDI_ROOT/tools || exit 1;
+ if [ -d kaldi_lm ]; then
+   echo Not installing the kaldi_lm toolkit since it is already there.
+ else
+   echo Downloading and installing the kaldi_lm tools
+   if [ ! -f kaldi_lm.tar.gz ]; then
+     wget http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz || exit 1;
+   fi
+   tar -xvzf kaldi_lm.tar.gz || exit 1;
+   cd kaldi_lm
+   make || exit 1;
+   echo Done making the kaldi_lm tools
+ fi
+) || exit 1;
+
+# OLDER version:
+
 
 # Get a wordlist-- keep everything but silence, which should not appear in
 # the LM.

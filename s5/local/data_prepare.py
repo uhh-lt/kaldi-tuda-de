@@ -43,7 +43,7 @@ def exportDict(dest_file,utterances_phoneme_dict):
         for word in utterances_phoneme_dict:
             out.write(word+' '+utterances_phoneme_dict[word]+'\n')
 
-def writeKaldiDataFolder(dest_dir, utts, wavextension):
+def writeKaldiDataFolder(dest_dir, utts, postfix, wavextension):
     ''' Exports the internal representation utts for all utterances into KALDIs corpus description format '''
     # Kaldi format, files: text,wav.scp,utt2spk,spk2gender
 
@@ -82,7 +82,7 @@ def writeKaldiDataFolder(dest_dir, utts, wavextension):
                 transcription = transcription.replace(target,replacement)
             
             text.write(kaldi_id+' '+transcription+'\n')
-            wavscp.write(kaldi_id+' '+utt['fileid']+wavextension+'\n')
+            wavscp.write(kaldi_id+' '+utt['fileid']+postfix+wavextension+'\n')
             utt2spk.write(kaldi_id+' '+utt['speakerid']+'\n')
             speaker2gender[utt['speakerid']] = utt['gender']
 
@@ -181,11 +181,10 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
     print 'Reading corpus transcriptions and producing automatic corpus phoneme dict for OOV words (you need MARY running in the background!)'
 
     lastutt = None
-    speakerid = 0
     for myid in ids:
         print '.',
-        if 1==1:
-        #try:
+        #if 1==1:
+        try:
             with codecs.open(myid+'.xml','r','utf-8') as myfile:
                 #extract xml meta 
                 xml = myfile.read()
@@ -197,15 +196,16 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 corpus = soup.recording.corpus.string
                 nativespeaker = soup.recording.muttersprachler.string
                 region = soup.recording.bundesland.string
+                speakerid= soup.recording.speaker_id.string
 
                 date = getDateFromID(myid)
 
-                if cache_cleaned_sentences and (sentence not in cleaned_sentences_cache):
+                if cache_cleaned_sentences and (cleaned_sentence not in cleaned_sentences_cache):
                     clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(cleaned_sentence,mary)
-                    cleaned_sentences_cache[sentence] = (clean_sentence_tokens,token_phonemes)
+                    cleaned_sentences_cache[cleaned_sentence] = (clean_sentence_tokens,token_phonemes)
                     #print 'cleaning ', cleaned_sentence, ' -> ', clean_sentence_tokens , ' phonemes:', token_phonemes
                 else:
-                    clean_sentence_tokens,token_phonemes = cleaned_sentences_cache[sentence]
+                    clean_sentence_tokens,token_phonemes = cleaned_sentences_cache[cleaned_sentence]
 
                 if not cache_cleaned_sentences:
                     clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(sentence,mary)
@@ -213,13 +213,13 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 for token,phoneme_representation in itertools.izip(clean_sentence_tokens,token_phonemes):
                     if token not in utts_phoneme_dict:
                         utts_phoneme_dict[token] = phoneme_representation
-
-                utt = {'id':myid.split('/')[-1],'fileid':myid,'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,'speakerid':'s'+('%04d'%speakerid),'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
+                #old speaker id was: 's'+('%04d'%speakerid)
+                utt = {'id':myid.split('/')[-1],'fileid':myid,'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,'speakerid':speakerid,'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
                 utts.append(utt)
 
-        #except Exception as err:
-        #    print 'Error in file, omitting', myid
-        #    print err
+        except Exception as err:
+            print 'Error in file, omitting', myid
+            print err
 
     #Sort utterances by date
     utts = sorted(utts,key=lambda utt:utt['date'])
@@ -293,10 +293,10 @@ if __name__ == '__main__':
         #train, test = simpleTrainTestSplit(utterances)
         train, test, dev = filenameSplit(utterances)
     
-        writeKaldiDataFolder('data/train/', train, args.wav_extension)
-        writeKaldiDataFolder('data/dev/', test, args.wav_extension)
-        writeKaldiDataFolder('data/test/', test, args.wav_extension)
-        writeKaldiDataFolder('data/all/', utterances, args.wav_extension)
+        writeKaldiDataFolder('data/train/', train,args.postfix, args.wav_extension)
+        writeKaldiDataFolder('data/dev/', dev, args.postfix, args.wav_extension)
+        writeKaldiDataFolder('data/test/', test, args.postfix, args.wav_extension)
+        writeKaldiDataFolder('data/all/', utterances, args.postfix, args.wav_extension)
 
         exportDict('data/lexicon/train.txt',utterances_phoneme_dict)
 

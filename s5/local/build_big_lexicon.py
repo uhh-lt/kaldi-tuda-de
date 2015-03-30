@@ -21,6 +21,7 @@ import traceback
 import datetime
 import sys
 import cPickle as pickle
+from itertools import groupby
 
 from bs4 import BeautifulSoup
 
@@ -283,6 +284,19 @@ def guessImportFunc(filename):
     else:
         return missingImporter
 
+#find same pronouciations in the list and merge them
+def collapsePronList(pron_list):
+    #sort by pronounciation
+    pron_list.sort(key=lambda elem: ''.join(elem['pron']))
+    pron_list_collpased = []
+    #see http://stackoverflow.com/questions/773/how-do-i-use-pythons-itertools-groupby
+    for key, group in groupby(pron_list, lambda x: ' '.join(x['pron'])):
+        same_prons = list(pron for pron in group)
+        freq = sum([pron['freq'] for pron in same_prons])
+        manual = any([pron['manual'] for pron in same_prons])
+        pron_list_collpased.append({'pron':same_prons[0]['pron'],'freq':freq,'manual':manual})
+    return pron_list_collpased 
+
 def merge_dicts(d1, d2):
     '''Merge two pronounciation dictionaries'''
     for word in d2.keys():
@@ -290,26 +304,14 @@ def merge_dicts(d1, d2):
         pron_list1 = d1[word] if word in d1 else []
         pron_list2 = d2[word]
 
-        #debug print
-        #if len(pron_list1) > 0 and len(pron_list2) > 0:
-        #    print 'Merge:',pron_list1, ' + ',pron_list2
-        
-        #merge dictionary entry entry2 from d2 with entry1 form d1 if word (key) is the same 
-        for entry2 in pron_list2:
-            #if pronounciation is the same in both dicts: merge freq counts, and set manual pronounciation True if any dict claims it as True
-            if entry2['pron'] in [entry1['pron'] for entry1 in pron_list1]:
-                freq = entry2['freq']+sum([entry1['freq'] for entry1 in pron_list1 if entry1['pron'] == entry2['pron']])
-                manual = entry2['manual'] or any([[entry1['manual'] for entry1 in pron_list1 if entry1['pron'] == entry2['pron']]])
-                merged_pron_list += [{'pron':entry2['pron'],'freq':freq,'manual':manual}]
-            else: #append only entry2 now (nothing to merge), worry about entry1 later
-                merged_pron_list += [entry2]
+        merged_pron_list = collapsePronList(pron_list1 + pron_list2)
 
-        #now add any pronuonciation variants that are in pron_list1, but not in the merged list
-        merged_pron_list += [entry1 for entry1 in pron_list1 if entry1['pron'] not in [elem['pron'] for elem in merged_pron_list]]
-        
-        #debug print
-        #if len(pron_list1) > 0 and len(pron_list2) > 0:
-        #    print 'Merged list is:', merged_pron_list
+        #check merged list:
+        for entry1 in merged_pron_list:
+            if len([entry2 for entry2 in merged_pron_list if entry1['pron']==entry2['pron']])>1:
+                print 'WARNING, duplicate pronounciation entry:',entry1['pron']
+                print pron_list1
+                print pron_list2
 
         d1[word] = merged_pron_list
     return d1 
