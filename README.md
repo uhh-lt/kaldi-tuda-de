@@ -29,8 +29,43 @@ You need python 2.7.x installed on your system with a recent version of the requ
 
 ## Building the acoustic models
 
-After you have fullfilled the prerequsites, edit cmd.sh in the s5/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this untested and may require some tinkering to get it running.
+After you have fullfilled the prerequsites, edit cmd.sh in the s5/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this is untested and may require some tinkering to get it running.
 
 Then, simply run ./run.sh in s5/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build apropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 3-gram LM.
 
+## Getting data files separately
 
+You can of course also use and download our data resources separtely.
+
+### Speech corpus
+
+The corpus can be downloaded [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-TUDa-2015.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+The scripts expect to find the corpus data extracted in data/wav/.
+
+### German language texts
+
+Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/all_corpora_filtered_maryfied.txt.gz)
+ 
+The scripts expect to find one gzipped text files containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
+
+The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbrevations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
+
+If you want to preprocess your own texts, you can use s5/local/maryfy_corpus.py.
+
+```
+python s5/local/maryfy_corpus.py --help
+```
+
+should point you into the right direction. You need to supply the path of the MARY server start script. MARY will unfortunately have problems if you try to process millions of lines of text in one go and it might become unresponsive with all its proccesing threads being stuck in endless loops. The current quick hack implemented in maryfy_corpus.py will routinely call "killall java" and then restart MARY. This of course only works, if you have no other Java programs running under your username besides MARY. 
+
+### German phoneme dictionary
+
+The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. 
+
+build_big_lexicon.py can import many dictionaries in the basSAMPA format and merge them into a single dictionary.
+
+See also:
+```
+python s5/local/build_big_lexicon.py --help
+python s5/local/export_lexicon.py --help
+```
