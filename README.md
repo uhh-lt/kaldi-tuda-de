@@ -1,11 +1,11 @@
 # Open source distant speech recipe for building German acoustic models with KALDI
-The speech corpus has been recorded using a Microsoft Kinect and three other microphones in parallel at Technische Universität Darmstadt. The corpus compromises ~31h of training data per microphone and 5h seperated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
+The speech corpus has been recorded using a Microsoft Kinect and three other microphones in parallel at Technische Universität Darmstadt. The corpus compromises ~31h of training data per microphone and 5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
-The current recipe trains and tests exlusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data.
+The current recipe trains and tests exclusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data.
 
-The scripts will ask you where to place larger files and can download all neccesary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
+The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
-## Prerequsites
+## Prerequisites
 
 The scripts are only tested under Linux (Ubuntu 14.04). Download and install KALDI and follow the installation instructions. You can download a recent version using svn:
 
@@ -17,7 +17,7 @@ In KALDI trunk:
 
 1. go to tools/  and follow INSTALL instructions there.
 
-   *Optional:* If you have some extra time, it can make sense to use a newer [development version of ATLAS](http://sourceforge.net/projects/math-atlas/files/Developer%20%28unstable%29/) instead of the one supplied by your distribution, as the newer version tend to be much faster and can make use of AVX instructions if you have a newer processor. It takes up to a day to build though and cannot be parallized (using -j with make will produce a ATALS library which will most likely produce incorrect results or crash randomly).
+   *Optional:* If you have some extra time, it can make sense to use a newer [development version of ATLAS](http://sourceforge.net/projects/math-atlas/files/Developer%20%28unstable%29/) instead of the one supplied by your distribution, as the newer version tend to be much faster and can make use of AVX instructions if you have a newer processor. It takes up to a day to build though and cannot be parallelized (using -j with make will produce a ATALS library which will most likely produce incorrect results or crash randomly).
 
 2. go to src/ and follow INSTALL instructions there.
 
@@ -25,17 +25,17 @@ In KALDI trunk:
 
 You also need [MARY 5.1.1](https://github.com/marytts/marytts/releases/download/v5.1.1/marytts-5.1.1.zip) running on your local machine. Please use this exact version, as other versions e.g. 5.1.2 are known to be uncompatible with our scripts currently. Start the MARY server before running our scripts. It will be used to generate phoneme entries in the phoneme dictionary for OOV words. It was also used to automatically clean the texts for the LM, but you will only need to do this more compute intensive step if you want to extend the LM, as we have packaged preprocessed texts (8 million sentences) that are automatically downloaded.
 
-You need python 2.7.x installed on your system with a recent version of the requests package (http://docs.python-requests.org/en/latest/). To install it, either run "pip install requests" for a system-wide installation or "pip install --user requests" if you don't have admin priviledges.
+You need python 2.7.x installed on your system with a recent version of the requests package (http://docs.python-requests.org/en/latest/). To install it, either run "pip install requests" for a system-wide installation or "pip install --user requests" if you don't have admin privileges.
 
 ## Building the acoustic models
 
-After you have fullfilled the prerequsites, edit cmd.sh in the s5/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this is untested and may require some tinkering to get it running.
+After you have fulfilled the prerequisites, edit cmd.sh in the s5/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this is untested and may require some tinkering to get it running.
 
-Then, simply run ./run.sh in s5/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build apropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 3-gram LM.
+Then, simply run ./run.sh in s5/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build appropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 3-gram LM.
 
 ## Getting data files separately
 
-You can of course also use and download our data resources separtely.
+You can of course also use and download our data resources separately.
 
 ### Speech corpus
 
@@ -48,7 +48,7 @@ Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org
  
 The scripts expect to find one gzipped text files containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
 
-The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbrevations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
+The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbreviations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
 
 If you want to preprocess your own texts, you can use s5/local/maryfy_corpus.py.
 
@@ -56,16 +56,16 @@ If you want to preprocess your own texts, you can use s5/local/maryfy_corpus.py.
 python s5/local/maryfy_corpus.py --help
 ```
 
-should point you into the right direction. You need to supply the path of the MARY server start script. MARY will unfortunately have problems if you try to process millions of lines of text in one go and it might become unresponsive with all its proccesing threads being stuck in endless loops. The current quick hack implemented in maryfy_corpus.py will routinely call "killall java" and then restart MARY. This of course only works, if you have no other Java programs running under your username besides MARY. 
+should point you into the right direction. You need to supply the path of the MARY server start script. MARY will unfortunately have problems if you try to process millions of lines of text in one go and it might become unresponsive with all its processing threads being stuck in endless loops. The current quick hack implemented in maryfy_corpus.py will routinely call "killall java" and then restart MARY. This of course only works, if you have no other Java programs running under your username besides MARY. 
 
 ### German phoneme dictionary
 
 The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries. Other sources for phoneme dictionary entries can be found at [BAS](ftp://ftp.bas.uni-muenchen.de/pub/BAS). Our parser understands the different formats of     [VM.German.Wordforms](ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms), [RVG1_read.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex), [RVG1_trl.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex) and [LEXICON.TBL](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL).
-The final dictionary covers ~44.8k unique German words with 70k entries total (pronounciation variants). You can also disable the BAS dictionaties, if it is important for to have a phoneme dictionary with an open license. You will then have a lexicon with ~36k unique German words and no pronounciation variants.
+The final dictionary covers ~44.8k unique German words with 70k entries total (pronunciation variants). You can also disable the BAS dictionaties, if it is important for to have a phoneme dictionary with an open license. You will then have a lexicon with ~36k unique German words and no pronounciation variants.
 
-build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialiects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialzed python object.
+build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialised python object.
 
-export_lexicon.py will export such a serialzed python dictionary into KALDIs [lexion_p.txt](http://kaldi.sourceforge.net/data_prep.html#data_prep_lang_creating) format (this allows to model different phonetic realizations of the same word with probablities). Stress markers in the phoneme set are grouped with their unstressed equivalents in KALDI using the extra_questions.txt file. It is also possible to generate a Sphinx formated dictionary with the same data using the -spx option. The Sphinx format also allows proununciation variants, but cannot model probabilities for these variants.
+export_lexicon.py will export such a serialised python dictionary into KALDIs [lexion_p.txt](http://kaldi.sourceforge.net/data_prep.html#data_prep_lang_creating) format (this allows to model different phonetic realisations of the same word with probabilities). Stress markers in the phoneme set are grouped with their unstressed equivalents in KALDI using the extra_questions.txt file. It is also possible to generate a Sphinx formated dictionary with the same data using the -spx option. The Sphinx format also allows pronunciation variants, but cannot model probabilities for these variants.
 
 See also:
 ```
