@@ -21,7 +21,7 @@ In KALDI trunk:
 
 2. go to src/ and follow INSTALL instructions there.
 
-**Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you need to enable CUDA in KALDI with the configure script in src/.
+**Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you probably want to enable CUDA in KALDI with the configure script in src/. You should have a relatively recent Nvidia GPU, at least one with the Kepler architecture.
 
 You also need MARY 5.1.1 running on your local machine (https://github.com/marytts/marytts/releases/download/v5.1.1/marytts-5.1.1.zip). Please use this version, as other versions e.g. 5.1.2 are known to be uncompatible with these scripts currently. Start the MARY server before running our scripts. It will be used to generate phoneme entries in the phoneme dictionary for OOV words. It was also used to automatically clean the texts for the LM, but you will only need to do this more compute intensive step if you want to extend the LM, as we have packaged preprocessed texts (8 million sentences) that are automatically downloaded.
 
