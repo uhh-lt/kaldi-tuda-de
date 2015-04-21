@@ -60,9 +60,12 @@ should point you into the right direction. You need to supply the path of the MA
 
 ### German phoneme dictionary
 
-The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. 
+The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries.
+The final dictionary covers ~44.8k unique German words with 70k entries total (pronounciation variants).
 
-build_big_lexicon.py can import many dictionaries in the basSAMPA format and merge them into a single dictionary.
+build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialiects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialzed python object.
+
+export_lexicon.py will export such a serialzed python dictionary into KALDIs [lexion_p.txt](http://kaldi.sourceforge.net/data_prep.html#data_prep_lang_creating) format (this allows to model different phonetic realizations of the same word with probablities). Stress markers in the phoneme set are grouped with their unstressed equivalents in KALDI using the extra_questions.txt file. It is also possible to generate a Sphinx formated dictionary with the same data using the -spx option. The Sphinx format also allows proununciation variants, but cannot model probabilities for these variants.
 
 See also:
 ```
