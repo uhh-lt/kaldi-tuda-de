@@ -1,9 +1,9 @@
 # Open source distant speech recipe for building German acoustic models with KALDI
-The speech corpus has been recorded using a Microsoft Kinect and three other microphones in parallel at Technische Universität Darmstadt. The corpus compromises ~31h of training data per microphone and 5h seperated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/)
+The speech corpus has been recorded using a Microsoft Kinect and three other microphones in parallel at Technische Universität Darmstadt. The corpus compromises ~31h of training data per microphone and 5h seperated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
 The current recipe trains and tests exlusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data.
 
-The scripts will ask you where to place larger files and can download all neccesary files (audio, German texts, phoneme dictionary) to train the acoustic and language models. 
+The scripts will ask you where to place larger files and can download all neccesary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## Prerequsites
 
@@ -60,8 +60,8 @@ should point you into the right direction. You need to supply the path of the MA
 
 ### German phoneme dictionary
 
-The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries.
-The final dictionary covers ~44.8k unique German words with 70k entries total (pronounciation variants).
+The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries. Other sources for phoneme dictionary entries can be found at [BAS](ftp://ftp.bas.uni-muenchen.de/pub/BAS). Our parser understands the different formats of     [VM.German.Wordforms](ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms), [RVG1_read.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex), [RVG1_trl.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex) and [LEXICON.TBL](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL).
+The final dictionary covers ~44.8k unique German words with 70k entries total (pronounciation variants). You can also disable the BAS dictionaties, if it is important for to have a phoneme dictionary with an open license. You will then have a lexicon with ~36k unique German words and no pronounciation variants.
 
 build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialiects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialzed python object.
 
