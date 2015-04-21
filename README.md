@@ -7,9 +7,11 @@ The scripts will ask you where to place larger files and can download all necces
 
 ## Prerequsites
 
-Download and install KALDI and follow the installation instructions on http://kaldi.sourceforge.net/. Our scripts are meant to be placed into KALDIs egs directory. If you want to build DNN models, you need to enable CUDA in KALDI.
+The scripts are only tested under Linux (Ubuntu 14.04). Download and install KALDI and follow the installation instructions on http://kaldi.sourceforge.net/. Our scripts are meant to be placed into KALDIs egs directory. If you want to build DNN models, you need to enable CUDA in KALDI.
 
 You also need MARY 5.1.1 running on your local machine (https://github.com/marytts/marytts/releases/download/v5.1.1/marytts-5.1.1.zip). Please use this version, as other versions e.g. 5.1.2 are known to be uncompatible with these scripts currently. Start the MARY server before running our scripts. It will be used to generate phoneme entries in the phoneme dictionary for OOV words. It was also used to automatically clean the texts for the LM, but you will only need to do this more compute intensive step if you want to extend the LM, as we have packaged preprocessed texts (8 million sentences) that are automatically downloaded.
+
+You need python 2.7.x installed on your system with a recent version of the requests package (http://docs.python-requests.org/en/latest/). To install it, either run "pip install requests" for a system-wide installation or "pip install --user requests" if you don't have admin priviledges.
 
 ## Building 
 
