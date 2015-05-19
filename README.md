@@ -17,7 +17,7 @@ In KALDI trunk:
 
 1. go to tools/  and follow INSTALL instructions there.
 
-   *Optional:* If you have some extra time, it can make sense to use a newer [development version of ATLAS](http://sourceforge.net/projects/math-atlas/files/Developer%20%28unstable%29/) instead of the one supplied by your distribution, as the newer version tend to be much faster and can make use of AVX instructions if you have a newer processor. It takes up to a day to build though and cannot be parallelized (using -j with make will produce a ATALS library which will most likely produce incorrect results or crash randomly).
+   *Optional:* If you have some extra time, it can make sense to use a newer [development version of ATLAS](http://sourceforge.net/projects/math-atlas/files/Developer%20%28unstable%29/) instead of the one supplied by your distribution, as the newer versions tend to be much faster and can make use of AVX instructions if you have a newer processor. It takes up to a day to build though and cannot be parallelized (using -j with make will produce a ATALS library which will most likely produce incorrect results or crash randomly).
 
 2. go to src/ and follow INSTALL instructions there.
 
