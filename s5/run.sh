@@ -76,7 +76,7 @@ python local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined
 python local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/lexiconp.txt 
 
 #Move old lang dir if it exists
-mkdir data/lang/old
+mkdir -p data/lang/old
 mv data/lang/* data/lang/old
 
 #Now start preprocessing with KALDI scripts
@@ -99,7 +99,7 @@ echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this 
 export LC_ALL=C
 
 #Sort the lexicon with C-encoding (Is this still needed?)
-sort data/local/dict/lexiconp.txt > data/local/dict/lexiconp.txt
+#sort data/local/dict/lexiconp.txt > data/local/dict/lexiconp.txt
 
 #Prepare phoneme data for Kaldi
 utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang
