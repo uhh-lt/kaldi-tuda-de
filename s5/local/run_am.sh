@@ -28,6 +28,7 @@ export LC_ALL=C
 echo "training jobs: $nJobs"
 echo "decode jobs: $nDecodeJobs"
 
+#change this to test, if you want results on the test set
 testDir=dev
 
 # Here we start the AM
