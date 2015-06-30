@@ -20,16 +20,16 @@ utf8()
 # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
 python local/prepare_dir_structure.py
 
-if [ ! -f data/wav/german-speechdata-TUDa-2015.tar.gz ]
+if [ ! -d data/wav/german-speechdata-package-v2 ]
 then
-    wget --directory-prefix=data/wav/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-TUDa-2015.tar.gz
+    wget --directory-prefix=data/wav/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-package-v2.tar.gz
     cd data/wav/
-    tar xvfz german-speechdata-TUDa-2015.tar.gz
+    tar xvfz german-speechdata-package-v2.tar.gz
     cd ../../
 fi
 
 #adapt this to the Sprachdatenaufnahmen2014 folder on your disk
-RAWDATA=data/wav
+RAWDATA=data/wav/german-speechdata-package-v2
 
 # Filter by name
 FILTERBYNAME="*.xml"

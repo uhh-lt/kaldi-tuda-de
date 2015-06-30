@@ -259,7 +259,7 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--filelist', dest='filelist', help='process this file list', type=str, default = '')
     parser.add_argument('-r', '--remove_extension', dest='remove_extension', help='remove this extension, to get plain file id', type=str, default='.xml')
     parser.add_argument('-w', '--audio-file-extension', dest='wav_extension', help='extension for audio files', type=str, default='.wav')
-    parser.add_argument('-p', '--utterance-postfix-name', dest='postfix', help='--utterance-postfix-name', type=str, default='-beamformedSignal')
+    parser.add_argument('-p', '--utterance-postfix-name', dest='postfix', help='--utterance-postfix-name', type=str, default='_Kinect-Beam')
 
     args = parser.parse_args()
 
@@ -273,15 +273,18 @@ if __name__ == '__main__':
         print 'I have',len(ids_raw),'files. Some may have their audio missing, I\'ll check that for you...'
         ids = []
         #check for missing wav files:
-        
+       
+        omitted = 0
         for myid in ids_raw:
             check = myid+args.postfix+args.wav_extension
             if os.path.isfile(check):
                 ids.append(myid)
             else:
                 print 'Warning, omitting',myid,'because I can\'t find',check
+                omitted += 1
         
-        print 'Found',len(ids),'files.'
+        print 'Found',len(ids),' wav files.'
+        print 'Omitted ',omitted,' xml transcription files (Some missing files is normal for the TUDA Kaldi corpus).'
 
         utterances,utterances_phoneme_dict = getUtterances(ids,args.postfix)
         

@@ -34,7 +34,7 @@ make_sure_path_exists('data/local/dict/')
 #if exp and mfcc don't exist locally, create them as link to some other directory on a larger disk
 if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
     default_dir = '/srv/data/speech/tuda_kaldi_de/'
-    data_dir = raw_input('Where do you want to store mfcc vectors and models (exp)? It should point to some largish disk. default: ' + default_dir) 
+    data_dir = raw_input('Where do you want to store mfcc vectors and models (exp)? It should point to some largish disk. default: ' + default_dir + ' : ') 
     if data_dir == '':
         data_dir = default_dir
 
