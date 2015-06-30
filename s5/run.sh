@@ -1,17 +1,5 @@
 #!/bin/bash
 
-if [ -f cmd.sh ]; then
-      . cmd.sh; else
-         echo "missing cmd.sh"; exit 1;
-fi
-
-if [ -f path.sh ]; then
-      . path.sh; else
-         echo "missing path.sh"; exit 1;
-fi
-
-echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this is not what you want, edit cmd.sh!"
-
 #adapted from gale_arabic run.sh
 
 [ ! -L "steps" ] && ln -s ../../wsj/s5/steps
@@ -93,11 +81,25 @@ mv data/lang/* data/lang/old
 
 #Now start preprocessing with KALDI scripts
 
+if [ -f cmd.sh ]; then
+      . cmd.sh; else
+         echo "missing cmd.sh"; exit 1;
+fi
+
+#Path also sets LC_ALL=C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs. It should be set here, after the python scripts and not at the beginning of this script
+if [ -f path.sh ]; then
+      . path.sh; else
+         echo "missing path.sh"; exit 1;
+
+fi
+
+echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this is not what you want, edit cmd.sh!"
+
 #Make sure that LC_ALL is C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs
 export LC_ALL=C
 
 #Sort the lexicon with C-encoding (Is this still needed?)
-#sort data/local/dict/lexiconp.txt > a/local/dict/lexiconp.txt
+sort data/local/dict/lexiconp.txt > data/local/dict/lexiconp.txt
 
 #Prepare phoneme data for Kaldi
 utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang
