@@ -93,11 +93,11 @@ mv data/lang/* data/lang/old
 
 #Now start preprocessing with KALDI scripts
 
-
+#Make sure that LC_ALL is C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs
 export LC_ALL=C
 
-#Sort the lexicon with C-encoding
-sort data/local/dict/lexiconp.txt
+#Sort the lexicon with C-encoding (Is this still needed?)
+#sort data/local/dict/lexiconp.txt > a/local/dict/lexiconp.txt
 
 #Prepare phoneme data for Kaldi
 utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang
