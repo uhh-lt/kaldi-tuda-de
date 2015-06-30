@@ -1,5 +1,16 @@
 #!/bin/bash
 
+if [ -f cmd.sh ]; then
+      . cmd.sh; else
+         echo "missing cmd.sh"; exit 1;
+fi
+
+if [ -f path.sh ]; then
+      . path.sh; else
+         echo "missing path.sh"; exit 1;
+fi
+
+echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this is not what you want, edit cmd.sh!"
 
 #adapted from gale_arabic run.sh
 
@@ -82,15 +93,6 @@ mv data/lang/* data/lang/old
 
 #Now start preprocessing with KALDI scripts
 
-if [ -f cmd.sh ]; then
-      . cmd.sh; else
-         echo "missing cmd.sh"; exit 1;
-fi
-
-if [ -f path.sh ]; then
-      . path.sh; else
-         echo "missing path.sh"; exit 1;
-fi
 
 export LC_ALL=C
 
@@ -116,7 +118,7 @@ mkdir -p data/local/lm/
 if [ ! -f data/local/lm/cleaned.gz ]
 then
     wget --directory-prefix=data/local/lm/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/German_sentences_8mil_filtered_maryfied.txt.gz
-    mv data/local/lm/all_corpora_filtered_maryfied.txt.gz data/local/lm/cleaned.gz
+    mv data/local/lm/German_sentences_8mil_filtered_maryfied.txt.gz data/local/lm/cleaned.gz
 fi
 
 #Prepare ARPA LM

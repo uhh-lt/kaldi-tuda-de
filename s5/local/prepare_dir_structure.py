@@ -18,6 +18,13 @@ from common_utils import make_sure_path_exists
 import os
 import sys
 
+def symlink_file(file1,file2):
+    try:
+        os.symlink(file1, file2)
+    except OSError, e:
+        if e.errno == errno.EEXIST:
+            print 'Omitted symlink', file1, '->', file2, ', because it already exists'        
+
 if not os.path.exists('run.sh'):
     print 'You have to run this python script from the base dir, where run.sh is located. WARNING: aborting.'
     sys.exit('wrong woring directory')
@@ -63,8 +70,8 @@ if not os.path.exists('exp/') and not os.path.exists('mfcc/'):
     print wav_dir_src 
     make_sure_path_exists(wav_dir_src)
 
-    os.symlink(mfcc_dir_src,'./mfcc')
-    os.symlink(exp_dir_src,'./exp')
-    os.symlink(lm_dir_src,'./data/local/lm')
-    os.symlink(lang_dir_src,'./data/local/lang')
-    os.symlink(wav_dir_src,'./data/wav')
+    symlink_file(mfcc_dir_src,'./mfcc')
+    symlink_file(exp_dir_src,'./exp')
+    symlink_file(lm_dir_src,'./data/local/lm')
+    symlink_file(lang_dir_src,'./data/local/lang')
+    symlink_file(wav_dir_src,'./data/wav')
