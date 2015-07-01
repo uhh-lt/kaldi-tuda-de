@@ -39,7 +39,7 @@ def loadIdFile(idfile,remove_extension='.wav',use_no_files=-1):
 #Rules for cleaning transcriptions, before using DFKI's TTS frontend MARY
 pre_mary_transcription_replace_rules = {(u'º',u'°'),(u'“',u'"'), (u'„',u'"'),(u'‶',u'"')}
 #Rules for cleaning transcriptions, after using DFKI's TTS frontend MARY
-post_mary_transcription_replace_rules = {(u' x ', u' mal '),(u'k m',u'kilometer'),(u'E U R',u'Euro'),(u' x ',u' mal '),('O K','okay'),(u'D i e',u'Die'),(u'D a s',u'Das'),(u'D e r',u'Der'),(u'Philipp V',u'Philipp den fünften')}
+post_mary_transcription_replace_rules = {(u' x ', u' mal '),(u' k m ',u' kilometer '),(u' E U R ',u' Euro '),('O K ','okay '),(u'D i e ',u'Die '),(u'D a s ',u'Das '),(u'D e r ',u'Der '),(u'Philipp V ',u'Philipp den fünften ')}
 
 def maryfySentence(sentence,mary,conn_num=0):
     ''' Use DFKI's MARY software to get a XML file which tokenizes and adds meta data to entities like numbers. We use it to convert e.g. "120" into "hundert twenty". Server has to run locally! Todo: inform user if it does not.'''

@@ -78,10 +78,6 @@ def writeKaldiDataFolder(dest_dir, utts, postfix, wavextension):
             kaldi_id = utt['kaldi_id']
             transcription = ' '.join(utt['clean_sentence_tokens'])
 
-            for rule in common_utils.post_mary_transcription_replace_rules:
-                target,replacement = rule
-                transcription = transcription.replace(target,replacement)
-            
             text.write(kaldi_id+' '+transcription+'\n')
             wavscp.write(kaldi_id+' '+utt['fileid']+postfix+wavextension+'\n')
             utt2spk.write(kaldi_id+' '+utt['speakerid']+'\n')
@@ -217,7 +213,8 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 for token,phoneme_representation in itertools.izip(clean_sentence_tokens,token_phonemes):
                     if token not in utts_phoneme_dict:
                         utts_phoneme_dict[token] = phoneme_representation
-                #old speaker id was: 's'+('%04d'%speakerid)
+                
+                clean_sentence_tokens = cleaned_sentence.split(' ')
                 utt = {'id':myid.split('/')[-1],'fileid':myid,'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,'speakerid':speakerid,'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
                 utts.append(utt)
 
