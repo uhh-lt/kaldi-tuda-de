@@ -39,8 +39,8 @@ You can of course also use and download our data resources separately.
 
 ### Speech corpus
 
-The corpus can be downloaded [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-TUDa-2015.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
-The scripts expect to find the corpus data extracted in data/wav/.
+The corpus can be downloaded [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+The run.sh script expects to find the corpus data extracted in data/wav/ and will download it for you automatically, if it does not find the data.
 
 ### German language texts
 
