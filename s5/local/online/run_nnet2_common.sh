@@ -5,7 +5,7 @@
 . cmd.sh
 
 
-stage=3
+stage=0
 
 set -e
 . cmd.sh
