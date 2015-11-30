@@ -77,10 +77,13 @@ echo training kaldi_lm with 3gram-mincount
 
 rm -r data/local/lm/3gram-mincount/
 train_lm.sh --arpa --lmtype 3gram-mincount $dir
-prune_lm.sh --arpa 6.0 $dir/3gram-mincount/
-prune_lm.sh --arpa 8.0 $dir/3gram-mincount/
-prune_lm.sh --arpa 10.0 $dir/3gram-mincount/
-prune_lm.sh --arpa 12.0 $dir/3gram-mincount/
+#prune_lm.sh --arpa 6.0 $dir/3gram-mincount/
+#prune_lm.sh --arpa 8.0 $dir/3gram-mincount/
+#prune_lm.sh --arpa 10.0 $dir/3gram-mincount/
+prune_lm.sh --arpa 16.0 $dir/3gram-mincount/
+
+# create unpruned const arpa for best path rescoring
+utils/build_const_arpa_lm.sh data/local/lm/3gram-mincount/lm_unpruned.gz data/lang/ data/lang_const_arpa/
 
 # we could also train a 4 gram model (omitted by default)
 #train_lm.sh --arpa --lmtype 4gram-mincount $dir

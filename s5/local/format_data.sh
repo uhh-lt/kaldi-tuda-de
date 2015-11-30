@@ -35,7 +35,7 @@ export LC_ALL=C
 
 mkdir -p data/lang_test
 
-arpa_lm=data/local/lm/3gram-mincount/lm_pr12.0.gz
+arpa_lm=data/local/lm/3gram-mincount/lm_pr16.0.gz
 [ ! -f $arpa_lm ] && echo No such file $arpa_lm && exit 1;
 
 rm -r data/lang_test
