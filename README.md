@@ -13,7 +13,7 @@ The scripts are only tested under Linux (Ubuntu 14.04). Download and install KAL
 svn co https://svn.code.sf.net/p/kaldi/code/trunk kaldi-trunk
 ```
 
-In KALDI trunk:
+In Kaldi trunk:
 
 1. go to tools/  and follow INSTALL instructions there.
 
