@@ -1,7 +1,7 @@
 # Open source distant speech recognition recipe and corpus for building German acoustic models with Kaldi
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for distant speech recognition (DSR) in a speaker-independent speech recognition setting with [Kaldi](http://kaldi.sourceforge.net/). State-of-the-art modelling techniques include SGMM models and DNN-HMM models. The speech corpus has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
-The current recipe trains and tests exclusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data.
+The current recipe trains and tests exclusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data. There is also data for three other microphones.
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
