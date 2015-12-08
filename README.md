@@ -46,7 +46,7 @@ The run.sh script expects to find the corpus data extracted in data/wav/ and wil
 
 Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/all_corpora_filtered_maryfied.txt.gz)
  
-The scripts expect to find one gzipped text files containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
+The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
 
 The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbreviations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
 
