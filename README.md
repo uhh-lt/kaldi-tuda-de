@@ -7,7 +7,7 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## Prerequisites
 
-The scripts are only tested under Linux (Ubuntu 14.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using svn:
+The scripts are only tested under Linux (Ubuntu 14.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
 
 ```
  git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
