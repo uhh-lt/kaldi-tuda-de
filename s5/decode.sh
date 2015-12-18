@@ -80,7 +80,7 @@ steps/decode_sgmm2.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode
   --transform-dir exp/tri3b/decode_$decodedir exp/sgmm_5a/graph data/$decodedir exp/sgmm_5a/decode_$decodedir
 
 # (Optional) rescore with large LM
-steps/lmrescore_const_arpa.sh data/lang_test data/lang_const_arpa /data/train exp/sgmm_5a/decode_$decodedir exp/sgmm_5a/decode_${decodedir}_rescored
+steps/lmrescore_const_arpa.sh data/lang_test data/lang_const_arpa data/$decodedir exp/sgmm_5a/decode_$decodedir exp/sgmm_5a/decode_${decodedir}_rescored
 
 # Output human readable version of the best path ( = best automatic transcript)
 cat exp/sgmm_5a/decode_${decodedir}_rescored/scoring/log/best_path.13.log
