@@ -1,19 +1,19 @@
-# Open source distant speech recognition recipe and corpus for building German acoustic models with KALDI
-This recipe and collection of scripts enables you to train large vocabulary German acoustic models for distant speech recognition (DSR) in a speaker-independent speech recognition setting with [KALDI](http://kaldi.sourceforge.net/). State-of-the-art modelling techniques include SGMM models and DNN-HMM models. The speech corpus has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
+# Open source distant speech recognition recipe and corpus for building German acoustic models with Kaldi
+This recipe and collection of scripts enables you to train large vocabulary German acoustic models for distant speech recognition (DSR) in a speaker-independent speech recognition setting with [Kaldi](http://kaldi.sourceforge.net/). State-of-the-art modelling techniques include SGMM models and DNN-HMM models. The speech corpus has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
-The current recipe trains and tests exclusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data.
+The current recipe trains and tests exclusively on the training and test partitions of the Microsoft Kinect beamformed and noise reduced audio data. There is also data for three other microphones.
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## Prerequisites
 
-The scripts are only tested under Linux (Ubuntu 14.04). Download and install KALDI and follow the installation instructions. You can download a recent version using svn:
+The scripts are only tested under Linux (Ubuntu 14.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
 
 ```
-svn co https://svn.code.sf.net/p/kaldi/code/trunk kaldi-trunk
+ git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
 ```
 
-In KALDI trunk:
+In Kaldi trunk:
 
 1. go to tools/  and follow INSTALL instructions there.
 
@@ -46,7 +46,7 @@ The run.sh script expects to find the corpus data extracted in data/wav/ and wil
 
 Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/all_corpora_filtered_maryfied.txt.gz)
  
-The scripts expect to find one gzipped text files containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
+The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
 
 The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbreviations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
 

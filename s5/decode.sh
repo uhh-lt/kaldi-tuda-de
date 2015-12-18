@@ -26,7 +26,7 @@
 # ...
 #
 # "wav.scp" is used to map unique identifiers to audio files (wav)
-# The file "text" would usually contain manuell transcriptions, which is only useful 
+# The file "text" would usually contain manual transcriptions, which is only useful 
 # if you want to evaluate the model with word error rate (WER). Here we use "None",
 # since we want to use the model for an automatic transcription.
 #
