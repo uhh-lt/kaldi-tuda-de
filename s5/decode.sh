@@ -42,6 +42,10 @@
 decodedir=frei_test
 mfccdir=mfcc
 
+# Check that steps and utils are probably linked:
+[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
+[ ! -L "utils" ] && ln -s ../../wsj/s5/utils
+
 # Now start preprocessing with KALDI scripts
 
 if [ -f cmd.sh ]; then
