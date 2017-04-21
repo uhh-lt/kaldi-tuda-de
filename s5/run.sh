@@ -21,7 +21,7 @@ python local/prepare_dir_structure.py
 
 if [ ! -d data/wav/german-speechdata-package-v2 ]
 then
-    wget --directory-prefix=data/wav/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-package-v2.tar.gz
+    wget --directory-prefix=data/wav/ http://speech.tools/kaldi_tuda_de/german-speechdata-package-v2.tar.gz
     cd data/wav/
     tar xvfz german-speechdata-package-v2.tar.gz
     cd ../../
@@ -119,7 +119,7 @@ mkdir -p data/local/lm/
 
 if [ ! -f data/local/lm/cleaned.gz ]
 then
-    wget --directory-prefix=data/local/lm/ http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/German_sentences_8mil_filtered_maryfied.txt.gz
+    wget --directory-prefix=data/local/lm/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
     mv data/local/lm/German_sentences_8mil_filtered_maryfied.txt.gz data/local/lm/cleaned.gz
 fi
 
