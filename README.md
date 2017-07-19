@@ -39,12 +39,12 @@ You can of course also use and download our data resources separately.
 
 ### Speech corpus
 
-The corpus can be downloaded [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+The corpus can be downloaded [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 The run.sh script expects to find the corpus data extracted in data/wav/ and will download it for you automatically, if it does not find the data.
 
 ### German language texts
 
-Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://dialogplus.lt.informatik.tu-darmstadt.de/downloads/speechdata/all_corpora_filtered_maryfied.txt.gz)
+Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz)
  
 The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
 
