@@ -39,7 +39,7 @@ python local/data_prepare.py -f data/waveIDs.txt
 # Get freely available phoneme dictionaries, if they are not already downloaded
 if [ ! -f data/lexicon/de.txt ]
 then
-    wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt 
+    wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts-lexicon-de/master/modules/de/lexicon/de.txt
     echo "data/lexicon/train.txt">> data/lexicon_ids.txt
     echo "data/lexicon/de.txt">> data/lexicon_ids.txt
 fi
