@@ -17,7 +17,11 @@
 # limitations under the License.
 
 import requests
-import StringIO
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 import ctypes
 import sys
@@ -28,7 +32,7 @@ import traceback
 # This class reuses connections with the request framework (esp. helpful for bulk processing), but you have to install it:
 # pip install requests
 # 
-# Try http://mary.dfki.de:59125/ with a sentence of your choice and set OUTPUT TYPE to 
+# Try http://mary.dfki.de:59125/ with a sentence of your choice and set OUTPUT TYPE to PHONEMES 
 #
 
 class maryclient:
