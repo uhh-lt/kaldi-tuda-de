@@ -14,13 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import print_function
+
 import argparse
 import common_utils
 import codecs
 import traceback
 import datetime
 import maryclient
-import StringIO
 import os
 import errno
 
@@ -44,7 +45,7 @@ def exportDict(dest_file,utterances_phoneme_dict):
         for word in utterances_phoneme_dict:
             out.write(word+' '+utterances_phoneme_dict[word]+'\n')
 
-def writeKaldiDataFolder(dest_dir, utts, postfix, wavextension):
+def writeKaldiDataFolder(dest_dir, utts):
     ''' Exports the internal representation utts for all utterances into KALDIs corpus description format '''
     # Kaldi format, files: text,wav.scp,utt2spk,spk2gender
 
@@ -75,18 +76,21 @@ def writeKaldiDataFolder(dest_dir, utts, postfix, wavextension):
         utts = sorted(utts,key=lambda utt:utt['kaldi_id'])
 
         for utt in utts:
-            kaldi_id = utt['kaldi_id']
+            kaldi_base_id = utt['kaldi_id']
             transcription = ' '.join(utt['clean_sentence_tokens'])
-
-            text.write(kaldi_id+' '+transcription+'\n')
-            wavscp.write(kaldi_id+' '+utt['fileid']+postfix+wavextension+'\n')
-            utt2spk.write(kaldi_id+' '+utt['speakerid']+'\n')
-            speaker2gender[utt['speakerid']] = utt['gender']
+            
+            for fileid,mic in zip(utt['fileids'], 'abcdefgh'):
+                if fileid != 'missing':
+                    kaldi_id =  kaldi_base_id + '_' + mic
+                    text.write(kaldi_id+' '+transcription+'\n')
+                    wavscp.write(kaldi_id+' '+ fileid +'\n')
+                    utt2spk.write(kaldi_id+' '+utt['speakerid']+'\n')
+                    speaker2gender[utt['speakerid']] = utt['gender']
 
         #sort by speaker
         speaker2gender = collections.OrderedDict(sorted(speaker2gender.items(), key=lambda x: x[0]))
 
-        for speaker,gender in speaker2gender.iteritems():
+        for speaker,gender in iter(speaker2gender.items()):
             spk2gender.write(speaker+' '+('f' if gender=='female' else 'm')+'\n')
 
 # Simple train test split that ignores speaker ids (dont use this one!)
@@ -101,17 +105,17 @@ def simpleTrainTestSplit(utts):
 
 #detect train/dev/test in the filenames of the ids. 
 def filenameSplit(utts):
-    train = [utt for utt in utts if 'train' in utt['fileid']]
-    dev = [utt for utt in utts if 'dev' in utt['fileid']]
-    test = [utt for utt in utts if 'test' in utt['fileid']]
+    train = [utt for utt in utts if 'train' in ' '.join(utt['fileids'])]
+    dev = [utt for utt in utts if 'dev' in ' '.join(utt['fileids'])]
+    test = [utt for utt in utts if 'test' in ' '.join(utt['fileids'])]
     #sanity checks
     for utt in test:
         if utt in train:
-            print 'WARNING overlapping test/train IDs. This is bad, check your filenaming scheme, no file should have both test and train in the name.'
+            print('WARNING overlapping test/train IDs. This is bad, check your filenaming scheme, no file should have both test and train in the name.')
 
     for utt in dev:
         if utt in train:
-            print 'WARNING overlapping dev/train IDs. This is bad, check your filenaming scheme, no file should have both dev and train in the name.'
+            print('WARNING overlapping dev/train IDs. This is bad, check your filenaming scheme, no file should have both dev and train in the name.')
     return train, test, dev
 
 # Extract date as best as possible from filename
@@ -146,8 +150,8 @@ def filterRepeatUtterances(utts):
                 if utt['sentence'] != old_utt['sentence']:
                     filtered_utt.append(utt)
                 else:
-                    print old_utt['sentence'], 'vs', utt['sentence']
-                    print old_utt['fileid'], 'vs', utt['fileid']
+                    print(old_utt['sentence'], 'vs', utt['sentence'])
+                    print(old_utt['fileid'], 'vs', utt['fileid'])
         old_utt = utt
     return reversed(filtered_utt)
 
@@ -168,24 +172,24 @@ def replace_sublist(seq, target, replacement):
     return seq
 
 #Load corpus xml files into python structures with BeautifulSoup
-def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
+def getUtterances(ids, use_mary=False, cache_cleaned_sentences = True):
     '''Loads the corpus and gets python structured object that can be used to export the corpus to a format KALDI understands'''
     utts= []
     
     cleaned_sentences_cache = {}
     utts_phoneme_dict = {}
 
-    print 'Reading corpus transcriptions and producing automatic corpus phoneme dict for OOV words (you need MARY running in the background!)'
+    print('Reading and parsing TUDA corpus transcriptions',end='',flush=True)
 
     lastutt = None
-    for myid in ids:
-        print '.',
-        #if 1==1:
+    for i,myid in enumerate(ids):
+        if i%100 == 0:
+            print('.',end='',flush=True)
         try:
             with codecs.open(myid+'.xml','r','utf-8') as myfile:
                 #extract xml meta 
                 xml = myfile.read()
-                soup = BeautifulSoup(xml)
+                soup = BeautifulSoup(xml,"lxml")
                 sentence = soup.recording.sentence.string
                 cleaned_sentence = soup.recording.cleaned_sentence.string
                 gender = soup.recording.gender.string
@@ -196,56 +200,40 @@ def getUtterances(ids, postfix_speaker ,cache_cleaned_sentences = True):
                 speakerid= soup.recording.speaker_id.string
 
                 if speakerid is None or speakerid == '':
-                    print 'ERROR, speakerid not found for', myid
+                    print('ERROR, speakerid not found for', myid)
 
                 date = getDateFromID(myid)
 
-                if cache_cleaned_sentences and (cleaned_sentence not in cleaned_sentences_cache):
-                    clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(cleaned_sentence,mary)
-                    cleaned_sentences_cache[cleaned_sentence] = (clean_sentence_tokens,token_phonemes)
-                    #print 'cleaning ', cleaned_sentence, ' -> ', clean_sentence_tokens , ' phonemes:', token_phonemes
-                else:
-                    clean_sentence_tokens,token_phonemes = cleaned_sentences_cache[cleaned_sentence]
+                if use_mary:
+                    if cache_cleaned_sentences and (cleaned_sentence not in cleaned_sentences_cache):
+                        clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(cleaned_sentence,mary)
+                        cleaned_sentences_cache[cleaned_sentence] = (clean_sentence_tokens,token_phonemes)
+                        #print 'cleaning ', cleaned_sentence, ' -> ', clean_sentence_tokens , ' phonemes:', token_phonemes
+                    else:
+                        clean_sentence_tokens,token_phonemes = cleaned_sentences_cache[cleaned_sentence]
 
-                if not cache_cleaned_sentences:
-                    clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(sentence,mary)
+                    if not cache_cleaned_sentences:
+                        clean_sentence_tokens,token_phonemes = common_utils.getCleanTokensAndPhonemes(sentence,mary)
 
-                for token,phoneme_representation in itertools.izip(clean_sentence_tokens,token_phonemes):
-                    if token not in utts_phoneme_dict:
-                        utts_phoneme_dict[token] = phoneme_representation
+                    for token,phoneme_representation in itertools.izip(clean_sentence_tokens,token_phonemes):
+                        if token not in utts_phoneme_dict:
+                            utts_phoneme_dict[token] = phoneme_representation
                 
                 clean_sentence_tokens = cleaned_sentence.split(' ')
-                utt = {'id':myid.split('/')[-1],'fileid':myid,'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,'speakerid':speakerid,'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
+                utt = {'id':myid.split('/')[-1],'fileids':ids[myid],'sentence':sentence,'clean_sentence_tokens':clean_sentence_tokens,
+                        'speakerid':speakerid,'gender':gender,'age':age,'corpus':corpus,'nativespeaker':nativespeaker,'region':region,'date':date}
+
                 utts.append(utt)
 
         except Exception as err:
-            print 'Error in file, omitting', myid
-            print err
+            print('Error in file, omitting', myid)
+            print(err)
 
     #Sort utterances by date
     utts = sorted(utts,key=lambda utt:utt['date'])
 
-    #Unfortunately, the xmls dont have speaker meta-information, we try to guess it here
-    #for i,utt in enumerate(utts):
-    #    if lastutt is not None:
-    #        delta = utt['date'] - lastutt['date']
-    #        diff = abs(delta.total_seconds())
-    #        #Heuristic: either a enough time passed between this and the last recording, or speaker meta information (gender,age,region) changed
-    #        if diff > speakerid_diff_heuristic or lastutt['gender'] != utt['gender'] or lastutt['age'] != utt['age'] or lastutt['region'] != utt['region']:
-    #            print 'probable new speaker',speakerid
-    #            if diff > speakerid_diff_heuristic:
-    #                print 'based on time diff',diff
-    #            else:
-    #                print 'based on meta', 'diff:',diff, lastutt['gender'],utt['gender'],lastutt['age'],utt['age'],lastutt['region'],utt['region']
-    #            speakerid += 1
-    #    utt['speakerid'] = 's'+('%04d'%speakerid)+postfix_speaker
-        
     for utt in utts:    
         utt['kaldi_id'] = utt['speakerid']+'_'+utt['id']
-        
-        #utts[i] = utt
-        
-        #lastutt = utt
 
     #Filter utterances with repeat in file name (recording was repeated after a wrong utterance)
     #utts = filterRepeatUtterances(utts)
@@ -257,56 +245,65 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--filelist', dest='filelist', help='process this file list', type=str, default = '')
     parser.add_argument('-r', '--remove_extension', dest='remove_extension', help='remove this extension, to get plain file id', type=str, default='.xml')
     parser.add_argument('-w', '--audio-file-extension', dest='wav_extension', help='extension for audio files', type=str, default='.wav')
-    parser.add_argument('-p', '--utterance-postfix-name', dest='postfix', help='--utterance-postfix-name', type=str, default='_Kinect-Beam')
+    parser.add_argument('-p', '--utterance-postfix-names', dest='postfix', help='--utterance-postfix-name', type=str, default='_Kinect-Beam,_Kinect-RAW,_Realtek,_Samson')
+    parser.add_argument('-m', '--use-mary', dest='use_mary', help='Use Mary to generate a phoneme dictionary (for all words in train)', action='store_true', default=False)
 
     args = parser.parse_args()
 
     if args.filelist == '':
-        print 'Corpus filelist is empty. Use -f to supply a filelist!'
+        print('Corpus filelist is empty. Use -f to supply a filelist!')
     else:
 
-        print 'Load ', args.filelist, ', ommit ', args.remove_extension
+        print('Load ', args.filelist, ', ommit ', args.remove_extension)
 
         ids_raw = common_utils.loadIdFile(args.filelist,remove_extension=args.remove_extension)
-        print 'I have',len(ids_raw),'files. Some may have their audio missing, I\'ll check that for you...'
-        ids = []
+        print('I have',len(ids_raw),'files. Some may have their audio missing, I\'ll check that for you...')
+        ids = collections.defaultdict(list)
         #check for missing wav files:
        
+        postfixes = args.postfix.split(',')
+
+        print('Create data directories for the following type of microphones:', ' '.join(postfixes))
+
         omitted = 0
         for myid in ids_raw:
-            check = myid+args.postfix+args.wav_extension
-            if os.path.isfile(check):
-                ids.append(myid)
-            else:
-                print 'Warning, omitting',myid,'because I can\'t find',check
-                omitted += 1
+            for postfix in postfixes:
+              check = myid + postfix + args.wav_extension
+              if os.path.isfile(check):
+                  ids[myid].append(check)
+              else:
+                  ids[myid].append('missing')
+                  #print('Warning, omitting',myid,'because I can\'t find',check)
+                  omitted += 1
         
-        print 'Found',len(ids),' wav files.'
-        print 'Omitted ',omitted,' xml transcription files (Some missing files is normal for the TUDA Kaldi corpus).'
+        print('Found',len(ids),' wav files.')
+        print('Omitted ',omitted,' xml transcription files (Some missing files is normal for the TUDA Kaldi corpus).')
 
-        utterances,utterances_phoneme_dict = getUtterances(ids,args.postfix)
+        utterances,utterances_phoneme_dict = getUtterances(ids, use_mary= args.use_mary)
         
-        print 'Done. Some example utterances:'
+        print('done.')
+        print('Some example utterances:')
         
         for utt in utterances[:10]:
-            print utt['sentence'].encode('utf-8'),utt
+            print(utt['sentence'].encode('utf-8'),utt)
             #print utt.sentence,utt.speakerid,utt.gender,utt.age,utt.corpus,utt.nativespeaker,utt.region,utt.date
 
-        print 'Export to kaldi train/test dirs...'
+        print('Export to kaldi train/test dirs...')
 
         #train, test = simpleTrainTestSplit(utterances)
         train, test, dev = filenameSplit(utterances)
  
-        print 'Writing train...'
-        writeKaldiDataFolder('data/train/', train,args.postfix, args.wav_extension)
-        print 'Writing dev...'
-        writeKaldiDataFolder('data/dev/', dev, args.postfix, args.wav_extension)
-        print 'Writing test...'
-        writeKaldiDataFolder('data/test/', test, args.postfix, args.wav_extension)
-        print 'Writing all...'
-        writeKaldiDataFolder('data/all/', utterances, args.postfix, args.wav_extension)
+        print('Writing train...')
+        writeKaldiDataFolder('data/train/', train)
+        print('Writing dev...')
+        writeKaldiDataFolder('data/dev/', dev)
+        print('Writing test...')
+        writeKaldiDataFolder('data/test/', test)
+        print('Writing all...')
+        writeKaldiDataFolder('data/all/', utterances)
 
-        print 'Writing phoneme dictionary for words in train/test/dev...'
-        exportDict('data/lexicon/train.txt',utterances_phoneme_dict)
+        if args.use_mary:
+            print('Writing phoneme dictionary for words in train/test/dev...')
+            exportDict('data/lexicon/train.txt',utterances_phoneme_dict)
 
-        print 'Done!'
+        print('Done!')

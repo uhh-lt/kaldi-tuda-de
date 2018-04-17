@@ -50,7 +50,7 @@ class maryclient:
         self.reserve(connections)
 
     def reserve(self,num_conn):
-        self.connection_pool = [requests.Session() for x in xrange(num_conn)]
+        self.connection_pool = [requests.Session() for x in range(num_conn)]
 
     def generate(self, message, connection_pool_num=0):
         '''Sends the text string in message to the MARY server and 
