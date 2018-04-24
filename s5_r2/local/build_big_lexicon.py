@@ -22,7 +22,7 @@ import io
 import traceback
 import datetime
 import sys
-import cPickle as pickle
+import pickle
 from itertools import groupby
 
 from bs4 import BeautifulSoup
@@ -44,7 +44,7 @@ BAS_German_set ={
     'silence' : ['usb']
     }
 
-BAS_German_set['items'] = BAS_German_set['nasal_vowels']+BAS_German_set['diphtongs']+BAS_German_set['unstressed_vowels']+BAS_German_set['vowels']+BAS_German_set['consonants']
+BAS_German_set['items'] = BAS_German_set['nasal_vowels']+BAS_German_set['diphtongs']+BAS_German_set['unstressed_vowels']+BAS_German_set['vowels']+BAS_German_set['consonants_and_stops']
 
 #Diacritics
 #
@@ -86,7 +86,7 @@ def BASpron_to_list(pron,word=''):
     '''takes a BAS pron string and turns it into a list of phoneme tokens'''
     orig_pron = pron
 
-    for orig,rep in BAS_German_trans.iteritems():
+    for orig,rep in BAS_German_trans.items():
         pron = pron.replace(orig,rep)
 
     def consume(symbols, string):
@@ -98,7 +98,7 @@ def BASpron_to_list(pron,word=''):
         return False,'',string
 
     #order in which symbols are consumed
-    symbol_sets = [BAS_German_set['silence'],BAS_German_set['items_glottal'],BAS_German_set['primary'],BAS_German_set['secondary'],BAS_German_set['items']]
+    symbol_sets = [BAS_German_set['silence'],BAS_German_set['primary'],BAS_German_set['secondary'],BAS_German_set['items']]
 
     pron_list = []
 
@@ -173,7 +173,7 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
                     no_lineerrors += 1
 
             #some (older) dialects of this fileformat use e.g. a latex format for special characters. Word_substitution_dict (parameter of this function) can be used to take care of such translations.
-            for orig,replace in word_substitution_dict.iteritems():
+            for orig,replace in word_substitution_dict.items():
                 word = word.replace(orig,replace)
 
             #check if we still have non-german characters
@@ -185,7 +185,7 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
                 phoneme_dict[word] += [{'pron':pron_list,'freq':int(freq),'manual':manual}]
 
         if lineerror:
-            print('Last',no_lineerrors,'lines had wrong format')
+            print('Last',no_lineerrors,'lines do not look like regular phoneme entries. Ignoring them.')
 
         return phoneme_dict
 
@@ -205,7 +205,7 @@ def importBASWordforms(myid,latexCodes=True):
             #check if we got all strange characters
             for ch in line:
                 if ch not in alphabet_de:
-                    print 'Warning, encountered non-german character',ch,'in word: ',line
+                    print('Warning, encountered non-german character',ch,'in word: ',line)
 
             if line != '':
                 phoneme_dict[line] = []
@@ -348,7 +348,7 @@ if __name__ == '__main__':
         combinedDict = merge_dicts(combinedDict, d)
 
     variants = 0
-    for key in sorted(combinedDict.iterkeys()):
+    for key in sorted(combinedDict.keys()):
         #print 'Word:',key,combinedDict[key]
         variants += len(combinedDict[key])
         

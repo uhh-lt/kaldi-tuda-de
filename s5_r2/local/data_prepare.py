@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright 2015 Language Technology, Technische Universitaet Darmstadt (author: Benjamin Milde)
+# Copyright 2018 Language Technology, Universitaat Hamburg (author: Benjamin Milde)
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
