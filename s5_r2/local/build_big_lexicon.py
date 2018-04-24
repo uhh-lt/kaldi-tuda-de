@@ -36,8 +36,9 @@ BAS_German_set ={
     'nasal_vowels' : ['a~:','a~','E~:', 'E~', 'O~:','O~', '9~:', '9~'],
     'diphtongs' : ['aI', 'aU', 'OY'],
     'unstressed_vowels' : ['@','6'],
-    'consonants' : ['ts','z', 'S', 'Z', 'C', 'x', 'N', 'Q', 'b', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v','R','T'], #R and T are english phonemes, maybe they should also be mapped to their closesed German representations (?)
-    'ignore' : ['Q','#','+','-','?',','],
+    'consonants_and_stops' : ['ts','z', 'S', 'Z', 'C', 'x', 'N', 'b', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', '?', 'R','T'], #R and T are english phonemes, maybe they should also be mapped to their closesed German representations (?)
+# Note we use ? as glottal stop, some BAS dictionaries use Q instead. Compare e.g. "Anfang" in Mary and BAS.
+    'ignore' : ['#','+','-',','],
     'silence' : ['usb']
     }
 
@@ -53,11 +54,13 @@ BAS_German_set['items'] = BAS_German_set['nasal_vowels']+BAS_German_set['diphton
 
 BAS_German_set['primary'] = ["'" + item for item in BAS_German_set['items']] 
 BAS_German_set['secondary'] = ['"' + item for item in BAS_German_set['items']]
-BAS_German_set['items_glottal'] = ['q'+item for item in BAS_German_set['items']]
 
 # Few variants that we map to a canocial representation and boundary markers that we ignore
 # Also: Maps the English phoneme w to the Germen phoneme v
-BAS_German_trans = {'o~':'O~', 'e~':'E~', 'Q':'', '#':'','+':'','-':'','?':'','w':'v','D':'d'}
+
+# We map the glottal stop to ?, like in the MARY TTS lexicon
+
+BAS_German_trans = {'o~':'O~', 'e~':'E~', 'q':'?' , 'Q':'?', '#':'','+':'','-':'','w':'v','D':'d'}
 
 #These are used to translate ascii codings of german Umlaute to unicode
 latex_to_unicode = {u'"U':u'Ü',u'"A':u'Ä',u'"O':u'Ö',u'"u':u'ü',u'"a':u'ä',u'"o':u'ö',u'"s':u'ß',u'-$':u'',u'$':u'',u'’':u"'"}
@@ -356,7 +359,7 @@ if __name__ == '__main__':
     print 'writing to', args.export_dir + 'nonsilence_phones.txt'     
     with open(args.export_dir + 'nonsilence_phones.txt','w') as nonsilence_phones:
         for item in BAS_German_set['items']:
-            nonsilence_phones.write(item + " '" + item + ' "' + item + ' q' + item + '\n')
+            nonsilence_phones.write(item + " '" + item + ' "' + item + '\n')
 
     print 'writing to', args.export_dir + 'silence_phones.txt'
     with open(args.export_dir + 'silence_phones.txt','w') as silence_phones:
@@ -371,5 +374,4 @@ if __name__ == '__main__':
         extra_questions.write(' '.join(BAS_German_set['items']) + '\n')
         extra_questions.write(' '.join(BAS_German_set['primary']) + '\n')
         extra_questions.write(' '.join(BAS_German_set['secondary']) + '\n')
-        extra_questions.write(' '.join(BAS_German_set['items_glottal']) + '\n')
     print 'done'
