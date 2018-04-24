@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import print_function
+
 import argparse
 import common_utils
 import codecs
@@ -112,7 +114,7 @@ def BASpron_to_list(pron,word=''):
             #try ignore list
             consumed,symbol,pron = consume(BAS_German_set['ignore'], pron)
             if not consumed:
-                print 'Warning, omitting unkown symbol',pron[0],' in pronounciation list:',orig_pron,'word:',word
+                print('Warning, omitting unkown symbol',pron[0],' in pronounciation list:',orig_pron,'word:',word)
                 pron = pron[1:]
     return pron_list
 
@@ -131,7 +133,7 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
             if line.startswith('#') or len(line) == 0:
                 continue
             if line[0].isdigit():
-                print 'Info: Ignoring this line that starts with a number:',line
+                print('Info: Ignoring this line that starts with a number:',line)
                 continue
 
             #remove carriage return, if it slipped into the line
@@ -143,18 +145,18 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
             if withFreq: 
                 if (len(split)==3):
                     if lineerror:
-                        print 'Last',no_lineerrors,'lines had wrong format'
+                        print('Last',no_lineerrors,'lines had wrong format')
 
                     no_lineerrors,lineerror = 0,False
                     word,freq = split[0],split[1]
                     
                     pron_list = BASpron_to_list(split[2],word)
                 else:
-                    print 'Encountered line with wrong format (doesnt have 3 elements)',line
+                    print('Encountered line with wrong format (doesnt have 3 elements)',line)
             else:
                 if (len(split)==2):
                     if lineerror:
-                        print 'Last',no_lineerrors,'lines had wrong format'
+                        print('Last',no_lineerrors,'lines had wrong format')
 
                     no_lineerrors,lineerror = 0,False
                     word = split[0]
@@ -166,7 +168,7 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
                     pron_list = BASpron_to_list(split[1],word)
                 else:
                     if not lineerror:
-                        print 'Encountered line with wrong format (doesnt have 2 elements)',line
+                        print('Encountered line with wrong format (doesnt have 2 elements)',line)
                     lineerror = True
                     no_lineerrors += 1
 
@@ -177,13 +179,13 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
             #check if we still have non-german characters
             for ch in word:
                 if ch not in alphabet_de:
-                    print 'Warning, encountered non-german character',ch,'in word: ',line
+                    print('Warning, encountered non-german character',ch,'in word: ',line)
 
             if word != '':
                 phoneme_dict[word] += [{'pron':pron_list,'freq':int(freq),'manual':manual}]
 
         if lineerror:
-            print 'Last',no_lineerrors,'lines had wrong format'
+            print('Last',no_lineerrors,'lines had wrong format')
 
         return phoneme_dict
 
@@ -210,7 +212,7 @@ def importBASWordforms(myid,latexCodes=True):
                 meta[line] = []
                 last_word = line
             else:
-                print '[addWord] WARNING, line is empty!'
+                print('[addWord] WARNING, line is empty!')
             #next state
             return 'parseMeta'
 
@@ -243,7 +245,7 @@ def importBASWordforms(myid,latexCodes=True):
             if last_word != '':
                 phoneme_dict[last_word] += [{'pron':pron_list,'freq':int(freq),'manual':manual}]
             else:
-                print '[parsePron] empty last_word!'
+                print('[parsePron] empty last_word!')
 
             #state in this function next time
             return 'parsePron'
@@ -262,7 +264,7 @@ def importBASWordforms(myid,latexCodes=True):
         return phoneme_dict
 
 def missingImporter(filename):
-    print 'No importer for',filename,'review build_big_lexicon.py. '
+    print('No importer for',filename,'review build_big_lexicon.py. ')
 
 def guessImportFunc(filename):
     '''Guess importer based on filename. Each dictionary has a slightly different file format. But all use some variant of German (BAS) Sampa for ponounciations.'''
@@ -312,9 +314,9 @@ def merge_dicts(d1, d2):
         #check merged list:
         for entry1 in merged_pron_list:
             if len([entry2 for entry2 in merged_pron_list if entry1['pron']==entry2['pron']])>1:
-                print 'WARNING, duplicate pronounciation entry:',entry1['pron']
-                print pron_list1
-                print pron_list2
+                print('WARNING, duplicate pronounciation entry:',entry1['pron'])
+                print(pron_list1)
+                print(pron_list2)
 
         d1[word] = merged_pron_list
     return d1 
@@ -333,14 +335,14 @@ if __name__ == '__main__':
         ids = [args.singlefile]
     else:
         if args.filelist == '':
-            print 'No files specified for processing!'
+            print('No files specified for processing!')
             sys.exit()
         ids = common_utils.loadIdFile(args.filelist)
 
     combinedDict = {}
     
     for myid in ids:
-        print "I'm now opening ", myid
+        print("I'm now opening ", myid)
         importer = guessImportFunc(myid)
         d = importer(myid)
         combinedDict = merge_dicts(combinedDict, d)
@@ -350,28 +352,28 @@ if __name__ == '__main__':
         #print 'Word:',key,combinedDict[key]
         variants += len(combinedDict[key])
         
-    print 'Dictionary size is ', len(combinedDict), ' pronounciation variants ', variants
+    print('Dictionary size is ', len(combinedDict), ' pronounciation variants ', variants)
 
     #export dictionary to intermediate format
     pickle.dump( combinedDict, open( args.export, 'wb' ) )
 
     #export auxillary files
-    print 'writing to', args.export_dir + 'nonsilence_phones.txt'     
+    print('writing to', args.export_dir + 'nonsilence_phones.txt')     
     with open(args.export_dir + 'nonsilence_phones.txt','w') as nonsilence_phones:
         for item in BAS_German_set['items']:
             nonsilence_phones.write(item + " '" + item + ' "' + item + '\n')
 
-    print 'writing to', args.export_dir + 'silence_phones.txt'
+    print('writing to', args.export_dir + 'silence_phones.txt')
     with open(args.export_dir + 'silence_phones.txt','w') as silence_phones:
         silence_phones.write('\n'.join(BAS_German_set['silence'])+'\n')
 
-    print 'writing to', args.export_dir + 'optional_silence.txt'
+    print('writing to', args.export_dir + 'optional_silence.txt')
     with open(args.export_dir + 'optional_silence.txt','w') as silence_phones:
         silence_phones.write(BAS_German_set['silence'][0])
 
-    print 'writing to', args.export_dir + 'extra_questions.txt'
+    print('writing to', args.export_dir + 'extra_questions.txt')
     with open(args.export_dir + 'extra_questions.txt','w') as extra_questions:
         extra_questions.write(' '.join(BAS_German_set['items']) + '\n')
         extra_questions.write(' '.join(BAS_German_set['primary']) + '\n')
         extra_questions.write(' '.join(BAS_German_set['secondary']) + '\n')
-    print 'done'
+    print('done')
