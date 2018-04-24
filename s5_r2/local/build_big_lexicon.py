@@ -18,7 +18,7 @@ from __future__ import print_function
 
 import argparse
 import common_utils
-import codecs
+import io
 import traceback
 import datetime
 import sys
@@ -120,7 +120,7 @@ def BASpron_to_list(pron,word=''):
 
 def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimiter='\t'):
     '''Import sampa dictionary fileformat, each line has word and its main pronounciation. A variant of this format also includes frequencies'''
-    with codecs.open(myid,'r','utf-8') as inputFile:
+    with io.open(myid,'r',encoding='utf-8') as inputFile:
         myinput = inputFile.read().split('\n')
         phoneme_dict = collections.defaultdict(list)
 
@@ -192,7 +192,7 @@ def importSampa(myid,word_substitution_dict={},withFreq=True,manual=False,delimi
 def importBASWordforms(myid,latexCodes=True):
     '''Importer for BAS Wordforms, a dictionary fileformat which includes pronounciation variants.'''
     global phoneme_dict,meta,last_word
-    with codecs.open(myid,'r','utf-8') as inputFile:
+    with io.open(myid,'r',encoding='utf-8') as inputFile:
         myinput = inputFile.read().split('\n')
 
         def addWord(line):
