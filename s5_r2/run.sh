@@ -2,8 +2,21 @@
 
 #adapted from gale_arabic run.sh
 
-[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
+use_BAS_dictionaries=false
+sequitur_g2p="/home/me/comp/g2p/g2p.py"
 
+if [ -f $sequitur_g2p ]
+then
+    echo "Using $sequitur_g2p for g2p conversion of OOV words."
+else
+    echo "Could not find g2p.py"
+    echo "Please edit run.sh and point sequitur_g2p to the g2p.py python script of your Sequitur G2P installation."
+    echo "Sequitur G2P can be downloaded from https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html"
+    echo "E.g. wget https://www-i6.informatik.rwth-aachen.de/web/Software/g2p-r1668-r3.tar.gz"
+    exit
+fi
+
+[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
 [ ! -L "utils" ] && ln -s ../../wsj/s5/utils
 
 # mfccdir should be some place with a largish disk where you
@@ -17,7 +30,7 @@ utf8()
 }
 
 # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
-python local/prepare_dir_structure.py
+python3 local/prepare_dir_structure.py
 
 if [ ! -d data/wav/german-speechdata-package-v2 ]
 then
@@ -34,46 +47,79 @@ RAWDATA=data/wav/german-speechdata-package-v2
 FILTERBYNAME="*.xml"
 
 find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
-python local/data_prepare.py -f data/waveIDs.txt
+#python local/data_prepare.py -f data/waveIDs.txt
+python3 local/data_prepare.py -f data/waveIDs.txt
 
 # Get freely available phoneme dictionaries, if they are not already downloaded
 if [ ! -f data/lexicon/de.txt ]
 then
+    # this lexicon is licensed under LGPL
     wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts-lexicon-de/master/modules/de/lexicon/de.txt
-    echo "data/lexicon/train.txt">> data/lexicon_ids.txt
+#    echo "data/lexicon/train.txt">> data/lexicon_ids.txt
     echo "data/lexicon/de.txt">> data/lexicon_ids.txt
 fi
 
-if [ ! -f data/lexicon/VM.German.Wordforms ]
-then
-    wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms
-    echo "data/lexicon/VM.German.Wordforms">> data/lexicon_ids.txt
-fi
+if [ use_BAS_dictionaries = true ] ; then
 
-if [ ! -f data/lexicon/RVG1_read.lex ]
-then
-    wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex
-    echo "data/lexicon/RVG1_read.lex">> data/lexicon_ids.txt
-fi
+  # These lexicons are publicly available on BAS servers, but can probably not be used in a commercial setting.
+  if [ ! -f data/lexicon/VM.German.Wordforms ]
+  then
+      wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms
+      echo "data/lexicon/VM.German.Wordforms">> data/lexicon_ids.txt
+  fi
 
-if [ ! -f data/lexicon/RVG1_trl.lex ]
-then
-    wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex
-    echo "data/lexicon/RVG1_trl.lex">> data/lexicon_ids.txt
-fi
+  if [ ! -f data/lexicon/RVG1_read.lex ]
+  then
+      wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex
+      echo "data/lexicon/RVG1_read.lex">> data/lexicon_ids.txt
+  fi
 
-if [ ! -f data/lexicon/LEXICON.TBL ]
-then
-    wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL
-    utf8 data/lexicon/LEXICON.TBL
-    echo "data/lexicon/LEXICON.TBL">> data/lexicon_ids.txt
-fi
+  if [ ! -f data/lexicon/RVG1_trl.lex ]
+  then
+      wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex
+      echo "data/lexicon/RVG1_trl.lex">> data/lexicon_ids.txt
+  fi
 
+  if [ ! -f data/lexicon/LEXICON.TBL ]
+  then
+      wget --directory-prefix=data/lexicon/ ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL
+      utf8 data/lexicon/LEXICON.TBL
+      echo "data/lexicon/LEXICON.TBL">> data/lexicon_ids.txt
+  fi
+fi
 
 #Transform freely available dictionaries into lexiconp.txt file + extra files 
 mkdir -p data/local/dict/
-python local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict 
-python local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/lexiconp.txt 
+python3 local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict 
+python3 local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/lexiconp.txt 
+
+g2p_model=data/local/g2p/de_g2p_model
+final_g2p_model=${g2p_model}-6
+
+if [ ! -f $final_g2p_model ]
+then
+    mkdir -p data/local/g2p/
+    train_file=data/local/g2p/lexicon.txt
+    
+    cut -d" " -f 1,3- data/local/dict/lexiconp.txt > $train_file
+    cut -d" " -f 1 data/local/dict/lexiconp.txt > data/local/g2p/lexicon_wordlist.txt
+
+    $sequitur_g2p --train $train_file --devel 3% --write-model ${g2p_model}-1
+    $sequitur_g2p --model ${g2p_model}-1 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-2
+    $sequitur_g2p --model ${g2p_model}-2 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-3
+    $sequitur_g2p --model ${g2p_model}-3 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-4
+    $sequitur_g2p --model ${g2p_model}-4 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-5
+    $sequitur_g2p --model ${g2p_model}-5 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-6
+else
+    echo "G2P model file $final_g2p_model already exists, not recreating it."
+fi
+
+echo "Now finding OOV in train"
+python3 local/find_oov.py -c data/train/text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+
+echo "Now using G2P to predict OOV"
+
+exit
 
 #Move old lang dir if it exists
 mkdir -p data/lang/old
