@@ -2,7 +2,7 @@
 
 #adapted from swbd Kaldi run.sh
 
-stage=7
+stage=8
 use_BAS_dictionaries=false
 sequitur_g2p="/home/me/comp/g2p/g2p.py"
 
@@ -176,7 +176,7 @@ fi
 
 if [ $stage -le 6 ]; then
   # Now make MFCC features.
-  for x in train dev test ; do
+  for x in train dev test; do
       utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
       steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
       utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
@@ -218,25 +218,41 @@ if [ $stage -le 8 ]; then
   # LM training data.   However, they will be in the lexicon, plus speakers
   # may overlap, so it's still not quite equivalent to a test set.
   utils/subset_data_dir.sh --first data/train 4000 data/train_dev # 5hr 6min
-  n=$[`cat data/train/segments | wc -l` - 4000]
+  
+  # currently we do not have a  segments file as in swbd:
+  if [ -f data/train/segments ]; then
+    n=$[`cat data/train/segments | wc -l` - 4000]
+  else
+    n=$[`cat data/train/wav.scp | wc -l` - 4000]
+  fi
+  
   utils/subset_data_dir.sh --last data/train $n data/train_nodev
 
+  # 55526 utterances in kaldi tuda de
+  # (1/5 of swbd - 260k utterances)
+  # we adapted the swbd numbers by dividing them by 5
+
+  # original swbd comment:
   # Now-- there are 260k utterances (313hr 23min), and we want to start the
   # monophone training on relatively short utterances (easier to align), but not
   # only the shortest ones (mostly uh-huh).  So take the 100k shortest ones, and
   # then take 30k random utterances from those (about 12hr)
-  utils/subset_data_dir.sh --shortest data/train_nodev 100000 data/train_100kshort
-  utils/subset_data_dir.sh data/train_100kshort 30000 data/train_30kshort
+
+  utils/subset_data_dir.sh --shortest data/train_nodev 20000 data/train_100kshort #(swbd default: 100k)
+  utils/subset_data_dir.sh data/train_100kshort 10000 data/train_30kshort #(swbd default: 30k)
 
   # Take the first 100k utterances (just under half the data); we'll use
   # this for later stages of training.
-  utils/subset_data_dir.sh --first data/train_nodev 100000 data/train_100k
-  utils/data/remove_dup_utts.sh 200 data/train_100k data/train_100k_nodup  # 110hr
+  utils/subset_data_dir.sh --first data/train_nodev 20000 data/train_100k
+
+  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
+  utils/data/remove_dup_utts.sh 1000 data/train_100k data/train_100k_nodup  # 110hr
 
   # Finally, the full training set:
-  utils/data/remove_dup_utts.sh 300 data/train_nodev data/train_nodup  # 286hr
+  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
+  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
 
-  if [ ! -d data/lang_nosp ] 
+  if [ ! -d data/lang_nosp ]; then 
     echo "Copying data/lang to data/lang_nosp..."
     cp -R data/lang data/lang_nosp
   fi
@@ -311,6 +327,7 @@ if [ $stage -le 12 ]; then
   done
 fi
 
+exit
 
 if [ $stage -le 13 ]; then
   # Now we compute the pronunciation and silence probabilities from training data,
