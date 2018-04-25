@@ -14,9 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import print_function
+
 import argparse
-import cPickle as pickle
-import codecs
+import pickle
+import io
 
 #generate string for one entry of the dictionary
 def generateEntry(word,entry,sphinx_format=False):
@@ -42,20 +44,23 @@ if __name__ == '__main__':
     parser.add_argument('-sph', '--sphinx-format', dest='sphinx_format', help='export lexicon in sphinx format', action='store_true', default=False)
 
     args = parser.parse_args()
-
-    print 'Load ', args.file
-
-    combinedDict = pickle.load( open( args.file , 'rb' ) )
     
-    with codecs.open(args.outfile,'w','utf-8') as outfile:
+    if args.sphinx_format:
+        print('Note: will use the Sphinx lexicon for this export.')
+
+    print('Load ', args.file)
+    combinedDict = pickle.load( open( args.file , 'rb' ) )
+
+    print('Succesfully opened pickle file, now exporting to:', args.outfile) 
+    with io.open(args.outfile,'w',encoding='utf-8') as outfile:
         if '%' in combinedDict:
             combinedDict['<UNK>'] = combinedDict['%']
-            print '<UNK> is:', combinedDict['<UNK>']
+            print('<UNK> is:', combinedDict['<UNK>'])
             #del combinedDict['%']
         else:
-            'Warning!: No % entry found! Will add <UNK> -> usb mapping manually.'
+            print('Warning!: No % entry found! Will add <UNK> -> usb mapping manually.')
             combinedDict['<UNK>'] = [{'pron': ['usb'], 'freq': 100, 'manual': True}]
-        for key in sorted(combinedDict.iterkeys()):
+        for key in sorted(combinedDict.keys()):
             txt = generateEntry(key,combinedDict[key],args.sphinx_format)
             outfile.write(txt)
 
