@@ -1,0 +1,92 @@
+# Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
+This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use a speech corpus that has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
+
+The newest recipe (s5\_r2) trains and tests on all data from all mircophones by default. By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect).
+
+The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
+
+## News
+
+25 April 2018
+
+- Scripts are now compatible with Python3
+- Training on all microphones data is now possible and also the default
+- Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
+- New s5_r2 recipe adapted from swbd s5c (GMM-HMM at the moment, TDNN recipe coming soon)
+- Updated Kaldi install instructions
+
+## Prerequisites
+
+The scripts are only tested under Linux (Ubuntu 16.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
+
+```
+ git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
+```
+
+In Kaldi trunk:
+
+1. go to tools/  and follow INSTALL instructions there.
+
+2. Download and install OpenBLAS, build a non-multithreading (important!) library with:
+
+make USE_THREAD=0 FC=gfortran
+
+Now follow the displayed instructions to install OpenBLAS headers and libs to a new and empty directory. 
+
+**Warning! It is imperative to build a single threaded OpenBLAS library**, otherwise you will encounter hard to debug problems with Kaldi as Kaldis parallelization interferes with the OpenBLAS one.
+
+3. go to src/ and follow INSTALL instructions there. Point the configure script to your OpenBLAS installation (see ./configure --help).
+
+**Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you probably want to enable CUDA in KALDI with the configure script in src/. You should have a relatively recent Nvidia GPU, at least one with the Kepler architecture.
+
+You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html, https://github.com/sequitur-g2p/sequitur-g2p). Download the package and run make, then edit the sequitur\_g2p variable in s5\_r2/run.sh to point to the g2p.py script.  
+
+You will also need a recent version of Python 3. Package requirements are:
+
+**pip3 install requests beautifulsoup4**
+
+## Building the acoustic models
+
+After you have installed the prerequisites, edit cmd.sh in the s5\_r2/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this is untested and may require some tinkering to get it running.
+
+Then, simply run ./run.sh in s5/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build appropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 3-gram LM.
+
+## Getting data files separately
+
+You can of course also use and download our data resources separately.
+
+### Speech corpus
+
+The corpus can be downloaded [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+The run.sh script expects to find the corpus data extracted in data/wav/ and will download it for you automatically, if it does not find the data.
+
+### German language texts
+
+Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz)
+ 
+The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
+
+The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbreviations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
+
+If you want to preprocess your own texts, you can use s5/local/maryfy\_corpus.py.
+
+```
+python s5/local/maryfy_corpus.py --help
+```
+
+should point you into the right direction. You need to supply the path of the MARY server start script. MARY will unfortunately have problems if you try to process millions of lines of text in one go and it might become unresponsive with all its processing threads being stuck in endless loops. The current quick hack implemented in maryfy_corpus.py will routinely call "killall java" and then restart MARY. This of course only works, if you have no other Java programs running under your username besides MARY. 
+
+### German phoneme dictionary
+
+The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries. Other sources for phoneme dictionary entries can be found at [BAS](ftp://ftp.bas.uni-muenchen.de/pub/BAS). Our parser understands the different formats of     [VM.German.Wordforms](ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms), [RVG1_read.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex), [RVG1_trl.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex) and [LEXICON.TBL](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL).
+The final dictionary covers ~44.8k unique German words with 70k entries total (pronunciation variants). You can also disable the BAS dictionaries, if it is important for you to have a phoneme dictionary with an open license. You will then have a lexicon with ~36k unique German words and no pronunciation variants.
+
+build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialised python object.
+
+export_lexicon.py will export such a serialised python dictionary into KALDIs [lexion_p.txt](http://kaldi.sourceforge.net/data_prep.html#data_prep_lang_creating) format (this allows to model different phonetic realisations of the same word with probabilities). Stress markers in the phoneme set are grouped with their unstressed equivalents in KALDI using the extra_questions.txt file. It is also possible to generate a CMU Sphinx formated dictionary with the same data using the -spx option. The Sphinx format also allows pronunciation variants, but cannot model probabilities for these variants.
+
+See also:
+```
+python s5/local/build_big_lexicon.py --help
+python s5/local/export_lexicon.py --help
+```
