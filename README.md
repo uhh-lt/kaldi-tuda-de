@@ -29,7 +29,9 @@ In Kaldi trunk:
 
 2. Download and install OpenBLAS, build a non-multithreading (important!) library with:
 
+```
 make USE_THREAD=0 FC=gfortran
+```
 
 Now follow the displayed instructions to install OpenBLAS headers and libs to a new and empty directory. 
 
@@ -43,7 +45,9 @@ You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Softwar
 
 You will also need a recent version of Python 3. Package requirements are:
 
-**pip3 install requests beautifulsoup4**
+```
+pip3 install requests beautifulsoup4
+```
 
 ## Building the acoustic models
 
@@ -87,6 +91,6 @@ export_lexicon.py will export such a serialised python dictionary into KALDIs [l
 
 See also:
 ```
-python s5/local/build_big_lexicon.py --help
-python s5/local/export_lexicon.py --help
+python3 s5_r2/local/build_big_lexicon.py --help
+python3 s5_r2/local/export_lexicon.py --help
 ```
