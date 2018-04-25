@@ -94,3 +94,8 @@ See also:
 python3 s5_r2/local/build_big_lexicon.py --help
 python3 s5_r2/local/export_lexicon.py --help
 ```
+
+### References
+
+If you use our scripts and/or data in your academic work please cite [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf)
+
