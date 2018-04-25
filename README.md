@@ -1,7 +1,7 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use a speech corpus that has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
-The newest recipe (s5\_r2) trains and tests on all data from all mircophones by default. By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect).
+The newest recipe (s5\_r2) trains and tests on all data from all mircophones by default. By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). The old s5 recipe used in [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available, checkout the README.md in the s5 directory if you want to reproduce the results of the paper.  
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
@@ -9,10 +9,10 @@ The scripts will ask you where to place larger files and can download all necess
 
 25 April 2018
 
-- Scripts are now compatible with Python3
+- New s5_r2 recipe adapted from swbd s5c (GMM-HMM at the moment, TDNN recipe coming soon)!
+- s5_r2 scripts are now compatible with Python3
 - Training on all microphones data is now possible and also the default
 - Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
-- New s5_r2 recipe adapted from swbd s5c (GMM-HMM at the moment, TDNN recipe coming soon)
 - Updated Kaldi install instructions
 
 ## Prerequisites
@@ -82,8 +82,8 @@ should point you into the right direction. You need to supply the path of the MA
 
 ### German phoneme dictionary
 
-The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~36k entries. Other sources for phoneme dictionary entries can be found at [BAS](ftp://ftp.bas.uni-muenchen.de/pub/BAS). Our parser understands the different formats of     [VM.German.Wordforms](ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms), [RVG1_read.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex), [RVG1_trl.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex) and [LEXICON.TBL](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL).
-The final dictionary covers ~44.8k unique German words with 70k entries total (pronunciation variants). You can also disable the BAS dictionaries, if it is important for you to have a phoneme dictionary with an open license. You will then have a lexicon with ~36k unique German words and no pronunciation variants.
+The phoneme dictionary is currently not supplied with this distribution, but the scripts to generate them are. DFKIs MARY includes a nice [LGPL German phoneme dictionary](https://raw.githubusercontent.com/marytts/marytts/master/marytts-languages/marytts-lang-de/lib/modules/de/lexicon/de.txt) with ~26k entries. Other sources for phoneme dictionary entries can be found at [BAS](ftp://ftp.bas.uni-muenchen.de/pub/BAS). Our parser understands the different formats of     [VM.German.Wordforms](ftp://ftp.bas.uni-muenchen.de/pub/BAS/VM/VM.German.Wordforms), [RVG1_read.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_read.lex), [RVG1_trl.lex](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG1/RVG1_trl.lex) and [LEXICON.TBL](ftp://ftp.bas.uni-muenchen.de/pub/BAS/RVG-J/LEXICON.TBL).
+The final dictionary covers ~44.8k unique German words with 70k entries total (pronunciation variants). Since the licensing of the BAS dictionaries is unclear, they are not included into the phoneme dictionary by default. You can however enable them by editing the header of run.sh and setting use_BAS_dictionaries to true.
 
 build_big_lexicon.py can import many dictionaries in the [BasSAMPA](http://www.bas.uni-muenchen.de/Bas/BasSAMPA)  format and merge them into a single dictionary. Its parser understand many variants and dialects of BasSAMPA and the adhoc dictionary formats. To support new variants you'll have to edit def guessImportFunc(filename). The output is a serialised python object.
 
