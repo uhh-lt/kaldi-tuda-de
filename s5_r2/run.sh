@@ -2,7 +2,7 @@
 
 #adapted from swbd Kaldi run.sh
 
-stage=8
+stage=10
 use_BAS_dictionaries=false
 sequitur_g2p="/home/me/comp/g2p/g2p.py"
 
@@ -252,10 +252,10 @@ if [ $stage -le 8 ]; then
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
   utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
 
-  if [ ! -d data/lang_nosp ]; then 
-    echo "Copying data/lang to data/lang_nosp..."
-    cp -R data/lang data/lang_nosp
-  fi
+  #if [ ! -d data/lang_nosp ]; then 
+  #  echo "Copying data/lang to data/lang_nosp..."
+  #  cp -R data/lang data/lang_nosp
+  #fi
 fi
 
 if [ $stage -le 9 ]; then
@@ -265,19 +265,19 @@ if [ $stage -le 9 ]; then
 fi
 
 if [ $stage -le 10 ]; then
-  steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
+    steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup data/lang_nosp exp/mono exp/mono_ali
 
-  steps/train_deltas.sh --cmd "$train_cmd" \
+    steps/train_deltas.sh --cmd "$train_cmd" \
                         3200 30000 data/train_100k_nodup data/lang_nosp exp/mono_ali exp/tri1
 
-    graph_dir=exp/tri1/graph_nosp_sw1_tg
+    graph_dir=exp/tri1/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
-               utils/mkgraph.sh data/lang_nosp_sw1_tg exp/tri1 $graph_dir
+               utils/mkgraph.sh data/lang_test exp/tri1 $graph_dir
     
     for dset in dev test; do
         steps/decode_si.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
-                       $graph_dir data/${dset} exp/tri1/decode_${dset}_nosp_sw1_tg
+                       $graph_dir data/${dset} exp/tri1/decode_${dset}_nosp
     done
     
 fi
@@ -291,15 +291,15 @@ if [ $stage -le 11 ]; then
 
     # The previous mkgraph might be writing to this file.  If the previous mkgraph
     # is not running, you can remove this loop and this mkgraph will create it.
-    while [ ! -s data/lang_nosp_sw1_tg/tmp/CLG_3_1.fst ]; do sleep 60; done
-    sleep 20; # in case still writing.
-    graph_dir=exp/tri2/graph_nosp_sw1_tg
+#    while [ ! -s data/lang_nosp_sw1_tg/tmp/CLG_3_1.fst ]; do sleep 60; done
+#    sleep 20; # in case still writing.
+    graph_dir=exp/tri2/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
-               utils/mkgraph.sh data/lang_nosp_sw1_tg exp/tri2 $graph_dir
+               utils/mkgraph.sh data/lang_test exp/tri2 $graph_dir
 
     for dset in dev test; do
-        steps/decode.sh --nj $nJobs --cmd "$decode_cmd" --config conf/decode.config \
-                    $graph_dir data/${dset} exp/tri2/decode_${dset}_nosp_sw1_tg
+        steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
+                    $graph_dir data/${dset} exp/tri2/decode_${dset}_nosp
     done
 fi
 
@@ -317,13 +317,13 @@ if [ $stage -le 12 ]; then
   steps/train_lda_mllt.sh --cmd "$train_cmd" \
                           6000 140000 data/train_nodup data/lang_nosp exp/tri2_ali_nodup exp/tri3
 
-  graph_dir=exp/tri3/graph_nosp_sw1_tg
+  graph_dir=exp/tri3/graph_nosp
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_nosp_sw1_tg exp/tri3 $graph_dir
+             utils/mkgraph.sh data/lang_test exp/tri3 $graph_dir
 
   for dset in dev test; do
-      steps/decode.sh --nj $nJobs --cmd "$decode_cmd" --config conf/decode.config \
-                  $graph_dir data/${dset} exp/tri3/decode_${dset}_nosp_sw1_tg
+      steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
+                  $graph_dir data/${dset} exp/tri3/decode_${dset}_nosp
   done
 fi
 
@@ -339,6 +339,8 @@ if [ $stage -le 13 ]; then
 
   utils/prepare_lang.sh data/local/dict "<unk>" data/local/lang data/lang
  
+  local/format_data.sh
+
 #  LM=data/local/lm/sw1.o3g.kn.gz
 #  srilm_opts="-subset -prune-lowprobs -unk -tolower -order 3"
 #  utils/format_lm_sri.sh --srilm-opts "$srilm_opts" \
@@ -351,10 +353,10 @@ if [ $stage -le 13 ]; then
 
   graph_dir=exp/tri3/graph_sw1_tg
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_sw1_tg exp/tri3 $graph_dir
+             utils/mkgraph.sh data/lang_test exp/tri3 $graph_dir
   
   for dset in dev test; do
-      steps/decode.sh --nj $nJobs --cmd "$decode_cmd" --config conf/decode.config \
+      steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
                   $graph_dir data/${dset} exp/tri3/decode_${dset}_sw1_tg
   done
 fi
@@ -370,10 +372,10 @@ if [ $stage -le 14 ]; then
 
   graph_dir=exp/tri4/graph_sw1_tg
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_sw1_tg exp/tri4 $graph_dir
+             utils/mkgraph.sh data/lang_test exp/tri4 $graph_dir
 
   for dset in dev test; do
-      steps/decode_fmllr.sh --nj $nJobs --cmd "$decode_cmd" \
+      steps/decode_fmllr.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
                       --config conf/decode.config \
                       $graph_dir data/${dset} exp/tri4/decode_${dset}_sw1_tg
   done
