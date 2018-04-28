@@ -2,6 +2,7 @@
 
 # Adapted from gale_arabic scripts
 
+# Copyright 2018 Language Technology, Universitaet Hamburg (author: Benjamin Milde)
 # Copyright 2015 Language Technology, Technische Universitaet Darmstadt (author: Benjamin Milde)
 # Copyright 2014 QCRI (author: Ahmed Ali)
 #
@@ -27,19 +28,26 @@ if [ -f path.sh ]; then
    echo "missing path.sh"; exit 1;
 fi 
 
+lang_out_dir=data/lang_test
+
 export LC_ALL=C
+
+. utils/parse_options.sh
+
+echo Starting FST creation
+echo Output lang directory is: $lang_out_dir
 
 #for dir in test train; do 
 #   cp -pr data/local/$dir data/$dir
 #done
 
-mkdir -p data/lang_test
+mkdir -p $lang_out_dir
 
 arpa_lm=data/local/lm/3gram-mincount/lm_pr16.0.gz
 [ ! -f $arpa_lm ] && echo No such file $arpa_lm && exit 1;
 
-rm -r data/lang_test
-cp -r data/lang data/lang_test
+rm -r $lang_out_dir
+cp -r data/lang $lang_out_dir
 
 # grep -v '<s> <s>' etc. is only for future-proofing this script.  Our
 # LM doesn't have these "invalid combinations".  These can cause 
@@ -53,17 +61,17 @@ gunzip -c "$arpa_lm" | \
    grep -v '</s> </s>' | \
    arpa2fst - | fstprint | \
    utils/remove_oovs.pl /dev/null | \
-   utils/eps2disambig.pl | utils/s2eps.pl | fstcompile --isymbols=data/lang_test/words.txt \
-     --osymbols=data/lang_test/words.txt  --keep_isymbols=false --keep_osymbols=false | \
-    fstrmepsilon | fstarcsort --sort_type=ilabel > data/lang_test/G.fst
-  fstisstochastic data/lang_test/G.fst
+   utils/eps2disambig.pl | utils/s2eps.pl | fstcompile --isymbols=${lang_out_dir}/words.txt \
+     --osymbols=${lang_out_dir}/words.txt  --keep_isymbols=false --keep_osymbols=false | \
+    fstrmepsilon | fstarcsort --sort_type=ilabel > ${lang_out_dir}/G.fst
+  fstisstochastic ${lang_out_dir}/G.fst
 
 exit 0;
 
 #rest of this script is sanity checks, which are currently disabled
 
 echo  "Checking how stochastic G is (the first of these numbers should be small):"
-fstisstochastic data/lang_test/G.fst 
+fstisstochastic ${lang_out_dir}/G.fst 
 
 ## Check lexicon.
 ## just have a look and make sure it seems sane.
@@ -73,21 +81,21 @@ fstprint   --isymbols=data/lang/phones.txt --osymbols=data/lang/words.txt data/l
 echo Performing further checks
 
 # Checking that G.fst is determinizable.
-fstdeterminize data/lang_test/G.fst /dev/null || echo Error determinizing G.
+fstdeterminize ${lang_out_dir}/G.fst /dev/null || echo Error determinizing G.
 
 # Checking that L_disambig.fst is determinizable.
-fstdeterminize data/lang_test/L_disambig.fst /dev/null || echo Error determinizing L.
+fstdeterminize ${lang_out_dir}/L_disambig.fst /dev/null || echo Error determinizing L.
 
 # Checking that disambiguated lexicon times G is determinizable
 # Note: we do this with fstdeterminizestar not fstdeterminize, as
 # fstdeterminize was taking forever (presumbaly relates to a bug
 # in this version of OpenFst that makes determinization slow for
 # some case).
-fsttablecompose data/lang_test/L_disambig.fst data/lang_test/G.fst | \
+fsttablecompose ${lang_out_dir}/L_disambig.fst data/lang_test/G.fst | \
    fstdeterminizestar >/dev/null || echo Error
 
 # Checking that LG is stochastic:
-fsttablecompose data/lang/L_disambig.fst data/lang_test/G.fst | \
+fsttablecompose data/lang/L_disambig.fst ${lang_out_dir}/G.fst | \
    fstisstochastic || echo LG is not stochastic
 
 echo format_data sanity checks succeeded.
