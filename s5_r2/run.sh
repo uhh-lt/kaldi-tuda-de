@@ -2,9 +2,11 @@
 
 #adapted from swbd Kaldi run.sh
 
-stage=10
+stage=0
 use_BAS_dictionaries=false
 sequitur_g2p="/home/me/comp/g2p/g2p.py"
+
+. utils/parse_options.sh
 
 if [ -f $sequitur_g2p ]
 then
