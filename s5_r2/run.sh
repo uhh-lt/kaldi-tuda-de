@@ -1,6 +1,22 @@
 #!/bin/bash
 
-#adapted from swbd Kaldi run.sh
+# This script is adapted from swbd Kaldi run.sh (https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh) and the older s5 (r1) version of this script
+
+# Copyright 2018 Kaldi developers (see: https://github.com/kaldi-asr/kaldi/blob/master/COPYING)
+# Copyright 2018 Language Technology, Universitaet Hamburg (author: Benjamin Milde)
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 
 stage=0
 use_BAS_dictionaries=false
@@ -329,8 +345,6 @@ if [ $stage -le 12 ]; then
   done
 fi
 
-exit
-
 if [ $stage -le 13 ]; then
   # Now we compute the pronunciation and silence probabilities from training data,
   # and re-create the lang directory.
@@ -341,7 +355,7 @@ if [ $stage -le 13 ]; then
 
   utils/prepare_lang.sh data/local/dict "<unk>" data/local/lang data/lang
  
-  local/format_data.sh
+  ./local/format_data.sh --lang_out_dir data/lang_test_pron
 
 #  LM=data/local/lm/sw1.o3g.kn.gz
 #  srilm_opts="-subset -prune-lowprobs -unk -tolower -order 3"
@@ -353,13 +367,13 @@ if [ $stage -le 13 ]; then
 #    utils/build_const_arpa_lm.sh $LM data/lang data/lang_sw1_fsh_fg
 #  fi
 
-  graph_dir=exp/tri3/graph_sw1_tg
+  graph_dir=exp/tri3/graph_pron
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_test exp/tri3 $graph_dir
+             utils/mkgraph.sh data/lang_test_pron exp/tri3 $graph_dir
   
   for dset in dev test; do
       steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
-                  $graph_dir data/${dset} exp/tri3/decode_${dset}_sw1_tg
+                  $graph_dir data/${dset} exp/tri3/decode_${dset}_pron
   done
 fi
 
@@ -372,14 +386,14 @@ if [ $stage -le 14 ]; then
   steps/train_sat.sh  --cmd "$train_cmd" \
                       11500 200000 data/train_nodup data/lang exp/tri3_ali_nodup exp/tri4
 
-  graph_dir=exp/tri4/graph_sw1_tg
+  graph_dir=exp/tri4/graph_pron
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_test exp/tri4 $graph_dir
+             utils/mkgraph.sh data/lang_test_pron exp/tri4 $graph_dir
 
   for dset in dev test; do
       steps/decode_fmllr.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
                       --config conf/decode.config \
-                      $graph_dir data/${dset} exp/tri4/decode_${dset}_sw1_tg
+                      $graph_dir data/${dset} exp/tri4/decode_${dset}_pron
   done
 
   # Will be used for confidence calibration example,
