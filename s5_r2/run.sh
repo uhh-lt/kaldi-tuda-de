@@ -348,14 +348,19 @@ fi
 if [ $stage -le 13 ]; then
   # Now we compute the pronunciation and silence probabilities from training data,
   # and re-create the lang directory.
+
+  echo "Re-creating the lang directory with pronunciation and silence probabilities from training data"
+
   steps/get_prons.sh --cmd "$train_cmd" data/train_nodup data/lang_nosp exp/tri3
   utils/dict_dir_add_pronprobs.sh --max-normalize true \
-                                  data/local/dict_nosp exp/tri3/pron_counts_nowb.txt exp/tri3/sil_counts_nowb.txt \
-                                  exp/tri3/pron_bigram_counts_nowb.txt data/local/dict
+                                  data/local/dict exp/tri3/pron_counts_nowb.txt exp/tri3/sil_counts_nowb.txt \
+                                  exp/tri3/pron_bigram_counts_nowb.txt data/local/dict_pron
 
-  utils/prepare_lang.sh data/local/dict "<unk>" data/local/lang data/lang
+  utils/prepare_lang.sh data/local/dict_pron "<UNK>" data/local/lang data/lang
  
   ./local/format_data.sh --lang_out_dir data/lang_test_pron
+
+  echo "Done. New lang dir in data/lang_test_pron"
 
 #  LM=data/local/lm/sw1.o3g.kn.gz
 #  srilm_opts="-subset -prune-lowprobs -unk -tolower -order 3"
@@ -377,14 +382,21 @@ if [ $stage -le 13 ]; then
   done
 fi
 
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3_ali_nodup/tree exp/tri3_ali_nodup/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov  -f 2- data/lang/words.txt data/train_nodup/split16/10/text|' 'ark:|gzip -c >exp/tri3_ali_nodup/fsts.10.gz' 
+# the --map-oov option requires an argument at utils/sym2int.pl line 27.
+
 if [ $stage -le 14 ]; then
+  
   # Train tri4, which is LDA+MLLT+SAT, on all the (nodup) data.
+  
+  echo "Starting tri4 training, LDA+MLLT+SAT, on all the data"
+
   steps/align_fmllr.sh --nj $nJobs --cmd "$train_cmd" \
-                       data/train_nodup data/lang exp/tri3 exp/tri3_ali_nodup
+                       data/train data/lang_test_pron exp/tri3 exp/tri3_ali
 
 
   steps/train_sat.sh  --cmd "$train_cmd" \
-                      11500 200000 data/train_nodup data/lang exp/tri3_ali_nodup exp/tri4
+                      11500 200000 data/train data/lang exp/tri3_ali exp/tri4
 
   graph_dir=exp/tri4/graph_pron
   $train_cmd $graph_dir/mkgraph.log \
