@@ -1,16 +1,20 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use a speech corpus that has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
 
-The newest recipe (s5\_r2) trains and tests on all data from all mircophones by default. By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). The old s5 recipe used in [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available, checkout the README.md in the s5 directory if you want to reproduce the results of the paper.  
+The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). The old s5 recipe used in [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available and trained only on the beamformed data of the Kinect microphone, checkout the README.md in the s5 directory if you want to reproduce the results of the paper.  
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## News
 
+02 May 2018
+
+- A recipe to train TDNN-HMM chain acoustic models is now available, similar to TED-LIUMs egs. See: https://github.com/tudarmstadt-lt/kaldi-tuda-de/blob/master/s5_r2/local/run_tdnn_1f.sh
+
 25 April 2018
 
 - New s5_r2 recipe adapted from swbd s5c (GMM-HMM at the moment, TDNN recipe coming soon)!
-- s5_r2 scripts are now compatible with Python3
+- s5_r2 local scripts are now compatible with Python3
 - Training on all microphones data is now possible and also the default
 - Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
 - Updated Kaldi install instructions
