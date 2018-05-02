@@ -1,0 +1,21 @@
+# Kaldi TDNN-HMM chain WER results for the German tuda distant speech corpus, by Benjamin Milde (2018) 
+# Note that these results are for open vocabulary speech recognition and are not comparable to the results in https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf
+# The new results reflect expected performance much better
+# The older s5 scripts assumed that there is no OOV by adding unkown dev and test words to the dictionary
+
+%WER 54.42 [ 28197 / 51815, 3789 ins, 9907 del, 14501 sub ] exp/tri1/decode_dev_nosp/wer_15_1.0
+%WER 51.52 [ 26893 / 52200, 4282 ins, 7112 del, 15499 sub ] exp/tri1/decode_test_nosp/wer_15_0.5
+%WER 53.47 [ 27708 / 51815, 4083 ins, 8818 del, 14807 sub ] exp/tri2/decode_dev_nosp/wer_15_1.0
+%WER 50.63 [ 26429 / 52200, 4040 ins, 7095 del, 15294 sub ] exp/tri2/decode_test_nosp/wer_16_1.0
+%WER 52.32 [ 27112 / 51815, 5147 ins, 2753 del, 19212 sub ] exp/tri3/decode_dev_nosp/wer_17_1.0
+%WER 45.05 [ 23343 / 51815, 6697 ins, 1275 del, 15371 sub ] exp/tri3/decode_dev_pron/wer_16_1.0
+%WER 48.94 [ 25548 / 52200, 5194 ins, 2664 del, 17690 sub ] exp/tri3/decode_test_nosp/wer_17_1.0
+%WER 45.60 [ 23801 / 52200, 6616 ins, 1375 del, 15810 sub ] exp/tri3/decode_test_pron/wer_16_1.0
+%WER 42.50 [ 22023 / 51815, 6808 ins, 1077 del, 14138 sub ] exp/tri4_cleaned/decode_dev/wer_17_1.0
+%WER 47.31 [ 24516 / 51815, 7356 ins, 1224 del, 15936 sub ] exp/tri4_cleaned/decode_dev.si/wer_17_1.0
+%WER 45.31 [ 23475 / 51815, 7577 ins, 966 del, 14932 sub ] exp/tri4/decode_dev_pron/wer_17_1.0
+%WER 53.01 [ 27469 / 51815, 8774 ins, 1081 del, 17614 sub ] exp/tri4/decode_dev_pron.si/wer_17_1.0
+%WER 45.55 [ 23776 / 52200, 7370 ins, 1118 del, 15288 sub ] exp/tri4/decode_test_pron/wer_17_1.0
+%WER 52.14 [ 27219 / 52200, 8450 ins, 1155 del, 17614 sub ] exp/tri4/decode_test_pron.si/wer_17_1.0
+%WER 35.53 [ 18408 / 51815, 4650 ins, 1235 del, 12523 sub ] exp/chain_cleaned/tdnn1f_sp_bi/decode_dev/wer_13_1.0
+%WER 36.32 [ 18958 / 52200, 4282 ins, 1517 del, 13159 sub ] exp/chain_cleaned/tdnn1f_sp_bi/decode_test/wer_13_1.0
