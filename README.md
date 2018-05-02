@@ -14,7 +14,7 @@ The scripts will ask you where to place larger files and can download all necess
 25 April 2018
 
 - New s5_r2 recipe adapted from swbd s5c (GMM-HMM at the moment, TDNN recipe coming soon)!
-- s5_r2 scripts are now compatible with Python3
+- s5_r2 local scripts are now compatible with Python3
 - Training on all microphones data is now possible and also the default
 - Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
 - Updated Kaldi install instructions
