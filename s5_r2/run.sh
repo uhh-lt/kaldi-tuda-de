@@ -21,6 +21,7 @@
 stage=0
 use_BAS_dictionaries=false
 sequitur_g2p="/home/me/comp/g2p/g2p.py"
+add_swc_data=true
 
 . utils/parse_options.sh
 
@@ -59,6 +60,29 @@ if [ $stage -le 1 ]; then
       tar xvfz german-speechdata-package-v2.tar.gz
       cd ../../
   fi
+
+  if [ "$add_swc_data" = true ]; then
+    
+    echo "Adding SWC German data (see https://nats.gitlab.io/swc/)"    
+
+    if [ ! -d data/wav/swc/german/ ]
+    then
+      mkdir -p data/wav/swc/
+      wget --directory-prefix=data/wav/swc/ https://www2.informatik.uni-hamburg.de/nats/pub/SWC/SWC_German.tar
+      cd data/wav/swc/
+      tar xvf SWC_German.tar
+      cd ../../../
+    fi
+    
+    if [ ! -d data/swc_train ]
+    then
+      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
+      cd data/
+      tar xvfz swc_kaldi_data.tar.gz
+      cd ../
+      python3 local/prepare_swc_german_wavscp.py
+    fi
+  fi
 fi
 
 #adapt this to the Sprachdatenaufnahmen2014 folder on your disk
@@ -69,8 +93,16 @@ FILTERBYNAME="*.xml"
 
 if [ $stage -le 2 ]; then
   find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
-  #python local/data_prepare.py -f data/waveIDs.txt
-  python3 local/data_prepare.py -f data/waveIDs.txt
+
+  # prepares directories in Kaldi format for the TUDA speech corpus
+  python3 local/data_prepare.py -f data/waveIDs.txt --separate-mic-dirs
+
+  # If want to do experiments with very noisy data, you can also create Kaldi dirs for the Realtek microphone. Disabled in train/test/dev by default.
+  # python3 local/data_prepare.py -f data/waveIDs.txt -p _Realtek -k _e
+
+  if [ "$add_swc_data" = false ] ; then
+    mv data/tuda_train data/train
+  fi
 fi
 
 if [ $stage -le 3 ]; then
@@ -113,7 +145,7 @@ if [ $stage -le 3 ]; then
   fi
 fi
 
-if [ $stage -le 3 ]; then
+if [ $stage -le 4 ]; then
   #Transform freely available dictionaries into lexiconp.txt file + extra files 
   mkdir -p data/local/dict/
   python3 local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict 
@@ -123,14 +155,18 @@ fi
 g2p_model=data/local/g2p/de_g2p_model
 final_g2p_model=${g2p_model}-6
 
-if [ $stage -le 4 ]; then
+mkdir -p data/local/g2p/
+cp data_old/local/g2p/de_g2p_model-6 data/local/g2p/de_g2p_model-6
+
+if [ $stage -le 5 ]; then
+  train_file=data/local/g2p/lexicon.txt
+        
+  cut -d" " -f 1,3- data/local/dict/_lexiconp.txt > $train_file
+  cut -d" " -f 1 data/local/dict/_lexiconp.txt > data/local/g2p/lexicon_wordlist.txt
+  
   if [ ! -f $final_g2p_model ]
   then
       mkdir -p data/local/g2p/
-      train_file=data/local/g2p/lexicon.txt
-      
-      cut -d" " -f 1,3- data/local/dict/_lexiconp.txt > $train_file
-      cut -d" " -f 1 data/local/dict/_lexiconp.txt > data/local/g2p/lexicon_wordlist.txt
 
       $sequitur_g2p --train $train_file --devel 3% --write-model ${g2p_model}-1
       $sequitur_g2p --model ${g2p_model}-1 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-2
@@ -143,11 +179,19 @@ if [ $stage -le 4 ]; then
   fi
 
   echo "Now finding OOV in train"
-  python3 local/find_oov.py -c data/train/text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+
+  if [ "$add_swc_data" = true ] ; then
+    cat data/tuda_train/text data/swc_train/text > data/local/g2p/complete_text
+    python3 local/find_oov.py -c data/local/g2p/complete_text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+  else
+    python3 local/find_oov.py -c data/train/text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+  fi
 
   echo "Now using G2P to predict OOV"
   $sequitur_g2p  --model $final_g2p_model --apply data/local/g2p/oov.txt > data/local/dict/oov_lexicon.txt
-  cat data/local/dict/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > data/local/dict/oov_lexiconp.txt
+  cat data/local/dict/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > data/local/dict/_oov_lexiconp.txt
+  # remove entries that don't have atleast 3 columns - some phonemizations are broken
+  awk 'NF>=3' data/local/dict/_oov_lexiconp.txt > data/local/dict/oov_lexiconp.txt
   #data/local/dict/oov_lexicon.txt
   echo "Done!"
 fi
@@ -171,10 +215,12 @@ echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this 
 # Make sure that LC_ALL is C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs
 # We set it here, because the Python data preparation scripts need a propoer utf local in LC_ALL
 export LC_ALL=C
+export LANG=C
+export LANGUAGE=C
 
-if [ $stage -le 5 ]; then
+if [ $stage -le 6 ]; then
   # Sort the lexicon with C-encoding (Is this still needed?)
-  sort data/local/dict/_lexiconp.txt data/local/dict/oov_lexiconp.txt > data/local/dict/lexiconp.txt
+  sort -u data/local/dict/_lexiconp.txt data/local/dict/oov_lexiconp.txt > data/local/dict/lexiconp.txt
 
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
   rm data/local/dict/lexicon.txt
@@ -192,20 +238,54 @@ if [ $stage -le 5 ]; then
   echo "Done!"
 fi
 
-if [ $stage -le 6 ]; then
-  # Now make MFCC features.
-  for x in train dev test; do
-      utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-      steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
-      utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-      steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
-      utils/fix_data_dir.sh data/$x
-  done
+if [ "$add_swc_data" = true ] ; then
+   if [ $stage -le 7 ]; then
+      echo "Generating features for tuda_train, swc_train, dev and test"
+      # Making sure all swc files are C-sorted 
+      rm data/swc_train/spk2utt
+      
+      cat data/swc_train/segments | sort > data/swc_train/segments_sorted
+      cat data/swc_train/text | sort | awk 'NF>=2' > data/swc_train/text_sorted
+      cat data/swc_train/utt2spk | sort > data/swc_train/utt2spk_sorted
+      cat data/swc_train/wav.scp | sort > data/swc_train/wav.scp_sorted
+
+      mv data/swc_train/wav.scp_sorted data/swc_train/wav.scp
+      mv data/swc_train/utt2spk_sorted data/swc_train/utt2spk
+      mv data/swc_train/text_sorted data/swc_train/text
+      mv data/swc_train/segments_sorted data/swc_train/segments
+
+      echo "$LC_ALL"
+
+      utils/utt2spk_to_spk2utt.pl data/swc_train/utt2spk > data/swc_train/spk2utt      
+      #utils/validate_data_dir.sh data/swc_train
+      
+      # Now make MFCC features.
+      for x in swc_train tuda_train dev test; do
+          utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+          steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+          utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+          steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+          utils/fix_data_dir.sh data/$x
+      done
+      echo "Done, now combining data (tuda_train swc_train)."
+      combine_data.sh data/train data/tuda_train data/swc_train
+  fi
+else
+  if [ $stage -le 7 ]; then
+    # Now make MFCC features.
+    for x in train dev test; do
+        utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+        steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+        utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+        steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+        utils/fix_data_dir.sh data/$x
+    done
+  fi
 fi
 
 # Todo: download source sentence archive for LM building
 
-if [ $stage -le 7 ]; then
+if [ $stage -le 8 ]; then
   mkdir -p data/local/lm/
 
   if [ ! -f data/local/lm/cleaned.gz ]
@@ -230,7 +310,7 @@ fi
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
-if [ $stage -le 8 ]; then
+if [ $stage -le 9 ]; then
   # Use the first 4k sentences as dev set.  Note: when we trained the LM, we used
   # the 1st 10k sentences as dev set, so the 1st 4k won't have been used in the
   # LM training data.   However, they will be in the lexicon, plus speakers
@@ -256,33 +336,33 @@ if [ $stage -le 8 ]; then
   # only the shortest ones (mostly uh-huh).  So take the 100k shortest ones, and
   # then take 30k random utterances from those (about 12hr)
 
-  utils/subset_data_dir.sh --shortest data/train_nodev 20000 data/train_100kshort #(swbd default: 100k)
-  utils/subset_data_dir.sh data/train_100kshort 10000 data/train_30kshort #(swbd default: 30k)
+  utils/subset_data_dir.sh --shortest data/train_nodev 30000 data/train_100kshort #(swbd default: 100k)
+  utils/subset_data_dir.sh data/train_100kshort 15000 data/train_30kshort #(swbd default: 30k)
 
   # Take the first 100k utterances (just under half the data); we'll use
   # this for later stages of training.
-  utils/subset_data_dir.sh --first data/train_nodev 20000 data/train_100k
+  utils/subset_data_dir.sh --first data/train_nodev 40000 data/train_100k
 
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_100k data/train_100k_nodup  # 110hr
+  utils/data/remove_dup_utts.sh 2000 data/train_100k data/train_100k_nodup  # 110hr
 
   # Finally, the full training set:
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
+  utils/data/remove_dup_utts.sh 2000 data/train_nodev data/train_nodup  # 286hr
 
-  #if [ ! -d data/lang_nosp ]; then 
-  #  echo "Copying data/lang to data/lang_nosp..."
-  #  cp -R data/lang data/lang_nosp
-  #fi
+  if [ ! -d data/lang_nosp ]; then 
+    echo "Copying data/lang to data/lang_nosp..."
+    cp -R data/lang data/lang_nosp
+  fi
 fi
 
-if [ $stage -le 9 ]; then
+if [ $stage -le 10 ]; then
   ## Starting basic training on MFCC features
   steps/train_mono.sh --nj $nJobs --cmd "$train_cmd" \
                       data/train_30kshort data/lang_nosp exp/mono
 fi
 
-if [ $stage -le 10 ]; then
+if [ $stage -le 11 ]; then
     steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup data/lang_nosp exp/mono exp/mono_ali
 
@@ -300,7 +380,7 @@ if [ $stage -le 10 ]; then
     
 fi
 
-if [ $stage -le 11 ]; then
+if [ $stage -le 12 ]; then
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup data/lang_nosp exp/tri1 exp/tri1_ali
 
@@ -321,7 +401,7 @@ if [ $stage -le 11 ]; then
     done
 fi
 
-if [ $stage -le 12 ]; then
+if [ $stage -le 13 ]; then
   # The 100k_nodup data is used in the nnet2 recipe.
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup data/lang_nosp exp/tri2 exp/tri2_ali_100k_nodup
@@ -345,7 +425,7 @@ if [ $stage -le 12 ]; then
   done
 fi
 
-if [ $stage -le 13 ]; then
+if [ $stage -le 14 ]; then
   # Now we compute the pronunciation and silence probabilities from training data,
   # and re-create the lang directory.
 
@@ -385,7 +465,7 @@ fi
 # compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3_ali_nodup/tree exp/tri3_ali_nodup/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov  -f 2- data/lang/words.txt data/train_nodup/split16/10/text|' 'ark:|gzip -c >exp/tri3_ali_nodup/fsts.10.gz' 
 # the --map-oov option requires an argument at utils/sym2int.pl line 27.
 
-if [ $stage -le 14 ]; then
+if [ $stage -le 15 ]; then
   
   # Train tri4, which is LDA+MLLT+SAT, on all the (nodup) data.
   
@@ -419,9 +499,12 @@ if [ $stage -le 14 ]; then
  # ) &
 fi
 
-# Let's create a subset with 10k segments to make quick flat-start training:
-# utils/subset_data_dir.sh data/train 10000 data/train.10K || exit 1;
+if [ $stage -le 16 ]; then
+  echo "Cleanup the corpus"
+  ./local/run_cleanup_segmentation.sh
+fi
 
-#local/run_am.sh
-#local/run_dnn.sh
-
+if [ $stage -le 17 ]; then
+  echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
+  ./local/run_tdnn_1f.sh
+fi

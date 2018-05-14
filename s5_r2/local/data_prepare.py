@@ -46,7 +46,7 @@ def exportDict(dest_file,utterances_phoneme_dict):
         for word in utterances_phoneme_dict:
             out.write(word+' '+utterances_phoneme_dict[word]+'\n')
 
-def writeKaldiDataFolder(dest_dir, utts):
+def writeKaldiDataFolder(dest_dir, utts, filter_fileid_list=None):
     ''' Exports the internal representation utts for all utterances into KALDIs corpus description format '''
     # Kaldi format, files: text,wav.scp,utt2spk,spk2gender
 
@@ -82,6 +82,9 @@ def writeKaldiDataFolder(dest_dir, utts):
             
             for fileid,mic in zip(utt['fileids'], 'abcdefgh'):
                 if fileid != 'missing':
+                    if filter_fileid_list is not None:
+                        if filter_fileid_list != mic:
+                            continue
                     kaldi_id =  kaldi_base_id + '_' + mic
                     text.write(kaldi_id+' '+transcription+'\n')
                     wavscp.write(kaldi_id+' '+ fileid +'\n')
@@ -246,8 +249,11 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--filelist', dest='filelist', help='process this file list', type=str, default = '')
     parser.add_argument('-r', '--remove_extension', dest='remove_extension', help='remove this extension, to get plain file id', type=str, default='.xml')
     parser.add_argument('-w', '--audio-file-extension', dest='wav_extension', help='extension for audio files', type=str, default='.wav')
-    parser.add_argument('-p', '--utterance-postfix-names', dest='postfix', help='--utterance-postfix-name', type=str, default='_Kinect-Beam,_Kinect-RAW,_Samson')
+    parser.add_argument('-p', '--utterance-postfix-names', dest='postfix', help='--utterance-postfix-name', type=str, default='_Kinect-Beam,_Kinect-RAW,_Samson,_Yamaha')
     parser.add_argument('-m', '--use-mary', dest='use_mary', help='Use Mary to generate a phoneme dictionary (for all words in train)', action='store_true', default=False)
+    parser.add_argument('-s', '--separate-mic-dirs', dest='separate_mic_dir', help='Add separate microphone directories, one per mic.', action='store_true', default=False)
+    parser.add_argument('-k', '--kaldidirs-postfix', dest='kaldidirs_postfix', help='Add a post fix to the generated directory, e.g. if set to "_a", the training dir will be named train_a (same for test and dev)', type=str, default='')
+    parser.add_argument('-a', '--write-all-dir', dest='write_all_dir', help='Additionally also write out a Kaldi directory containing all utterances (train+test+dev)', action='store_true', default=False)
 
     args = parser.parse_args()
 
@@ -294,14 +300,23 @@ if __name__ == '__main__':
         #train, test = simpleTrainTestSplit(utterances)
         train, test, dev = filenameSplit(utterances)
  
-        print('Writing train...')
-        writeKaldiDataFolder('data/train/', train)
-        print('Writing dev...')
-        writeKaldiDataFolder('data/dev/', dev)
-        print('Writing test...')
-        writeKaldiDataFolder('data/test/', test)
-        print('Writing all...')
-        writeKaldiDataFolder('data/all/', utterances)
+        print('Writing train'+args.kaldidirs_postfix+'...')
+        writeKaldiDataFolder('data/tuda_train'+args.kaldidirs_postfix+'/', train)
+        print('Writing dev'+args.kaldidirs_postfix+'...')
+        writeKaldiDataFolder('data/dev'+args.kaldidirs_postfix+'/', dev)
+        print('Writing test'+args.kaldidirs_postfix+'...')
+        writeKaldiDataFolder('data/test'+args.kaldidirs_postfix+'/', test)
+
+        if args.separate_mic_dir:
+            for out in [("dev"+args.kaldidirs_postfix, dev), ("test"+args.kaldidirs_postfix, test)]:
+                for mic in 'abcd':
+                    outdir = 'data/'+out[0]+'_'+mic+'/'
+                    print('Writing '+outdir+'...')            
+                    writeKaldiDataFolder(outdir, out[1], filter_fileid_list=mic)
+
+        if args.write_all_dir:
+            print('Writing all...')
+            writeKaldiDataFolder('data/all/', utterances)
 
         if args.use_mary:
             print('Writing phoneme dictionary for words in train/test/dev...')
