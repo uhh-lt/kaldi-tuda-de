@@ -25,6 +25,11 @@ add_extra_words=true
 
 . utils/parse_options.sh
 
+if [ -f cmd.sh ]; then
+      . cmd.sh; else
+         echo "missing cmd.sh"; exit 1;
+fi
+
 if [ -f $sequitur_g2p ]
 then
     echo "Using $sequitur_g2p for g2p conversion of OOV words."
@@ -205,10 +210,6 @@ fi
 
 # Now start preprocessing with KALDI scripts
 
-if [ -f cmd.sh ]; then
-      . cmd.sh; else
-         echo "missing cmd.sh"; exit 1;
-fi
 
 # Path also sets LC_ALL=C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs. It should be set here, after the python scripts and not at the beginning of this script
 if [ -f path.sh ]; then
