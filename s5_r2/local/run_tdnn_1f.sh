@@ -48,7 +48,7 @@ nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 # are just hardcoded at this level, in the commands below.
 train_stage=-10
 tree_affix=  # affix for tree directory, e.g. "a" or "b", in case we change the configuration.
-tdnn_affix=1f  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
+tdnn_affix=1f_1024  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 common_egs_dir=  # you can set this to use previously dumped egs.
 
 # End configuration section.
@@ -142,7 +142,7 @@ if [ $stage -le 17 ]; then
 
   num_targets=$(tree-info $tree_dir/tree |grep num-pdfs|awk '{print $2}')
   learning_rate_factor=$(echo "print 0.5/$xent_regularize" | python)
-  num_hidden=512
+  num_hidden=1024
 
   mkdir -p $dir/configs
   cat <<EOF > $dir/configs/network.xconfig
