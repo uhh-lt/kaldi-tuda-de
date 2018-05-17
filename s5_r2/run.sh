@@ -22,6 +22,7 @@ stage=0
 use_BAS_dictionaries=false
 sequitur_g2p="/home/me/comp/g2p/g2p.py"
 add_swc_data=true
+add_extra_words=false
 
 . utils/parse_options.sh
 
@@ -182,11 +183,18 @@ if [ $stage -le 5 ]; then
 
   if [ "$add_swc_data" = true ] ; then
     cat data/tuda_train/text data/swc_train/text > data/local/g2p/complete_text
-    python3 local/find_oov.py -c data/local/g2p/complete_text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
   else
-    python3 local/find_oov.py -c data/train/text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+    cp data/tuda_train/text data/local/g2p/complete_text
   fi
 
+  if [ "$add_extra_words" = true ] ; then
+    # source extra words from local/extra_words.txt and prefix them with bogus ids, so that we can just add them to the transcriptions (data/local/g2p/complete_text)
+    awk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" local/extra_words.txt | cat data/local/g2p/complete_text - > data/local/g2p/complete_text_new
+    mv data/local/g2p/complete_text_new data/local/g2p/complete_text
+  fi
+
+  python3 local/find_oov.py -c data/local/g2p/complete_text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+  
   echo "Now using G2P to predict OOV"
   $sequitur_g2p  --model $final_g2p_model --apply data/local/g2p/oov.txt > data/local/dict/oov_lexicon.txt
   cat data/local/dict/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > data/local/dict/_oov_lexiconp.txt
