@@ -20,7 +20,6 @@
 
 stage=0
 use_BAS_dictionaries=false
-sequitur_g2p="/home/me/comp/g2p/g2p.py"
 add_swc_data=true
 add_extra_words=false
 
