@@ -20,8 +20,8 @@
 
 stage=0
 use_BAS_dictionaries=false
-add_swc_data=true
-add_extra_words=false
+add_swc_data=false
+add_extra_words=true
 
 . utils/parse_options.sh
 
