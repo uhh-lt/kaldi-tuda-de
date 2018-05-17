@@ -50,7 +50,7 @@ You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Softwar
 You will also need a recent version of Python 3. Package requirements are:
 
 ```
-pip3 install requests beautifulsoup4
+pip3 install requests beautifulsoup4 lxml
 ```
 
 ## Building the acoustic models
