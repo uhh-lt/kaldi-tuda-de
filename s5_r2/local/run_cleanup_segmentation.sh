@@ -16,18 +16,19 @@
 # GMM Results for speaker-independent (SI) and speaker adaptive training (SAT) systems on dev and test sets
 # [will add these later].
 
-set -e
-set -o pipefail
-set -u
+#set -e
+#set -o pipefail
+#set -u
 
 stage=0
 cleanup_stage=0
 data=data/train
 cleanup_affix=cleaned
 srcdir=exp/tri4
-nj=100
-decode_nj=16
+nj=24
+decode_nj=12
 decode_num_threads=4
+mfccdir=mfcc
 
 . ./path.sh
 . ./cmd.sh
@@ -39,12 +40,17 @@ dir=${srcdir}_${cleanup_affix}_work
 cleaned_dir=${srcdir}_${cleanup_affix}
 
 if [ $stage -le 1 ]; then
+  # we need our own version of utt2dur, as it needs the read_entire_file set for tuda
+  local/get_utt2dur.sh $data
   # This does the actual data cleanup.
   steps/cleanup/clean_and_segment_data.sh --stage $cleanup_stage --nj $nj --cmd "$train_cmd" \
     $data data/lang $srcdir $dir $cleaned_data
 fi
 
 if [ $stage -le 2 ]; then
+  #recalculate cmvn
+  steps/compute_cmvn_stats.sh $cleaned_data exp/make_mfcc/train_${cleanup_affix} $mfccdir
+  local/get_utt2dur.sh $cleaned_data
   steps/align_fmllr.sh --nj $nj --cmd "$train_cmd" \
     $cleaned_data data/lang $srcdir ${srcdir}_ali_${cleanup_affix}
 fi
