@@ -51,6 +51,9 @@ if [ $stage -le 2 ]; then
   #recalculate cmvn
   steps/compute_cmvn_stats.sh $cleaned_data exp/make_mfcc/train_${cleanup_affix} $mfccdir
   local/get_utt2dur.sh $cleaned_data
+  local/get_reco2dur.sh $cleaned_data
+  # create recordings file, otherwise validation of the data dir fails
+  cut -f 1 -d' ' $cleaned_data/segments > $cleaned_data/recordings
   steps/align_fmllr.sh --nj $nj --cmd "$train_cmd" \
     $cleaned_data data/lang $srcdir ${srcdir}_ali_${cleanup_affix}
 fi
