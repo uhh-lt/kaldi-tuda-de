@@ -7,6 +7,10 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+30 May 2018
+
+- We have added the option to train with additional data from the SWC corpus. See https://nats.gitlab.io/swc/ for more information on this dataset. The combined amount of training data is now around 250 hours.
+
 02 May 2018
 
 - A recipe to train TDNN-HMM chain acoustic models is now available, similar to TED-LIUMs egs. See: https://github.com/tudarmstadt-lt/kaldi-tuda-de/blob/master/s5_r2/local/run_tdnn_1f.sh
