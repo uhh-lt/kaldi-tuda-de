@@ -9,11 +9,9 @@ The scripts will ask you where to place larger files and can download all necess
 
 31 May 2018
 
-A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: 
+- A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
 
-http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
-
-Vocabulary: 126794 words, trained on tuda-de and SWC (268h combined). Contains all the content of the exp/chain_cleaned directory, also decoding lattices of tuda test/dev. See https://github.com/alumae/kaldi-gstreamer-server and https://github.com/jcsilva/docker-kaldi-gstreamer-server for a nice server API for Kaldi models, where you should be able to use our models, too.
+- Vocabulary: 126794 words, trained on tuda-de and SWC (268h combined). Contains all the content of the exp/chain_cleaned directory, also decoding lattices of tuda test/dev. See https://github.com/alumae/kaldi-gstreamer-server and https://github.com/jcsilva/docker-kaldi-gstreamer-server for a nice server API for Kaldi models, where you should be able to use our models, too.
 
 30 May 2018
 
