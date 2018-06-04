@@ -49,6 +49,8 @@ nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 train_stage=-10
 tree_affix=  # affix for tree directory, e.g. "a" or "b", in case we change the configuration.
 tdnn_affix=1f_1024  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
+decode_affix= #if you want to to change decoding parameters and decode into a different directory
+#tdnn_affix=1f
 common_egs_dir=  # you can set this to use previously dumped egs.
 
 # End configuration section.
@@ -223,7 +225,7 @@ if [ $stage -le 19 ]; then
   # Note: it might appear that this data/lang_chain directory is mismatched, and it is as
   # far as the 'topo' is concerned, but this script doesn't read the 'topo' from
   # the lang directory.
-  utils/mkgraph.sh --self-loop-scale 1.0 data/lang_test_pron $dir $dir/graph
+  utils/mkgraph.sh --self-loop-scale 1.0 data/lang_test_pron $dir $dir/graph${decode_affix}
 fi
 
 if [ $stage -le 20 ]; then
@@ -234,7 +236,7 @@ if [ $stage -le 20 ]; then
           --acwt 1.0 --post-decode-acwt 10.0 \
           --online-ivector-dir exp/nnet3${nnet3_affix}/ivectors_${dset}_hires \
           --scoring-opts "--min-lmwt 5 " \
-         $dir/graph data/${dset}_hires $dir/decode_${dset} || exit 1;
+         $dir/graph${decode_affix} data/${dset}_hires $dir/decode_${dset}${decode_affix} || exit 1;
     #  steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" data/lang data/lang_rescore \
     #    data/${dset}_hires ${dir}/decode_${dset} ${dir}/decode_${dset}_rescore || exit 1
   done
