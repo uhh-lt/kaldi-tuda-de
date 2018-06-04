@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Copyright 2018 Language Technology, Universitaet Hamburg (author: Benjamin Milde)
 # Copyright 2016  Vimal Manohar
 #           2016  Johns Hopkins University (author: Daniel Povey)
 # Apache 2.0
