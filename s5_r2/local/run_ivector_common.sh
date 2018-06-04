@@ -2,6 +2,12 @@
 
 set -e -o pipefail
 
+# (Copied from tedlium run.sh, author list may need review:)
+# Copyright  2014  Nickolay V. Shmyrev
+#            2014  Brno University of Technology (Author: Karel Vesely)
+#            2016  Vincent Nguyen
+#            2016  Johns Hopkins University (Author: Daniel Povey)
+#            2018  Language Technology, Universitaet Hambuth (Author: Benjamin Milde)
 
 # This script is called from local/nnet3/run_tdnn.sh and local/chain/run_tdnn.sh (and may eventually
 # be called by more scripts).  It contains the common feature preparation and iVector-related parts
