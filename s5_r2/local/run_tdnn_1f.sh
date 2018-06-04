@@ -1,28 +1,16 @@
 #!/bin/bash
 
-# run_tdnn_1f.sh is like run_tdnn_1e.sh but it use 2 to 6 jobs and add proportional-shrink 20.
+# Copyright  2014  Nickolay V. Shmyrev
+#            2014  Brno University of Technology (Author: Karel Vesely)
+#            2016  Vincent Nguyen
+#            2016  Johns Hopkins University (Author: Daniel Povey)
+#            2018  Language Technology, Universitaet Hambuth (Author: Benjamin Milde)
 
-#exp/chain_cleaned/tdnn1e_sp_bi/: num-iters=253 nj=2..12 num-params=7.0M dim=40+100->3597 combine=-0.095->-0.095 xent:train/valid[167,252,final]=(-1.37,-1.31,-1.31/-1.47,-1.44,-1.44) logprob:train/valid[167,252,final]=(-0.087,-0.078,-0.078/-0.102,-0.099,-0.099)
-#exp/chain_cleaned/tdnn1f_sp_bi/: num-iters=444 nj=2..6 num-params=7.0M dim=40+100->3603 combine=-0.114->-0.113 xent:train/valid[295,443,final]=(-1.59,-1.51,-1.49/-1.58,-1.52,-1.50) logprob:train/valid[295,443,final]=(-0.112,-0.102,-0.098/-0.122,-0.113,-0.110)
-
-# local/chain/compare_wer_general.sh exp/chain_cleaned/tdnn1d_sp_bi exp/chain_cleaned/tdnn1e_sp_bi
-# System                 tdnn1e_sp_bi   tdnn1f_sp_bi
-# WER on dev(orig)            9.2           9.0
-# WER on dev(rescored)        8.6           8.2
-# WER on test(orig)           9.4           9.1
-# WER on test(rescored)       8.9           8.7
-# Final train prob         -0.0776       -0.0983
-# Final valid prob         -0.0992       -0.1103
-# Final train prob (xent)  -1.3110       -1.4893
-# Final valid prob (xent)  -1.4353       -1.4951
-
-## how you run this (note: this assumes that the run_tdnn.sh soft link points here;
-## otherwise call it directly in its location).
-# by default, with cleanup:
-# local/chain/run_tdnn.sh
+# Adapted from TED-LIUMs run_tdnn_1f.sh TDNN-CHAIN script with i-vectors.
+# run_tdnn_1f.sh uses a proportional-shrink 20.
 
 # without cleanup:
-# local/chain/run_tdnn.sh  --train-set train --gmm tri3 --nnet3-affix "" &
+# local/chain/run_tdnn_1f.sh  --train-set train --gmm tri3 --nnet3-affix "" &
 
 # note, if you have already run the corresponding non-chain nnet3 system
 # (local/nnet3/run_tdnn.sh), you may want to run with --stage 14.
@@ -48,10 +36,23 @@ nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 # are just hardcoded at this level, in the commands below.
 train_stage=-10
 tree_affix=  # affix for tree directory, e.g. "a" or "b", in case we change the configuration.
-tdnn_affix=1f_1024  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 decode_affix= #if you want to to change decoding parameters and decode into a different directory
 #tdnn_affix=1f
 common_egs_dir=  # you can set this to use previously dumped egs.
+
+# how many GPU jobs to start in parallel
+num_jobs_initial=1
+num_jobs_final=1
+
+# these variables influnce training outcomes
+num_chunk_per_minibatch=128
+leaky_hmm_coefficient=0.1
+l2_regularize=0.00005
+proportional_shrink=20
+num_hidden=1024
+num_epochs=4
+
+tdnn_affix=1f_${num_hidden}  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 
 # End configuration section.
 echo "$0 $@"  # Print the command line for logging
@@ -144,7 +145,6 @@ if [ $stage -le 17 ]; then
 
   num_targets=$(tree-info $tree_dir/tree |grep num-pdfs|awk '{print $2}')
   learning_rate_factor=$(echo "print 0.5/$xent_regularize" | python)
-  num_hidden=1024
 
   mkdir -p $dir/configs
   cat <<EOF > $dir/configs/network.xconfig
@@ -196,19 +196,19 @@ if [ $stage -le 18 ]; then
     --feat.online-ivector-dir $train_ivector_dir \
     --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
     --chain.xent-regularize $xent_regularize \
-    --chain.leaky-hmm-coefficient 0.1 \
-    --chain.l2-regularize 0.00005 \
+    --chain.leaky-hmm-coefficient $leaky_hmm_coefficient \
+    --chain.l2-regularize $l2_regularize \
     --chain.apply-deriv-weights false \
     --chain.lm-opts="--num-extra-lm-states=2000" \
     --egs.dir "$common_egs_dir" \
     --egs.opts "--frames-overlap-per-eg 0" \
     --egs.chunk-width 150 \
-    --trainer.num-chunk-per-minibatch 128 \
+    --trainer.num-chunk-per-minibatch $num_chunk_per_minibatch \
     --trainer.frames-per-iter 1500000 \
-    --trainer.num-epochs 4 \
-    --trainer.optimization.proportional-shrink 20 \
-    --trainer.optimization.num-jobs-initial 1 \
-    --trainer.optimization.num-jobs-final 1 \
+    --trainer.num-epochs $num_epochs \
+    --trainer.optimization.proportional-shrink $proportional_shrink \
+    --trainer.optimization.num-jobs-initial $num_jobs_initial \
+    --trainer.optimization.num-jobs-final $num_jobs_final \
     --trainer.optimization.initial-effective-lrate 0.001 \
     --trainer.optimization.final-effective-lrate 0.0001 \
     --trainer.max-param-change 2.0 \
