@@ -14,6 +14,7 @@
 export train_cmd="utils/run.pl"
 export decode_cmd="utils/run.pl"
 export cuda_cmd="utils/run.pl -l gpu=1"
+export sequitur_g2p="/usr/local/bin/g2p.py"
 
 export nJobs=28
 export nDecodeJobs=12

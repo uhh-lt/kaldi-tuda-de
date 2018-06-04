@@ -7,6 +7,16 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+31 May 2018
+
+- A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
+
+- Vocabulary: 126794 words, trained on tuda-de and SWC (268h combined). Contains all the content of the exp/chain_cleaned directory, also decoding lattices of tuda test/dev. See https://github.com/alumae/kaldi-gstreamer-server and https://github.com/jcsilva/docker-kaldi-gstreamer-server for a nice full-duplex server API for Kaldi models, you should be able to use our models there, too.
+
+30 May 2018
+
+- We have added the option to train with additional data from the SWC corpus. See https://nats.gitlab.io/swc/ for more information on this dataset. The combined amount of training data is now around 268 hours.
+
 02 May 2018
 
 - A recipe to train TDNN-HMM chain acoustic models is now available, similar to TED-LIUMs egs. See: https://github.com/tudarmstadt-lt/kaldi-tuda-de/blob/master/s5_r2/local/run_tdnn_1f.sh
@@ -50,7 +60,7 @@ You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Softwar
 You will also need a recent version of Python 3. Package requirements are:
 
 ```
-pip3 install requests beautifulsoup4
+pip3 install requests beautifulsoup4 lxml
 ```
 
 ## Building the acoustic models
