@@ -16,6 +16,8 @@ word_ins_penalty=0.0,0.5,1.0
 min_lmwt=7
 max_lmwt=17
 iter=final
+compute_wer_mode=all #default was present
+
 #end configuration section.
 
 echo "$0 $@"  # Print the command line for logging
@@ -88,7 +90,7 @@ if [ $stage -le 0 ]; then
 
     $cmd LMWT=$min_lmwt:$max_lmwt $dir/scoring_kaldi/penalty_$wip/log/score.LMWT.log \
       cat $dir/scoring_kaldi/penalty_$wip/LMWT.txt \| \
-      compute-wer --text --mode=present \
+      compute-wer --text --mode=${compute_wer_mode} \
       ark:$dir/scoring_kaldi/test_filt.txt  ark,p:- ">&" $dir/wer_LMWT_$wip || exit 1;
 
   done
@@ -131,7 +133,7 @@ if [ $stage -le 1 ]; then
       sort -b -i -k 1,1 -k 4,4rn -k 2,2 -k 3,3 \> $dir/scoring_kaldi/wer_details/ops || exit 1;
 
     $cmd $dir/scoring_kaldi/log/wer_bootci.log \
-      compute-wer-bootci --mode=present \
+      compute-wer-bootci --mode=${compute_wer_mode} \
         ark:$dir/scoring_kaldi/test_filt.txt ark:$dir/scoring_kaldi/penalty_$best_wip/$best_lmwt.txt \
         '>' $dir/scoring_kaldi/wer_details/wer_bootci || exit 1;
 
