@@ -7,6 +7,10 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+26 June 2018
+
+We moved the repository from tudarmstadt-lt to [language technologies](https://www.inf.uni-hamburg.de/en/inst/ab/lt/home.html) new uhh-lt github repository.
+
 31 May 2018
 
 - A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
