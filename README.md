@@ -9,7 +9,9 @@ The scripts will ask you where to place larger files and can download all necess
 
 26 June 2018
 
-We moved the repository from tudarmstadt-lt to [language technologies](https://www.inf.uni-hamburg.de/en/inst/ab/lt/home.html) new uhh-lt github repository.
+- We moved the repository from tudarmstadt-lt to [language technologies](https://www.inf.uni-hamburg.de/en/inst/ab/lt/home.html) new uhh-lt github repository.
+
+- The ivector extractor had been missing from the acoustic model binary archive. You can download it separately from  http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k_ivector_extractor.tar.bz2 or redownload the [full archive](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2).
 
 31 May 2018
 
