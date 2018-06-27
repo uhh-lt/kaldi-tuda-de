@@ -7,6 +7,12 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+26 June 2018
+
+- We moved the repository from tudarmstadt-lt to [language technologies](https://www.inf.uni-hamburg.de/en/inst/ab/lt/home.html) new uhh-lt github repository.
+
+- The ivector extractor had been missing from the acoustic model binary archive. You can download it separately from  http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k_ivector_extractor.tar.bz2 or redownload the [full archive](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2).
+
 31 May 2018
 
 - A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
@@ -77,6 +83,8 @@ You can of course also use and download our data resources separately.
 
 The corpus can be downloaded [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 The run.sh script expects to find the corpus data extracted in data/wav/ and will download it for you automatically, if it does not find the data.
+
+Newer recipes also make use of [SWC data](https://nats.gitlab.io/swc/).
 
 ### German language texts
 
