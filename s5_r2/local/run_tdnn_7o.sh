@@ -53,7 +53,7 @@ leaky_hmm_coefficient=0.1
 l2_regularize=0.0
 proportional_shrink=20
 #num_hidden=1024
-num_epochs=8
+num_epochs=6
 frames_per_eg=150,110,100
 dropout_schedule='0,0@0.20,0.5@0.50,0'
 
@@ -250,6 +250,8 @@ if [ $stage -le 18 ]; then
      /export/b0{5,6,7,8}/$USER/kaldi-data/egs/ami-$(date +'%m_%d_%H_%M')/s5/$dir/egs/storage $dir/egs/storage
   fi
 
+#    --trainer.optimization.proportional-shrink $proportional_shrink \
+
  steps/nnet3/chain/train.py --stage $train_stage \
     --cmd "$decode_cmd" \
     --feat.online-ivector-dir $train_ivector_dir \
@@ -267,7 +269,6 @@ if [ $stage -le 18 ]; then
     --trainer.num-chunk-per-minibatch $num_chunk_per_minibatch \
     --trainer.frames-per-iter 1500000 \
     --trainer.num-epochs $num_epochs \
-    --trainer.optimization.proportional-shrink $proportional_shrink \
     --trainer.optimization.num-jobs-initial $num_jobs_initial \
     --trainer.optimization.num-jobs-final $num_jobs_final \
     --trainer.optimization.initial-effective-lrate 0.0005 \
@@ -277,7 +278,9 @@ if [ $stage -le 18 ]; then
     --feat-dir $train_data_dir \
     --tree-dir $tree_dir \
     --lat-dir $lat_dir \
-    --dir $dir
+    --dir $dir #\
+#    --egs.stage 100 \
+#    --stage 1400
 fi
 
 if [ $stage -le 19 ]; then
