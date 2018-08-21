@@ -9,11 +9,9 @@ The scripts will ask you where to place larger files and can download all necess
 
 21 August 2018
 
-- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2
+- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2 
 
-This model has been succesfully tested in the popular Kaldi Gstreamer Server software: https://github.com/alumae/kaldi-gstreamer-server
-
-The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths.
+- This model has been succesfully tested in the popular [Kaldi Gstreamer Server software](https://github.com/alumae/kaldi-gstreamer-server). The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths.
 
 - We thank Sven Hartrumpf for fixing xml files with incorrect transcriptions in the Tuda corpus. A new release of the corpus data will soon be available.
 
