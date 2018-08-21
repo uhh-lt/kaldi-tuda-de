@@ -6,6 +6,10 @@ The newest recipe (s5\_r2) trains and tests on data from multiple microphones by
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## News
+26 July 2018
+
+- Our paper "Open Source Automatic Speech Recognition for German" is accepted at [ITG2018](https://www.uni-oldenburg.de/itg2018/) (10.-12. October 2018, Oldenburg, Germany)! [A preprint of the paper is available here](https://arxiv.org/abs/1807.10311). 
+
 
 26 June 2018
 
@@ -119,5 +123,16 @@ python3 s5_r2/local/export_lexicon.py --help
 
 ### References
 
-If you use our scripts and/or data in your academic work please cite [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf)
+If you use our scripts and/or data in your academic work please cite:
+
+@InProceedings{milde-koehn-18-german-asr,
+author="Benjamin Milde and Arne K{\"o}hn ",
+title="Open Source Automatic Speech Recognition for German",
+booktitle="Proceedings of ITG 2018",
+year="2018",
+}
+
+An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version)
+
+You can also additionaly cite our [older paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
 
