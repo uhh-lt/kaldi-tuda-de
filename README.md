@@ -134,14 +134,26 @@ python3 s5_r2/local/export_lexicon.py --help
 
 If you use our scripts and/or data in your academic work please cite:
 
+```
 @InProceedings{milde-koehn-18-german-asr,
 author="Benjamin Milde and Arne K{\"o}hn ",
 title="Open Source Automatic Speech Recognition for German",
 booktitle="Proceedings of ITG 2018",
 year="2018",
 }
+```
 
 An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version)
 
 You can also additionaly cite our [older paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
 
+```
+@inproceedings{Radeck-Arneth2015,
+author = {Radeck-Arneth, Stephan and Milde, Benjamin and Lange, Arvid and Gouvea, Evandro and Radomski, Stefan and M{\"{u}}hlh{\"{a}}user, Max and Biemann, Chris},
+booktitle = {Proceedings Text, Speech and Dialogue (TSD)},
+title = {{Open Source German Distant Speech Recognition: Corpus and Acoustic Model}},
+year = {2015},
+address = {Pilsen, Czech Republic},
+pages = {480--488}
+}
+```
