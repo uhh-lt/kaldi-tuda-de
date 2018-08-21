@@ -148,7 +148,7 @@ An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.1031
 You can also additionaly cite our [older paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
 
 ```
-@inproceedings{Radeck-Arneth2015,
+@InProceedings{Radeck-Arneth2015,
 author = {Radeck-Arneth, Stephan and Milde, Benjamin and Lange, Arvid and Gouvea, Evandro and Radomski, Stefan and M{\"{u}}hlh{\"{a}}user, Max and Biemann, Chris},
 booktitle = {Proceedings Text, Speech and Dialogue (TSD)},
 title = {{Open Source German Distant Speech Recognition: Corpus and Acoustic Model}},
