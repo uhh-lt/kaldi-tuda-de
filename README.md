@@ -6,6 +6,15 @@ The newest recipe (s5\_r2) trains and tests on data from multiple microphones by
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## News
+
+21 August 2018
+
+- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2
+This model has been succesfully tested in the popular Kaldi Gstreamer Server software: https://github.com/alumae/kaldi-gstreamer-server
+The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths.
+
+- We thank Sven Hartrumpf for fixing xml files with incorrect transcriptions in the Tuda corpus. A new release of the corpus data will soon be available.
+
 26 July 2018
 
 - Our paper "Open Source Automatic Speech Recognition for German" is accepted at [ITG2018](https://www.uni-oldenburg.de/itg2018/) (10.-12. October 2018, Oldenburg, Germany)! [A preprint of the paper is available here](https://arxiv.org/abs/1807.10311). 
