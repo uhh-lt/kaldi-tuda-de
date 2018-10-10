@@ -2,6 +2,7 @@
 # Note that these results are for open vocabulary speech recognition and are not comparable to the results in https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf
 # The new results reflect expected performance much better
 # The older s5 scripts assumed that there is no OOV by adding unkown dev and test words to the dictionary
+# These are results with a small vocabulary (28k) and only using the tuda dataset. See the RESULTS file for our newest results where we also added additional data.
 
 %WER 54.42 [ 28197 / 51815, 3789 ins, 9907 del, 14501 sub ] exp/tri1/decode_dev_nosp/wer_15_1.0
 %WER 51.52 [ 26893 / 52200, 4282 ins, 7112 del, 15499 sub ] exp/tri1/decode_test_nosp/wer_15_0.5
