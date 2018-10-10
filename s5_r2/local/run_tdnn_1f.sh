@@ -216,7 +216,10 @@ if [ $stage -le 18 ]; then
     --feat-dir $train_data_dir \
     --tree-dir $tree_dir \
     --lat-dir $lat_dir \
-    --dir $dir
+    --dir $dir # Add this for restarting the training at a certain epoch, e.g. epoch 1542:
+#\
+#    --egs.stage 100 \
+#    --stage 1542
 fi
 
 
