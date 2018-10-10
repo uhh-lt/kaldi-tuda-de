@@ -287,8 +287,6 @@ if [ $stage -le 7 ]; then
 
 fi
 
-exit
-
 if [ "$add_swc_data" = true ] ; then
    if [ $stage -le 8 ]; then
       echo "Generating features for tuda_train, swc_train, dev and test"
