@@ -20,8 +20,24 @@
 
 stage=0
 use_BAS_dictionaries=false
-add_swc_data=false
+add_swc_data=true
 add_extra_words=true
+
+extra_words_file=local/extra_words.txt
+extra_words_file=local/filtered_300k_vocab_de_wiki.txt
+
+# TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt 
+
+dict_suffix=_300k3
+
+dict_dir=data/local/dict${dict_suffix}
+local_lang_dir=data/local/lang${dict_suffix}
+lang_dir=data/lang${dict_suffix}
+lang_dir_nosp=${lang_dir}_nosp${dict_suffix}
+format_lang_out_dir=${lang_dir}_test${dict_suffix}
+g2p_dir=data/local/g2p${dict_suffix}
+lm_dir=data/local/lm${dict_suffix}
+arpa_lm=${lm_dir}/4gram-mincount/lm_pr10.0.gz
 
 . utils/parse_options.sh
 
@@ -79,14 +95,14 @@ if [ $stage -le 1 ]; then
       cd ../../../
     fi
     
-    if [ ! -d data/swc_train ]
-    then
-      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
-      cd data/
-      tar xvfz swc_kaldi_data.tar.gz
-      cd ../
-      python3 local/prepare_swc_german_wavscp.py
-    fi
+#    if [ ! -d data/swc_train ]
+#    then
+#      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
+#      cd data/
+#      tar xvfz swc_kaldi_data.tar.gz
+#      cd ../
+#      python3 local/prepare_swc_german_wavscp.py
+#    fi
   fi
 fi
 
@@ -152,33 +168,33 @@ fi
 
 if [ $stage -le 4 ]; then
   #Transform freely available dictionaries into lexiconp.txt file + extra files 
-  mkdir -p data/local/dict/
-  python3 local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict 
-  python3 local/export_lexicon.py -f data/local/combined.dict -o data/local/dict/_lexiconp.txt 
+  mkdir -p ${dict_dir}/
+  python3 local/build_big_lexicon.py -f data/lexicon_ids.txt -e data/local/combined.dict --export-dir ${dict_dir}/
+  python3 local/export_lexicon.py -f data/local/combined.dict -o ${dict_dir}/_lexiconp.txt 
 fi
 
-g2p_model=data/local/g2p/de_g2p_model
+g2p_model=${g2p_dir}/de_g2p_model
 final_g2p_model=${g2p_model}-6
 
-mkdir -p data/local/g2p/
-cp data_old/local/g2p/de_g2p_model-6 data/local/g2p/de_g2p_model-6
+mkdir -p ${g2p_dir}/
+#cp data_old/local/g2p/de_g2p_model-6 ${g2p_dir}/de_g2p_model-6
 
 if [ $stage -le 5 ]; then
-  train_file=data/local/g2p/lexicon.txt
+  train_file=${g2p_dir}/lexicon.txt
         
-  cut -d" " -f 1,3- data/local/dict/_lexiconp.txt > $train_file
-  cut -d" " -f 1 data/local/dict/_lexiconp.txt > data/local/g2p/lexicon_wordlist.txt
+  cut -d" " -f 1,3- ${dict_dir}/_lexiconp.txt > $train_file
+  cut -d" " -f 1 ${dict_dir}/_lexiconp.txt > ${g2p_dir}/lexicon_wordlist.txt
   
   if [ ! -f $final_g2p_model ]
   then
-      mkdir -p data/local/g2p/
+      mkdir -p ${g2p_dir}/
 
-      $sequitur_g2p --train $train_file --devel 3% --write-model ${g2p_model}-1
-      $sequitur_g2p --model ${g2p_model}-1 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-2
-      $sequitur_g2p --model ${g2p_model}-2 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-3
-      $sequitur_g2p --model ${g2p_model}-3 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-4
-      $sequitur_g2p --model ${g2p_model}-4 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-5
-      $sequitur_g2p --model ${g2p_model}-5 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-6
+      $sequitur_g2p -e utf8 --train $train_file --devel 3% --write-model ${g2p_model}-1
+      $sequitur_g2p -e utf8 --model ${g2p_model}-1 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-2
+      $sequitur_g2p -e utf8 --model ${g2p_model}-2 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-3
+      $sequitur_g2p -e utf8 --model ${g2p_model}-3 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-4
+      $sequitur_g2p -e utf8 --model ${g2p_model}-4 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-5
+      $sequitur_g2p -e utf8 --model ${g2p_model}-5 --ramp-up --train $train_file --devel 3% --write-model ${g2p_model}-6
   else
       echo "G2P model file $final_g2p_model already exists, not recreating it."
   fi
@@ -186,25 +202,25 @@ if [ $stage -le 5 ]; then
   echo "Now finding OOV in train"
 
   if [ "$add_swc_data" = true ] ; then
-    cat data/tuda_train/text data/swc_train/text > data/local/g2p/complete_text
+    cat data/tuda_train/text data/swc_train/text > ${g2p_dir}/complete_text
   else
-    cp data/tuda_train/text data/local/g2p/complete_text
+    cp data/tuda_train/text ${g2p_dir}/complete_text
   fi
 
   if [ "$add_extra_words" = true ] ; then
-    # source extra words from local/extra_words.txt and prefix them with bogus ids, so that we can just add them to the transcriptions (data/local/g2p/complete_text)
-    awk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" local/extra_words.txt | cat data/local/g2p/complete_text - > data/local/g2p/complete_text_new
-    mv data/local/g2p/complete_text_new data/local/g2p/complete_text
+    # source extra words from $extra_words_file (e.g. local/extra_words.txt) and prefix them with bogus ids, so that we can just add them to the transcriptions (${g2p_dir}/complete_text)
+    awk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" $extra_words_file | cat ${g2p_dir}/complete_text - > ${g2p_dir}/complete_text_new
+    mv ${g2p_dir}/complete_text_new ${g2p_dir}/complete_text
   fi
 
-  python3 local/find_oov.py -c data/local/g2p/complete_text -w data/local/g2p/lexicon_wordlist.txt -o data/local/g2p/oov.txt
+  python3 local/find_oov.py -c ${g2p_dir}/complete_text -w ${g2p_dir}/lexicon_wordlist.txt -o ${g2p_dir}/oov.txt
   
   echo "Now using G2P to predict OOV"
-  $sequitur_g2p  --model $final_g2p_model --apply data/local/g2p/oov.txt > data/local/dict/oov_lexicon.txt
-  cat data/local/dict/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > data/local/dict/_oov_lexiconp.txt
+  $sequitur_g2p -e utf8 --model $final_g2p_model --apply ${g2p_dir}/oov.txt > ${dict_dir}/oov_lexicon.txt
+  cat ${dict_dir}/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > ${dict_dir}/_oov_lexiconp.txt
   # remove entries that don't have atleast 3 columns - some phonemizations are broken
-  awk 'NF>=3' data/local/dict/_oov_lexiconp.txt > data/local/dict/oov_lexiconp.txt
-  #data/local/dict/oov_lexicon.txt
+  awk 'NF>=3' ${dict_dir}/_oov_lexiconp.txt > ${dict_dir}/oov_lexiconp.txt
+  #${dict_dir}/oov_lexicon.txt
   echo "Done!"
 fi
 
@@ -228,26 +244,53 @@ export LANGUAGE=C
 
 if [ $stage -le 6 ]; then
   # Sort the lexicon with C-encoding (Is this still needed?)
-  sort -u data/local/dict/_lexiconp.txt data/local/dict/oov_lexiconp.txt > data/local/dict/lexiconp.txt
+  sort -u ${dict_dir}/_lexiconp.txt ${dict_dir}/oov_lexiconp.txt > ${dict_dir}/lexiconp.txt
 
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
-  rm data/local/dict/lexicon.txt
+  rm ${dict_dir}/lexicon.txt
 
   unixtime=$(date +%s)
   # Move old lang dir if it exists
-  mkdir -p data/lang/old_$unixtime/
-  mv data/lang/* data/lang/old_$unixtime/
+  mkdir -p ${lang_dir}/old_$unixtime/
+  mv ${lang_dir}/* ${lang_dir}/old_$unixtime/
 
-  echo "Preparing the data/lang directory...."
+  echo "Preparing the ${lang_dir} directory...."
 
   # Prepare phoneme data for Kaldi
-  utils/prepare_lang.sh data/local/dict "<UNK>" data/local/lang data/lang
+  utils/prepare_lang.sh ${dict_dir} "<UNK>" ${local_lang_dir} ${lang_dir}
 
   echo "Done!"
 fi
 
+# Todo: download source sentence archive for LM building
+
+if [ $stage -le 7 ]; then
+  mkdir -p ${lm_dir}/
+
+  if [ ! -f ${lm_dir}/cleaned.gz ]
+  then
+      wget --directory-prefix=${lm_dir}/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
+      mv ${lm_dir}/German_sentences_8mil_filtered_maryfied.txt.gz ${lm_dir}/cleaned.gz
+  fi
+
+  # Prepare ARPA LM
+
+  # If you wont to build your own:
+  local/build_lm.sh --srcdir ${local_lang_dir} --dir ${lm_dir}
+
+  # Otherwise you can also use the supplied LM:
+  # wget speechdata-LM.arpa
+
+
+  # Transform LM into Kaldi LM format 
+  local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
+
+fi
+
+exit
+
 if [ "$add_swc_data" = true ] ; then
-   if [ $stage -le 7 ]; then
+   if [ $stage -le 8 ]; then
       echo "Generating features for tuda_train, swc_train, dev and test"
       # Making sure all swc files are C-sorted 
       rm data/swc_train/spk2utt
@@ -279,7 +322,7 @@ if [ "$add_swc_data" = true ] ; then
       combine_data.sh data/train data/tuda_train data/swc_train
   fi
 else
-  if [ $stage -le 7 ]; then
+  if [ $stage -le 8 ]; then
     # Now make MFCC features.
     for x in train dev test; do
         utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
@@ -289,30 +332,6 @@ else
         utils/fix_data_dir.sh data/$x
     done
   fi
-fi
-
-# Todo: download source sentence archive for LM building
-
-if [ $stage -le 8 ]; then
-  mkdir -p data/local/lm/
-
-  if [ ! -f data/local/lm/cleaned.gz ]
-  then
-      wget --directory-prefix=data/local/lm/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
-      mv data/local/lm/German_sentences_8mil_filtered_maryfied.txt.gz data/local/lm/cleaned.gz
-  fi
-
-  # Prepare ARPA LM
-
-  # If you wont to build your own:
-  local/build_lm.sh
-
-  # Otherwise you can also use the supplied LM:
-  # wget speechdata-LM.arpa
-
-  # Transform LM into Kaldi LM format 
-  local/format_data.sh
-
 fi
 
 # Here we start the AM
@@ -344,42 +363,58 @@ if [ $stage -le 9 ]; then
   # only the shortest ones (mostly uh-huh).  So take the 100k shortest ones, and
   # then take 30k random utterances from those (about 12hr)
 
-  utils/subset_data_dir.sh --shortest data/train_nodev 30000 data/train_100kshort #(swbd default: 100k)
-  utils/subset_data_dir.sh data/train_100kshort 15000 data/train_30kshort #(swbd default: 30k)
+  # todo take this for no swbd training:
+  utils/subset_data_dir.sh --shortest data/train_nodev 150000 data/train_100kshort #(swbd default: 100k)
+  utils/subset_data_dir.sh data/train_100kshort 50000 data/train_30kshort #(swbd default: 30k)
 
   # Take the first 100k utterances (just under half the data); we'll use
   # this for later stages of training.
-  utils/subset_data_dir.sh --first data/train_nodev 40000 data/train_100k
+  utils/subset_data_dir.sh --first data/train_nodev 100000 data/train_100k
 
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
-  utils/data/remove_dup_utts.sh 2000 data/train_100k data/train_100k_nodup  # 110hr
+  utils/data/remove_dup_utts.sh 1000 data/train_100k data/train_100k_nodup  # 110hr
 
   # Finally, the full training set:
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
-  utils/data/remove_dup_utts.sh 2000 data/train_nodev data/train_nodup  # 286hr
+  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
 
-  if [ ! -d data/lang_nosp ]; then 
-    echo "Copying data/lang to data/lang_nosp..."
-    cp -R data/lang data/lang_nosp
+  # todo take this for no swbd training:
+#  utils/subset_data_dir.sh --shortest data/train_nodev 30000 data/train_100kshort #(swbd default: 100k)
+#  utils/subset_data_dir.sh data/train_100kshort 15000 data/train_30kshort #(swbd default: 30k)
+
+  # Take the first 100k utterances (just under half the data); we'll use
+  # this for later stages of training.
+#  utils/subset_data_dir.sh --first data/train_nodev 40000 data/train_100k
+
+  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
+#  utils/data/remove_dup_utts.sh 2000 data/train_100k data/train_100k_nodup  # 110hr
+
+  # Finally, the full training set:
+  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
+#  utils/data/remove_dup_utts.sh 2000 data/train_nodev data/train_nodup  # 286hr
+
+  if [ ! -d ${lang_dir_nosp} ]; then 
+    echo "Copying ${lang_dir} to ${lang_dir_nosp}..."
+    cp -R ${lang_dir} ${lang_dir_nosp}
   fi
 fi
 
 if [ $stage -le 10 ]; then
   ## Starting basic training on MFCC features
   steps/train_mono.sh --nj $nJobs --cmd "$train_cmd" \
-                      data/train_30kshort data/lang_nosp exp/mono
+                      data/train_30kshort ${lang_dir_nosp} exp/mono
 fi
 
 if [ $stage -le 11 ]; then
     steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup data/lang_nosp exp/mono exp/mono_ali
+                    data/train_100k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
 
     steps/train_deltas.sh --cmd "$train_cmd" \
-                        3200 30000 data/train_100k_nodup data/lang_nosp exp/mono_ali exp/tri1
+                        3200 30000 data/train_100k_nodup ${lang_dir_nosp} exp/mono_ali exp/tri1
 
     graph_dir=exp/tri1/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
-               utils/mkgraph.sh data/lang_test exp/tri1 $graph_dir
+               utils/mkgraph.sh ${lang_dir}_test exp/tri1 $graph_dir
     
     for dset in dev test; do
         steps/decode_si.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
@@ -390,18 +425,18 @@ fi
 
 if [ $stage -le 12 ]; then
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup data/lang_nosp exp/tri1 exp/tri1_ali
+                    data/train_100k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
 
   steps/train_deltas.sh --cmd "$train_cmd" \
-                        4000 70000 data/train_100k_nodup data/lang_nosp exp/tri1_ali exp/tri2
+                        4000 70000 data/train_100k_nodup ${lang_dir_nosp} exp/tri1_ali exp/tri2
 
     # The previous mkgraph might be writing to this file.  If the previous mkgraph
     # is not running, you can remove this loop and this mkgraph will create it.
-#    while [ ! -s data/lang_nosp_sw1_tg/tmp/CLG_3_1.fst ]; do sleep 60; done
+#    while [ ! -s ${lang_dir_nosp}_sw1_tg/tmp/CLG_3_1.fst ]; do sleep 60; done
 #    sleep 20; # in case still writing.
     graph_dir=exp/tri2/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
-               utils/mkgraph.sh data/lang_test exp/tri2 $graph_dir
+               utils/mkgraph.sh ${lang_dir}_test exp/tri2 $graph_dir
 
     for dset in dev test; do
         steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
@@ -412,20 +447,20 @@ fi
 if [ $stage -le 13 ]; then
   # The 100k_nodup data is used in the nnet2 recipe.
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup data/lang_nosp exp/tri2 exp/tri2_ali_100k_nodup
+                    data/train_100k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_100k_nodup
 
   # From now, we start using all of the data (except some duplicates of common
   # utterances, which don't really contribute much).
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_nodup data/lang_nosp exp/tri2 exp/tri2_ali_nodup
+                    data/train_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_nodup
 
   # Do another iteration of LDA+MLLT training, on all the data.
   steps/train_lda_mllt.sh --cmd "$train_cmd" \
-                          6000 140000 data/train_nodup data/lang_nosp exp/tri2_ali_nodup exp/tri3
+                          6000 140000 data/train_nodup ${lang_dir_nosp} exp/tri2_ali_nodup exp/tri3
 
   graph_dir=exp/tri3/graph_nosp
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_test exp/tri3 $graph_dir
+             utils/mkgraph.sh ${lang_dir}_test exp/tri3 $graph_dir
 
   for dset in dev test; do
       steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
@@ -439,30 +474,30 @@ if [ $stage -le 14 ]; then
 
   echo "Re-creating the lang directory with pronunciation and silence probabilities from training data"
 
-  steps/get_prons.sh --cmd "$train_cmd" data/train_nodup data/lang_nosp exp/tri3
+  steps/get_prons.sh --cmd "$train_cmd" data/train_nodup ${lang_dir_nosp} exp/tri3
   utils/dict_dir_add_pronprobs.sh --max-normalize true \
-                                  data/local/dict exp/tri3/pron_counts_nowb.txt exp/tri3/sil_counts_nowb.txt \
-                                  exp/tri3/pron_bigram_counts_nowb.txt data/local/dict_pron
+                                  ${dict_dir} exp/tri3/pron_counts_nowb.txt exp/tri3/sil_counts_nowb.txt \
+                                  exp/tri3/pron_bigram_counts_nowb.txt ${dict_dir}_pron
 
-  utils/prepare_lang.sh data/local/dict_pron "<UNK>" data/local/lang data/lang
+  utils/prepare_lang.sh ${dict_dir}_pron "<UNK>" ${local_lang_dir} ${lang_dir}
  
-  ./local/format_data.sh --lang_out_dir data/lang_test_pron
+  ./local/format_data.sh --lang_out_dir ${lang_dir}_test_pron
 
-  echo "Done. New lang dir in data/lang_test_pron"
+  echo "Done. New lang dir in ${lang_dir}_test_pron"
 
-#  LM=data/local/lm/sw1.o3g.kn.gz
+#  LM=${lm_dir}/sw1.o3g.kn.gz
 #  srilm_opts="-subset -prune-lowprobs -unk -tolower -order 3"
 #  utils/format_lm_sri.sh --srilm-opts "$srilm_opts" \
-#                         data/lang $LM data/local/dict/lexicon.txt data/lang_sw1_tg
+#                         ${lang_dir} $LM ${dict_dir}/lexicon.txt ${lang_dir}_sw1_tg
 
-#  LM=data/local/lm/sw1_fsh.o4g.kn.gz
+#  LM=${lm_dir}/sw1_fsh.o4g.kn.gz
 #  if $has_fisher; then
-#    utils/build_const_arpa_lm.sh $LM data/lang data/lang_sw1_fsh_fg
+#    utils/build_const_arpa_lm.sh $LM ${lang_dir} ${lang_dir}_sw1_fsh_fg
 #  fi
 
   graph_dir=exp/tri3/graph_pron
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_test_pron exp/tri3 $graph_dir
+             utils/mkgraph.sh ${lang_dir}_test_pron exp/tri3 $graph_dir
   
   for dset in dev test; do
       steps/decode.sh --nj $nDecodeJobs --cmd "$decode_cmd" --config conf/decode.config \
@@ -470,7 +505,7 @@ if [ $stage -le 14 ]; then
   done
 fi
 
-# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3_ali_nodup/tree exp/tri3_ali_nodup/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov  -f 2- data/lang/words.txt data/train_nodup/split16/10/text|' 'ark:|gzip -c >exp/tri3_ali_nodup/fsts.10.gz' 
+# compile-train-graphs --read-disambig-syms=${lang_dir}/phones/disambig.int exp/tri3_ali_nodup/tree exp/tri3_ali_nodup/final.mdl ${lang_dir}/L.fst 'ark:utils/sym2int.pl --map-oov  -f 2- ${lang_dir}/words.txt data/train_nodup/split16/10/text|' 'ark:|gzip -c >exp/tri3_ali_nodup/fsts.10.gz' 
 # the --map-oov option requires an argument at utils/sym2int.pl line 27.
 
 if [ $stage -le 15 ]; then
@@ -480,15 +515,15 @@ if [ $stage -le 15 ]; then
   echo "Starting tri4 training, LDA+MLLT+SAT, on all the data"
 
   steps/align_fmllr.sh --nj $nJobs --cmd "$train_cmd" \
-                       data/train data/lang_test_pron exp/tri3 exp/tri3_ali
+                       data/train ${lang_dir}_test_pron exp/tri3 exp/tri3_ali
 
 
   steps/train_sat.sh  --cmd "$train_cmd" \
-                      11500 200000 data/train data/lang exp/tri3_ali exp/tri4
+                      11500 200000 data/train ${lang_dir} exp/tri3_ali exp/tri4
 
   graph_dir=exp/tri4/graph_pron
   $train_cmd $graph_dir/mkgraph.log \
-             utils/mkgraph.sh data/lang_test_pron exp/tri4 $graph_dir
+             utils/mkgraph.sh ${lang_dir}_test_pron exp/tri4 $graph_dir
 
   for dset in dev test; do
       steps/decode_fmllr.sh --nj $nDecodeJobs --cmd "$decode_cmd" \
@@ -501,7 +536,7 @@ if [ $stage -le 15 ]; then
   #                      $graph_dir data/train_dev exp/tri4/decode_dev_sw1_tg
   #if $has_fisher; then
   #  steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" \
-    #    data/lang_sw1_{tg,fsh_fg} data/eval2000 \
+    #    ${lang_dir}_sw1_{tg,fsh_fg} data/eval2000 \
     #    exp/tri4/decode_eval2000_sw1_{tg,fsh_fg}
     #fi
  # ) &
