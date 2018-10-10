@@ -1,0 +1,43 @@
+%WER 30.76 [ 20536 / 66768, 4188 ins, 2390 del, 13958 sub ] [PARTIAL] exp//tri3/decode_dev_pron/wer_13_1.0
+%WER 31.85 [ 22168 / 69600, 4559 ins, 2458 del, 15151 sub ] [PARTIAL] exp//tri3/decode_test_pron/wer_14_0.5
+%WER 26.92 [ 17977 / 66768, 4128 ins, 1824 del, 12025 sub ] [PARTIAL] exp//tri4_cleaned/decode_dev/wer_15_0.5
+%WER 33.21 [ 22176 / 66768, 4634 ins, 2283 del, 15259 sub ] [PARTIAL] exp//tri4_cleaned/decode_dev.si/wer_13_0.5
+%WER 28.25 [ 19659 / 69600, 4497 ins, 1912 del, 13250 sub ] [PARTIAL] exp//tri4_cleaned/decode_test/wer_14_0.5
+%WER 34.01 [ 23671 / 69600, 4548 ins, 2870 del, 16253 sub ] [PARTIAL] exp//tri4_cleaned/decode_test.si/wer_13_1.0
+%WER 24.91 [ 16631 / 66768, 3646 ins, 1907 del, 11078 sub ] [PARTIAL] exp//tri4/decode_300k3_dev_pron/wer_15_0.0
+%WER 34.93 [ 23322 / 66768, 4437 ins, 2805 del, 16080 sub ] [PARTIAL] exp//tri4/decode_300k3_dev_pron.si/wer_14_0.5
+%WER 25.77 [ 17936 / 69600, 3971 ins, 1911 del, 12054 sub ] [PARTIAL] exp//tri4/decode_300k3_test_pron/wer_14_0.0
+%WER 35.38 [ 24623 / 69600, 4834 ins, 2752 del, 17037 sub ] [PARTIAL] exp//tri4/decode_300k3_test_pron.si/wer_13_0.5
+%WER 25.78 [ 17940 / 69600, 3983 ins, 1913 del, 12044 sub ] [PARTIAL] exp//tri4/decode_300k_test_pron/wer_14_0.0
+%WER 35.45 [ 24670 / 69600, 4698 ins, 2906 del, 17066 sub ] [PARTIAL] exp//tri4/decode_300k_test_pron.si/wer_14_0.5
+%WER 28.07 [ 18744 / 66768, 4268 ins, 2003 del, 12473 sub ] [PARTIAL] exp//tri4/decode_dev_pron/wer_16_1.0
+%WER 37.74 [ 25198 / 66768, 5415 ins, 2510 del, 17273 sub ] [PARTIAL] exp//tri4/decode_dev_pron.si/wer_15_1.0
+%WER 28.92 [ 20126 / 69600, 4856 ins, 1830 del, 13440 sub ] [PARTIAL] exp//tri4/decode_test_pron/wer_15_0.5
+%WER 38.02 [ 26464 / 69600, 5624 ins, 2553 del, 18287 sub ] [PARTIAL] exp//tri4/decode_test_pron.si/wer_14_1.0
+%WER 45.96 [ 6857 / 14918, 425 ins, 1781 del, 4651 sub ] exp//tri4/decode_vm1_dev_vm1_generic/wer_15_0.0
+%WER 55.64 [ 8300 / 14918, 537 ins, 2158 del, 5605 sub ] exp//tri4/decode_vm1_dev_vm1_generic.si/wer_12_0.0
+%WER 26.61 [ 3970 / 14918, 382 ins, 1191 del, 2397 sub ] exp//tri4/decode_vm1_dev_vm1_lm/wer_17_0.0
+%WER 34.19 [ 5101 / 14918, 409 ins, 1874 del, 2818 sub ] exp//tri4/decode_vm1_dev_vm1_lm.si/wer_17_0.0
+%WER 50.15 [ 7230 / 14417, 388 ins, 2046 del, 4796 sub ] exp//tri4/decode_vm1_test_vm1_generic/wer_16_0.0
+%WER 59.26 [ 8543 / 14417, 432 ins, 2520 del, 5591 sub ] exp//tri4/decode_vm1_test_vm1_generic.si/wer_15_0.0
+%WER 29.05 [ 4188 / 14417, 379 ins, 1327 del, 2482 sub ] exp//tri4/decode_vm1_test_vm1_lm/wer_17_0.0
+%WER 36.98 [ 5332 / 14417, 420 ins, 1879 del, 3033 sub ] exp//tri4/decode_vm1_test_vm1_lm.si/wer_16_0.0
+%WER 15.23 [ 10168 / 66768, 2468 ins, 1123 del, 6577 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_300k3_dev/wer_11_1.0
+%WER 16.49 [ 11480 / 69600, 2747 ins, 1199 del, 7534 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_300k3_test/wer_11_1.0
+%WER 15.22 [ 10162 / 66768, 2467 ins, 1128 del, 6567 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_300k_dev/wer_11_1.0
+%WER 16.50 [ 11481 / 69600, 2749 ins, 1196 del, 7536 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_300k_test/wer_11_1.0
+%WER 18.39 [ 12276 / 66768, 3241 ins, 980 del, 8055 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_dev/wer_12_1.0
+%WER 19.60 [ 13641 / 69600, 3449 ins, 1090 del, 9102 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_test/wer_12_1.0
+%WER 6.04 [ 56095 / 929449, 11237 ins, 17542 del, 27316 sub ] [PARTIAL] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_tuda_train/wer_9_1.0
+%WER 33.69 [ 5026 / 14918, 277 ins, 1393 del, 3356 sub ] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_vm1_dev_vm1_generic/wer_10_0.0
+%WER 18.17 [ 2710 / 14918, 140 ins, 1195 del, 1375 sub ] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_vm1_dev_vm1_lm/wer_13_0.0
+%WER 38.23 [ 5511 / 14417, 269 ins, 1681 del, 3561 sub ] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_vm1_test_vm1_generic/wer_10_0.0
+%WER 20.04 [ 2889 / 14417, 196 ins, 1143 del, 1550 sub ] exp//chain_cleaned/tdnn1f_1024_sp_bi/decode_vm1_test_vm1_lm/wer_11_0.0
+%WER 15.40 [ 10285 / 66768, 2529 ins, 1073 del, 6683 sub ] [PARTIAL] exp//chain_cleaned/tdnn7o_std_sp_bi/decode_300k_dev/wer_12_1.0
+%WER 16.52 [ 11498 / 69600, 2948 ins, 960 del, 7590 sub ] [PARTIAL] exp//chain_cleaned/tdnn7o_std_sp_bi/decode_300k_test/wer_11_1.0
+%WER 18.30 [ 12218 / 66768, 3253 ins, 888 del, 8077 sub ] [PARTIAL] exp//chain_cleaned/tdnn7o_std_sp_bi/decode_dev/wer_12_1.0
+%WER 19.27 [ 13414 / 69600, 3500 ins, 864 del, 9050 sub ] [PARTIAL] exp//chain_cleaned/tdnn7o_std_sp_bi/decode_test/wer_12_1.0
+%WER 21.79 [ 14552 / 66768, 3140 ins, 1525 del, 9887 sub ] [PARTIAL] exp//chain_cleaned/tdnn_lstm_attend1a_sp_bi/decode_dev/wer_13_1.0
+%WER 22.36 [ 14927 / 66768, 3568 ins, 1354 del, 10005 sub ] [PARTIAL] exp//chain_cleaned/tdnn_lstm_attend1a_sp_bi/decode_looped_dev/wer_16_1.0
+%WER 23.82 [ 16580 / 69600, 3816 ins, 1496 del, 11268 sub ] [PARTIAL] exp//chain_cleaned/tdnn_lstm_attend1a_sp_bi/decode_looped_test/wer_16_1.0
+%WER 23.01 [ 16014 / 69600, 3320 ins, 1664 del, 11030 sub ] [PARTIAL] exp//chain_cleaned/tdnn_lstm_attend1a_sp_bi/decode_test/wer_13_1.0
