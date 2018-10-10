@@ -94,7 +94,8 @@ if [ $stage -le 1 ]; then
       tar xvf SWC_German.tar
       cd ../../../
     fi
-    
+
+# compute kaldi data dir from SWC export:   
 #    if [ ! -d data/swc_train ]
 #    then
 #      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
@@ -103,6 +104,16 @@ if [ $stage -le 1 ]; then
 #      cd ../
 #      python3 local/prepare_swc_german_wavscp.py
 #    fi
+
+# But the default is currently to download the precomputed data dir:
+    if [ ! -d data/swc_train ]
+    then
+      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_train.tar.gz
+      cd data/
+      tar xvfz swc_train.tar.gz
+      cd ../
+    fi
+
   fi
 fi
 
