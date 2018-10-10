@@ -1,11 +1,29 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
-This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use a speech corpus that has been recorded using a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). The corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. The speech data has been recorded using the [KisRecord software](http://kisrecord.sourceforge.net/).
+This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use two freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data. 
 
-The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). The old s5 recipe used in [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available and trained only on the beamformed data of the Kinect microphone, checkout the README.md in the s5 directory if you want to reproduce the results of the paper.  
+The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data by default, too, resulting in 412h of speech data in total before cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and recent WER results. 
+
+The old s5 recipe used in [our previous paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available and trained only on the beamformed data of the Kinect microphone, checkout the README.md in the s5 directory if you want to reproduce the results of our old paper.  
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
 ## News
+
+21 August 2018
+
+- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2 
+ This is also the best performing model in [our paper](https://arxiv.org/abs/1807.10311).
+
+- This model has also been succesfully tested in the popular [Kaldi Gstreamer Server software](https://github.com/alumae/kaldi-gstreamer-server). The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI).
+
+15 August 2018
+
+- We thank Sven Hartrumpf for fixing xml files with incorrect transcriptions in the Tuda corpus! A new release of the corpus data will soon be available.
+
+26 July 2018
+
+- Our paper "Open Source Automatic Speech Recognition for German" is accepted at [ITG2018](https://www.uni-oldenburg.de/itg2018/) (10.-12. October 2018, Oldenburg, Germany)! [A preprint of the paper is available here](https://arxiv.org/abs/1807.10311). 
+
 
 26 June 2018
 
@@ -119,5 +137,28 @@ python3 s5_r2/local/export_lexicon.py --help
 
 ### References
 
-If you use our scripts and/or data in your academic work please cite [our paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf)
+If you use our scripts and/or data in your academic work please cite:
 
+```
+@InProceedings{milde-koehn-18-german-asr,
+author="Benjamin Milde and Arne K{\"o}hn ",
+title="Open Source Automatic Speech Recognition for German",
+booktitle="Proceedings of ITG 2018",
+year="2018",
+}
+```
+
+An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version)
+
+You can also additionaly cite our [older paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
+
+```
+@InProceedings{Radeck-Arneth2015,
+author = {Radeck-Arneth, Stephan and Milde, Benjamin and Lange, Arvid and Gouvea, Evandro and Radomski, Stefan and M{\"{u}}hlh{\"{a}}user, Max and Biemann, Chris},
+booktitle = {Proceedings Text, Speech and Dialogue (TSD)},
+title = {{Open Source German Distant Speech Recognition: Corpus and Acoustic Model}},
+year = {2015},
+address = {Pilsen, Czech Republic},
+pages = {480--488}
+}
+```
