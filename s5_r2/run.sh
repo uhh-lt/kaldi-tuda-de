@@ -105,7 +105,7 @@ if [ $stage -le 1 ]; then
 #      python3 local/prepare_swc_german_wavscp.py
 #    fi
 
-# But the default is currently to download the precomputed data dir:
+# But the default is currently to download the precomputed SWC data dir (285h version, minimally pruned):
     if [ ! -d data/swc_train ]
     then
       wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_train.tar.gz
