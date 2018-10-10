@@ -28,6 +28,8 @@ if [ -f path.sh ]; then
    echo "missing path.sh"; exit 1;
 fi 
 
+arpa_lm=data/local/lm/3gram-mincount/lm_pr10.0.gz
+lang_in_dir=data/lang
 lang_out_dir=data/lang_test
 
 export LC_ALL=C
@@ -43,11 +45,10 @@ echo Output lang directory is: $lang_out_dir
 
 mkdir -p $lang_out_dir
 
-arpa_lm=data/local/lm/3gram-mincount/lm_pr16.0.gz
 [ ! -f $arpa_lm ] && echo No such file $arpa_lm && exit 1;
 
 rm -r $lang_out_dir
-cp -r data/lang $lang_out_dir
+cp -r $lang_in_dir $lang_out_dir
 
 # grep -v '<s> <s>' etc. is only for future-proofing this script.  Our
 # LM doesn't have these "invalid combinations".  These can cause 
