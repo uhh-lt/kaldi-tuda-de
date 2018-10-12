@@ -77,7 +77,7 @@ fstisstochastic ${lang_out_dir}/G.fst
 ## Check lexicon.
 ## just have a look and make sure it seems sane.
 echo "First few lines of lexicon FST:"
-fstprint   --isymbols=data/lang/phones.txt --osymbols=data/lang/words.txt data/lang/L.fst  | head
+fstprint   --isymbols=${lang_in_dir}/phones.txt --osymbols=${lang_in_dir}/words.txt ${lang_in_dir}/L.fst  | head
 
 echo Performing further checks
 
@@ -92,7 +92,7 @@ fstdeterminize ${lang_out_dir}/L_disambig.fst /dev/null || echo Error determiniz
 # fstdeterminize was taking forever (presumbaly relates to a bug
 # in this version of OpenFst that makes determinization slow for
 # some case).
-fsttablecompose ${lang_out_dir}/L_disambig.fst data/lang_test/G.fst | \
+fsttablecompose ${lang_out_dir}/L_disambig.fst ${lang_out_dir}/G.fst | \
    fstdeterminizestar >/dev/null || echo Error
 
 # Checking that LG is stochastic:
