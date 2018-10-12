@@ -39,10 +39,6 @@ g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
 arpa_lm=${lm_dir}/4gram-mincount/lm_pr10.0.gz
 
-echo local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir 
-
-exit
-
 . utils/parse_options.sh
 
 if [ -f cmd.sh ]; then
@@ -493,8 +489,8 @@ if [ $stage -le 14 ]; then
                                   exp/tri3/pron_bigram_counts_nowb.txt ${dict_dir}_pron
 
   utils/prepare_lang.sh ${dict_dir}_pron "<UNK>" ${local_lang_dir} ${lang_dir}
- 
-  ./local/format_data.sh --lang_out_dir ${lang_dir}_test_pron
+
+  ./local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir ${lang_dir}_test_pron
 
   echo "Done. New lang dir in ${lang_dir}_test_pron"
 
