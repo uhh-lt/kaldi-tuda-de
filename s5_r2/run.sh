@@ -553,7 +553,7 @@ fi
 
 if [ $stage -le 16 ]; then
   echo "Cleanup the corpus"
-  ./local/run_cleanup_segmentation.sh
+  ./local/run_cleanup_segmentation.sh --langdir ${lang_dir}
 fi
 
 if [ $stage -le 17 ]; then
