@@ -34,10 +34,14 @@ dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
 lang_dir=data/lang${dict_suffix}
 lang_dir_nosp=${lang_dir}_nosp${dict_suffix}
-format_lang_out_dir=${lang_dir}_test${dict_suffix}
+format_lang_out_dir=${lang_dir}_test
 g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
 arpa_lm=${lm_dir}/4gram-mincount/lm_pr10.0.gz
+
+echo local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir 
+
+exit
 
 . utils/parse_options.sh
 
