@@ -23,6 +23,7 @@
 
 stage=0
 cleanup_stage=0
+langdir=data/lang
 data=data/train
 cleanup_affix=cleaned
 srcdir=exp/tri4
@@ -45,7 +46,7 @@ if [ $stage -le 1 ]; then
   local/get_utt2dur.sh $data
   # This does the actual data cleanup.
   steps/cleanup/clean_and_segment_data.sh --stage $cleanup_stage --nj $nj --cmd "$train_cmd" \
-    $data data/lang $srcdir $dir $cleaned_data
+    $data ${langdir} $srcdir $dir $cleaned_data
 fi
 
 if [ $stage -le 2 ]; then
@@ -56,23 +57,23 @@ if [ $stage -le 2 ]; then
   # create recordings file, otherwise validation of the data dir fails
   cut -f 1 -d' ' $cleaned_data/segments > $cleaned_data/recordings
   steps/align_fmllr.sh --nj $nj --cmd "$train_cmd" \
-    $cleaned_data data/lang $srcdir ${srcdir}_ali_${cleanup_affix}
+    $cleaned_data ${langdir} $srcdir ${srcdir}_ali_${cleanup_affix}
 fi
 
 if [ $stage -le 3 ]; then
   steps/train_sat.sh --cmd "$train_cmd" \
-    5000 100000 $cleaned_data data/lang ${srcdir}_ali_${cleanup_affix} ${cleaned_dir}
+    5000 100000 $cleaned_data ${langdir} ${srcdir}_ali_${cleanup_affix} ${cleaned_dir}
 fi
 
 if [ $stage -le 4 ]; then
   # Test with the models trained on cleaned-up data.
-  utils/mkgraph.sh data/lang_test_pron ${cleaned_dir} ${cleaned_dir}/graph
+  utils/mkgraph.sh ${langdir}_test_pron ${cleaned_dir} ${cleaned_dir}/graph
 
   for dset in dev test; do
     steps/decode_fmllr.sh --nj $decode_nj --num-threads $decode_num_threads \
        --cmd "$decode_cmd"  --num-threads 4 \
        ${cleaned_dir}/graph data/${dset} ${cleaned_dir}/decode_${dset}
-    steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" data/lang data/lang_rescore \
+    steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" ${langdir} ${langdir}_rescore \
        data/${dset} ${cleaned_dir}/decode_${dset} ${cleaned_dir}/decode_${dset}_rescore
   done
 fi
