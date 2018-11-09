@@ -52,6 +52,8 @@ proportional_shrink=20
 num_hidden=1024
 num_epochs=4
 
+lang_dir=data/lang
+
 tdnn_affix=1f_${num_hidden}  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 
 # End configuration section.
@@ -76,7 +78,8 @@ local/run_ivector_common.sh --stage $stage \
                                   --train-set $train_set \
                                   --gmm $gmm \
                                   --num-threads-ubm $num_threads_ubm \
-                                  --nnet3-affix "$nnet3_affix"
+                                  --nnet3-affix "$nnet3_affix" \
+                                  --lang-dir $lang_dir
 
 
 gmm_dir=exp/$gmm
@@ -99,21 +102,21 @@ if [ $stage -le 14 ]; then
   # Create a version of the lang/ directory that has one state per phone in the
   # topo file. [note, it really has two states.. the first one is only repeated
   # once, the second one has zero or more repeats.]
-  if [ -d data/lang_chain ]; then
-    if [ data/lang_chain/L.fst -nt data/lang_test_pron/L.fst ]; then
-      echo "$0: data/lang_chain already exists, not overwriting it; continuing"
+  if [ -d ${lang_dir}_chain ]; then
+    if [ ${lang_dir}_chain/L.fst -nt ${lang_dir}_test_pron/L.fst ]; then
+      echo "$0: ${lang_dir}_chain already exists, not overwriting it; continuing"
     else
-      echo "$0: data/lang_chain already exists and seems to be older than data/lang..."
+      echo "$0: ${lang_dir}_chain already exists and seems to be older than ${lang_dir}..."
       echo " ... not sure what to do.  Exiting."
       exit 1;
     fi
   else
-    cp -r data/lang_test_pron data/lang_chain
-    silphonelist=$(cat data/lang_chain/phones/silence.csl) || exit 1;
-    nonsilphonelist=$(cat data/lang_chain/phones/nonsilence.csl) || exit 1;
+    cp -r ${lang_dir}_test_pron ${lang_dir}_chain
+    silphonelist=$(cat ${lang_dir}_chain/phones/silence.csl) || exit 1;
+    nonsilphonelist=$(cat ${lang_dir}_chain/phones/nonsilence.csl) || exit 1;
     # Use our special topology... note that later on may have to tune this
     # topology.
-    steps/nnet3/chain/gen_topo.py $nonsilphonelist $silphonelist >data/lang_chain/topo
+    steps/nnet3/chain/gen_topo.py $nonsilphonelist $silphonelist >${lang_dir}_chain/topo
   fi
 fi
 
@@ -121,7 +124,7 @@ if [ $stage -le 15 ]; then
   # Get the alignments as lattices (gives the chain training more freedom).
   # use the same num-jobs as the alignments
   steps/align_fmllr_lats.sh --nj $nj --cmd "$train_cmd" ${lores_train_data_dir} \
-    data/lang $gmm_dir $lat_dir
+    $lang_dir $gmm_dir $lat_dir
   rm $lat_dir/fsts.*.gz # save space
 fi
 
@@ -135,7 +138,7 @@ if [ $stage -le 16 ]; then
   fi
   steps/nnet3/chain/build_tree.sh --frame-subsampling-factor 3 \
       --context-opts "--context-width=2 --central-position=1" \
-      --cmd "$train_cmd" 4000 ${lores_train_data_dir} data/lang_chain $ali_dir $tree_dir
+      --cmd "$train_cmd" 4000 ${lores_train_data_dir} ${lang_dir}_chain $ali_dir $tree_dir
 fi
 
 if [ $stage -le 17 ]; then
@@ -228,7 +231,7 @@ if [ $stage -le 19 ]; then
   # Note: it might appear that this data/lang_chain directory is mismatched, and it is as
   # far as the 'topo' is concerned, but this script doesn't read the 'topo' from
   # the lang directory.
-  utils/mkgraph.sh --self-loop-scale 1.0 data/lang_test_pron $dir $dir/graph${decode_affix}
+  utils/mkgraph.sh --self-loop-scale 1.0 ${lang_dir}_test_pron $dir $dir/graph${decode_affix}
 fi
 
 if [ $stage -le 20 ]; then
