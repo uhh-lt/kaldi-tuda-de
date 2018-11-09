@@ -556,8 +556,6 @@ if [ $stage -le 16 ]; then
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir}
 fi
 
-exit
-
 if [ $stage -le 17 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
