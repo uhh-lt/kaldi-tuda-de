@@ -27,6 +27,8 @@ num_threads_ubm=32
 nnet3_affix=_cleaned     # affix for exp/nnet3 directory to put iVector stuff in, so it
                          # becomes exp/nnet3_cleaned or whatever.
 
+lang_dir=data/lang
+
 . ./cmd.sh
 . ./path.sh
 . utils/parse_options.sh
@@ -34,7 +36,6 @@ nnet3_affix=_cleaned     # affix for exp/nnet3 directory to put iVector stuff in
 
 gmm_dir=exp/${gmm}
 ali_dir=exp/${gmm}_ali_${train_set}_sp_comb
-lang_dir=data/lang
 
 for f in data/${train_set}/feats.scp ${gmm_dir}/final.mdl; do
   if [ ! -f $f ]; then
