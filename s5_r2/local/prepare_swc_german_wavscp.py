@@ -76,7 +76,7 @@ for folder in os.listdir(corpus):
 
 with open('data/swc_train/wav.scp','w') as wavscp: 
     for key in sorted(list(wav_scp.keys())):
-        audio_str = ' '.join(sorted(list(wav_scp[key])))
+        audio_str = ' '.join(sorted(list(wav_scp[key]))).replace('(', '\(').replace(')', '\)').replace('&', '\&')
         cleaned_key = cleanup_str(key)
         if cleaned_key in segment_ids:
             wavscp.write(sox_str % (cleanup_str(key),audio_str) + '\n')
