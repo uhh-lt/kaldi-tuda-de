@@ -17,6 +17,7 @@ echo "and ivector extractor $ivector_extractor"
 echo "copying model and fst to $model_name"
 
 cp $model_path/final.mdl $model_name/
+cp $model_path/cmvn_opts $model_name/
 cp -r $graph_dir/* $model_name/
 cp -r conf $model_name/
 
