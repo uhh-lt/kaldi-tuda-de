@@ -17,10 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 stage=0
 use_BAS_dictionaries=false
 add_swc_data=true
+add_mailabs_data=true
 add_extra_words=true
 
 extra_words_file=local/extra_words.txt
@@ -28,7 +28,7 @@ extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt 
 
-dict_suffix=_300k3
+dict_suffix=_300k4
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -59,6 +59,7 @@ fi
 
 [ ! -L "steps" ] && ln -s ../../wsj/s5/steps
 [ ! -L "utils" ] && ln -s ../../wsj/s5/utils
+[ ! -L "rnnlm" ] && ln -s ../../../scripts/rnnlm/
 
 # mfccdir should be some place with a largish disk where you
 # want to store MFCC features.
@@ -108,12 +109,26 @@ if [ $stage -le 1 ]; then
 # But the default is currently to download the precomputed SWC data dir (285h version, minimally pruned):
     if [ ! -d data/swc_train ]
     then
-      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_train.tar.gz
+      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_train_v2.tar.gz
       cd data/
-      tar xvfz swc_train.tar.gz
+      tar xvfz swc_train_v2.tar.gz
       cd ../
     fi
 
+  fi
+
+  if [ "$add_mailabs_data" = true ]
+  then
+    if [ ! -d data/wav/m_ailabs/ ]
+    then
+      mkdir -p data/wav/m_ailabs/
+      wget --directory-prefix=data/wav/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
+      cd data/wav/m_ailabs/
+      tar xvfz m-ailabs.bayern.de_DE.tgz
+      cd ../../../
+      # make data directory data/m_ailabs_train 
+      python3 local/prepare_m-ailabs_data.py
+    fi
   fi
 fi
 
@@ -212,10 +227,14 @@ if [ $stage -le 5 ]; then
 
   echo "Now finding OOV in train"
 
+  cp data/tuda_train/text ${g2p_dir}/complete_text
+  
   if [ "$add_swc_data" = true ] ; then
-    cat data/tuda_train/text data/swc_train/text > ${g2p_dir}/complete_text
-  else
-    cp data/tuda_train/text ${g2p_dir}/complete_text
+    cat data/swc_train/text >> ${g2p_dir}/complete_text
+  fi  
+
+  if [ "$add_mailabs_data" = true ] ; then
+    cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
   fi
 
   if [ "$add_extra_words" = true ] ; then
@@ -242,7 +261,6 @@ fi
 if [ -f path.sh ]; then
       . path.sh; else
          echo "missing path.sh"; exit 1;
-
 fi
 
 echo "Runtime configuration is: nJobs $nJobs, nDecodeJobs $nDecodeJobs. If this is not what you want, edit cmd.sh!"
@@ -295,7 +313,6 @@ if [ $stage -le 7 ]; then
 
   # Transform LM into Kaldi LM format 
   local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
-
 fi
 
 if [ "$add_swc_data" = true ] ; then
@@ -343,6 +360,22 @@ else
   fi
 fi
 
+if [ "$add_mailabs_data" = true ] ; then
+  if [ $stage -le 8 ]; then
+    mv data/train data/train_without_mailabs 
+    echo "Now computing MFCC features for m_ailabs_train"
+    # Now make MFCC features.
+    x=data/m_ailabs_train
+    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+    steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+    steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+    utils/fix_data_dir.sh data/$x
+    
+    echo "Done, now combining data (train m_ailabs_train)."
+    combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
+  fi
+fi
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
