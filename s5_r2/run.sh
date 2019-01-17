@@ -26,7 +26,7 @@ add_extra_words=true
 extra_words_file=local/extra_words.txt
 extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 
-# TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt 
+# TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
 dict_suffix=_300k4
 
@@ -146,6 +146,8 @@ if [ $stage -le 2 ]; then
 
   # If want to do experiments with very noisy data, you can also create Kaldi dirs for the Realtek microphone. Disabled in train/test/dev by default.
   # python3 local/data_prepare.py -f data/waveIDs.txt -p _Realtek -k _e
+
+  local/get_utt2dur.sh data/tuda_train
 
   if [ "$add_swc_data" = false ] ; then
     mv data/tuda_train data/train
@@ -378,6 +380,15 @@ if [ "$add_mailabs_data" = true ] ; then
 fi
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
+
+# check data/train/feats.scp available
+
+if [ -f data/train/feats.scp ]; then
+  echo "data/train/feats.scp is available, continuing with AM training."
+else
+  echo "data/train/feats.scp is not available, something went wrong in feature generation. Not continuing with AM training."
+  exit -1
+fi
 
 if [ $stage -le 9 ]; then
   # Use the first 4k sentences as dev set.  Note: when we trained the LM, we used
