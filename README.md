@@ -1,4 +1,17 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
+
+   * [Open source speech recognition recipe and corpus for building German acoustic models with Kaldi](#open-source-speech-recognition-recipe-and-corpus-for-building-german-acoustic-models-with-kaldi)
+      * [News](#news)
+      * [Pretrained models](#pretrained-models)
+   * [Training your own models](#training-your-own-models)
+      * [Prerequisites](#prerequisites)
+      * [Building the acoustic models](#building-the-acoustic-models)
+      * [Getting data files separately](#getting-data-files-separately)
+         * [Speech corpus](#speech-corpus)
+         * [German language texts](#german-language-texts)
+         * [German phoneme dictionary](#german-phoneme-dictionary)
+   * [References](#references)
+
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use two freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data. 
 
 The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data by default, too, resulting in 412h of speech data in total before cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and recent WER results. 
@@ -53,6 +66,21 @@ The scripts will ask you where to place larger files and can download all necess
 - Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
 - Updated Kaldi install instructions
 
+## Pretrained models
+
+| Modell | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
+| --- | --- | --- | --- |
+|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h tuda+SWC | 20.30 | 21.43 |
+| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
+
+All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
+
+We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project. You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back.
+
+# Training your own models
+
+If you want to adapt our models (add training data, augment training data, change vocabulary, ...), you will need to retrain our models. A workstation or server with more than 32GB memory might be needed, having access to a lot of CPU cores is recommended and a recent Nvidia GPU is needed to train neural models such as the TDNN-HMM.
+
 ## Prerequisites
 
 The scripts are only tested under Linux (Ubuntu 16.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
@@ -91,7 +119,7 @@ pip3 install requests beautifulsoup4 lxml
 
 After you have installed the prerequisites, edit cmd.sh in the s5\_r2/ directory of this distribution to adjust for the number of processors you have locally (change nJobs and nDecodeJobs accordingly). You could probably also uncomment the cluster configuration and run the scripts on a cluster, but this is untested and may require some tinkering to get it running.
 
-Then, simply run ./run.sh in s5/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build appropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 3-gram LM.
+Then, simply run ./run.sh in s5_r2/ to build the acoustic and language models. The script will ask you where to place larger files (feature vectors and KALDI models) and automatically build appropriate symlinks. [Kaldi_lm](http://www.danielpovey.com/files/kaldi/kaldi_lm.tar.gz) is automatically downloaded and compiled if it is not found on your system and standard Kneser-Ney is used for a 4-gram LM.
 
 ## Getting data files separately
 
@@ -135,7 +163,7 @@ python3 s5_r2/local/build_big_lexicon.py --help
 python3 s5_r2/local/export_lexicon.py --help
 ```
 
-### References
+# References
 
 If you use our scripts and/or data in your academic work please cite:
 
