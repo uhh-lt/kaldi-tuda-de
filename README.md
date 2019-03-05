@@ -20,7 +20,7 @@ The old s5 recipe used in [our previous paper](https://www.inf.uni-hamburg.de/en
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
-**If you use our data, models or scripts in your academic work please cite our [paper](#paper)!**
+**If you use our data, models or scripts in your academic work please cite our [paper](#references)!**
 
 ## News
 
