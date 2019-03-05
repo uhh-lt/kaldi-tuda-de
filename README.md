@@ -1,4 +1,20 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
+
+Table of Contents
+=================
+
+   * [Open source speech recognition recipe and corpus for building German acoustic models with Kaldi](#open-source-speech-recognition-recipe-and-corpus-for-building-german-acoustic-models-with-kaldi)
+      * [News](#news)
+      * [Pretrained models](#pretrained-models)
+   * [Training your own models](#training-your-own-models)
+      * [Prerequisites](#prerequisites)
+      * [Building the acoustic models](#building-the-acoustic-models)
+      * [Getting data files separately](#getting-data-files-separately)
+         * [Speech corpus](#speech-corpus)
+         * [German language texts](#german-language-texts)
+         * [German phoneme dictionary](#german-phoneme-dictionary)
+   * [References](#references)
+
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use two freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data. 
 
 The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data by default, too, resulting in 412h of speech data in total before cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and recent WER results. 
@@ -150,7 +166,7 @@ python3 s5_r2/local/build_big_lexicon.py --help
 python3 s5_r2/local/export_lexicon.py --help
 ```
 
-### References
+# References
 
 If you use our scripts and/or data in your academic work please cite:
 
