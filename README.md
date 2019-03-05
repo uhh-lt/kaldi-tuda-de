@@ -26,7 +26,7 @@ The scripts will ask you where to place larger files and can download all necess
 
 - A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
 
-We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) and Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
+- We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) and Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
 
 21 August 2018
 
@@ -42,7 +42,6 @@ This is also the best performing model in [our paper](https://arxiv.org/abs/1807
 26 July 2018
 
 - Our paper "Open Source Automatic Speech Recognition for German" is accepted at [ITG2018](https://www.uni-oldenburg.de/itg2018/) (10.-12. October 2018, Oldenburg, Germany)! [A preprint of the paper is available here](https://arxiv.org/abs/1807.10311). 
-
 
 26 June 2018
 
@@ -82,7 +81,7 @@ This is also the best performing model in [our paper](https://arxiv.org/abs/1807
 
 All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
-We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project. You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back.
+We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project. You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI).
 
 # Training your own models
 
