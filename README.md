@@ -58,7 +58,7 @@ The scripts will ask you where to place larger files and can download all necess
 | Modell | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
 | --- | --- | --- | --- |
 |[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h tuda+SWC | 20.30 | 21.43 |
-| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2)[mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
+| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
 
 All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
