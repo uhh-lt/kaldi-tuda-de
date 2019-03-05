@@ -22,10 +22,15 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+5 March 2019
+
+- A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
+We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) and Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
+
 21 August 2018
 
-- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2 
- This is also the best performing model in [our paper](https://arxiv.org/abs/1807.10311).
+- A new pretrained model with a vocabulary of 350 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2)
+This is also the best performing model in [our paper](https://arxiv.org/abs/1807.10311).
 
 - This model has also been succesfully tested in the popular [Kaldi Gstreamer Server software](https://github.com/alumae/kaldi-gstreamer-server). The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI).
 
