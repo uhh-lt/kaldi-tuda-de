@@ -49,10 +49,10 @@ num_chunk_per_minibatch=128
 leaky_hmm_coefficient=0.1
 l2_regularize=0.00005
 proportional_shrink=20
-num_hidden=1024
+num_hidden=2048
 num_epochs=4
 
-lang_dir=data/lang
+lang_dir=data/lang_300k4
 
 tdnn_affix=1f_${num_hidden}  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 

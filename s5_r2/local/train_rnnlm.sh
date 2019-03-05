@@ -31,7 +31,7 @@ lstm_rpd=256
 lstm_nrpd=256
 stage=-10
 train_stage=-10
-train_stage=60
+#train_stage=60
 
 # variables for lattice rescoring
 run_lat_rescore=true
