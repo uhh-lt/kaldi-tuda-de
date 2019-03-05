@@ -1,8 +1,5 @@
 # Open source speech recognition recipe and corpus for building German acoustic models with Kaldi
 
-Table of Contents
-=================
-
    * [Open source speech recognition recipe and corpus for building German acoustic models with Kaldi](#open-source-speech-recognition-recipe-and-corpus-for-building-german-acoustic-models-with-kaldi)
       * [News](#news)
       * [Pretrained models](#pretrained-models)
