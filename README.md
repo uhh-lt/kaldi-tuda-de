@@ -53,6 +53,18 @@ The scripts will ask you where to place larger files and can download all necess
 - Instead of MARYs phonemizer for OOV words, sequitur G2P is now used
 - Updated Kaldi install instructions
 
+## Pretrained models
+
+Modell | Cleaned training data | Tuda dev WER | Tuda test WER
+--- | --- | ---
+[http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2](tuda_swc_voc126k) | 375h tuda+SWC | 15.32 | 16.49
+
+We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project.
+
+# Training your own models
+
+If you want to adapt our models (add training data, augment training data, change vocabulary, ...), you will need to retrain our models. A workstation or server with more than 32GB memory might be needed, having access to a lot of CPU cores is recommended and a recent Nvidia GPU is needed to train neural models such as the TDNN-HMM.
+
 ## Prerequisites
 
 The scripts are only tested under Linux (Ubuntu 16.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
