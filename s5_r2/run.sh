@@ -154,6 +154,10 @@ if [ $stage -le 2 ]; then
   # python3 local/data_prepare.py -f data/waveIDs.txt -p _Realtek -k _e
 
   local/get_utt2dur.sh data/tuda_train
+  if [ $? -ne 0 ]; then
+    echo "Error at get_utt2dur.sh with TUDA corpus. Exiting."
+    exit 1
+  fi
 
   if [ "$add_swc_data" = false ] ; then
     mv data/tuda_train data/train
