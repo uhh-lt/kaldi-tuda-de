@@ -142,8 +142,8 @@ RAWDATA=data/wav/german-speechdata-package-v2
 FILTERBYNAME="*.xml"
 
 if [ $stage -le 2 ]; then
-  # remove files, which would later produce errors
-  python3 local/remove_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+  # Move files, which would later produce errors. They are saved in backup location
+  python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
 
   find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
 
