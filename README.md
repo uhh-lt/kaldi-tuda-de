@@ -116,13 +116,15 @@ Now follow the displayed instructions to install OpenBLAS headers and libs to a 
 
 **Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you probably want to enable CUDA in KALDI with the configure script in src/. You should have a relatively recent Nvidia GPU, at least one with the Kepler architecture.
 
-You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html, https://github.com/sequitur-g2p/sequitur-g2p). Download the package and run make, then edit the sequitur\_g2p variable in s5\_r2/run.sh to point to the g2p.py script.  
+You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html, https://github.com/sequitur-g2p/sequitur-g2p). Download the package and run make, then edit the sequitur\_g2p variable in s5\_r2/cmd.sh to point to the g2p.py script.  
 
 You will also need a recent version of Python 3. Package requirements are:
 
 ```
-pip3 install requests beautifulsoup4 lxml
+pip3 install beautifulsoup4 lxml
 ```
+
+Additinally, the requests package was previously used to communicate with MaryTTS to generate phonemizations, however you won't need it if you run the standard setup.
 
 ## Building the acoustic models
 
