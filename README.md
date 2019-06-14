@@ -12,7 +12,7 @@
          * [German phoneme dictionary](#german-phoneme-dictionary)
    * [References](#references)
 
-This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use two freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data. 
+This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). The scripts currently use three freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data and the German subset of [m-ailabs read speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/) (237h).
 
 The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data by default, too, resulting in 412h of speech data in total before cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and recent WER results. 
 
@@ -28,7 +28,7 @@ The scripts will ask you where to place larger files and can download all necess
 
 - A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
 
-- We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/). We also thank Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
+- We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/). We also thank Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
 
 21 August 2018
 
