@@ -17,6 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Set bash to 'debug' mode, it prints the commands (option '-x') and exits on :
+# -e 'error', -u 'undefined variable', -o pipefail 'error in pipeline',
+set -euxo pipefail
+
 stage=0
 use_BAS_dictionaries=false
 add_swc_data=true
@@ -28,7 +32,7 @@ extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_300k4
+dict_suffix=_std
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
