@@ -369,7 +369,7 @@ if __name__ == '__main__':
 
     print('writing to', args.export_dir + 'optional_silence.txt')
     with open(args.export_dir + 'optional_silence.txt','w') as silence_phones:
-        silence_phones.write(BAS_German_set['silence'][0])
+        silence_phones.write(BAS_German_set['silence'][0]+'\n')
 
     print('writing to', args.export_dir + 'extra_questions.txt')
     with open(args.export_dir + 'extra_questions.txt','w') as extra_questions:
