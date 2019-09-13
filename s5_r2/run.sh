@@ -297,12 +297,15 @@ if [ $stage -le 6 ]; then
   sort -u ${dict_dir}/_lexiconp.txt ${dict_dir}/oov_lexiconp.txt > ${dict_dir}/lexiconp.txt
 
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
-  rm ${dict_dir}/lexicon.txt
+  if test -f "${dict_dir}/lexicon.txt"; then
+    echo "${dict_dir}/lexicon.txt already exists, removing it..."
+    rm ${dict_dir}/lexicon.txt
+  fi
 
   unixtime=$(date +%s)
   # Move old lang dir if it exists
   mkdir -p ${lang_dir}/old_$unixtime/
-  mv ${lang_dir}/* ${lang_dir}/old_$unixtime/
+  mv ${lang_dir}/* ${lang_dir}/old_$unixtime/ || true
 
   echo "Preparing the ${lang_dir} directory...."
 
@@ -621,5 +624,6 @@ fi
 
 if [ $stage -le 17 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
+  echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
 fi
