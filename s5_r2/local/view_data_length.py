@@ -28,10 +28,14 @@ if __name__ == '__main__':
 
     if args.folder == '':
       print('You have to specify a Kaldi data folder with the -f flag.')
-    
+   
+    folder = args.folder
+
+    if folder[-1] != '/':
+      folder += '/'
 
     try:
-      with io.open(args.folder + 'utt2dur') as utt2dur:
+      with io.open(folder + 'utt2dur') as utt2dur:
         sum_list = []
         for line in utt2dur:
           if line[-1]=='\n':
@@ -44,7 +48,7 @@ if __name__ == '__main__':
 
 
     try:
-      with io.open(args.folder + 'segments') as segments:
+      with io.open(folder + 'segments') as segments:
         sum_list = []
         for line in segments:
           diff = float(line.split()[3]) - float(line.split()[2])
