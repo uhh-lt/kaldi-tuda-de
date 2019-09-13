@@ -15,7 +15,7 @@ set -e -o pipefail
 
 
 stage=0
-nj=30
+nj=28
 min_seg_len=1.55  # min length in seconds... we do this because chain training
                   # will discard segments shorter than 1.5 seconds.   Must remain in sync
                   # with the same option given to prepare_lores_feats_and_alignments.sh
@@ -23,7 +23,7 @@ train_set=train_cleaned   # you might set this to e.g. train.
 gmm=tri3_cleaned          # This specifies a GMM-dir from the features of the type you're training the system on;
                          # it should contain alignments for 'train_set'.
 
-num_threads_ubm=32
+num_threads_ubm=1
 nnet3_affix=_cleaned     # affix for exp/nnet3 directory to put iVector stuff in, so it
                          # becomes exp/nnet3_cleaned or whatever.
 
@@ -148,7 +148,7 @@ if [ $stage -le 5 ]; then
 
   echo "$0: training the diagonal UBM."
   # Use 512 Gaussians in the UBM.
-  steps/online/nnet2/train_diag_ubm.sh --cmd "$train_cmd" --nj 30 \
+  steps/online/nnet2/train_diag_ubm.sh --cmd "$train_cmd" --nj $nj \
     --num-frames 700000 \
     --num-threads $num_threads_ubm \
     ${temp_data_root}/${train_set}_sp_hires_subset 512 \
@@ -160,7 +160,7 @@ if [ $stage -le 6 ]; then
   # can be sensitive to the amount of data.  The script defaults to an iVector dimension of
   # 100.
   echo "$0: training the iVector extractor"
-  steps/online/nnet2/train_ivector_extractor.sh --cmd "$train_cmd" --nj 10 \
+  steps/online/nnet2/train_ivector_extractor.sh --cmd "$train_cmd" --nj 8 --num_threads 2 --num_processes 2 \
     data/${train_set}_sp_hires exp/nnet3${nnet3_affix}/diag_ubm exp/nnet3${nnet3_affix}/extractor || exit 1;
 fi
 
@@ -189,7 +189,7 @@ if [ $stage -le 7 ]; then
   # Also extract iVectors for the test data, but in this case we don't need the speed
   # perturbation (sp) or small-segment concatenation (comb).
   for data in dev test; do
-    steps/online/nnet2/extract_ivectors_online.sh --cmd "$train_cmd" --nj 10 \
+    steps/online/nnet2/extract_ivectors_online.sh --cmd "$train_cmd" --nj 8 \
       data/${data}_hires exp/nnet3${nnet3_affix}/extractor \
       exp/nnet3${nnet3_affix}/ivectors_${data}_hires
   done
