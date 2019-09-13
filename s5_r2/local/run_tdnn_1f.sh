@@ -29,7 +29,7 @@ min_seg_len=1.55
 xent_regularize=0.1
 train_set=train_cleaned
 gmm=tri4_cleaned  # the gmm for the target data
-num_threads_ubm=32
+num_threads_ubm=1
 nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 
 # The rest are configs specific to this script.  Most of the parameters

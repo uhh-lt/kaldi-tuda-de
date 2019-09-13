@@ -17,6 +17,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Set bash to 'debug' mode, it prints the commands (option '-x') and exits on :
+# -e 'error', -u 'undefined variable', -o pipefail 'error in pipeline',
+set -euxo pipefail
+
 stage=0
 use_BAS_dictionaries=false
 add_swc_data=true
@@ -28,7 +32,7 @@ extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_300k4
+dict_suffix=_std
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -38,6 +42,10 @@ format_lang_out_dir=${lang_dir}_test
 g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
 arpa_lm=${lm_dir}/4gram-mincount/lm_pr10.0.gz
+
+[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
+[ ! -L "utils" ] && ln -s ../../wsj/s5/utils
+[ ! -L "rnnlm" ] && ln -s ../../../scripts/rnnlm/
 
 . utils/parse_options.sh
 
@@ -56,10 +64,6 @@ else
     echo "E.g. wget https://www-i6.informatik.rwth-aachen.de/web/Software/g2p-r1668-r3.tar.gz"
     exit
 fi
-
-[ ! -L "steps" ] && ln -s ../../wsj/s5/steps
-[ ! -L "utils" ] && ln -s ../../wsj/s5/utils
-[ ! -L "rnnlm" ] && ln -s ../../../scripts/rnnlm/
 
 # mfccdir should be some place with a largish disk where you
 # want to store MFCC features.
@@ -122,10 +126,13 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/m_ailabs/ ]
     then
       mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
+      wget --directory-prefix=data/wav/m_ailabs/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
       cd data/wav/m_ailabs/
       tar xvfz m-ailabs.bayern.de_DE.tgz
       cd ../../../
+    fi
+    if [ ! -d data/m_ailabs_train ]
+    then
       # make data directory data/m_ailabs_train 
       python3 local/prepare_m-ailabs_data.py
     fi
@@ -139,6 +146,9 @@ RAWDATA=data/wav/german-speechdata-package-v2
 FILTERBYNAME="*.xml"
 
 if [ $stage -le 2 ]; then
+  # Move files, which would later produce errors. They are saved in backup location
+  python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+
   find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
 
   # prepares directories in Kaldi format for the TUDA speech corpus
@@ -148,6 +158,10 @@ if [ $stage -le 2 ]; then
   # python3 local/data_prepare.py -f data/waveIDs.txt -p _Realtek -k _e
 
   local/get_utt2dur.sh data/tuda_train
+  if [ $? -ne 0 ]; then
+    echo "Error at get_utt2dur.sh with TUDA corpus. Exiting."
+    exit 1
+  fi
 
   if [ "$add_swc_data" = false ] ; then
     mv data/tuda_train data/train
@@ -227,33 +241,38 @@ if [ $stage -le 5 ]; then
       echo "G2P model file $final_g2p_model already exists, not recreating it."
   fi
 
-  echo "Now finding OOV in train"
+  if [ ! -f ${dict_dir}/oov_lexiconp.txt ]
+  then
+    echo "Now finding OOV in train"
 
-  cp data/tuda_train/text ${g2p_dir}/complete_text
-  
-  if [ "$add_swc_data" = true ] ; then
-    cat data/swc_train/text >> ${g2p_dir}/complete_text
-  fi  
+    cp data/tuda_train/text ${g2p_dir}/complete_text
 
-  if [ "$add_mailabs_data" = true ] ; then
-    cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
+    if [ "$add_swc_data" = true ] ; then
+      cat data/swc_train/text >> ${g2p_dir}/complete_text
+    fi
+
+    if [ "$add_mailabs_data" = true ] ; then
+      cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
+    fi
+
+    if [ "$add_extra_words" = true ] ; then
+      # source extra words from $extra_words_file (e.g. local/extra_words.txt) and prefix them with bogus ids, so that we can just add them to the transcriptions (${g2p_dir}/complete_text)
+      gawk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" $extra_words_file | cat ${g2p_dir}/complete_text - > ${g2p_dir}/complete_text_new
+      mv ${g2p_dir}/complete_text_new ${g2p_dir}/complete_text
+    fi
+
+    python3 local/find_oov.py -c ${g2p_dir}/complete_text -w ${g2p_dir}/lexicon_wordlist.txt -o ${g2p_dir}/oov.txt
+
+    echo "Now using G2P to predict OOV"
+    $sequitur_g2p -e utf8 --model $final_g2p_model --apply ${g2p_dir}/oov.txt > ${dict_dir}/oov_lexicon.txt
+    cat ${dict_dir}/oov_lexicon.txt | gawk '{$1=$1" 1.0"; print }' > ${dict_dir}/_oov_lexiconp.txt
+    # remove entries that don't have atleast 3 columns - some phonemizations are broken
+    gawk 'NF>=3' ${dict_dir}/_oov_lexiconp.txt > ${dict_dir}/oov_lexiconp.txt
+    #${dict_dir}/oov_lexicon.txt
+    echo "Done!"
+  else
+    echo "OOV already predicted and exists, not recreating."
   fi
-
-  if [ "$add_extra_words" = true ] ; then
-    # source extra words from $extra_words_file (e.g. local/extra_words.txt) and prefix them with bogus ids, so that we can just add them to the transcriptions (${g2p_dir}/complete_text)
-    awk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" $extra_words_file | cat ${g2p_dir}/complete_text - > ${g2p_dir}/complete_text_new
-    mv ${g2p_dir}/complete_text_new ${g2p_dir}/complete_text
-  fi
-
-  python3 local/find_oov.py -c ${g2p_dir}/complete_text -w ${g2p_dir}/lexicon_wordlist.txt -o ${g2p_dir}/oov.txt
-  
-  echo "Now using G2P to predict OOV"
-  $sequitur_g2p -e utf8 --model $final_g2p_model --apply ${g2p_dir}/oov.txt > ${dict_dir}/oov_lexicon.txt
-  cat ${dict_dir}/oov_lexicon.txt | awk '{$1=$1" 1.0"; print }' > ${dict_dir}/_oov_lexiconp.txt
-  # remove entries that don't have atleast 3 columns - some phonemizations are broken
-  awk 'NF>=3' ${dict_dir}/_oov_lexiconp.txt > ${dict_dir}/oov_lexiconp.txt
-  #${dict_dir}/oov_lexicon.txt
-  echo "Done!"
 fi
 
 # Now start preprocessing with KALDI scripts
@@ -278,12 +297,15 @@ if [ $stage -le 6 ]; then
   sort -u ${dict_dir}/_lexiconp.txt ${dict_dir}/oov_lexiconp.txt > ${dict_dir}/lexiconp.txt
 
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
-  rm ${dict_dir}/lexicon.txt
+  if test -f "${dict_dir}/lexicon.txt"; then
+    echo "${dict_dir}/lexicon.txt already exists, removing it..."
+    rm ${dict_dir}/lexicon.txt
+  fi
 
   unixtime=$(date +%s)
   # Move old lang dir if it exists
   mkdir -p ${lang_dir}/old_$unixtime/
-  mv ${lang_dir}/* ${lang_dir}/old_$unixtime/
+  mv ${lang_dir}/* ${lang_dir}/old_$unixtime/ || true
 
   echo "Preparing the ${lang_dir} directory...."
 
@@ -324,7 +346,7 @@ if [ "$add_swc_data" = true ] ; then
       rm data/swc_train/spk2utt
       
       cat data/swc_train/segments | sort > data/swc_train/segments_sorted
-      cat data/swc_train/text | sort | awk 'NF>=2' > data/swc_train/text_sorted
+      cat data/swc_train/text | sort | gawk 'NF>=2' > data/swc_train/text_sorted
       cat data/swc_train/utt2spk | sort > data/swc_train/utt2spk_sorted
       cat data/swc_train/wav.scp | sort > data/swc_train/wav.scp_sorted
 
@@ -367,7 +389,7 @@ if [ "$add_mailabs_data" = true ] ; then
     mv data/train data/train_without_mailabs 
     echo "Now computing MFCC features for m_ailabs_train"
     # Now make MFCC features.
-    x=data/m_ailabs_train
+    x=m_ailabs_train
     utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
     steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
     utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
@@ -602,5 +624,6 @@ fi
 
 if [ $stage -le 17 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
+  echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
 fi

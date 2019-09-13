@@ -12,7 +12,7 @@
          * [German phoneme dictionary](#german-phoneme-dictionary)
    * [References](#references)
 
-This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). Our primary target is distant speech recognition (DSR), but decoding should also work in other settings. The scripts currently use two freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data. 
+This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). The scripts currently use three freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data and the German subset of [m-ailabs read speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/) (237h). We use the test/dev sets from Tuda-De for WER evaluations.
 
 The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data by default, too, resulting in 412h of speech data in total before cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and recent WER results. 
 
@@ -20,12 +20,21 @@ The old s5 recipe used in [our previous paper](https://www.inf.uni-hamburg.de/en
 
 The scripts will ask you where to place larger files and can download all necessary files (speech corpus, German texts, phoneme dictionaries) to train the acoustic and language models. You can also download these resources manually, see Section "Getting data files separately" down below.
 
+**If you use our data, models or scripts in your academic work please cite our [paper](#references)!**
+
 ## News
+
+5 March 2019
+
+- A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
+
+- We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/). We also thank Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
 
 21 August 2018
 
-- A new pretrained model with a vocabulary of 350 thousand words is available at http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2 
- This is also the best performing model in [our paper](https://arxiv.org/abs/1807.10311).
+- A new pretrained model with a vocabulary of 350 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2)
+
+- This model is also the best performing one in [our paper](https://arxiv.org/abs/1807.10311).
 
 - This model has also been succesfully tested in the popular [Kaldi Gstreamer Server software](https://github.com/alumae/kaldi-gstreamer-server). The paths in this package are organized according to the Kaldi Gstreamer examples, a matching kaldi_tuda_de_nnet3_chain.yaml configuration file is included. A worker startup script is also included (run_tuda_de.sh), but you will probably need to change paths. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI).
 
@@ -36,7 +45,6 @@ The scripts will ask you where to place larger files and can download all necess
 26 July 2018
 
 - Our paper "Open Source Automatic Speech Recognition for German" is accepted at [ITG2018](https://www.uni-oldenburg.de/itg2018/) (10.-12. October 2018, Oldenburg, Germany)! [A preprint of the paper is available here](https://arxiv.org/abs/1807.10311). 
-
 
 26 June 2018
 
@@ -68,14 +76,15 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## Pretrained models
 
-| Modell | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
+| Acoustic model + FST | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
 | --- | --- | --- | --- |
-|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h tuda+SWC | 20.30 | 21.43 |
+|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h tuda+SWC | 20.30 | 21.43 |
 | [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
+| [tuda_swc_mailabs_voc400k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h tuda+SWC+m-ailabs | 14.78 | 15.87 |
 
 All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
-We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project. You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back.
+We recommend the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server) for easy API access if you want to simply use our pre-trained models in your project. You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI). There is a run_tuda_de.sh in the package that starts Kaldi gstreamer workers for tuda_de. You will need to modify the KALDI_ROOT variable in the script so that it finds your Kaldi installation properly.
 
 # Training your own models
 
@@ -107,13 +116,15 @@ Now follow the displayed instructions to install OpenBLAS headers and libs to a 
 
 **Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you probably want to enable CUDA in KALDI with the configure script in src/. You should have a relatively recent Nvidia GPU, at least one with the Kepler architecture.
 
-You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html, https://github.com/sequitur-g2p/sequitur-g2p). Download the package and run make, then edit the sequitur\_g2p variable in s5\_r2/run.sh to point to the g2p.py script.  
+You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Software/g2p.html, https://github.com/sequitur-g2p/sequitur-g2p). Download the package and run make, then edit the sequitur\_g2p variable in s5\_r2/cmd.sh to point to the g2p.py script.  
 
 You will also need a recent version of Python 3. Package requirements are:
 
 ```
-pip3 install requests beautifulsoup4 lxml
+pip3 install beautifulsoup4 lxml
 ```
+
+Additinally, the requests package was previously used to communicate with MaryTTS to generate phonemizations, however you won't need it if you run the standard setup.
 
 ## Building the acoustic models
 
