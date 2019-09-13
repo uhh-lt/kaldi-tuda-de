@@ -23,22 +23,24 @@
 
 # Begin configuration section.
 
-langdir=data/lang_300k4/
-old_lm=data/lang_300k4_test_300k4
-dir=exp/rnnlm_lstm_1e_300k4
+
+dict_suffix=300k4
+langdir=data/lang_${dict_suffix}/
+old_lm=data/lang_${dict_suffix}_test_${dict_suffix}
+dir=exp/rnnlm_lstm_1e_${dict_suffix}
 embedding_dim=1024
 lstm_rpd=256
 lstm_nrpd=256
 stage=-10
 train_stage=-10
-#train_stage=60
+train_stage=24
 
 # variables for lattice rescoring
 run_lat_rescore=true
 run_nbest_rescore=true
 run_backward_rnnlm=false
 
-old_decode_dir=decode_300k4
+old_decode_dir=decode_${dict_suffix}
 ac_model_dir=exp/chain_cleaned/tdnn1f_2048_sp_bi/  #exp/nnet3/tdnn_lstm_1a_adversarial0.3_epochs12_ld5_sp
 decode_dir_suffix=rnnlm_1e
 ngram_order=4 # approximate the lattice-rescoring by limiting the max-ngram-order
@@ -51,9 +53,9 @@ pruned_rescore=true
 . ./utils/parse_options.sh
 
 text=data/train_nodev/text
-lm_text=data/local/lm_300k4/cleaned.gz
-lexicon=data/local/dict_300k4/lexiconp.txt
-text_dir=data/rnnlm/text_nosp_1e_300k4
+lm_text=data/local/lm_${dict_suffix}/cleaned.gz
+lexicon=data/local/dict_${dict_suffix}/lexiconp.txt
+text_dir=data/rnnlm/text_nosp_1e_${dict_suffix}
 mkdir -p $dir/config
 set -e
 
