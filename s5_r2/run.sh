@@ -123,7 +123,7 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/m_ailabs/ ]
     then
       mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
+      wget --directory-prefix=data/wav/m_ailabs/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
       cd data/wav/m_ailabs/
       tar xvfz m-ailabs.bayern.de_DE.tgz
       cd ../../../
@@ -365,10 +365,10 @@ fi
 
 if [ "$add_mailabs_data" = true ] ; then
   if [ $stage -le 8 ]; then
-    mv data/train data/train_without_mailabs 
+    mv data/train data/train_without_mailabs || true
     echo "Now computing MFCC features for m_ailabs_train"
     # Now make MFCC features.
-    x=data/m_ailabs_train
+    x=m_ailabs_train
     utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
     steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
     utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons, fuck the fucking fuck, this never fucking worked what the hell that is why you dont c&p code
