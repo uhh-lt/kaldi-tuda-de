@@ -300,13 +300,15 @@ if [ $stage -le 6 ]; then
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
   if test -f "${dict_dir}/lexicon.txt"; then
     echo "${dict_dir}/lexicon.txt already exists, removing it..."
-    rm ${dict_dir}/lexicon.txt
+    rm ${dict_dir}/lexicon.txt || true
   fi
 
   unixtime=$(date +%s)
   # Move old lang dir if it exists
   mkdir -p ${lang_dir}/old_$unixtime/
+
   mv ${lang_dir}/* ${lang_dir}/old_$unixtime/ || true
+
 
   echo "Preparing the ${lang_dir} directory...."
 
@@ -344,7 +346,7 @@ if [ "$add_swc_data" = true ] ; then
    if [ $stage -le 8 ]; then
       echo "Generating features for tuda_train, swc_train, dev and test"
       # Making sure all swc files are C-sorted 
-      rm data/swc_train/spk2utt
+      rm data/swc_train/spk2utt || true
       
       cat data/swc_train/segments | sort > data/swc_train/segments_sorted
       cat data/swc_train/text | sort | gawk 'NF>=2' > data/swc_train/text_sorted
