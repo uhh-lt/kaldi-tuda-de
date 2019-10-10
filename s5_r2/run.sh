@@ -372,7 +372,7 @@ if [ "$add_swc_data" = true ] ; then
           utils/fix_data_dir.sh data/$x
       done
       echo "Done, now combining data (tuda_train swc_train)."
-      combine_data.sh data/train data/tuda_train data/swc_train
+      ./utils/combine_data.sh data/train data/tuda_train data/swc_train
   fi
 else
   if [ $stage -le 8 ]; then
@@ -395,12 +395,12 @@ if [ "$add_mailabs_data" = true ] ; then
     x=m_ailabs_train
     utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
     steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
-    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons, fuck the fucking fuck, this never fucking worked what the hell that is why you dont c&p code
     steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
     utils/fix_data_dir.sh data/$x
     
     echo "Done, now combining data (train m_ailabs_train)."
-    combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
+    ./utils/combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
   fi
 fi
 # Here we start the AM
