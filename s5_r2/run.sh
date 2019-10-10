@@ -389,7 +389,7 @@ fi
 
 if [ "$add_mailabs_data" = true ] ; then
   if [ $stage -le 8 ]; then
-    mv data/train data/train_without_mailabs 
+    mv data/train data/train_without_mailabs || true
     echo "Now computing MFCC features for m_ailabs_train"
     # Now make MFCC features.
     x=m_ailabs_train
