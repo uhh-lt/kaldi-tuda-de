@@ -16,6 +16,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+set -e # exit on error
 
 # Set bash to 'debug' mode, it prints the commands (option '-x') and exits on :
 # -e 'error', -u 'undefined variable', -o pipefail 'error in pipeline',
