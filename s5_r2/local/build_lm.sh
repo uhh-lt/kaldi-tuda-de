@@ -12,6 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+set -e # fail on error
 
 srcdir=data/local/lang
 dir=data/local/lm
@@ -77,7 +78,7 @@ gunzip -c $dir/train_nounk.gz | awk -v wmap=$dir/word_map 'BEGIN{while((getline<
 
 echo training kaldi_lm with 3gram-mincount
 
-rm -r data/local/lm/3gram-mincount/
+rm -r data/local/lm/3gram-mincount/ || true
 train_lm.sh --arpa --lmtype 3gram-mincount $dir
 #prune_lm.sh --arpa 6.0 $dir/3gram-mincount/
 #prune_lm.sh --arpa 8.0 $dir/3gram-mincount/

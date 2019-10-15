@@ -299,13 +299,15 @@ if [ $stage -le 6 ]; then
   # deleting lexicon.txt text from a previous run, utils/prepare_lang.sh will regenerate it
   if test -f "${dict_dir}/lexicon.txt"; then
     echo "${dict_dir}/lexicon.txt already exists, removing it..."
-    rm ${dict_dir}/lexicon.txt
+    rm ${dict_dir}/lexicon.txt || true
   fi
 
   unixtime=$(date +%s)
   # Move old lang dir if it exists
   mkdir -p ${lang_dir}/old_$unixtime/
+
   mv ${lang_dir}/* ${lang_dir}/old_$unixtime/ || true
+
 
   echo "Preparing the ${lang_dir} directory...."
 
@@ -343,7 +345,7 @@ if [ "$add_swc_data" = true ] ; then
    if [ $stage -le 8 ]; then
       echo "Generating features for tuda_train, swc_train, dev and test"
       # Making sure all swc files are C-sorted 
-      rm data/swc_train/spk2utt
+      rm data/swc_train/spk2utt || true
       
       cat data/swc_train/segments | sort > data/swc_train/segments_sorted
       cat data/swc_train/text | sort | gawk 'NF>=2' > data/swc_train/text_sorted
@@ -369,7 +371,7 @@ if [ "$add_swc_data" = true ] ; then
           utils/fix_data_dir.sh data/$x
       done
       echo "Done, now combining data (tuda_train swc_train)."
-      combine_data.sh data/train data/tuda_train data/swc_train
+      ./utils/combine_data.sh data/train data/tuda_train data/swc_train
   fi
 else
   if [ $stage -le 8 ]; then
@@ -386,7 +388,7 @@ fi
 
 if [ "$add_mailabs_data" = true ] ; then
   if [ $stage -le 8 ]; then
-    mv data/train data/train_without_mailabs 
+    mv data/train data/train_without_mailabs || true
     echo "Now computing MFCC features for m_ailabs_train"
     # Now make MFCC features.
     x=m_ailabs_train
@@ -397,7 +399,7 @@ if [ "$add_mailabs_data" = true ] ; then
     utils/fix_data_dir.sh data/$x
     
     echo "Done, now combining data (train m_ailabs_train)."
-    combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
+    ./utils/combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
   fi
 fi
 # Here we start the AM
