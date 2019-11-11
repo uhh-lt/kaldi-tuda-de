@@ -27,14 +27,15 @@ def generateEntry(word,entry,sphinx_format=False):
     freqs = [pron['freq'] for pron in entry]
     freqMult = 1.0 / float(max(freqs))
     freqs = [float(pron['freq'])*freqMult for pron in entry]
-    
+    prons = [elem['pron'] for elem in entry]    
+
     txt = ''
-    for i,(freq,elem) in enumerate(sorted(zip(freqs,entry),reverse=True)):
+    for i,(freq,pron) in enumerate(sorted(zip(freqs,prons), reverse=True, key=lambda x:x[0])):
         if sphinx_format:
-            txt += word + ('('+str(i)+')' if i>0 else '') + '  ' + ' '.join(elem['pron']) + '\n'
+            txt += word + ('('+str(i)+')' if i>0 else '') + '  ' + ' '.join(pron) + '\n'
         else:
             #Kaldi probabilty format <word> <freq> <pronounciation>
-            txt += word + ' ' + str(freq) + ' ' + ' '.join(elem['pron']) + '\n'
+            txt += word + ' ' + str(freq) + ' ' + ' '.join(pron) + '\n'
     return txt
 
 if __name__ == '__main__':
@@ -60,7 +61,7 @@ if __name__ == '__main__':
         else:
             print('Warning!: No % entry found! Will add <UNK> -> usb mapping manually.')
             combinedDict['<UNK>'] = [{'pron': ['usb'], 'freq': 100, 'manual': True}]
-        for key in sorted(combinedDict.keys()):
+        for key in sorted(list(combinedDict.keys())):
             txt = generateEntry(key,combinedDict[key],args.sphinx_format)
             outfile.write(txt)
 
