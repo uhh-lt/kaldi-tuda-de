@@ -26,9 +26,15 @@ use_BAS_dictionaries=false
 add_swc_data=true
 add_mailabs_data=true
 add_extra_words=true
+add_commonvoice_data=true
 
 extra_words_file=local/extra_words.txt
 extra_words_file=local/filtered_300k_vocab_de_wiki.txt
+
+kaldi_tuda_de_corpus_server="http://speech.tools/kaldi_tuda_de/"
+
+# backup:
+# kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/"
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
@@ -81,7 +87,7 @@ if [ $stage -le 1 ]; then
 
   if [ ! -d data/wav/german-speechdata-package-v2 ]
   then
-      wget --directory-prefix=data/wav/ http://speech.tools/kaldi_tuda_de/german-speechdata-package-v2.tar.gz
+      wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
       cd data/wav/
       tar xvfz german-speechdata-package-v2.tar.gz
       cd ../../
@@ -113,7 +119,7 @@ if [ $stage -le 1 ]; then
 # But the default is currently to download the precomputed SWC data dir (285h version, minimally pruned):
     if [ ! -d data/swc_train ]
     then
-      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_train_v2.tar.gz
+      wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
       cd data/
       tar xvfz swc_train_v2.tar.gz
       cd ../
@@ -126,7 +132,7 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/m_ailabs/ ]
     then
       mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/m_ailabs/ http://speech.tools/kaldi_tuda_de/m-ailabs.bayern.de_DE.tgz
+      wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
       cd data/wav/m_ailabs/
       tar xvfz m-ailabs.bayern.de_DE.tgz
       cd ../../../
@@ -135,6 +141,23 @@ if [ $stage -le 1 ]; then
     then
       # make data directory data/m_ailabs_train 
       python3 local/prepare_m-ailabs_data.py
+    fi
+  fi
+
+  if [ "$add_commonvoice_data" = true ]
+  then
+    if [ ! -d data/wav/cv/ ]
+    then
+       mkdir -p data/wav/cv/
+       wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
+       cd data/wav/cv/
+       tar xvfz cv-corpus-3-oct19-de.tar.gz
+       cd ../../../
+    fi
+    if [ ! -d data/commonvoice_train ]
+    then
+      # make data directory data/commonvoice_train
+      python3 local/prepare_commonvoice_data.py
     fi
   fi
 fi
@@ -255,6 +278,10 @@ if [ $stage -le 5 ]; then
       cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
     fi
 
+    if [ "$add_commonvoice_data" = true ] ; then
+      cat data/commonvoice_train/text >> ${g2p_dir}/complete_text
+    fi
+
     if [ "$add_extra_words" = true ] ; then
       # source extra words from $extra_words_file (e.g. local/extra_words.txt) and prefix them with bogus ids, so that we can just add them to the transcriptions (${g2p_dir}/complete_text)
       gawk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" $extra_words_file | cat ${g2p_dir}/complete_text - > ${g2p_dir}/complete_text_new
@@ -341,67 +368,81 @@ if [ $stage -le 7 ]; then
   local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
 fi
 
-if [ "$add_swc_data" = true ] ; then
-   if [ $stage -le 8 ]; then
-      echo "Generating features for tuda_train, swc_train, dev and test"
-      # Making sure all swc files are C-sorted 
-      rm data/swc_train/spk2utt || true
-      
-      cat data/swc_train/segments | sort > data/swc_train/segments_sorted
-      cat data/swc_train/text | sort | gawk 'NF>=2' > data/swc_train/text_sorted
-      cat data/swc_train/utt2spk | sort > data/swc_train/utt2spk_sorted
-      cat data/swc_train/wav.scp | sort > data/swc_train/wav.scp_sorted
+if [ $stage -le 8 ]; then
+	if [ "$add_swc_data" = true ] ; then
+		  echo "Generating features for tuda_train, swc_train, dev and test"
+		  # Making sure all swc files are C-sorted 
+		  rm data/swc_train/spk2utt || true
+		  
+		  cat data/swc_train/segments | sort > data/swc_train/segments_sorted
+		  cat data/swc_train/text | sort | gawk 'NF>=2' > data/swc_train/text_sorted
+		  cat data/swc_train/utt2spk | sort > data/swc_train/utt2spk_sorted
+		  cat data/swc_train/wav.scp | sort > data/swc_train/wav.scp_sorted
 
-      mv data/swc_train/wav.scp_sorted data/swc_train/wav.scp
-      mv data/swc_train/utt2spk_sorted data/swc_train/utt2spk
-      mv data/swc_train/text_sorted data/swc_train/text
-      mv data/swc_train/segments_sorted data/swc_train/segments
+		  mv data/swc_train/wav.scp_sorted data/swc_train/wav.scp
+		  mv data/swc_train/utt2spk_sorted data/swc_train/utt2spk
+		  mv data/swc_train/text_sorted data/swc_train/text
+		  mv data/swc_train/segments_sorted data/swc_train/segments
 
-      echo "$LC_ALL"
+		  echo "$LC_ALL"
 
-      utils/utt2spk_to_spk2utt.pl data/swc_train/utt2spk > data/swc_train/spk2utt      
-      #utils/validate_data_dir.sh data/swc_train
-      
-      # Now make MFCC features.
-      for x in swc_train tuda_train dev test; do
-          utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-          steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
-          utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-          steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
-          utils/fix_data_dir.sh data/$x
-      done
-      echo "Done, now combining data (tuda_train swc_train)."
-      ./utils/combine_data.sh data/train data/tuda_train data/swc_train
-  fi
-else
-  if [ $stage -le 8 ]; then
-    # Now make MFCC features.
-    for x in train dev test; do
-        utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-        steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
-        utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-        steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
-        utils/fix_data_dir.sh data/$x
-    done
-  fi
+		  utils/utt2spk_to_spk2utt.pl data/swc_train/utt2spk > data/swc_train/spk2utt      
+		  #utils/validate_data_dir.sh data/swc_train
+		  
+		  # Now make MFCC features.
+		  for x in swc_train tuda_train dev test; do
+			  utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+			  steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+			  utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+			  steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+			  utils/fix_data_dir.sh data/$x
+		  done
+
+		  echo "Done, now combining data (tuda_train swc_train)."
+		  ./utils/combine_data.sh data/train data/tuda_train data/swc_train
+	else
+		# Now make MFCC features.
+		for x in train dev test; do
+			utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+			steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+			utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+			steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+			utils/fix_data_dir.sh data/$x
+		done
+	fi
+
+	if [ "$add_mailabs_data" = true ] ; then
+		mv data/train data/train_without_mailabs || true
+		echo "Now computing MFCC features for m_ailabs_train"
+		# Now make MFCC features.
+		x=m_ailabs_train
+		utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+		steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+		utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+		steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+		utils/fix_data_dir.sh data/$x
+		
+		echo "Done, now combining data (train m_ailabs_train)."
+		./utils/combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
+	fi
+
+	if [ "$add_commonvoice_data" = true ] ; then
+		mv data/train data/train_without_commonvoice || true
+        	echo "Now computing MFCC features for m_ailabs_train"
+        	# Now make MFCC features.
+        	x=commonvoice_train
+        	utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+        	steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+        	utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+        	steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+        	utils/fix_data_dir.sh data/$x
+
+		echo "Done, now combining data (train commonvoice_train)."
+		./utils/combine_data.sh data/train data/train_without_commonvoice data/commonvoice_train
+	fi
 fi
 
-if [ "$add_mailabs_data" = true ] ; then
-  if [ $stage -le 8 ]; then
-    mv data/train data/train_without_mailabs || true
-    echo "Now computing MFCC features for m_ailabs_train"
-    # Now make MFCC features.
-    x=m_ailabs_train
-    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-    steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
-    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
-    steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
-    utils/fix_data_dir.sh data/$x
-    
-    echo "Done, now combining data (train m_ailabs_train)."
-    ./utils/combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
-  fi
-fi
+exit
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
@@ -627,5 +668,5 @@ fi
 if [ $stage -le 17 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
   echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
-  ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
+#  ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
 fi
