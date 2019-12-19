@@ -75,7 +75,7 @@ def process(corpus_path, output_datadir):
             fullid = spk + '_' + myid
             filename, normalized_text = corpus[myid]
 
-            wav_scp.write(fullid + ' ' + wav_scp_template.replace("$filepath", output_datadir + filename) + '\n')
+            wav_scp.write(fullid + ' ' + wav_scp_template.replace("$filepath", corpus_path + 'clips/' + filename) + '\n')
             utt2spk.write(fullid + ' ' + spk + '\n')
             text_out.write(fullid + ' ' + normalized_text + '\n')
 
