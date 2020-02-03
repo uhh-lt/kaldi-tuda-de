@@ -25,6 +25,7 @@ stage=0
 use_BAS_dictionaries=false
 add_swc_data=true
 add_mailabs_data=true
+add_extra_data=false
 add_extra_words=true
 
 extra_words_file=local/extra_words.txt
@@ -255,6 +256,10 @@ if [ $stage -le 5 ]; then
       cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
     fi
 
+    if [ "$add_extra_data" = true ] ; then
+      cat data/extra_train/text >> ${g2p_dir}/complete_text
+    fi
+
     if [ "$add_extra_words" = true ] ; then
       # source extra words from $extra_words_file (e.g. local/extra_words.txt) and prefix them with bogus ids, so that we can just add them to the transcriptions (${g2p_dir}/complete_text)
       gawk "{ printf(\"extra-word-%i %s\n\",NR,\$1) }" $extra_words_file | cat ${g2p_dir}/complete_text - > ${g2p_dir}/complete_text_new
@@ -402,6 +407,25 @@ if [ "$add_mailabs_data" = true ] ; then
     ./utils/combine_data.sh data/train data/train_without_mailabs data/m_ailabs_train
   fi
 fi
+
+
+if [ "$add_extra_data" = true ] ; then
+  if [ $stage -le 8 ]; then
+    mv data/train data/train_without_extra || true
+    echo "Now computing MFCC features for extra_train"
+    # Now make MFCC features.
+    x=extra_train
+    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+    steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+    steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+    utils/fix_data_dir.sh data/$x
+    
+    echo "Done, now combining data (train extra_train)."
+    ./utils/combine_data.sh data/train data/train_without_extra data/extra_train
+  fi
+fi
+
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
