@@ -1,0 +1,2114 @@
+Kaldi 'k a l d i:
+Kaldi 'k a l d I
+Dataset 'd EI t a s e t
+Human '? j u: m @ n
+Skill 's k I l
+Wintergrippe 'v I n t 6 'g R I p @
+Language 'l E N g w I t S
+Technology t E k 'n O l @ d Z i:
+Özge '2: s g @
+Eugen ? OY g @ n
+Eugen '? OY g @ n
+Ruppert 'R U p 6 t
+Steffen 'S t E f @ n
+Remus R e: m U s
+Chris 'k R I s
+Biemann 'b i: m a n
+Sascha 'z a S a:
+Lambert 'l a m b E 6 t
+IT-Ethik 'aI 'ti: 'e: t I k
+Uni-Hamburg ? U n i: 'h a m b U 6 k
+MIN 'm I n
+MINT 'm I n t
+Fakultät f a k U l 't E: t
+TensorFlow t E n 'z o: R f l O w
+Python 'p aI T O n
+Pi 'p i:
+Informationen ? I n f O 6 m a 'ts j o: n @ n
+Unsupervised 'a n z u: p 6 v aI z d
+Learning 'l 9 6 n I N
+Sprachassistenten 'S p R a: x '? a s I s t E n t @ n
+Reinforcement 'r e: ? I n f o: 6 s m @ n t
+Input 'I n p U t
+Computerethik k O m 'p j u: t 6 ? e: t I k
+Neuronale 'n OY R O n a: l @
+neuronale 'n OY R O n a: l @
+GPUs 'g e: 'p e: 'u: z
+LSTM '? E l '? E s 'te: '? Em
+des 'd E s
+AlphaGo '? a l f a: 'g o:
+Smart-Lautsprecher 's m a 6 t l aU t S p R E C 6
+arbeiten '? a 6 b aI t @ n
+annotiert 'a n o: 't i: 6 t
+Segmentierung 'z e: g m E n 't i: R U N
+Segmentierung z E k m E n 't i: R U N
+Mycroft 'm aI k R O f t
+Herunterladen 'h E 'R U n t 6 l a: d @ n
+trainiert 't R E n i: 6 t
+Dilemma 'd i: l E m a:
+Audiodateien '? aU d i: o: d a: t aI @ n
+maschinelles 'm a S i: n E l @ s
+Smartphones 's m a 6 t f o: n s
+Lernansätze 'l E 6 n a n z E ts @
+annotierten 'a n o: t i: 6 t @ n
+entwickeln '? E n t v I k @ l n
+USB 'U '? E s 'b e:
+Voice 'v OY s
+Semi-supervised 'z e: m i: 'z u: p 6 v aI z d
+Clustering 'k l a s t E r I N
+Spracherkennungspipelines 'S p R a: x ? E 6 k E n U N s p aI p l aI n s
+neuronalen 'n OY R O n a: l @ n
+Examples '? E k s a: m p l s
+Examples ? E k s 'E m p l s
+and '{ n d
+YouTube 'j u: t j u: b
+im '? I m
+Prognosen 'p R o: g n o: z @ n
+Alexa a: l 'E k s a:
+Information 'I n f O 6 m a ts j o: n
+Supervised 'z u: p 6 v aI z d
+Algorithmus '? a l g o: 'R I t m U s
+KI 'k a  '? i:
+HZD 'h a 'ts E t 'd e:   
+LUSD '? E l 'u: '? E s 'd e:
+NLP '? E n '? E l 'p e:
+PhD 'p i: '? EI tS 'd i:
+KI 'ka '? i:
+IT '?aI 'ti:
+Kaggle k E g ? @ l
+API 'a: 'p e: '? i:
+HHI 'ha 'ha '? i:
+AI '? EI '? aI
+KI-Systeme 'k a  '? i: 'z Y s t e: m @
+LSTMs 'El '?Es 'te: '?Em s
+CNTK 'ts e: '? E n 't e: 'k a:
+Data 'd EI t a:
+Verantwortung f E R '? a n t v O R t U N 
+trainieren t R E 'n i: R @ n
+kommen 'k O m @ n
+ASR '? EI  '? Es  '6
+korrigieren 'k o R i g i: R @ n
+ImageNET '? I m I t S 'n E t
+USA '? u: '? Es '? a:
+Output '? aU t p U t
+Todesalgorithmus 't o: d @ s '? a l g o: 'R I t m U s
+Common k O m e n
+als '? a l s
+paar 'p a: 6
+Rechenleistung 'R E C @ n l aI s t U N
+CSV 'tse: 'Es 'f aU
+ImageClef '? I m I t S k l @ f
+zur 'ts u: 6
+RNN '? E 6 '? En '?En
+Auto '? aU t o:
+Simulation 'z i: m u: l a 'ts j o: n
+SD '? Es 'de:
+micro 'm aI k R o:
+micro 'm a I k r o:
+ML '? E m '? E l
+Toolkit 't u: l k I t
+Verkehrsszenen f E 6 'k e: 6 s z ts e: n @ n
+Publikum 'p U b l i: k U m
+evil 'i: v @ l 
+Tastatur 't a s t a 't U 6
+machen m a x @ n
+Smartphone 's m a 6 t f o: n
+Annotationen '? a n o: t a ts j o: n @ n
+Code 'k O U d
+Mozillas 'm o: 'ts I ll a s
+selbstfahrenden 'z E l p s t f a R @ n d @ n
+nachdem n a: x 'd e: m
+vier 'f i: 6
+Case-Based 'k EI s 'b EI z d
+Softwareentwickler 's O f t v E: 6 ? E n t v I k l 6
+Propagation p R o: p a: 'g a ts j o: n
+Propagation p r o: p a: 'g EI S @ n
+VGG 'f aU 'g e: 'g e:
+KI-System 'k a '? i: z y st e: m
+Deep-Learning-Frameworks 'd i: p l 9 6 n I N f r EI m v 9 6 k s
+Deep-Learning-Modell 'd i: p l 9 6 n I N m o: 'd E l
+Deep-Learning-Netzwerke 'd i: p l 9 6 n I N 'n E ts v E 6 k @
+Form 'f O 6 m
+Layer-Wise 'l EI 6 v aI z
+Keras-Versionen k E R a s v e 6 'z j o: n @ n
+Keras-Version k E R a s v e 6 'z j o: n
+Unternehmen '? U n t 6 n e: m @ n
+übertragen ? y: b 6 't R a: g @ n
+ASR-Pipeline '? a '? Es '? E 6 'p aI 'p l aI n
+COCO-Datasets 'k o: k o: 'd EI t a s e t s
+Open '? O U p @ n
+Python-Packages 'p aI T O n 'p { k E dZ e s
+HGI 'ha: 'ge: '?i:
+API '? a: p  '? i:
+ASR '? a: '? Es '? E 6
+US-Dollar '? u: '? Es d O l a 6
+Photoshop 'f o: t o: S O p
+Illustrator '? I l U s 't R a: t o: 6
+Illustrator ? I l U s 't r EI t O 6
+Algorithmus '? a l g o: 'R I t m U s
+Pi 'p aI
+Mozilla 'm o: 'ts I ll a
+KIT 'k I t
+KIT 'kEi '? aI 'ti:
+Larson 'l a: s @ n
+Larson 'l a: 6 s O n
+JSON 'd Z E I s o n
+Theano 'T i: a: n o
+SpamAssassin 's p { m '? @ s { s i n
+API '? EI 'pi: '? aI
+Kontext 'k O n t E k s t
+TensorFlow-Nutzer t E n z o: R f l O w 'n U ts 6
+TensorFlow-Module t E n z o: R f l O w 'm o: d u: l
+ASR-Plattform '? a '? E s '? E 6 'p l a t f O 6 m
+GitHub g i: 't 'h ? a: p
+Quantencomputer 'k v a n t @ n k O m p j u: t 6
+Quantencomputer 'k v a n t E n k O m p j u: t 6
+Selbstopferung 'z E l p s t ? O p f 6 R U N
+Deep 'd i: p
+arbeiteten '? a: 6 b aI t @ t @ n
+GPU 'ge: 'pe: 'u:
+GPU-Unterstützung 'ge: 'pe: 'u: 'U n t 6 'S t Y ts U N
+deployen d i: p l OY 'j @ n
+iPhone '? aI f o: n @
+CEO 's i: '? i: 'o:
+Tesla 't E s l a
+Rechenoperationen 'R E C @ n ? O p @ R a ts j o: n @ n
+Sprachassistent 'S p R a: x ? a 's I s t E n t
+MP3 'E m 'p e: 'd R a I
+Dilemmata 'd i: l E m a t a:
+E-Klasse '? e: k l a s @
+Eisenhofer '? aI z @ n h o: f 6
+et '? E t
+HDMI 'h a 'd e: '? E m 'i:
+aktuell '? a k t u: ? E l
+Trainingsphase 't R E: n I N s f a: z @
+ASR-Systeme '? a '? E s '? E 6 z Y s 't e: m @
+permanent p E 6 m a n E n t
+Schwarz-Weiß-Bilder 'S v a 6 ts v aI s 'b I l d 6
+strukturieren 'S t R U k t u: R i: R @ n
+learning 'l 9 6 n I N
+SMU '? E s '? E m '? u:
+Sentiment-Analyse 's e n t i: m e n t ? a n a: 'l y: z @
+RNNs 'E R '? E n '? E n s
+Internet '? I n t 6 n E t
+Tech-Konzerne 't E k k O n ts E 6 n @
+bearbeitet b @ '? a 6 b aI t @ t
+Geohots dSi: o: h O ts
+simulieren 'z i: m u: l i: R @ n
+Buch 'b u: x
+LRP-Technologie 'E l 'E R 'pe: t E C n o: l o: 'g i:
+Prognose p R o: 'g n o: z @
+Spectral 's p E k t r @ l
+Spectral 'S p E k t R a: l
+Spectral 'S p E k t r @ l
+KI-Algorithmen 'k a ? i: ? a l g o: 'R I t m @ n
+Jarvis 'dZ a  6 v I s
+Assistenten ? a s I s t E n t @ n
+Aktienkurse '? a k ts j @ n k U 6 z @
+Raumimpulsantwort 'R aU m ? I m p U l s ? a n t v O 6 t
+Bundesregierung b U n d @ s R e: g i: R U N
+quantifiziert 'k v a n t i: f i: ts i: 6 t
+XLS 'I k s '? E l '? E s
+KI-Strategie 'k a '? i: S t R a t e: 'g i:
+vorherzusagen f o: 6 'h e: 6 ts u: 'z a: g @ n
+Version v E 6 'z j o: n
+Processing p r o 's E s I N
+Aktienkurs '? a k ts j E N k U 6 s
+Paradigma 'p a R a: d I g m a:
+KIs 'k a '? i: z
+Autohersteller '? aU t o: h E 6 S t E l 6
+bereinigt b @ 'R aI n I C t
+Laien 'l a: j @ n
+mögliche 'm 2: k l I C @
+möglichen 'm 2: k l I C @ n
+annehmen '? a n n e: m @ n
+Tech-Konzerne 't E C k O n ts E 6 n @
+XLS 'E k s '? E l '? E s
+Objekte '? O b j E k t @
+quelloffene 'k v E l ? O f @ n @
+funktionieren f U N k ts j o n i: R @ n
+Qubits 'k u: b I ts
+Qubits 'kj u: b i: ts
+dt 'd e: 't e:
+Recognition 'r E k O k n I S o n
+IT-Sicherheit '? a I 't i: s I C 6 h aI t
+zugreifen 'ts u: g R aI f @ n
+Zalando 'ts a l a n d o:
+die 'd i:
+hinaus h I 'n aU s
+Skalierung 's k a: l i: R U N
+unterschiedliche '? U n t 6 S i: t l I C @
+LRP '? E l '? E R 'p e:
+Verantwortungsethik f E 6 '? a n t v O R t U N s e: t I k
+Repräsentation 'R e: p R E z E n t a ts j o: n
+Don't 'd o: n t
+zunächst 'ts u: n E: k s t
+Blog 'b l O k
+Cortana 'k O 6 t a: n a:
+universelle '? U n i: v E 6 z E l @
+layer-wise 'l EI 6 v aI z
+relativ 'R e: l a t i: f
+Machine m a S i: n @
+Machine m a S i: n 
+Developers 'd I v { 'l O  p 6 s
+Pet 'p E t
+ML-Anwendungen '? E m '?E l '? a n v E n d U N @ n
+resümiert 'R e: z y: m i: 6 t
+Display d I s p l EI
+smarte 's m a 6 t @
+möglichst 'm 2: k l I C s t
+möglich 'm 2: k l I C
+deployt d i: p l OY t
+vorhergesagt f o: 6 'h e: 6 g @ z a: k t
+Lerch 'l e: 6 C
+versus v E 6 z U s
+versus v 2: 6 z @ s
+Insassen '? I n z a s @ n
+Technologie 't E C n o: l o: g i:
+Fehlinformationen 'f e: l ? I n f O 6 m a ts j o: n @ n
+Neuronaler 'n OY R o: n a: l 6
+Internetethik '? I n t 6 n E t e: t I k
+Lauschangriff 'l aU S ? a n g R I f
+neuronales 'n OY R O 'n a: l @ s
+Echo-Alternative '? E C o: ? a l t 6 n a t i: v @
+Echo-Alternative '? E k o: ? a l t 6 n a 't i: v @
+Echo-Alternative '? E k o: '? a l t 9 n a t I v 
+unsichere '? U n s I C 6 R @
+Siri 'z i: R i:
+Temperatur 't E m p e R a 't u: 6
+voneinander f O n ? aI n 'a n d 6
+Training 't R E: n I N
+selbstfahrendes 'z E l p s t f a: R @ n d @ s
+maschinellen 'm a S i: n E l @ n
+extrahieren 'E k s t R a h i: R @ n
+per 'p e: 6
+Silicon z i: 'l i: k o: n
+Silicon z' i: l i: k O n
+Chatbot 't S E t b O t
+Personen 'p E 6 z o: n @ n
+Erfahrungen '? e 6 f a: R U N @ n
+Erfahrung '? e 6 f a: R U N
+Programmbibliotheken 'p R o: g R a m b i: b l i o: t e: k @ n
+arbeitete '? a: 6 b aI t @ t @
+University j U n I 'v 9 6 z I t i:
+stabil 'S t a b i: l
+Home 'h @ U m
+parat 'p a R a: t
+krebsartig 'k R e: p s ? a 6 t I C
+krebsartig 'k R e: p s ? a 6 t I g
+klassifizieren 'k l a s i: f i: 'ts i: R @ n
+Kundenkommunikation 'k U n d @ n k O m u n I k a 'ts j o: n
+Scannen 's k E n @ n
+Reasoning 'R i: s O n I N
+Urteilsvermögen '? U 6 t aI l s f 6 m 2: g @ n
+a '? a:
+a '? EI
+neural 'n OY 'R a: l
+neural 'n U r @ l
+Inspirationsquelle ? I n s p i: R a ts j o: n s k v E l @
+Produktionsmodule 'p R o: d U k ts j o: n s m o: d U l @
+Hürden 'h Y 6 d @ n
+hin 'h I n
+Technology t E k 'n O l @ d Z I
+Reaktion 'R e: a k ts j o: n
+Autos 'aU t o: s
+Neuronen 'n OY R o: n @ n
+existierende '? E k s I s t i: R @ n d @
+Algorithmen '? a l g o: R I t m @ n
+Funktion 'f U N k ts j o n
+tatsächlich 't a t z E C l I C
+Datenbasis 'd a: t @ n b a: z I s
+Vorteil 'f o: 6 t aI l
+Aktienkurses '? a k ts j E N k U 6 z @ s
+Spracherkennung 'S p R a: x ? E 6 k E n U N
+Unterschiede '? U n t 6 'S i: d @
+identifiziert '? i: d E n t i: f i: 'ts i: 6 t
+entwickelten '? E n t v I k @ l t @ n
+Automobil '? aU t o: m o: b i: l
+Flaschenhals 'f l a S @ n h a l s
+Adversarial '? a d v E 6 z a: R i: 'a: l
+Formate 'f O 6 m a: t @
+Montag 'm o: n t a: k
+Passwörter 'p a s v 9 6 t 6
+ebenfalls '? e: b @ n f a l s
+Bernhart b E 6 n 'h a: 6 t
+eingesetzt '? aI n g @ z E ts t
+algorithmische '? a l g o: R I t m I S @
+daran 'd a: R a n
+Alter '? a l t 6
+zuverlässig 'ts u: f E 6 l E s I C
+Massenmedien 'm a s @ n m e: d i: @ n
+kommt 'k O m t
+Lernmodus 'l E 6 n m o: d U s
+Caffe k a f e:
+Industrie '? I n d U s t R i:
+Technologien 't E C n o: l o: g i: @ n
+unterschiedlich '? U n t 6 S i: t l I C
+unterschiedlichen '? U n t 6 S i: t l I C @ n
+programmiert 'p R o: g R a m i: 6 t
+Integration '? I n t e g R a ts j o: n
+Fraunhofer 'f R aU n h o: f 6
+Thematik 't e: m a: t I k
+Werten 'v e: 6 t @ n
+Systemsicherheit 'z Y s t e: m z I C 6 h aI t
+Natur 'n a t u: 6
+Die 'd i:
+offizielle '? O f i: ts j E l @
+Technik 't E C n I k
+Philosophie 'f i: l o: z o: f i:
+I '? i:
+I 'aI
+vorher 'f o: 6 h e: 6
+Forscherteams 'f O 6 S 6 t i: m s
+entweder '? E n t v e: d 6
+Pipeline 'p aI p l aI n
+Hamster 'h a m s t 6
+jedes 'j e: d @ s
+durchführen 'd U 6 C f y: R @ n
+all 'o: l
+Bundesrepublik b U n d @ s R e: p u: b l I k
+hinter 'h I n t 6
+fünfzig 'f Y n f ts I C
+fünfzig 'f Y n f ts I g
+fündig 'f Y n d I C
+fündig 'f Y n d I g
+Objekterkennung '? O b j E k t ? E 6 k E n U N
+Science-Fiction 's aI @ n s 'f I k S @ n
+Wissensbasis 'v I s @ n s b a: z I s
+funktioniert 'f U N k ts j o n i: 6 t
+Worterkennung 'v O 6 t ? E 6 k E n U N
+maschinelle 'm a S i: n E l @
+jeder 'j e: d 6
+noch 'n O x
+Messgröße m E 's g R 2: s @
+darin 'd a R I n
+COCO 'k o: k o:
+Schlussfolgerungen 'S l U s f O l g @ R U N @ n
+viele 'f i: l @
+regelbasierte 'R e: g @ l b a 'z i: 6 t @
+Politik 'p O l i 't i k
+Hello 'h E l o:
+neuronaler 'n OY R o: 'n a: l 6
+Spiegel 'S p ? i: g @ l
+Berufsethik 'b @ R u: f s ? e: t I k
+to 't u:
+Weg 'v e: k
+Wertvorstellungen 'v e: 6 t f o: 6 S t E l U N @ n
+Valley 'v E l i:
+Fahrradfahrer 'f a: R a: t f a: R 6
+austauschen '? aU s t aU S @ n
+Cognitive 'k O g n I t I v 
+Mining 'm aI n I N
+Atmosphäre '? a t m O s f E: R @
+Funktionen 'f U N k ts j o: n @ n
+Vorgehensweise 'f o: 6 g e: @ n s v aI z @
+Vorgehensweise 'f O 6 g e: @ n s v aI z @
+Sonneneinstrahlung 'z O n @ n ? aI n S t R a: l U N
+selbstfahrende 'z E l p s t f a: R @ n d @
+Fische 'f I S @
+europäische '? OY R o: p E: I S @
+App '? E p
+Erde '? e: 6 d @
+Art '? a 6 t
+lernende 'l E 6 n @ n d @
+hat 'h a t
+vorgestellt 'f o: 6 g @ S t E l t
+Kommission 'k O m I s j o: n
+sehen 'z e: @ n
+virtuelle 'v I 6 t u: ? E l @
+Entdeckungen ? E n t 'd E k U N @ n
+durchzusetzen 'd U R C ts u: z E ts @ n
+siehe 'z i: @
+Infrastruktur '? I n f R a S t R u: k t u: 6
+hierfür 'h i: 6 f y: 6
+Produkt 'p R o: d U k t
+geworden 'g @ v O 6 d @ n
+Synonyme 'z y: n o: n y: m @
+Luftweg 'l U f t v e: k
+Problem 'p R o: b l e: m
+Kapitel 'k a p i: t @ l
+Bilddatenbank 'b I l t ? d a: t @ n b a N k
+Privatsphäre p R i: 'v a: t s f E: R @
+Hack 'h E k
+aufgedeckt '? aU f g @ d E k t
+Forget 'f O 6 g ? E: t
+sozialen z o: ts 'j a: l @ n
+Maschinellen 'm a S i: n E l @ n
+Bundes 'b U n d e s
+Sensor 'z E n z o: 6
+Konzepte k O n 'ts E p t @
+nehmen 'n e: m @ n
+Verbraucher 'f E 6 b R aU x 6
+Computertechnologien k O m 'p j u: t 6 t E C n o: l o: g i: @ n
+Sprachdaten 'S p R a: x 'd a: t @ n
+Versprechen 'f 6 S p R E C @ n
+Automobilindustrie '? aU t o: m o: 'b i: l I n d U s t R i:
+statt 'S t a t
+Versionen 'v E 6 z j o: n @ n
+Quantenüberlegenheit 'k v a n t @ n ? y: b 6 'l e: g @ n h aI t
+Forscherteam 'f O 6 S 6 t i: m
+Lernens 'l E 6 n @ n s
+Programm 'p R o: g R a m
+Alltags '? a l t a: k s
+Probleme p R o: 'b l e: m @
+Person 'p E 6 z o: n
+Terminator 't E 6 m i: n a t o: 6
+Terminator 't 9 6 m i: n EI t 6
+Strategie 'S t R a: t e g i:
+WLAN 'v e: 'l a: n
+Peter 'p i: t 6
+Peter 'p e: t 6
+Blackbox 'b l E k b O k s
+Tay 't EI
+Europa '? OY R o: p a:
+Trainieren 't R E n i: R @ n
+Wert 'v e: 6 t
+trainierten 't R E n i: 6 t @ n
+geplant g @ 'p l a: n t
+Erfahrungswissen 'E 6 f a: R U N s v I s @ n
+Welt 'v E l t
+potenzielle p o: t E n 'ts j E l @
+Antworten '? a n t v O 6 t @ n
+erklärbar ? E 6 'k l E: 6 b a: 6
+implementieren '? I m p l @ m E n t i: R @ n
+semi-überwachtes 'z e: m i: ? y b 6 'v a x t @ s
+Robo-Butler 'R o: b o: 'b a t l 6
+selbst 'z E l p s t
+wenn 'v E n
+Communities k O 'm j U n I t i: s
+Szenarien s ts e: 'n a: R i: @ n
+Universität '? U n i: v E 6 z i: t E: t
+ausweichen '? aU s v aI C @ n
+implementiert '? I m p l @ m E n t i: 6 t
+miteinander m I t ? aI n a n d 6
+orientieren '? o: R i: E n t i: R @ n
+Entwicklungsbedarf '? E n t v I k l U N s b @ d a R f
+Steuerung 'S t OY 6 R U N
+when 'v E n
+Oxford '? O k s f O 6 t
+Oxford '? O k s f 9 6 t
+kapern 'k a: p 6 n
+diskreten 'd I s k R e: t @ n
+Hintergrund 'h I n t 6 g R U n t
+identifizieren '? i: d E n t i: f i: 'ts i: R @ n
+Spracherkennungssysteme 'S p R a: x ? E 6 k E n U N s z Y s t e: m @
+Vorbereitung 'f o: 6 b 6 R aI t U N
+Möglichkeit 'm 2: g l I C k aI t
+Interview '? I n t 6 v j u:
+Pattern 'p E t 6 n
+Fahrers 'f a: R 6 s
+Wettbewerbsfaktor 'v E t b @ v E 6 p s f a k t o: 6
+Konkurrenz 'k O N k U R E n ts
+Luftfeuchtigkeit 'l U f t f OY C t I C k aI t
+präsentierten 'p R E z E n t i: 6 t @ n
+Kombination 'k O m b i: n a ts j o: n
+Kategorien 'k a t @ g o: R i: n
+Vorhersagen 'f o: 6 h e: 6 s a: g @ n
+Programmiersprache p R o: g R a 'm i: 6 S p R a: x @
+Schallwellen 'S a l v E l @ n
+Schallwellen S a l v E l @ n
+Gebiet g @ 'b i: t
+Bildschirmauszug 'b I l t S I 6 m '? aU s ts u: k
+Recht 'R E C t
+Wahrscheinlichkeit 'v a: 6 S aI n l I C k aI t
+Institutionen '? I n s t i: t u: 'ts j o: n e n
+Kritik 'k R i: t i: k
+Kurve 'k U 6 v @
+Analysis '? a n a: l y: z I s
+Go 'g o U
+Diskriminierung 'd I s k R I m i: n i: R U N
+Gehirns g @ 'h I 6 n s
+Computerprogramme k O m 'p j u: t 6 p R o: g R a m @
+Module 'm o: d u: l @
+Technischen 't E C n I S @ n
+Quellcode 'k v E l k o U d
+Bilderkennung 'b I l t ? E 6 k E n U N
+System z Y s 't e: m
+Spracherkennungslösungen 'S p R a: x ? E 6 k E n U N s l 2: z U N @ n
+verstehen 'f E 6 S t e: @ n
+technologischen 't E C n o: 'l o: g I S @ n
+dass 'd a s
+Ernstfall '? E 6 n s t f a l
+dog 'd O g
+Klassifikation 'k l a s i: f i: k a ts j o: n
+unterstellen ? U n t 6 'S t E l @ n
+moralische m o: 'R a: l I S @
+auf '? aU f
+Berlin b E 6 'l i: n
+deep 'd i: p
+Unfälle '? U n f E l @
+uns '? U n s
+Zero 'z i: r o:
+mehrschichtigen 'm e: 6 S I C t I g @ n
+Maßnahmen 'm a: s n a: m @ n
+betrieben b @ 't R i: b @ n
+wesentlich 'v e: z @ n t l I C
+auseinanderzusetzen '? aU s ? aI n a n d 6 'ts u: z E ts @ n
+wissensbasierte 'v I s @ n s b a z i: 6 t @
+gehen 'g e: @ n
+Wettervorhersagen 'v E t 6 f o: 6 h e: 6 z a: g @ n
+Klassifikationsaufgaben k l a s i: f i: k a ts 'j o: n s ? aU f g a: b @ n
+Todesalgorithmen 't o: d @ s ? a l g o: 'R I t m @ n
+revolutioniert 'R e v o l u ts j o: n i: 6 t
+Programme 'p R o: g R a m @
+politische p o: 'l i: t I S @
+politischen p o: 'l i: t I S @ n
+Gate 'g EI t
+we 'v i:
+automatisierte ? aU t o: m a t i: 'z i: 6 t @
+moralischen m o: 'R a: l I S @ n
+Kommunikation 'k O m u: n i: k a ts j o: n
+Systeme 'z Y s t ? e: m @
+Meeting 'm i: t I N
+Meetings 'm i: t I N s
+Tool 't u: l
+Minute 'm i: n u: t @
+Minute 'm i: n @ t 
+Minutes 'm i: n @ t s
+Bot 'b O t
+live 'l aI f
+Smart 's m a: 6 t
+Speaker 's p i: k 6
+Telefonieplattform 't e: l @ f o: n i: p l a t f O 6 m
+Telefonieplattformen 't e: l @ f o: n i: p l a t f O 6 m @ n
+IP-Telefonie '? aI 'pi: 't e l @ 'f o: 'n i:
+Telekom 't e: l @ k O m
+Voice 'v OY s
+over '? Ou v 6
+IP '? aI 'pi:
+Product 'p r O d a k t
+Launch 'l aU n S
+Produkt p R o: 'd U k t
+gemappt g @ 'm E p t
+mappen 'm E p @ n
+Roadmap 'r O U t m E p
+Resource 'R i: s O 6 s
+Human h j u: m @ n
+Skill 's k i l
+Confidence k O n f I d @ n s
+Konfidenz 'k O n f i: d E n ts
+Witz 'v I ts
+Scherz 'S E 6 ts
+Königsdisziplin 'k 2: n I k s d I s ts I p l i: n
+Modell m o: 'd E l
+Model 'm O d @ l
+Wortfehlerrate 'v O 6 t f e: l 6 'R a: t @
+zwanzig 'ts v a n ts I C
+zwanzig 'ts v a n ts I k
+dreißig 'd R aI s I C
+dreißig 'd R aI s I k
+vierzig 'f I R ts I C
+vierzig 'f I R ts I k
+fünfzig 'f Y n f ts I C
+fünfzig 'f Y n f ts I k
+sechszig 'z E C ts I C
+sechszig 'z E C ts I k
+siebszig 'z i: p ts I C
+siebszig 'z i: p ts I k
+achtzig '? a x ts I C
+achtzig '? a x ts I k
+neunzig 'n OY n ts I C
+neunzig 'n OY n ts I k
+der 'd E: 6
+GmbH 'g e: 'E m 'b e: 'h a:
+US-amerikanischen '? u: '? E s 'a m e R i: 'k a: n I S @ n
+US '? u: '? E s
+US-Dollar '? u: '? E s 'd O l a 6
+US-amerikanische '? u: '? E s 'a: m e R i: 'k a: n I S @
+US-amerikanischer '? u: '? E s 'a m e R i: 'k a: n I S 6
+in '? I n
+Celsius 'ts E l s i: j U s
+US-Repräsentantenhaus '? u: '? E s 'R e: p R E z E n 't a n t @ n h aU s
+USA '? u: '? E s '? a:
+Pennsylvania 'p E n z @ l 'v EI n i: a:
+Diözese 'd i: 2: ts e: z @
+US-Bundesstaat '? u: '? E s 'b U n d E s S t a: t
+Nacional 'n a: s i o 'n a: l
+NGC '? E n 'Z i: ' s i:
+NGC '? E n 'g e: 'ts e:
+Commonwealth 'k O m @ n v E: l T
+Philadelphia 'f i l a 'd E l f i: a:
+Gebietsreform g @ 'b i: t s R e: f O 6 m
+debütierte d e: b Y 't i: 6 t @
+IUCN 'aI 'j u: 's i: '? E n
+IUCN 'i: '? u: 'ts e: ' E n
+CDU 'ts e: 'd e: '? u:
+Giuseppe 'dS j u: s E p @
+Railroad 'r EI l r O U d
+Connecticut 'k O n E t I k @ t
+Engineering '? E n 'Z i: 'n i: r I N
+Marseille 'm a 6 s EI 
+Massachusetts 'm E: s @ tS j u: z E ts
+Minnesota 'm I n E z o: t a:
+NSDAP '? E n '? E s 'd e: '? a: 'p e:
+Aserbaidschan '? a z 6 b aI d Z a: n
+BSG 'b e: '? E s 'g e:
+VEB 'f aU '? e: 'b e:
+Bukarest 'b u k a R E s t
+Municipio m U n i: 'T i: p j o
+Osnabrück '? O s n a b R Y k
+SG '? E s 'g e:
+DDR 'd e: 'd e: '6
+US-Amerikaner '? u: '? E s 'a m e R i: 'k a: n 6
+Emeritierung ? e: 'm e: R i: 't i: R U N
+Council 'k aU n 'ts I l
+Hamilton 'h E m I l t @ n
+Pedro 'p e: d R o:
+Vogelarten 'f o: g @ l ? a 6 t @ n
+BGB 'b e: 'g e: 'b e:
+SK '? E s 'k a:
+Lissabon 'l I s a: b o n
+Hudson 'h a ts @ n
+García 'g a 6 s i: a:
+García 'g a 6 T i: a:
+VfB 'f aU '? E: f 'b e:
+Alabama '? a l a 'b a: m a:
+Alabama '? E l @ 'b E: m a:
+onlyinclude '? O n l i: 'I n k l u: d 
+María 'm a: 6 i: a:
+NRW '? E n '6 'v e:
+Cinema 's i: n @ m a:
+EU '? e: '? u:
+NSG '? E n '? E s 'g e:
+Koblenz 'k o: b l E n ts
+UK '? j u: 'k EI
+Infanterie-Regiment '? I n f a n t e: R i: 'R e: g i: 'm E n t
+Cincinnati 's I n s @ n E: t i:
+Samuel 'z a: m u: e: l
+Samuel 'z E: m j u: @ l
+Infanterie-Division '? I n f a n t e: R i: d i: v i: 'z j o: n
+Kader 'k a: d 6
+StGB '? E s 't e: 'g e: 'b e:
+Bratislava 'b R a 't I s 'l a: v a
+Michigan 'm I S I g @ n
+González 'g O n 'ts a: l E s
+ORF '? o: '6 '? E f
+U-Boot '? u: 'b o: t
+Friedrich-Wilhelms-Universität 'f R i: d R I C 'v I l h E l m s U n i: v E R z i: 't E: t
+DJ 'd i: 'dZ EI
+Nord-Süd-Richtung 'n O 6 t 's y: t 'R I C t U N
+Seoul 's ou l
+Rodríguez 'R o: d R i: g E s
+Circuit 's 2 6 k I t
+BMW 'b e: '?E m 'v e:
+Debütalbum d e: 'b y: 'a: l b U m
+Quedlinburg 'k v E t l i: N b U 6 k
+eG 'e: 'g e:
+Assistent '? a s I s t E n t
+LSG '? E l '? E s 'g e:
+Ludwig-Maximilians-Universität 'l u: t v I C 'm a k s i: 'm i: l i: a: n s ? U n i: v E R z i: 't E: t
+Ludwig-Maximilians-Universität 'l u: t v I g m a k s i: 'm i: l i: a: n s ? U n i: v E R z i: 't E: t
+einsSieg '? aI n s 'z i: k
+Säkularisation 'z E k u: l a R i: z a 'ts j o: n
+Secretary 's E k r @ t E r i:
+Valencia 'v a l E n s i: a:
+Valencia v a l @ n T i: a:
+Montgomery 'm O n t g O m E r i:
+Savoyen 'z a: v OY @ n
+vierzig 'f I R ts I C
+Pictures 'p I k t S 6 s
+US-amerikanisches '?u: '? E s 'a m e R i: 'k a: n I S @ s
+VfL 'f aU '? E f '?E l
+Garmisch-Partenkirchen 'g a 6 m I S 'p a: 6 t @ N k I 6 C @ n
+Calgary k E l 'g @ r i:
+Salvador 'z a l v a d o: 6
+Adjutant '? a d j U t a n t
+McCartney 'm E k 'k a 6 t n i:
+SGB '? E s 'g e: 'b e:
+kW 'k a: v e:
+Oklahoma ? O k l a 'h o: m a:
+Leverkusen 'l e: v 6 k u: z @ n
+Accademia ? E k a 'd i: m i a:
+Wimbledon 'v I m b @ l d @ n
+Oregon '? O r i g @ n
+Government 'g a v 6 n m @ n t
+SSR '? E s '? E s '? E 6
+SSR '? E s '? E s '? a: r
+Bordeaux 'b O 6 d o:
+Mountains 'm aU n t @ n s
+Kavallerie 'k a v a l E R i:
+Ian '? i: @ n
+CSU 'ts e: '? E s 'u:
+Health 'h E l T
+Sachsen-Anhalt 'z a k s @ n '? a n h a l t
+Bad 'b a: t
+Montpellier 'm O~ p E l j e:
+ETH '? e: 't e: 'h a:
+Orleans '? O 6 l i: n s
+Ecuador '? E k u a d o: 6
+Göteborg 'g 2: t @ b O 6 k
+Circle 's 2 6 k @ l
+Uppsala '? U p z a: l a:
+Kaliningrad 'k a: l i: n I N g R a: t
+Ost-West-Richtung '? O s t 'v E s t 'R I C t U N
+Agnes '? a: g n @ s
+emeritiert '? E m E R i: t i: 6 t
+Tennessee 't E n @ s i:
+Muhammad 'm u h a: m a t
+Hampshire 'h E m p S @ 6 
+Racing 'r EI s I N
+US-Armee '? u: '?E s 'a: 6 m e:
+ÖVP '? 2: 'f aU 'p e:
+AC ? a: 'ts e:
+AC ? EI 's i:
+Fellow 'f E l O U
+CEO 's i: '? i: 'o:
+bis 'b I s
+lutherischen 'l u: t e R I S @ n
+EC '? e: 'ts e:
+Infanterie '? I n f a n t e: R i:
+Karibik 'k a: R i: b I k
+EHC '? e: 'h a: 'ts e:
+EHC '? i: 'Ei tS 's i:
+Nashville 'n E S v I l 
+Infanterieregiment '? I n f a n t e: R i: 'R e: g i: m E n t
+Metal 'm E t @ l
+Rallye 'r E l i:
+Turin 't U R i: n
+Homepage 'h @ U m 'p ? EI tS
+Antarktisexpedition '? a n t a 6 k t I s '? E k s p e: d i: 'ts j o: n
+Apsis '? a p z I s
+Leichtathletik-Europameisterschaften 'l aI C t a t l e: t I k '? OY R o: p a: 'm aI s t 6 S a f t @ n
+Reynolds 'r EI n O l d s
+Railway 'r EI l v E i:
+SS '? E s '? E s
+Dublin 'd a b l I n
+Bataillon 'b a t a l j o: n
+Mixed 'm I k s d
+Jean-Baptiste 'Z a~ b a: p 't i: s t 
+Places 'p l EI s @ s
+Movie 'm u: v i:
+EM '? e: '? E m
+Comeback 'k a m 'b E k
+Bretagne 'b R e: t a n j @
+Louisiana 'l u: i: z i: E n a:
+RWTH '?E R 'v e: 't e: 'h a:
+Cornelius 'k O 6 n e: l i: j U s
+renommierten 'R e: n o: m i: 6 t @ n
+Chevrolet 'S E v R O l e:
+Chevrolet 'S E v R O l EI
+Cemetery 's E m @ t E r i:
+Cactaceae k a k 't EI s i:
+Grenoble 'g R E n O b l
+Amateurliga '? a m a t 2: 6 'l i: g a:
+Gebiets g @ 'b i: ts
+MW '?E m 'v e:
+UTC '? u: 't e: 'ts e:
+UTC 'j u: 't i: 's i:
+McCarthy 'm E k 'k a: r T i:
+Municipal m j u n 'I s I p @ l
+Coast 'k OU s t
+Papua-Neuguinea p a 'p u: a: n OY g u i: 'n e: a:
+S-Bahn '? E s 'b a: n
+Sánchez 'z a n S E s
+Bautzen 'b aU ts @ n
+U-Bahn '? u: 'b a: n
+SMS '? E s '? E m '? E s
+Pyeongchang 'p i: O N 'tS a N
+Birmingham 'b 2: 6 m I N h E m
+NHL '? E n ' EI tS '? E l
+US-Senat '? u: '? E s 'z e: n a: t
+Aue '? aU @
+Curtis 'k 9 t I s
+Segment 'z e: g m E n t
+Antarktis '? a n t a 6 k t I s
+U-Bahnhof '? u: 'b a: n h o: f
+Exchange ? E k s 'tS EI n S
+NRHP '? E n '? a: R '? EI tS 'p i:
+vierzigste 'f I 6 ts I C s t @
+vierzigste 'f I 6 ts I k s t @
+People 'p i: p @ l
+Bachelor-Abschluss 'b E tS l @ 6 'a p S l U s
+MHz '? E m ' h a: 'ts E t
+Gloucester 'g l O s t 6
+Adelaide '? E d @ l EI d
+Mississippi 'm I s I s I p I
+Erzdiözese '? E 6 ts 'd i: 2: ts e: z @
+All-Star '? O l s t a: 6
+KZ 'k a: 'ts E t
+Pearl 'p 2: 6 l
+Soloalbum 'z o: l o: a l b U m
+TSG 't e: '? E s 'g e:
+A '? a:
+Okres '? O k R E s
+REIMER 'R aI m @ 6
+Quedlinburger 'k v E t l i: n b U 6 g 6
+Rio 'R i: o:
+Provence-Alpes-Côte 'p R O~ v O~ s 'a l p 'k o: t
+DDR-Liga 'd e: 'd e: '? E R 'l i: g a:
+d'Azur 'd a z y: 6
+EP '? e: 'p e:
+EP 'i: 'p i:
+Tenor 't e: n o: 6
+Cleveland 'k l i: v 'l E n t
+Milwaukee 'm I l v O k i:
+AEG ? a: '? e: 'g e:
+Ruprecht-Karls-Universität 'R u: p R E C t 'k a 6 l s '? U n i: v E R z i: t E: t
+Lazarett 'l a ts a R E t
+Orléans '? O 6 l e: O~
+Newcastle 'n j u: 'k a: s @ l
+U-Boote '? u: 'b o: t @
+Solidarität 'z O l i: d a: R i: t E: t
+mbH '? E m 'b e: 'h a:
+Francesco 'f R a n S E s k o:
+Résistance 'R e: z I s 't a~ s
+KPdSU 'k a: 'p e: 'd e: '? E s 'u:
+US-Regierung '? u: '?E s R e: 'g i: R U N
+Distinguished d I s t I N 'g U I S d
+IAU-Code '? aI ? EI 'j u: 'k OU d 
+Uwe '? u: v @
+Kompaniechef 'k O m p a n i: S E f
+Choice 'tS OY s
+Kakteengewächse 'k a k t ? e: n 'g @ v E k s @
+Organization ? O 6 g a 'n I s Ei S @ n
+SpVgg '? E s 'p e: 'f aU 'g e: 'g e:
+suspendiert 'z U s p E n d i: 6 t
+Pro-Kopf-Einkommen 'p R o: 'k O p f 'aI n k O m @ n
+Attorney '? E t 2: 6 n i:
+McLaren 'm E k l a: R @ n
+McLaren 'm E k 'l E r @ n
+Forest 'f O r e s t
+Korsika 'k O 6 z i: k a:
+Season 'z i: s @ n
+Second 'z E k @ n t
+Baden-Württemberg 'b a: d @ n 'v Y 6 t @ m b E 6 k
+RTL '?E R 't e: '? E l
+Basilika 'b a: z i: l i: k a:
+BBC 'b i: 'b i: 's i:
+Beaux-Arts 'b o: z a 6
+Collège k o: 'l E: Z
+Rue 'R y:
+Karl-Marx-Stadt 'k a: 6 l 'm a: 6 k s 'S t a t
+Labour 'l Ei b 9 6
+Iserlohn '? i: z 6 'l o: n
+Facebook 'f EI s 'b U k
+IBM '? aI 'b i: '? E m
+Allradantrieb '? a l R a: t ? a n t R i: p
+Gendarmerie 'Z a n d a R m @ 6 i:
+IEEE '? aI '? i: '? i: '? i:
+graduierte 'g R a: d u: 'i: 6 t @
+Seattle 'z i: E t @ l
+Sommersemester 'z O m 6 'z @ m E s t 6
+Iwan '? i: v a: n
+Teresa 't e: 'R e: z a:
+Antarctic ? a n 't a 6 k t I k
+Reykjavík 'R EI k j a: v I k
+ABC '? EI 'b i: 's i:
+ABC 'a: 'b e: 'ts e:
+Nelson 'n E l s @ n
+okzitanisch '? O k ts i: 't a: n I S
+Mexiko-Stadt 'm E k s I k o: S t a t
+Elsaß-Lothringen '? E l 'z a s 'l o: t R I N @ n
+EU-Kommission '? e: '? u: 'k O m I s j o: n
+IHK 'i: 'h a: 'k a:
+Vogel 'f o: g @ l
+Gallery 'g E l @ r i:
+Natural 'n E t S 9 r @ l
+Resource 'r i: s O r s
+Resources r i: s O r s e s
+Resources r i: s O r s @ s
+Datasets 'd EI t a s E t s
+Raspberry 'r E s b E r i:
+Dataset ' d EI t a s E t
+IT-Experten 'aI 't i: E k s p E 6 t @ n
+Relevance 'r E l e 'v @ n s
+Infanterie-Regiments '? I n f a n t e: R i: 'R e: g i: m E n ts
+Dixon 'd I k s @ n
+Ostindien-Kompanie '? O s t '? I n d i: @ n 'k O m p a n i:
+Compagnie 'k O m p @ n i:
+Sopran 'z o: p R a: n
+Mitkonsekratoren 'm I t k O n z E k R a 't o: R @ n
+Georg-August-Universität ' g e: O R g '? aU g U s t '? U n i: v E R z i: t E: t
+Isle '? a: I l
+Málaga 'm a l a g a:
+Cádiz 'k a d i: T
+Nagasaki 'n a g a 'z a k i:
+Sullivan 's a l I v @ n
+Infanterie-Brigade '? I n f a n t e: R i: 'b R i g a: d @
+CDs 'z e: 'd e: s
+Potosí p o: t o: 's i:
+Evangelisch-Lutherischen ? E f a: N 'g ? e: l I S 'l u: t e R I S @ n
+Guatemala g u: 'a t @ m a: l a:
+Rafael 'R a f a ? e: l
+López 'l O p E T
+Toskana 't O s k a: n a:
+McDonald 'm E k 'd O n @ l t
+Vogelart 'f o: g @ l ? a: 6 t
+Dragon 'd r E g @ n
+Comunità 'k O m u n 'i: t a:
+Peerage 'p i: r @ d S
+Reptilien R E p 't i: l i: @ n
+West-Ost-Richtung 'v E s t '? O s t 'R I C t U N
+Ocean '? OU S @ n
+Zealand 'z i: l E n t
+Township 't ? aU n S I p
+Clermont-Ferrand 'k l E 6 'm O~ f E R a~
+Departamento d e: p a R t a 'm E n t o:
+Horrorfilm 'h O R o: 6 'f I l m
+Generalvikar 'g E n @ 'R a: l 'v I k a: 6
+Okzitanien ? O k ts i: 't a: n i: @ n
+Leichtathletik-Weltmeisterschaften 'l aI C t a t l e: t I k 'v E l t m aI s t 6 S a f t @ n
+USS '? j u: '? E s '? E s
+Delhi 'd e: l i:
+Provincial p r o: 'v I n S 'j @ l
+Max-Planck-Institut 'm a k s 'p l a N k ? I n s t i: 't u: t
+U-Bahn-Station '? u: 'b a: n S t a ts 'j o: n
+Cuxhaven 'k U k s h a: f @ n
+NS-Zeit '? E: n '? E: s 'ts aI t
+Diözesen d i: 2: ts e: z @ n
+Cerro 's E R O
+AIK ? a: '? i: 'k a:
+SBB '? E: s 'b e: 'b e:
+Steyr 'S t aI 6
+US-Bundesstaates '? u: '? E s 'b U n d @ s S t a: t @ s
+Christian-Albrechts-Universität 'k R I s t j a: n 'a l b R E C ts 'U n i: v E R z i: 't E: t
+Trichterbecherkultur 't R I C t 6 'b E C 6 'k U l 't u: 6
+Suárez 's U a: R E s
+registriert R e: 'g I s 't R i: 6 t
+Canterbury 'k E n t 6 b 9 r i:
+Saint-Germain 's O~ 'Z e: R 'm a~
+dem 'd e: m
+EMI '? i: '? E m '? aI
+ZDF 'ts E t 'd e: '? E f
+Development d i 'v E l O p m @ n t
+Picture 'p I k t S 6
+SWR '? E s 'v e: '? 6
+Jamaika 'd Z a: m aI k a:
+Jamaika 'd Z a: m EI k a:
+Arizona ? E r i: 'z o: n a:
+Giulio 'dZ u: l i: o:
+Marienkirche m a: 'R i: j @ N 'k I 6 C @
+lutherische l U t e: R I S @
+sporadisch 'S p o: 'R a: d I S
+Sachsen-Weimar-Eisenach 'z a k s @ n 'v aI m a: R '? aI z @ n a x
+Eiablage '? aI '? a b l a: g @
+Cordillera 'k O R d I j e: R a:
+Arkansas 'a 6 k @ n s O
+UCI 'j u: 's ? i: '? aI
+Mitsubishi 'm I t 'z u: 'b I S i:
+separat 'z e: p a 'R a: t
+Emergency '? i: m 6 dZ @ n s i:
+asphaltierte '? a s f a: l t i: 6 t @
+Rebounds 'r i: 'b aU n ts
+LUKE 'l u: k
+Räikkönen 'R aI k 2: n @ n
+Saaremaa 's a: R E: m a:
+Engineers '? E n dZ I n i: r s
+Loyalität 'l OY a: l i: t E: t
+Guadalajara g u: a d a l a: x 'E: R a:
+permanent 'p E 6 m a n E n t
+Wernigerode 'v E 6 n i: N 6 'R o: d @
+iTunes '? aI 't j u: n s
+Jerzy 'j E: R S E:
+Mustafa 'm U s t a f a:
+Biennale 'b j E n a: l @
+Mecklenburg-Schwerin 'm E k l @ n b U 6 g 'S v e: R i: n
+Princeton 'p r I n ts t @ n
+ibn '? aI 'b i: '? E n
+Advisory ? E d v aI z @ r i:
+TausendMeter-Lauf 't aU z @ n t m e: t 6 l aU f
+Mariä 'm a: R i: a:
+Chöre 'k 2: R @
+Infanteriedivision '? I n f a n t e: R i: 'd i: v i: z j o: n
+Player 'p l ? EI 6
+Rhein-Sieg-Kreis 'R aI n 'z i: k 'k R aI s
+Stolpersteine 'S t O l p 6 'S t aI n @
+Jaroslav 'j a: R O s l a: f
+Ruanda 'R u: a n d a:
+Chelsea 'dZ E l s i:
+Wipperfürth 'v I p 6 f Y 6 t
+U-Bahn-Linie '? u: b a: n l i: n i: j @
+Cherokee dZ 'E r o: k i:
+AIDS '? EI d s
+Hubraum 'h u: b R aU m
+Detlev 'd E t l E f
+Chevalier S @ v a l j e:
+arbeitete '? a 6 b aI t @ t @
+Jeremy 'dZ E r e: m i:
+Aborigines '? a b O r i: dZ @ n i: s
+AHL '? EI '? EI t S '? E l
+Eleanor '? E l @ n o: 6
+Amalie ? a 'm a: l i: @
+ÖPNV '? 2: 'p ? e: '? E n 'f aU
+Cornell 'k O 6 'n E l
+Venture 'v E n t dZ 6
+Miranda m i: 'r E n d a:
+Colin 'k O l I n
+Belvedere 'b E l v @ d E 6
+Józef 'j o: z E f
+Teheran 't E h E 'R a: n
+Oil '? OY l
+Canyon 'k E n j @ n
+Sarkophag 'z a: 6 k o: f a: k
+separaten 'z e: p a R a: t @ n
+separaten 'z E p a 'R a: t @ n
+Sweet 's v i: t
+Sibylle 'z i: b Y l @
+gecovert 'g @ k a v 6 t
+Amateur ? a m a 't 2: 6
+BGH 'b e: 'g e: 'h a:
+Paolo 'p a: o: l o:
+Ilse '? I l z @
+Agency '? EI dZ @ n t s i:
+Villeneuve 'v I l n 9 f
+Alice '? E l I s
+Co-Trainer 'k o: t R E: n 6
+Migration 'm i: g R a ts 'j o: n
+Peripherie 'p E R i: f E: R i:
+Tasmanien 't a s m a: n i: @ n
+Gräfin 'g R E: f I n
+Aaron '? E r @ n
+Anita '? a: n i: t a:
+Assistentin '? a s I s t E n t I n
+US-Truppen '? u: '? E s 't R U p @ n
+Vaughan 'v O n
+Pkw 'p e: 'k a: 'v e:
+Lkw '? E l 'k a: 'v e:
+EV '? e: 'f aU
+OECD '? o: '? e: 'ts e: 'd e:
+OECD '? OU '? i: 's i: 'd i:
+Äquivalent '? E k v i: v a l E n t
+Vehicle 'v i: h i: k @ l
+Sofia 'z o: f i: a:
+Middle 'm I d @ l
+Garcia 'g a 6 s i: a:
+Garcia 'g a 6 T i: a:
+Guy 'g a: i:
+Avignon '? a v i: n i: O~
+Suzuki 'z u: 'z u: k i:
+All-Star-Team '? O l s t a 6 t i: m
+Sacramento 'z E k r a m E n t o:
+Illinois ? I l i: 'n OY s
+asphaltiert ? a s f a l 't i: 6 t
+Alessandro '? a l E 's a n d R o:
+Heritage 'h E r I t @ tS
+Britain 'b r I t @ n
+América ? a m e: 'R i: k a:
+Raiffeisenbank 'R aI f '? aI z @ n 'b a N k
+Lyzeum 'l Y ts e: U m
+Fellowship 'f E l OU S I p
+Reformation 'R e: f O 6 m a ts j o: n
+Jérôme 'Z e: R o: m 
+Corvey 'k O 6 'v aI
+Pay-TV-Sender 'p EI 't i: 'v i: 's E n d 6
+Bevölkerung b @ 'f 9 l k 6 R U N
+posthum 'p O s t u: m
+McGill m E k 'g ? I l
+Jehovas 'j e: h o: v a: s
+US-Bundesstaaten '? u: ? E s 'b U n d @ s S t a: t @ n
+Edo-Zeit '? e: d o: 'ts aI t
+Kawasaki k a v a 'z a k i:
+Restauration 'R E s t aU R a ts j o: n
+Oblast ? o: 'b l a s t
+O'Connor ? o: 'k O n 6
+Ferguson 'f 9 6 g @ s @ n
+Pearson 'p i: r s @ n
+dreißiger-Jahren 'd R aI s I g 6 j a: R @ n
+Batman 'b E t m E: n
+KG 'k a: 'g e:
+Scuderia 's k u: d 6 R i: j a:
+Martin-Luther-Universität m a 6 't i: n 'l U t 6 '? U n i: v E R z i: t E: t
+Andersson '? E n d 6 s @ n
+Süditalien z y: t '? I t a l i: @ n
+Rendsburg 'R @ n s b U 6 k
+Peloponnes p E l @ 'p o: n e: s
+WWE 'd a b @ l j u: 'd a b @ l j u: '? i:
+RWE '?E R 'v e: '? e:
+US-Amerikanerin '? u: 'E s 'a: m 6 R i: 'k a: n 6 R I n
+Alejandro ? a l e: 'x a n d R o:
+Gaetano g a e 't a: n o:
+FFH-Gebiet '? E f '? E f 'h a: 'g @ b i: t
+Excellence '? E k s @ l @ n s
+Cadillac 'k E d I l E k
+E-Mail '? i: m EI l
+Auxerre '? o: s E R
+Marguerite 'm a R g e: R i: t @
+Fuldaer 'f U l d a: 6
+Ignacio '? i: g n a T i: o:
+Approbation '? a p R o: b a 'ts j o: n
+Assistant ? @ 's I s t @ n t
+Comarca 'k O m a 6 k a:
+Publikum 'p U b l i: k U m
+Bavaria b a: 'v E r i: a:
+Regieassistent R e: 'Z i: 'a s I s t E n t
+Coca-Cola k o: k a 'k o: l a:
+Larsson 'l a: 6 s @ n
+Baden-Baden 'b a: d @ n 'b a: d @ n
+Parsons 'p a 6 s @ n s
+da 'd a:
+Prairie 'p R E 'R i:
+Europäischen ? OY R o: 'p E: I S @ n
+Bureau 'b i: r oU
+Meschede 'm E S e d @
+Gemeindegebiets g @ 'm aI n d @ g @ b i: ts
+Trophäe 't R o: f E: @
+Fontainebleau 'f O n 't E n b l o:
+Davis-Cup-Mannschaft 'd EI v I s 'k a p 'm a n S a f t
+Schizophrenie S I ts o: f R E 'n i:
+Special 's p E S @ l
+Nevada 'n e: v a: d a:
+Amadeus ? a m a 'd e: U s
+Alaska '? a l a s k a:
+Alaska ? @ 'l E: s k a:
+Aquitanien ? a k v i: 't a: n i: @ n
+Calw 'k a: l f
+McDonnell 'm E k 'd O n @ l
+Montbéliard 'm O~ 'b i: l j a 6
+František 'f R a n t i: S e k
+Hauptquartier 'h aU p t k v a 6 t i: 6
+Harbour 'h a 6 b @ 6
+Charts 't S a: 6 ts
+Crystal 'k r Y s t @ l
+Kazimierz 'k a: S i: m I 6 S
+Vilnius 'v I l n i: U s
+Chaussee S o: 's e:
+Security 'z I k j U r I t i:
+Nazareth 'n a: ts a: R E t
+permanente 'p E 6 m a n E n t @
+Century 's E n t U r i:
+Titularbischof 't i: t u: l a: 6 b I S o: f
+Kevin 'k E v I n
+Electric ? e: 'l E k t r I k
+Environment ? E n 'v aI r @ n m E n t
+UCLA 'j u: 's i: '? E l '?EI
+Jasper 'd Z E s p 6
+Krzysztof 'k R I s t O f
+Assistenten '? a s I s t E n t @ n
+ostantarktischen '? O s t '? a n t a 6 k t I S @ n
+Place-Names 'p l EI s 'n EI m s
+ADAC '? a: 'd e: '? a: 'ts e:
+renommierte 'R e: n O m i: 6 t @
+Birgit 'b I 6 g I t
+UdSSR '? u: 'd e: '? E s '? E s '? 6
+Sigmaringen 'z I g m a: R I N @ n
+Overath ? o: v E R a: t
+Jaroslawl 'j a R o: 's l a: v l
+Manila 'm a n I l a:
+CDU-Fraktion 'ts e: 'd e: '? u: 'f R a k ts j o: n
+Kobayashi k o: 'b a j a S i:
+DVDs 'd e: 'f aU 'd e: s
+Île-de-France 'I l d @ f R a~ s
+Calvados 'k a l v a d o: s
+Neu-Delhi 'n OY d e: l i:
+AOC '?EI '? OU 's i:
+Lorbeerblatt 'l o: 6 'b e: 6 b l a t
+Irish '? aI r I S
+Belgien 'b E l g i: @ n
+Executive ? E k s 'E k j U t I v
+ATP '? a: 't e: 'p e:
+BVG 'b e: 'f aU 'g e:
+Psychologie 'p s y: C o: l o: g i:
+Cheyenne S a: 'j E n
+Petit p @ 't i: 
+US-Präsident '? u: '? E s 'p R E z i: 'd E n t
+Kastilien 'k a s t i: l i: @ n
+Principal 'p r I n ts I 'p @ l
+Stabes S t a: b @ s
+Toyota 't o: 'j o: t a:
+Gloucestershire 'g l O st 6 S E 6
+Harvard 'h a 6 v 9 6 t
+Suco 's u: k o:
+Baby 'b EI b i:
+Set 's E t
+Future 'f j u: t dZ 9 6
+Chaux-de-Fonds 'S o: d @ 'f O~
+Placid 'p l { s I t
+Maigret 'm aI g R e: t
+Dragons 'd r { g @ n s
+Ingeborg '? I N @ b O 6 k
+Tsunami 'ts u: n a: m i:
+HSG 'h a: '? E s 'g e:
+DNVP 'd e: '?E n 'f aU 'p e:
+Children 'tS I l d r @ n
+Species 's p i: S i: s
+Nilsson 'n i: l s O n
+Guerrero g E R 'E R o:
+Sopranistin 'z o: p R a 'n I s t I n
+Mendoza m E n 'd o: s a:
+Gemeindegebietsreform g @ 'm aI n d @ g @ b i: t s R e: f O 6 m
+Murcia 'm U 6 T i: a:
+DJs 'd i: 'dZ EI s
+Osnabrücker '? O s n a: b R Y k 6
+Balthasar 'b a l t a z a: 6
+US-Marine '? u: '? E s m a 'R i: n @
+Ligue 'l i: g @
+Bartolomeo 'b a 6 t o: l o: 'm e: j o:
+Education '? { d j U k EI S @ n
+Inquisition '? I n k v i: z i: 'ts j o: n
+CONCACAF 'k O n 'k E 'k E f
+Ireland '? aI r l { n t
+Delegation d e: l e: g a 'ts j o: n
+Census-designated 's E n z U s d E z i: g n EI t @d
+Trikot 't R I k o:
+Königin-Maud-Land 'k 2: n i: g I n 'm O d 'l a n t
+Harvey 'h a r v i:
+Grande 'g R a n d @
+Salvatore 'z a l v a t O R @
+Equipment '? e k v I p m E n t
+Download 'd aU n l O U d
+Governance g a v 9 6 'n E n s
+Ronnie 'R O n i:
+Ronnie 'r O n i:
+Sigismund 'z i: g I s m U n t
+Puy-de-Dôme 'p y: I d i: d o: m
+Dinosaurier 'd i: n o: 'z aU R i: 6
+Achievement '? @ t S i: f m @ n t
+Adjektiv '? a d j E k t i: f
+Friedrich-Schiller-Universität 'f R i: d R I C S I l 6 '? U n i: v E R z i: 't E: t
+Toledo t o: 'l i: d o:
+Eozän '? e: j o: 'ts E: n
+Orangerie ? o: R a~ Z @ 'R i:
+Hospital 'h O s p i: 't a: l
+Hospital 'h O s p I 't @ l
+Mountain 'm aU n t @ n
+TV-Serie 't e: 'f aU 's e: R i: @
+Côte-d'Or 'k o: t 'd O 6
+U-Booten '? u: b o: t @ n
+Guinness-Buch 'g I n @ s b u: x
+Infanterieregiments '? I n f a n t e: R i: 'R e: g i: m E n ts
+Rhein-Main-Gebiet 'R aI n 'm aI n 'g @ b i: t
+Nueva 'n u: E v a:
+durchqueren 'd U R C 'k v e: 6 R @ n
+Memphis 'm E m f I s
+Ramírez 'R a m i: R E: s
+Departamentos d e: p a R t a: 'm E n t o: s
+Uerdingen '? 2: 6 d I N @ n
+Aragón '? a R a g O n
+Philipps-Universität 'f I l I p s ? U n i: v E R z i: 't E: t
+Miniserie 'm i: n i: z e: R i: @
+Baptist 'b a: p 't I s t
+Bülow 'b 2: l o:
+Thrakien 't R a: k i: @ n
+Martínez m a 6 't i: n E: s
+DVD 'd e: 'f aU 'd e:
+vorangetrieben f o: 'R a n g @ t R i: b @ n
+Heart 'h a: 6 t
+Electronic ? e: l E k 't r O n I k
+Manufacturing 'm E n j u: f { k tS 9 6 I N
+Ted 't {: d
+Middlesex 'm I d @ l 's E k s
+Pestepidemie 'p E s t 'e: p i: d e: m i:
+Magdalena 'm a g d a: l e: n a:
+Alegre ? a 'l E: g R @
+westantarktischen 'v E s t '? a n t '? a 6 k t I S @ n
+emeritierte ? e: m 6 R i: 't i: 6 t @
+Joaquín '? x O a: k i: n
+Fußball-Europameisterschaft 'f u: s b a l ? OY 'R o: p a: m aI s t 6 S a f t
+Nuevo 'n u: E: v o:
+Lopez 'l o: 'p E s
+Friends f r E: n ts
+HGB 'h a: 'g e: 'b e:
+Facility f a s 'I l I t i:
+Tomatoes t o: 'm EI t o: s
+Connor 'k O n @ 6
+Annemarie '? a n @ 'm a 'R i:
+CERN 'ts E R n
+Karel k a 'R E l
+Again ? @ g {: n
+Hispanics 'h I s p E n I k s
+Cornelia 'k O 6 n e: l i: j a:
+Bachelor 'b { tS l 6
+Armenier ? a 6 'm e: n i: 6
+Hessen-Darmstadt 'h E s @ n 'd a 6 m S t a t
+Singlecharts 's I N @ l tS a 6 ts
+Catania k a 't a: n i: j a:
+Montabaur 'm O n t a: 'b a U 6
+US-Soldaten '? u: '? E s 'z O l 'd a: t @ n
+Okinawa ? O k i: 'n a: v a:
+Justus-Liebig-Universität 'j U s t U s l i: b I C U n i: v E R z i: 't E: t
+Rhenania 'R e: n a: 'n i: a:
+Veracruz v E 6 R a: 'k R u: s
+Reliquien 'R e: l I k v i: @ n
+Savoie 'z a: v U a:
+Laubblätter 'l aU p 'b l E t 6
+McCoy 'm E k k OY
+Asteraceae '? a s t e: R a: ts {: @
+Fletcher 'f l E tS 6
+acht '? a x t
+Secret 's i: k r @ t
+Sergeant 's a: 6 dZ @ n t
+Stadt-und-Land-Gemeinde 'S t a t 'U n d 'l a n t g @ 'm aI n d @
+Mecklenburg-Strelitz 'm E k l @ n b U 6 g S t R e: l I ts
+Whitehead 'v aI t 'h E d
+Beatles 'b i: t @ l s
+Gascogne 'g a: s 'k o: n i:@
+Weißenburg-Gunzenhausen 'v aI s @ n b u: 6 g ' g U n ts @ n h aU z @ n
+O'Sullivan ? o: 's a l I v @ n
+albanischen '? a l b a: n I S @ n
+Pablo 'p a: p l o:
+Notre-Dame 'n O t R @ d a m
+separate 'z e: p a 'R a: t @
+UzwanzigJunioren-Weltmeisterschaft '? u: 'ts v a n ts I k 'j u: n 'j o: R @ n v E l t m aI s t 6 S a f t
+Poseidon 'p o: z aI d O n
+Circus 's 9 6 k @ s
+Chairman 't S E: 6 m @ n
+Karikatur 'k a R I k a 't u: 6
+EZB '? e: 'ts E t 'b e:
+US-Charts '? u: '? E s tS a 6 ts
+Pole-Position 'p oU l  p o: z i: S @ n
+EM-Endrunde '? e: '? E m '? E n d R U n d @
+Duisburg 'd y: s b U 6 k
+permanenten 'p E 6 m @ n E n t @ n
+Teneriffa 't E n @ R I f a:
+Janssen 'j a n s @ n
+Thrash-Metal-Band 't r E S 'm E t @ l  'b {: n d
+Baden-Württembergänze 'b a: d @ n 'v Y 6 t @ m b E 6 'g E n ts @
+Titularbistum 't i: t u: l a R b I s t u: m
+Bolívar b o: 'l i: 'v a: 6
+Governor 'g a v E 6 n @ 6
+Main-Kinzig-Kreis 'm aI n 'k I n ts I g 'k R aI s
+CBS 's i: 'b i: '? E s
+DDR-Zeiten 'd e: 'd e: 'e 6 'ts aI t @ n
+Tomás 't o: m a: s
+Côtes-d'Armor 'k o: t  d a R m o: 6
+Woman 'v U m @ n
+Nachbarorte 'n a x b a 6  'O 6 t @
+EU-Staaten '? e: '? u: 'S t a: t @ n
+Bogotá 'b o: g o: 't a:
+Federal 'f e: d e 6 R a: l
+Federal 'f E d @ r @ l
+Treasurer 't r { S @ 6 r 6
+emeritierter ? e: m 6 R i: 't i: 6 t 6
+Vogelsang 'f o: g @ l z a N
+Max-Planck-Gesellschaft 'm a k s 'p l a N k g @ 'z E l S a f t
+Pasadena p E z @ 'd i: n a:
+Stargard 'S t a 6 g a: 6 t
+B-Seite 'b e: 's aI t @
+US-Kongress '? u: '? E s k O N 'g R E s
+Usbekistan '? U s b e: k I s t a: n
+iPhone '? aI 'f OU n 
+Lafayette 'l a: f a 'j E t 
+Taekwondo 't E k v a n d o:
+US-Army '? j u: '? E s '? a: 6 m i:
+Pembroke p E m 'b r OU k
+Kalabrien 'k a l a: b R i: @ n
+Sewastopol 'z e: v a s t o: p o: l
+Profikader 'p R o: f i: k a: d 6
+Mordes 'm O 6 d @ s
+Lancashire 'l E n 'k @ S 6
+Skilanglauf 'S i: 'l a N l aU f
+Gómez 'g O 'm E s
+Middlesbrough 'm I d @ l s b r a
+Dolní 'd O l n i:
+sciences 's aI @ n s @ s
+HMS '? EI t S '? E m '? E s
+Arktis '? a 6 k t I s
+Pankow p a N k o:
+Noricum 'n o: R I k U m
+Odysseus '? o: d y s OY s
+Lagune 'l a g u: n @
+Seneca z E: n E k a:
+Perth 'p 9 6 T
+Cornwall 'k O R n v O l
+Oakland '? OU k l { n t
+Freedom 'f r i: d @ m
+Mekka m E k a:
+Aloe '? a l o: e:
+Sébastien 's e: 'b a s t I a~
+Mixtape 'm I k s 't EI p
+Nowosibirsk 'n o: v o: z i: b I 6 s k
+Album-Charts '? a l b U m t S a 6 ts
+Charkow 't S a 6 k O f
+Melanchthon 'm E l a n C t h O n
+Kirgisistan 'k I 6 g i: z I s t a: n
+Pfarrort 'p f a 6 ? O 6 t
+Miriam 'm i: R i: a: m
+PCs 'p e: 'ts e: s
+PCs 'p i: 's i: s
+AOK '? a: '? o: 'k a:
+Sylvester 's I l v E s t 6
+Sylvester z Y l 'v E s t 6
+UCI-Bahn-Weltmeisterschaften '? u: 'ts e: '? i: 'b a: n v E l t m aI s t 6 S a f t @ n
+Freimaurerloge 'f R aI m aU R 6 'l o: Z @
+Mittelrisalit 'm I t @ l R i: z a l i: t
+Tochterunternehmen 't O x t 6 ? U n t 6 'n e: m @ n
+Lazarus 'l a: ts a: R U s
+Palacio p a 'l a s i: o:
+VW 'f aU 'v e:
+Metal-Band m E t @ l 'b a n t
+Velázquez 'v e: l a s k @  s
+Pays 'p ? EI 
+Jekaterinburg 'j e: 'k a t e 'R i: n b U 6 k
+MIT '? E m '? aI 't i:
+IRA '? aI '? a 6 '? EI
+Sunset 's a n s E t
+Wilhelms-Universität 'v I l h E l m s 'U n i: v E R z i: 't E: t
+Minneapolis 'm I n @ j { p O l I s
+Diokletian 'd i: o: k l e: ts i: a: n
+Chanson 'S O~ s O~
+Hohenzollern-Sigmaringen 'h o: @ n 'ts O 'l  E 6 n 'z I g m a: R I N @ n
+Seahawks 's i: h O k s
+Ignaz '? i: g n a: ts
+Eugène '? 2: Z E: n
+Erasmus ? E R a s m U s
+Südsudan 'z y: t z U 'd a: n
+Albert-Ludwigs-Universität '? a l b 6 t 'l u: t v I k s '? U n i: v E R z i: 't E: t
+OSZE '? o: '?E s 'ts E t '? e:
+Burkina 'b u: 6 k i: n a:
+and '? {: n d
+Catalunya 'k a t a: l u: n i: j a:
+Samurai 'z a m U R aI
+Juárez '? x u: a: R E s
+Non-Profit-Organisation 'n O n 'p r O f I t 'O 6 g a: n i: z a ts j o: n
+Grand-Slam-Turnier 'g r {: n d s l {: m t U 6 'n i: 6
+gejagt g @ j a: k t
+Aula '? aU l a:
+Lionel 'l aI n @ l
+Somerset 's a m 6 's E t
+Cameo-Auftritt k a 'm e: o: '? aU f t R I t
+Antalya ? a n 't a l i j a:
+Basilica 'b a: z i: 'l i: k a:
+Everton '? E v E 6 t @ n
+Ravenna 'r a: v E n a
+h 'h a:
+h '? EI tS
+Councils 'k aU n s I l s
+Illustrator ? I l U s 't r EI t 6
+Aserbaidschans '? a z 6 b a 'i: d Z a: n s
+Taipeh 't aI p e:
+Kamerun 'k a m @ R u: n
+Holiday 'h O l i d EI
+US-Senator '? u: '? E s 's e: n a: t o: 6
+Alonso '? a l O n z o:
+Australien ? aU s 't R a: l i: @ n
+Uetersen '? y: t e: 6 z @ n
+strukturelle 'S t R U k 't u: R E l @
+Gillespie g I l l 'E s p i:
+Townships 't aU n S h I p s
+Johanniterordens j o: 'h a n i: t 6 ? O 6 d @ n s
+Brilon 'b R i: l O n
+Mumbai 'm U m b aI
+Schwerin 'S v e: 'R i: n
+Dragoner-Regiment 'd R a 'g o: n 6 'R e: g i: 'm E n t
+Sucre 's y: k R @
+Vancouver 'v E n k u: v 6
+Escuela ? E s 'k u: E l a:
+Wembley-Stadion 'v E m b l i: 'S t a: d i: O n
+Lonely 'l oU n l i:
+Autodidakt '? aU t o: d i: d a k t
+Civil 's I 'v I l
+Opposition ? O p o: z i: 'ts j o: n
+Nordatlantik n O 6 t ? a t 'l a n t I k
+S-Bahn-Linie '? E s 'b a: n l i: n i: @
+Rendezvous 'R O~ n d @ v u:
+Veterinärmedizin v e: t e: 'R i: n E 6 m e: d i: 'ts i: n
+Veteranen v E t E R a: n @ n
+Paket 'p a k e: t
+dreißiger-Jahre 'd R aI s I g 6 j a: R @
+Realgymnasium R e: '? a: l g Y m 'n a: z i: U m
+Rendsburg-Eckernförde 'R e: n ts b U 6 g 'E k 6 n f 9 6 d @
+Soest z o: s t
+McLean 'm E k l EI n
+Kurator 'k u: 'R a: t O 6
+Eugen '? OY g @ n
+molekulargenetische m o: l @ k u: l a 6 g e: 'n e: t I S @
+Riccardo 'R I k a 6 d o:A '? a:
+A '? a:
+B 'b e:
+C 'ts e:
+D 'd e:
+E '? e:
+F '? E f
+G 'g e:
+H 'h a:
+I '? i:
+J 'j O t
+K 'k a:
+L '? E l
+M '? E m
+N '? E n
+O '? o:
+P 'p e:
+Q 'k a:
+R '? E 6
+S '? E s
+T 't e:
+U '? u:
+V 'f aU
+W 'v e:
+X '? I k s
+Y '? Y p s i: l O n
+Z 'ts E t
+Ä '? E:
+Ö '? 2:
+Ü '? y:
+3rd-Level-Support 'T 9 6 d 'l E v @ l s @ 'p O 6 t
+Abfall-Überwachungssystem '? a p f a l ? y: b 6 'v a x U N s z Y s t e: m
+Abwasseranlage '? a p v a s 6 ? a n l a: g @
+Access '? E k s E s
+Active '? E k t I v 
+Directory d a I 'r E k t O r i:
+Admin '? a t m I n
+Akkreditierung '? a k R e: d i: t i: R U N
+Akte '? a k t @
+Altlasten '? a l t l a s t @ n
+Analyseplattform ? a n a 'l y: z @ p l a t f O 6 m
+Anlagen '? a n l a: g @ n
+Anlageninventursystem '? a n l a: g @ n ? I n v E n t u: 6 z Y s t e: m
+Anmeldung '? a n m E l d U N
+Antragsmanagementkomponente '? a n t R a: k s m E n @ t S m @ n t k O m p o: 'n E n t @
+Anwendungen '? a n v E n d U N @ n
+Anwendungsbereitstellung '? a n v E n d U N s b @ R aI t S t E l U N
+Anwendungsbetrieb '? a n v E n d U N s b @ t R i: p
+Application '? E p @ l i: 'k EI S @ n
+Applikationsserver ? a p l i: k a ts 'j o: n s z 9 6 v 6
+Arbeitnehmerüberlassung '? a 6 b aI t 'n e: m 6 ? y: b 6 'l a s U N
+Arbeitsschutz '? a 6 b aI ts S U ts
+Archiv ? a 6 'C i: f
+Archivierung ? a 6 C i: 'v i: R U N
+Archivierungsmodul ? a 6 C i: 'v i: R U N s m o: d U l
+Area '? E r i a
+Assetmanagement '? E s @ t m E n @ t S m @ n t
+Asyldatenbank ? a 'z y: l 'd a: t @ n b a N k
+Asylfact-Datenbank ? a 'z y: l f E k t d a: t @ n b a N k
+Atrium '? a: t R i: U m
+Aufenthaltsüberwachung '? aU f @ n t h a l ts ? y: b 6 'v a x U N
+Aufgabenverwaltung '? aU f g a: b @ n f 6 v a l t U N
+Ausbildungsdatenbank '? aU s b I l d U N s d a: t @ n b a N k
+Auskunft '? aU s k U n f t
+Ausländer '? aU s l E n d 6
+Außenanlagen '? aU s @ n ? a n l a: g @ n
+Außenstelle '? aU s @ n S t E l @
+austauschen '? aU s t aU S @ n
+Austauschplattform '? aU s t aU S p l a t f O 6 m
+Auswertung '? aU s v e: 6 t U N
+Automation '? aU t o: m a 'ts j o: n
+Automatisierung ? aU t o: m a t i: 'z i: R U N
+Basis 'b a: z I s
+Baukostenplanung 'b aU k O s t @ n p l a: n U N
+Bauten 'b aU t @ n
+Beantragung b @ '? a n t R a: g U N
+Bearbeitung b @ '? a 6 b aI t U N
+Benutzerverwaltung b @ 'n u ts 6 f E 6 'v a l t U N
+Beratungsstelle b @ 'R a: t U N s S t E l @
+Bereiche b @ 'R aI C @
+Bereitstellung b @ 'R aI t S t E l U N
+Bergaufsichtsunterstützungssystem 'b E 6 k ? aU f z I C ts U n t 6 'S t Y ts U N s z Y s t e: m
+Berufsanerkennungssoftware b @ 'R u: f s ? a n ? E 6 k E n U N s z O f t v E: 6
+Beschaffungsmanagement b @ 'S a f U N s m E n @ t S m @ n t
+Betriebsportal b @ 't R i: p s p O 6 t a: l
+Betriebsumgebung b @ 't R i: p s ? U m 'g e: b U N
+Bewerberdatenbank b @ 'v E 6 b 6 d a: t @ n b a N k
+Bewerberverwaltung b @ 'v E 6 b 6 f E 6 'v a l t U N
+Bewerbungsdaten b @ 'v E 6 b U N s d a: t @ n
+Bewertungsverfahren b @ 'v E 6 t U N s f E 6 f a: R @ n
+Bildungsmanagement 'b I l d U N s m E n @ t S m @ n t
+Bildungsurlaub 'b I l d U N s ? u: 6 l aU p
+Bildverarbeitung 'b I l t f E 6 ? a 6 b aI t U N
+BizTalk 'b I z 't O k
+BlackBerry 'b l E k 'b E r i:
+Bebauungsplan b @ 'b aU U N s p l a: n
+Brandenburgisch 'b R a n d @ n b U 6 g I S
+Brandschutz 'b R a n t S U ts
+Browser¡ 'b r aU z 6
+in '? I n
+the 'T @
+box 'b O k s
+Bund 'b U n t
+Bundesbank 'b U n d @ s b a N k
+bundeseinheitlich 'b U n d @ s ? aI n h aI t l I C
+Bundesländer 'b U n d @ s l E n d 6
+Bundesratsangelegenheiten 'b U n d @ s R a: ts ? a N g @ l e: g @ n h aI t @ n
+Bund-Länder 'b U n t 'l E n d 6
+Business 'b I z n @ s
+Call 'k O l
+Center 's E n t 6
+Certification s 9 6 t i: f i: 'k EI S @ n
+Authority ? O 'T o: r @ t i:
+Change 'tS EI n S
+Management 'm E n E d Z m @ n t
+Client 'k l aI j @ n t
+Computergestützte k O m 'p j u: t 6 g @ S t Y ts t @
+Configuration k O n f i: g u: 'r EI S @ n
+Criminal 'k r I m I n @ l
+Customer 'k a s t O m 6
+Data 'd EI t a:
+Database 'd EI t a: 'b EI z
+Dateiablage d a: 't aI ? a p l a: g @
+Daten 'd a: t @ n
+Datenbank 'd a: t @ n b a N k
+Datenbankplattform 'd a: t @ n b a N k p l a t f O 6 m
+Datenpool 'd a: t @ n p u: l
+Daten-Schnittstelle 'd a: t @ n 'S n I t S t E l @
+Datensicherung 'd a: t @ n z I C 6 R U N
+Datenspeicher 'd a: t @ n S p aI C 6
+Datenübernahme 'd a: t @ n ? y: b 6 n a: m @
+Datenwiederherstellung 'd a: t @ n v i: d 6 'h e: 6 S t E l U N
+De-Mail 'd e: '? e: 'm EI l
+Desk 'd E s k
+Dezentraler 'd e: ts E n t R a: l 6
+Dialog d i: a 'l o: k
+Dienst 'd i: n s t
+Dienste 'd i: n s t @
+Dienstfahrzeuge 'd i: n s t f a: 6 ts OY g @
+Dienststelle 'd i: n s t S t E l @
+Dienststellenauftritte 'd i: n s t S t E l @ n ? aU f t R I t @
+Dienststellenverzeichnis 'd i: n s t S t E l @ n f 6 'ts aI C n I s
+Digital d i: g i: 't a: l
+Direktanschlüsse d i: 'R E k t ? a n S l Y s @
+Distributed d I s t r i: b u: t @ d
+Dokumentenaustausch d o: k u: 'm E n t @ n ? aU s t aU S
+Dokumenten-Informations-System 'd o: k u: m E n t @ n '? I n f O 6 m a ts j o: n s 'z Y s t e: m
+Dolmetscherdatenbank 'd O l m E t S 6 'd a: t @ n b a N k
+Domain-Registrierung d O 'm EI n R e: g I s 't R i: R U N
+Druck 'd R U k
+Druckdaten 'd R U k 'd a: t @ n
+Drupal 'd R u: p a: l
+DSL-Anschluss 'd  e: '? E s '? E l 'a n S l U s
+Duplo-Akte 'd U p l o: ? a k t @
+E-Akte '? e: '? a: k t @
+E-Aufenthalt '? e: '? aU f E n t h a l t
+E-Beihilfe '? e: 'b aI h I l f @
+E-Einbürgerung '? e: '? aI n b Y 6 g @ R U N
+e-Gesetzesregistratur '?e: g @ 'z E ts @ s R e: g I s t R a t u: 6
+E-Gewerbeuntersagung '? e: g @ 'v E 6 b @ ? U n t 6 z a: g U N
+E-Government '? e: 'g a v 9 n m E n t
+Einsatzbibliothek '? aI n z a ts b i: b l i: o: t e: k
+E-Learning-Plattform '? i: 'l 6 n I N 'p l a t f O 6 m
+Elektronisches '? e: l E k 't R o: n I S @ s
+Verwaltungspostfach f 6 'v a l t U N s p O s t f a x
+Elterngeld '? E l t 6 n g E l t
+E-Mail '? i: 'm EI l
+Protokollierung p R o: t o: 'k O l i: R U N
+Verschlüsselung f 6 'S l Y s @ l U N
+E-Nachricht ? e: 'n a: x R I C t
+Enterprise '? E n t 6 p r aI s
+Edition ? e: d i: 'ts j o: n
+Entwicklungsplattform ? E n t 'v I k l U N s p l a t f O 6 m
+Entwicklungsrelevanten ? E n t 'v I k l U N s R e: l @ 'v a n t @ n
+Environmental ? E n v aI r O n m E n t @ l
+E-Payment '? i: 'p EI m E n t
+Erbschein '? E 6 p S aI n
+E-Rechnung '? e: 'R E C n U N
+e-Recruiting 'i: 'r i: k r u t I N
+Ergonomisch ? E 6 g o: 'n o: m I S
+Erhebung ? E 6 'h e: b U N
+Erstaufnahmeeinrichtung '? e: 6 s t ? aU f n a: m @ '? aI n R I C t U N
+EU-Dienstleistungsrichtlinie '? e: '? u: d i: n s t l aI s t U N s R I C t l i: n i @
+Evaluationssoftware ? e: v a l u: ? a 'ts j o: n s z O f t v E: 6
+E-Vergabe '? e: 'f 6 g a: b @
+Examensinformationssystem ? E 'k s a: m @ n s ? I n f O 6 m a ts 'j o: n s z Y s t e: m
+Externes ? E k s 't E R n @ s
+Extranet '? E k s t R a n @ t
+Fachinformationssystem 'f a x ? I n f O 6 m a ts 'j o: n s z Y s t e: m
+Fachspezifische 'f a x S p e: 'ts i: f I S @
+Fachverfahren 'f a x f 6 f a: R @ n
+Fahrerlaubnis 'f a: 6 ? E 6 'l aU p n I s
+Fahrzeugschlüsselverwaltung 'f a: 6 ts OY k S l Y s @ l f E 6 v a l t U N
+Feature 'f i: t S 6
+festsetzungsnah 'f E s t z E ts U N s n a:
+Festsetzungsthemen 'f E s t z E ts U N s 't e: m @ n
+File 'f aI l 
+Service 's 9 6 v I s
+Finanzämter f i: 'n a n ts ? E m t 6
+Firewall 'f aI 6 v O l
+Fliegende 'f l i: g @ n d @
+Flüchtlinge 'f l Y C t l I N @
+Flüchtlingsverwaltung-Datendrehscheibe 'f l Y C t l I N s f 6 'v a l t U N 'd a: t E n 'd R e: S aI b @
+Förderinformationssystem 'f 9 6 d 6 ? I n f O 6 m a ts j o: n s z Y s t e: m
+Förderportal 'f 9 6 d 6 p O 6 t a: l
+Form 'f O 6 m
+Formularversand f O 6 m u: 'l a R f 6 z a n t
+Forst 'f O 6 s t
+Forstliche 'f O 6 s t l I C @
+Foundation f aU n 'd EI S @ n
+FTP-Dienst '?E f 't e: 'p e: 'd i: n s t
+Fuhrparkverwaltung 'f u: 6 p a 6 k f 6 v a l t U N
+Functional 'f a n k tS @ n @ l
+Gas 'g a: s
+Gebäudeeinmessungsregister g @ 'b OY d @ '? aI n m E s U N s R e: g I s t 6
+Gebäudeleittechnik g @ 'b OY d @ 'l aI t t E C n I k
+Gefahrstoff g @ 'f a: 6 S t O f
+Gentechnik 'g e: n t E C n I k
+Geodaten 'g e: o: d a: t @ n
+Geodateninfrastruktur 'g e: o: d a: t @ n '? I n f R a S t R u: k t U 6
+Geographische g e: o: 'g R a: f I S @
+Geo-Informationssysteme 'g e: o: '? I n f O 6 m a ts 'j o: n s z Y s t e: m @
+Geo-Webdienst 'g e: o: 'v E p d i: n s t
+Gericht g @ 'R I C t
+gerichtliches g @ 'R I C t l I C @ s
+Gerichtskassen g @ 'R I C ts k a s @ n
+Geschäftsprozessmodellierung g @ 'S E f ts p R o: ts E s m o d E 'l i: R U N
+Gesetzgebungsverfahren g @ 'z E ts g e: b U N s f 6 f a: R @ n
+Ginster-Referenz- 'g I n s t 6 'R E f @ 'R E n ts
+Graphische 'g R a: f I S @
+Große 'g R o: s @
+Grundbuch 'g R U n t b u: x
+Grundbuchabrufverfahren 'g R U n t b u: x '? a: b R u: f f 6 f a: R @ n
+Grundinformationsdienst 'g R U n t ? I n f O 6 m a ts 'j o: n s d i: n s t
+Grundstück 'g R U n t S t Y k
+Grundwasserschadensfälle 'g R U n t v a: s 6 S a: d @ n s f E l @
+Grundwasserschutz 'g R U n t v a: s 6 S U ts
+Handelsregister 'h a n d @ l s R e: 'g I s t 6
+Haushaltsaufstellungsverfahren 'h aU s h a l ts '? aU f S t E l U N s f 6 f a: R @ n
+Haussystem 'h aU s z Y s t e: m
+HeDis 'h e: 'd I s
+HeDok 'h e: 'd O k
+HELABA 'h e: l a: b a:
+HepChat 'h E p 'tS E t
+HESIS 'h e: s I s
+Hessen 'h E s @ n
+HessenAccess 'h E s @ n '? E k s E s
+HessenConnect 'h E s @ n 'k O n E k t
+HessenDANTE 'h E s @ n 'd a: n t @
+HessenDrive 'h E s @ n 'd r aI f
+HessenPC 'h E s @ n 'p e: 'ts e:
+HessenPortal 'h E s @ n p O 6 't a: l
+HessenSmartphones 'h E s @ n 's m a 6 t f O U n s
+HessenVoice 'h E s @ n 'v OY s
+hessenweiter 'h E s @ n v aI t 6
+Hessische 'h E s I S @
+Hessischen 'h E s I S @ n
+Hessischer 'h E s I S 6
+Hessisches 'h E s I S @ s
+Hinweisaufnahme 'h I n v aI s '? aU f n a: m @
+HKM 'h a: 'k a: '? E m
+HLA 'h a: '? E l '? a:
+HMdF 'h a: '? E m 'd e: '? E f
+HMdF-Verfahren 'h a: '? E m ' d e: 'E f 'f 6 f a: R @ n
+HMdJ 'h a: '? E m 'd e: 'j O t
+HMUKLV 'h a: '? E m '? u: 'k a: '? E l 'f aU
+Hochverfügbarkeit 'h o: x f 6 'f y: k b a 6 k aI t
+Homing 'h O U m I N
+Host 'h O U s t
+HP 'h a: 'p e:
+Hünfeld 'h y: n f E l t
+Hyper-V 'h aI p 6 'v i:
+A 'h a: 'ts E t 'd e:
+Ideenmanagement '? I d e: n 'm E n E d Z m @ n t
+Identity ? aI 'd E n t @ t i:
+IDM '? i: 'd e: '? E m
+IMMO-Spezial ? I m o: 'S p e: 'ts j a: l
+Incident '? I n s i: d E n t
+Informationsportal '? I n f O 6 m a ts j o: n s p O 6 t a: l
+Informationssicherheitsmanagement '? I n f O 6 m a ts 'j o: n s z I C 6 h aI ts m E n @ t S m @ n t
+Informationssystem '? I n f O 6 m a ts j o: n s z Y s t e: m
+Informationsverarbeitung '? I n f O 6 m a ts j o: n s f 6 ? a 6 b aI t U N
+Infoserver '? I n f o: s 9 6 v 6
+Infrastructure '? I n f r a: st r a: k tS 6
+Infrastruktur '? I n f R a S t R u: k t u: 6
+Infrastrukturdienste '? I n f R a S t R u: k t u: 6 d i: n s t @
+Infrastrukturförderung '? I n f R a S t R u: k t u: 6 f 9 6 d 6 R U N
+inklusive '? I n k l u: z i: v @
+innerhalb '? I n 6 h a l p
+INSM '? i: '? E n '? E s '? E m 
+INSPIRE ? I n 's p aI 6
+Institute '? I n s t i: 't u: t @
+Integrierte '? I n t e: 'g R i: 6 t @
+Intelligence ? I n 't E l i: 'dZ E n s
+intern '? I n t 6 n
+interne ?' I n t 6 n @
+Internet '? I n t 6 n E t
+Internetauftritt '? I n t 6 n E t '? aU f t R I t
+Internetportal '? I n t 6 n E t p O 6 't a: l
+Internet-Protokollierung '? I n t 6 n E t p R o: t o: 'k O 'l i: R U N
+Internetzugang '? I n t 6 n E t 'ts u: g a N
+Intranet '? I n t R a n E t
+Inventarisierung '? I n v E n t a: R i: z i: R U N
+Investigation '? I n v E s t i: g a ts j o: n
+IT ' ? aI 't i:
+IT-Bebauungsplan '? aI 't i: 'b @ 'b aU U N s p l a: n
+IT-Beschaffung '? aI 't i: b @ 'S a f U N
+IT-Bestandsführung '? aI 't i: b @ 'S t a n ds f y: R U N
+IT-Service-Desk '? aI 't i: 's 9 6 v I s d E s k
+I-T-S-M '? aI 't i: '? E s '? E m
+Jira 'd Z I r a
+Jugendhilfegesetzbuch 'j u: g @ n t h I l f @ g @ z E ts b u: x
+Justiz-Kostenwesen j u: s 't i: ts 'k O s t @ n v e: z @ n
+Justiz j u: s 't i: ts
+Kabinettsinformationssystem k a b I 'n E t z 'i: n f O 6 m a ts 'j o: n s z Y s t e: m
+Kapazitätsmanagement k a p a ts i: 't E ts m E n @ t S m @ n t
+Kartenerstellung 'k a: 6 t @ n 6 'S t E l U N
+Kassenwesen 'k a s @ n v e: z @ n
+Katastrophenschutz k a t a s 't R o: f @ n S U ts
+KatWarn 'k a t 'v a: R n
+K-D-W 'k a: 'd e: 'v e:
+Key 'k i:
+Kinder 'k I n d 6
+KinderförderungsGesetz 'k I n d 6 f 9 6 d 6 R U N s g @ 'z E ts
+Kleinverfahren 'k l aI n f 6 f a: R @ n
+Kommunikation 'k O m u: n i: k a ts j o: n
+Kommunikatives 'k O m u: n i: k a t i: v @ s
+Konferenzsystem k O n f 6 'R E n ts z Y s t e: m
+KONSENS 'k O n z E n s
+Kopplung 'k O p l U N
+Kreditorischer k R e: 'd i: t o: R I S 6
+Kriminalitätslagebild 'k R I m i: n a: l i: t E: ts l a: g @ 'b I l t
+Kultus 'k U l t U s
+Kunden-Firewall 'k U n d @ n 'f aI 6 v O l
+Kundenlokationen 'k U n d @ n l o: k a 'ts j o: n @ n
+Kurierdienst k u: 'R i: R d i: n s t
+Kürzel 'k Y 6 ts @ l
+Kuvertierung 'k u: v E 6 't i: R U N
+Laborinformationssystem l a b o: 6 '? I n f O 6 m a ts 'j o: n s z Y s t e: m
+Lagezentrumsinformationssystem 'l a: g @ ts E n t R U m s '? I n f O 6 m a ts j o: n s z Y s t e: m
+Land 'l a n t
+Länder 'l E n d 6
+LänderInformationsSystem 'l E n d 6 '? I n f O 6 m a ts j o: n s z Y s t e: m
+Länderverbund 'l E n d 6 f 6 b U n t
+Landes 'l a n d @ s
+Landesamtes 'l a n d @ s ? a m t @ s
+Landesaufnahmegesetz 'l a n d @ s ? aU f n a: m @ g @ z E ts
+Landeseinheitliches 'l a n d @ s ? aI n h aI t l I C @ s
+Landesnetzes 'l a n d @ s 'n E ts @ s
+Landesschulnetz 'l a n d @ s S u: l n E ts
+Landesverwaltung 'l a n d @ s f 6 'v a l t U N
+Landesweite 'l a n d @ s v aI t @
+Landpachtverkehr 'l a n t p a x t f E 6 k e: 6
+Landtag 'l a n t t a: k
+Langzeitaufbewahrung 'l a N ts aI t ? aU f b @ v a: R U N
+LAN-Port 'l a: n 'p O 6 t
+Lasttest 'l a s t t E s t
+L-B-I-H '? E l 'b e: '? i: 'h a:
+Lebensmittelüberwachung 'l e: b @ n s m I t @ l ? y: b 6 'v a x U N
+Lehrer 'l e: R 6
+Lehrerbedarfsplanung 'l e: R 6 b @ d a R f s p l a: n U N
+Liegenschaftsinformationssystems 'l i: g @ n S a f ts ? I n f O 6 m a ts 'j o: n s z Y s t e: m s
+Liegenschaftskataster 'l i: g @ n S a f ts k a t a s t 6
+LINUX 'l i: n U k s
+Lizenzen l i: 'ts E n ts @ n
+Lizenzmanagement l i: 'ts E n ts m E n @ t S m @ n t
+Lizenzverwaltung l i: 'ts E n ts f 6 v a l t U N
+lnformationssicherheitsmanagementsystems 'l n f O 6 m a ts j o: n s 'z I C 6 h aI ts 'm E n @ t S m @ n t z Y s t e: m s
+Loadbalancer 'l ? OU d b E l @ n s 6
+Log 'l O g
+LuSD '?E l '? u: '?E s 'd e:
+LuSD-Forum '?E l '? u: '? E s 'd e: 'f o: R U m
+Mahnverfahren 'm a: n f 6 f a: R @ n
+Management 'm E n E d Z m @ n t
+Management-Informations-System 'm E n E d Z m @ n t ? I n f O 6 m a ts 'j o: n s z Y s 't e: m
+Management-System-KONSENS 'm E n E d Z m @ n ts z Y s 't e: m k O n z e n s
+Manager 'm E n E d Z 6
+Map 'm E p
+Mehr-Länder-Staatsanwaltschafts-Automatisierungsprogramm 'm e: 6 'l E n d 6 'S t a: ts a n v a l t S a f ts ? aU t o: 'm a: t i: 'z i: R U N s p R o: g R a m
+Meldung 'm E l d U N
+Mengenerfassung 'm E N @ n ? E 6 'f a s U N
+MESTA-Registerkommunikation 'm E s t a: R e: 'g I s t 6 k O m u: n i: k a ts 'j o: n
+Metadirectory m e: 't a d aI r E k t O r i:
+Microsoft 'm aI k r o s O f t
+Middleware 'm I d l v E: 6
+minderjährige 'm I n d 6 j E: R I g @
+Ministerpräsidentenkonferenz m i: n I s t 6 p R E z i: d E n t @ n k O n f 6 'R E n ts
+Mitarbeiter 'm I t ? a 6 b aI t 6
+Mitarbeiterportal 'm I t ? a 6 b aI t 6 p O 6 t a: l
+Mitfahrerbörse 'm I t f a: R 6 b 9 6 z @
+Mobile m o: 'b ? aI l 
+Access '? E k s E s
+Mobilgeräteverwaltung m o: 'b i: l g @ R E: t @ f E 6 v a l t U N
+Mobility m o: 'b i: l I t i:
+Monitoringdaten 'm o n i: t O r I N 'd a: t @ n
+Multimedia 'm U l t i: 'm e: d i: a:
+MySQL 'm aI '? E s 'k u: '? E l
+NATUrschutzREGister 'n a: t u: 6 S U ts R e: g I s t 6
+Network 'n E t v 9 6 k
+Netze 'n E ts @
+Netzinformationssystem 'n E ts ? I n f O 6 m a ts j o: n s z Y s t e: m
+Netzservice 'n E ts s 9 6 v I s
+Netzwerk 'n E ts v E 6 k
+netzwerkübergreifenden 'n E ts v E 6 k 'y: b 6 g R aI f @ n d @ n
+Object '? O b dS E k t
+OFD '? o: '? E f 'd e:
+online '? O n l aI n
+Online-Abfrage '? O n l aI n '? a p f R a: g @
+Online-Befragung '? O n l aI n b @ 'f R a: g U N
+Oracle '? O r I k @ l
+Orchestration '? O 6 k E s t R a ts j o: n
+Ordnungswidrigkeiten '? O 6 d n U N s v i: d R I C k aI t @ n
+Organisation '? O 6 g a: n i: z a ts j o: n
+organisieren ? O 6 g a n i: 'z i: R @ n
+Outlook '? aU t 'l U k
+Outputmanagement '? aU t p U t m E n @ t S m @ n t
+Pauschalen 'p aU S a: l @ n
+PC-Arbeitsplatz 'p e: 'ts e: 'a 6 b aI ts p l a ts
+PDF 'p e: 'd e: '? E f
+PEGEL 'p e: g @ l
+Performancedaten p E 6 'f O 6 m @ n s d a: t @ n
+Performancetest p E 6 'f O 6 m @ n s 't E s t
+Personalbeschaffung 'p E 6 z o: n a: l b @ S a f U N
+Personalbudgetsteuerung 'p E 6 z o: n a: l b Y 'd Z e: 'S t OY 6 R U N
+Personalkostenplanung 'p E 6 z o: n a: l 'k O s t @ n p l a: n U N
+Personallenkung 'p E 6 z o: n a: l 'l E N k U N
+Personalmanagement 'p E 6 z o: n a: l 'm E n @ t S m @ n t
+Personalwesen 'p E 6 z o: n a: l v e: z @ n
+Pflege 'p f l e: g @
+Pflegeaufsicht 'p f l e: g @ '? aU f z I C t
+Pflegeberufegesetz 'p f l e: g @ b @ R u: f @ g @ z E ts
+Pinnwand 'p I n v a n t
+Planungstool 'p l a: n U N s t u: l
+Plattform 'p l a t f O 6 m
+Polas 'p o: l a: s
+Polizei 'p o l i 'ts aI
+Portal p O 6 't a: l
+Posteingang 'p O s t ? aI n g a N
+Postfach 'p O s t f a x
+Poststelle 'p O s t S t E l @
+Präsenzkontrolle p R E 'z E n ts k O n t R O l @
+Pressespiegel 'p R E s @ S p i: g @ l
+Print 'p R I n t
+Process p r O 's E s
+Produktionssteuerung p R o: d U k 'ts j o: n s S t OY 6 R U N
+Produkt-Portfolio-Datenbank 'p R o: d U k t p O 6 t 'f o: l i: o: 'd a: t @ n b a N k
+Programm p R o: 'g R a m
+Projektablage p R o: 'j E k t '? a: b l a: g @
+Proxy 'p r O k s i:
+Prüfberichte 'p R y: f b @ R I C t @
+Prüfungsabläufe 'p R y: f U N s ? a p l OY f @
+Prüfungsaufgaben 'p R y: f U N s ? aU f g a: b @ n
+Public 'p a b l I k
+Publisher 'p a b l I S 6
+Querschnittsbasisdienst 'k v e: 6 S n I ts b a z I s d i: n s t
+Raumdatenerfassung 'R aU m 'd a: t @ n ? E 6 'f a s U N
+Realisierung R e: a: l i: 'z i: R U N
+Rechenzentrum 'R E C @ n ts E n t R U m
+Recherchesystem 'R E C 6 C @ 'z Y s t e: m
+Rechnungswesen 'R E C n U N s v e: z @ n
+Workflow 'v 9 6 k f l o:
+Rechtsverkehr 'R E C ts f E 6 k e: 6
+Rechnungshof 'R E C n U N s h o: f
+Redaktion R e: d a k 'ts j o: n
+Redaktionssystem R e: d a k 'ts j o: n s z Y s t e: m
+Referendarinformationssystem R E f @ 'R E n 'd a: R 'I n f O 6 m a ts j o: n s 'z Y s t e: m
+Regierungspräsidien R e: 'g i: R U N s p R E z i: d i: @ n
+Registerauskunft R e: 'g I s t 6 '? aU s k U n f t
+Relationship r i: 'l EI S @ n S h I p
+Remedy r E m @ d i:
+Rentenauskunftsverfahren 'R E n t @ n '? aU s k U n f ts f 6 f a: R @ n
+Research 'r i: s 9 6 t S
+Ressort 'R E s o: 6
+Reverse 'r I v 9 6 z
+Richtlinien 'R I C t l i: n i: @ n
+RP '? E 6 'p e:
+RZ '? E 6 'ts E t
+RZ-Netzinfrastrukturen '? E 6 'ts E t 'n E ts ? I n f R a S t R U k 't u: R @ n
+SAP '? E s '? a: 'p e:
+SAP-Jobsteuerung '? E s '? a: 'p e: dZ O p S t OY 6 R U N
+SAP-PO '? E s '? a: 'p e: 'p e: '? o:
+Schadensabrechnung 'S a: d @ n s ? a p R E C n U N
+Schalter 'S a l t 6
+Schnittstellenkontrolle 'S n I t S t E l @ n k O n t R O l @
+Schulen 'S u: l @ n
+Schüler-Datenbank 'S y: l 6 'd a: t @ n b a N k
+Schulinformationssystem 'S u: l '? I n f O 6 m a ts j o: n s z Y s t e: m
+Schulverwaltungsnetz 'S u: l f 6 v a l t U N s n E ts
+Schulverwaltungssystem 'S u: l f 6 v a l t U N s z Y s t e: m
+Schutzschriftenregister 'S U ts S R I f t @ n R e: g I s t 6
+Schwarzarbeiterdatenbank 'S v a 6 ts ? a 6 b aI t 6 d a: t @ n b a N k
+Schwerbehindertengesetz 'S v E 6 b @ h I n d 6 t @ n g @ z E ts
+Security 'z E k j U r I t i:
+Server 's 9 6 v 6
+Serverfarm-Datenbank 's 9 6 v 6 f a R m d a: t @ n b a N k
+Service 's 9 6 v I s
+Service-Portal 's 9 6 v I s p O 6 't a: l
+Services 's 9 6 v I s @ s
+Sharepoint 'S E 6 'p OY n t
+Shop 'S O p
+Sicherheitsüberprüfung 'z I C 6 h aI ts ? y: b 6 'p R y: f U N
+S-O-C '? E s '? O U 's i:
+Sofortlagen z o: 'f O 6 t l a: g @ n
+Software 's O f t v E: 6
+Softwarebereitstellung 's O f t v E: 6 b @ 'R aI t S t E l U N
+Konfigurations-Management k O n f i: g u: R a ts 'j o: n s 'm E n E d Z m @ n t
+Softwareverteilung 's O f t v E: 6 f 6 't aI l U N
+Solution 'z o: l u: 'ts j o: n
+Sonderlagen 'z O n d 6 l a: g @ n
+SozialPartner z o: 'ts j a: l 'p a 6 t n 6
+Spieler-Status 'S p i: l 6 S t a: t U s
+Sport 'S p O 6 t
+SQL '? E s 'k u: '? E l
+Squid 's k v I t
+Staatsprüfung 'S t a: ts p R y: f U N
+Staatsschutz 'S t a: ts S U ts
+Standorte 'S t a n t ? O 6 t @
+Stellenbewirtschaftung 'S t E l @ n b @ v I 6 t S a f t U N
+Stellenerfassung 'S t E l @ n ? E 6 'f a s U N
+Steuer 'S t OY 6
+Steuerberaterprüfung 'S t OY 6 b @ R a: t 6 p R y: f U N
+Steuererhebungsthemen 'S t OY 6 ? 6 'h e: b U N s t e: m @ n
+Steuererklärung 'S t OY 6 ? E 6 'k l E: R U N
+steuerlichen 'S t OY 6 l I C @ n
+Steuerverwaltung 'S t OY 6 f 6 'v a l t U N
+Stick 's t I k
+Stiftungsinformationssystem 'S t I f t U N s '? I n f O 6 m a ts j o: n s z Y s t e: m
+Storage 's t O r I d S
+Strahlenschutzkataster 'S t R a: l @ n S U ts k a t a s t 6
+Streaming 's t r i: m I N
+Streamworks 's t r i: m v 9 6 k s
+Suite 's v i: t
+Support-Infrastruktur z U 'p O 6 t '? I n f R a S t R u: k t U 6
+System z Y s 't e: m
+Systembetrieb z Y s 't e: m b @ t R i: p
+Systemmanagement z Y s 't e: m m E n @ t S m @ n t
+Tablet 't E b l @ t
+Tätigkeitsbuch 't E: t I C k aI ts b u: x
+Taxonomie 't a k 's o: n o: 'm i:
+Team 't i: m
+Technisch 't E C n I S
+Teil 't aI l
+Telekommunikationsdienste 't e: l @ k O m u n I k a ts 'j o: n s d i: n s t @
+Telekommunikationsüberwachung 't e: l @ k O m u n I k a 'ts j o: n s ? y: b 6 'v a x U N
+Terminal 't 9 6 m i: n @ l
+Test 't E s t
+Test-System 't E s t z Y s 't e: m
+Textanwendung 't E k s t '? a n v E n d U N
+Texterstellung 't E k s t 6 S t E l U N
+Themenportale 't e: m @ n p O 6 t a: l @
+Tierseuchennachrichtensystem 't i: 6 s OY C @ n n a: x R I C t @ n z Y s t e: m
+Tool 't u: l
+Übermittlung ? y: b 6 'm I t l U N
+Übersetzerdatenbank ? y: b 6 'z E ts 6 d a: t @ n b a N k
+Umfeld '? U m f E l t
+Umwelt '? U m v E l t
+unbegleitet '? U n b @ g l aI t @ t
+Unfalltypen-Steckkarte '? U n f a l t y: p @ n 'S t E k k a 6 t @
+Unified 'j u ni: f aI d
+UNIX 'j u: n i: k s
+Unterstützung ? U n t 6 'S t Y ts U N
+Update '? a p d EI t
+Veranstaltungsmanagement f 6 '? a n S t a l t U N s m E n @ t S m @ n t
+Verbindungsnetz f 6 'b I n d U N s n E ts
+Verfahren f 6 'f a: R @ n
+Verfahrenscloud f 6 'f a: R @ n s k l aU d
+Vergabe f 6 'g a: b @
+Vergabeplattform f 6 'g a: b @ 'p l a t f O 6 m
+Veröffentlichung f 6 '? 9 f E n t l I C U N
+Versand f 6 'z a n t
+Versorgungskassen f 6 'z O 6 g U N s k a s @ n
+Vertragsdaten f 6 't R a: k s d a: t @ n
+Vertragsdatenbank f 6 't R a: k s d a: t @ n b a N k
+Verwaltung f 6 'v a l t U N
+Verwaltungs-PKI f 6 'v a l t U N s 'p e: 'k a: '? i:
+Verwaltungspostfach f 6 'v a l t U N s p O s t f a x
+Veterinärwesen v e: t e: 'R i: n E: 6 v e: z @ n
+Video 'v i: d e: o:
+Videokonferenz 'v i: d e: o: k O n f 6 'R E n ts
+Virenschutz 'v i: R @ n S U ts
+Virtualisierungsplattform v I 6 t u: a l i: 'z i: R U N s p l a t f O 6 m
+Visualisierungsservice v i: z u: a l i: 'z i: R U N s 's 9 6 v I s
+Vollstreckungssoftware 'f O l 'S t R E k U N s s O f t v E: 6
+Vorgang 'f O 6 g a N
+Vorgangsbearbeitung 'f O 6 g a N s b @ ? a 6 b aI t U N
+Vorgangsverwaltung 'f O 6 g a N s f 6 'v a l t U N
+VPN-Einwahl 'f aU 'p e: '? E n 'aI n v a: l
+Wahlurne 'v a: l ? u: 6 n @
+Warehouse 'v E r h aU s
+Wasserbuch 'v a s 6 b u: x
+Wasserwirtschaft 'v a s 6 'v I 6 t S a f t
+Web 'v E b
+Web-Applikationen 'v E b a p l i: k a ts 'j o: n @ n
+Web-Auftritte 'v E b '? aU f t R I t @
+Weblogic 'v E b l O d Z I k
+Webserverbetrieb 'v E b s 9 6 v E 6 b @ t R i: p
+Webservices 'v E b s 9 6 v I s @ s
+Wiedergutmachung 'v i: d 6 g u: t m a x U N
+Windows 'v I n d O U s
+Windowsbasiert 'v I n d O U s b a 'z i: 6 t
+Wissensdatenbank 'v I s @ n s d a: t @ n b a N k
+Wohngeldverfahren 'v o: n g E l t f E 6 f a: R @ n
+ZDA 'ts E t 'd e: '? a:
+Zeit 'ts aI t
+Zeiterfassungsservice 'ts aI t ? E 6 'f a s U N s s 9 6 v I s
+Zeiterfassungstool 'ts aI t ? E 6 'f a s U N s t u: l
+Zeitmanagement 'ts aI t m E n @ t S m @ n t
+Zentrale ts E n 't R a: l @
+Zugangs-Kontroll-System 'ts u: g a N s k O n t R O 'l z Y s 't e: m
+Zuwendungsmanagementsystem 'ts u: v E n d U N s m E n @ t S m @ n t z Y s t e: m
