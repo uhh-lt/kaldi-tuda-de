@@ -179,7 +179,7 @@ if [ $stage -le 3 ]; then
       echo "data/lexicon/de.txt">> data/lexicon_ids.txt
   fi
 
-  if [ use_BAS_dictionaries = true ] ; then
+  if [ $use_BAS_dictionaries = true ] ; then
 
     # These lexicons are publicly available on BAS servers, but can probably not be used in a commercial setting.
     if [ ! -f data/lexicon/VM.German.Wordforms ]
