@@ -15,7 +15,7 @@
 # limitations under the License.
 
 #
-# This is an example script that shows how a custom test set can be decoded
+# This is an example script that shows how a custom test set can be decoded with a TDNN-HMM
 #
 
 . path.sh
@@ -93,7 +93,6 @@ if [ $stage -le 2 ]; then
 
     echo "Extract ivectors..."
     steps/online/nnet2/extract_ivectors_online.sh --cmd "$train_cmd" --nj $mfccJobs data/${decodedir}_hires/ exp/nnet3_cleaned/extractor/ exp/nnet3_cleaned/ivectors_${decodedir}_hires
-	# generate ivector
 fi
 
 if [ $stage -le 3 ]; then
@@ -101,17 +100,15 @@ if [ $stage -le 3 ]; then
 fi
 
 if [ $stage -le 4 ]; then
-#   for dset in dev_e test_e; do
       dset=$decodedir 
-# for dset in dev_a dev_b dev_c dev_d test_a test_b test_c test_d; do
-#  for dset in dev test; do
       echo "Now decoding $dset with TDNN-HMM model"
       steps/nnet3/decode.sh --num-threads 4 --nj $nDecodeJobs --cmd "$decode_cmd" --stage $tdnn_decode_stage \
           --acwt 1.0 --post-decode-acwt 10.0 \
           --online-ivector-dir exp/nnet3${nnet3_affix}/ivectors_${dset}_hires \
           --scoring-opts "--min-lmwt 5 " \
          $dir/graph${decode_affix} data/${dset}_hires $dir/decode${decode_affix}_${dset} || exit 1;
+
+      # rescore currently disabled:
       #  steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" data/lang data/lang_rescore \
       #    data/${dset}_hires ${dir}/decode_${dset} ${dir}/decode_${dset}_rescore || exit 1
- # done
 fi
