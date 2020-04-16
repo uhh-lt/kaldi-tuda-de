@@ -9,13 +9,8 @@ Technology t E k 'n O l @ d Z i:
 Özge '2: s g @
 Eugen ? OY g @ n
 Eugen '? OY g @ n
-Ruppert 'R U p 6 t
 Steffen 'S t E f @ n
-Remus R e: m U s
-Chris 'k R I s
-Biemann 'b i: m a n
 Sascha 'z a S a:
-Lambert 'l a m b E 6 t
 IT-Ethik 'aI 'ti: 'e: t I k
 Uni-Hamburg ? U n i: 'h a m b U 6 k
 MIN 'm I n
@@ -37,6 +32,7 @@ GPUs 'g e: 'p e: 'u: z
 LSTM '? E l '? E s 'te: '? Em
 des 'd E s
 AlphaGo '? a l f a: 'g o:
+Chris 'k R I s
 Smart-Lautsprecher 's m a 6 t l aU t S p R E C 6
 arbeiten '? a 6 b aI t @ n
 annotiert 'a n o: 't i: 6 t
@@ -47,7 +43,9 @@ Herunterladen 'h E 'R U n t 6 l a: d @ n
 trainiert 't R E n i: 6 t
 Dilemma 'd i: l E m a:
 Audiodateien '? aU d i: o: d a: t aI @ n
+Lambert 'l a m b E 6 t
 maschinelles 'm a S i: n E l @ s
+Biemann 'b i: m a n
 Smartphones 's m a 6 t f o: n s
 Lernansätze 'l E 6 n a n z E ts @
 annotierten 'a n o: t i: 6 t @ n
@@ -62,6 +60,8 @@ Examples '? E k s a: m p l s
 Examples ? E k s 'E m p l s
 and '{ n d
 YouTube 'j u: t j u: b
+Remus R e: m U s
+Ruppert 'R U p 6 t
 im '? I m
 Prognosen 'p R o: g n o: z @ n
 Alexa a: l 'E k s a:
@@ -1560,7 +1560,6 @@ Archivierungsmodul ? a 6 C i: 'v i: R U N s m o: d U l
 Area '? E r i a
 Assetmanagement '? E s @ t m E n @ t S m @ n t
 Asyldatenbank ? a 'z y: l 'd a: t @ n b a N k
-Asylfact-Datenbank ? a 'z y: l f E k t d a: t @ n b a N k
 Atrium '? a: t R i: U m
 Aufenthaltsüberwachung '? aU f @ n t h a l ts ? y: b 6 'v a x U N
 Aufgabenverwaltung '? aU f g a: b @ n f 6 v a l t U N
@@ -1600,7 +1599,7 @@ BlackBerry 'b l E k 'b E r i:
 Bebauungsplan b @ 'b aU U N s p l a: n
 Brandenburgisch 'b R a n d @ n b U 6 g I S
 Brandschutz 'b R a n t S U ts
-Browser¡ 'b r aU z 6
+Browser 'b r aU z 6
 in '? I n
 the 'T @
 box 'b O k s
@@ -1704,7 +1703,6 @@ Finanzämter f i: 'n a n ts ? E m t 6
 Firewall 'f aI 6 v O l
 Fliegende 'f l i: g @ n d @
 Flüchtlinge 'f l Y C t l I N @
-Flüchtlingsverwaltung-Datendrehscheibe 'f l Y C t l I N s f 6 'v a l t U N 'd a: t E n 'd R e: S aI b @
 Förderinformationssystem 'f 9 6 d 6 ? I n f O 6 m a ts j o: n s z Y s t e: m
 Förderportal 'f 9 6 d 6 p O 6 t a: l
 Form 'f O 6 m
@@ -1730,7 +1728,6 @@ gerichtliches g @ 'R I C t l I C @ s
 Gerichtskassen g @ 'R I C ts k a s @ n
 Geschäftsprozessmodellierung g @ 'S E f ts p R o: ts E s m o d E 'l i: R U N
 Gesetzgebungsverfahren g @ 'z E ts g e: b U N s f 6 f a: R @ n
-Ginster-Referenz- 'g I n s t 6 'R E f @ 'R E n ts
 Graphische 'g R a: f I S @
 Große 'g R o: s @
 Grundbuch 'g R U n t b u: x
@@ -1742,20 +1739,10 @@ Grundwasserschutz 'g R U n t v a: s 6 S U ts
 Handelsregister 'h a n d @ l s R e: 'g I s t 6
 Haushaltsaufstellungsverfahren 'h aU s h a l ts '? aU f S t E l U N s f 6 f a: R @ n
 Haussystem 'h aU s z Y s t e: m
-HeDis 'h e: 'd I s
-HeDok 'h e: 'd O k
 HELABA 'h e: l a: b a:
-HepChat 'h E p 'tS E t
-HESIS 'h e: s I s
 Hessen 'h E s @ n
-HessenAccess 'h E s @ n '? E k s E s
-HessenConnect 'h E s @ n 'k O n E k t
-HessenDANTE 'h E s @ n 'd a: n t @
-HessenDrive 'h E s @ n 'd r aI f
 HessenPC 'h E s @ n 'p e: 'ts e:
 HessenPortal 'h E s @ n p O 6 't a: l
-HessenSmartphones 'h E s @ n 's m a 6 t f O U n s
-HessenVoice 'h E s @ n 'v OY s
 hessenweiter 'h E s @ n v aI t 6
 Hessische 'h E s I S @
 Hessischen 'h E s I S @ n
@@ -1764,10 +1751,6 @@ Hessisches 'h E s I S @ s
 Hinweisaufnahme 'h I n v aI s '? aU f n a: m @
 HKM 'h a: 'k a: '? E m
 HLA 'h a: '? E l '? a:
-HMdF 'h a: '? E m 'd e: '? E f
-HMdF-Verfahren 'h a: '? E m ' d e: 'E f 'f 6 f a: R @ n
-HMdJ 'h a: '? E m 'd e: 'j O t
-HMUKLV 'h a: '? E m '? u: 'k a: '? E l 'f aU
 Hochverfügbarkeit 'h o: x f 6 'f y: k b a 6 k aI t
 Homing 'h O U m I N
 Host 'h O U s t
@@ -1777,8 +1760,6 @@ Hyper-V 'h aI p 6 'v i:
 A 'h a: 'ts E t 'd e:
 Ideenmanagement '? I d e: n 'm E n E d Z m @ n t
 Identity ? aI 'd E n t @ t i:
-IDM '? i: 'd e: '? E m
-IMMO-Spezial ? I m o: 'S p e: 'ts j a: l
 Incident '? I n s i: d E n t
 Informationsportal '? I n f O 6 m a ts j o: n s p O 6 t a: l
 Informationssicherheitsmanagement '? I n f O 6 m a ts 'j o: n s z I C 6 h aI ts m E n @ t S m @ n t
@@ -1811,7 +1792,7 @@ IT-Bebauungsplan '? aI 't i: 'b @ 'b aU U N s p l a: n
 IT-Beschaffung '? aI 't i: b @ 'S a f U N
 IT-Bestandsführung '? aI 't i: b @ 'S t a n ds f y: R U N
 IT-Service-Desk '? aI 't i: 's 9 6 v I s d E s k
-I-T-S-M '? aI 't i: '? E s '? E m
+ITSM '? aI 't i: '? E s '? E m
 Jira 'd Z I r a
 Jugendhilfegesetzbuch 'j u: g @ n t h I l f @ g @ z E ts b u: x
 Justiz-Kostenwesen j u: s 't i: ts 'k O s t @ n v e: z @ n
@@ -1822,7 +1803,7 @@ Kartenerstellung 'k a: 6 t @ n 6 'S t E l U N
 Kassenwesen 'k a s @ n v e: z @ n
 Katastrophenschutz k a t a s 't R o: f @ n S U ts
 KatWarn 'k a t 'v a: R n
-K-D-W 'k a: 'd e: 'v e:
+KDW 'k a: 'd e: 'v e:
 Key 'k i:
 Kinder 'k I n d 6
 KinderförderungsGesetz 'k I n d 6 f 9 6 d 6 R U N s g @ 'z E ts
@@ -1830,7 +1811,7 @@ Kleinverfahren 'k l aI n f 6 f a: R @ n
 Kommunikation 'k O m u: n i: k a ts j o: n
 Kommunikatives 'k O m u: n i: k a t i: v @ s
 Konferenzsystem k O n f 6 'R E n ts z Y s t e: m
-KONSENS 'k O n z E n s
+Konsens 'k O n z E n s
 Kopplung 'k O p l U N
 Kreditorischer k R e: 'd i: t o: R I S 6
 Kriminalitätslagebild 'k R I m i: n a: l i: t E: ts l a: g @ 'b I l t
@@ -1859,7 +1840,6 @@ Landtag 'l a n t t a: k
 Langzeitaufbewahrung 'l a N ts aI t ? aU f b @ v a: R U N
 LAN-Port 'l a: n 'p O 6 t
 Lasttest 'l a s t t E s t
-L-B-I-H '? E l 'b e: '? i: 'h a:
 Lebensmittelüberwachung 'l e: b @ n s m I t @ l ? y: b 6 'v a x U N
 Lehrer 'l e: R 6
 Lehrerbedarfsplanung 'l e: R 6 b @ d a R f s p l a: n U N
@@ -1872,18 +1852,14 @@ Lizenzverwaltung l i: 'ts E n ts f 6 v a l t U N
 lnformationssicherheitsmanagementsystems 'l n f O 6 m a ts j o: n s 'z I C 6 h aI ts 'm E n @ t S m @ n t z Y s t e: m s
 Loadbalancer 'l ? OU d b E l @ n s 6
 Log 'l O g
-LuSD '?E l '? u: '?E s 'd e:
-LuSD-Forum '?E l '? u: '? E s 'd e: 'f o: R U m
 Mahnverfahren 'm a: n f 6 f a: R @ n
 Management 'm E n E d Z m @ n t
 Management-Informations-System 'm E n E d Z m @ n t ? I n f O 6 m a ts 'j o: n s z Y s 't e: m
-Management-System-KONSENS 'm E n E d Z m @ n ts z Y s 't e: m k O n z e n s
 Manager 'm E n E d Z 6
 Map 'm E p
-Mehr-Länder-Staatsanwaltschafts-Automatisierungsprogramm 'm e: 6 'l E n d 6 'S t a: ts a n v a l t S a f ts ? aU t o: 'm a: t i: 'z i: R U N s p R o: g R a m
 Meldung 'm E l d U N
 Mengenerfassung 'm E N @ n ? E 6 'f a s U N
-MESTA-Registerkommunikation 'm E s t a: R e: 'g I s t 6 k O m u: n i: k a ts 'j o: n
+MESTA 'm E s t a:
 Metadirectory m e: 't a d aI r E k t O r i:
 Microsoft 'm aI k r o s O f t
 Middleware 'm I d l v E: 6
@@ -1899,7 +1875,6 @@ Mobility m o: 'b i: l I t i:
 Monitoringdaten 'm o n i: t O r I N 'd a: t @ n
 Multimedia 'm U l t i: 'm e: d i: a:
 MySQL 'm aI '? E s 'k u: '? E l
-NATUrschutzREGister 'n a: t u: 6 S U ts R e: g I s t 6
 Network 'n E t v 9 6 k
 Netze 'n E ts @
 Netzinformationssystem 'n E ts ? I n f O 6 m a ts j o: n s z Y s t e: m
@@ -1921,7 +1896,7 @@ Outputmanagement '? aU t p U t m E n @ t S m @ n t
 Pauschalen 'p aU S a: l @ n
 PC-Arbeitsplatz 'p e: 'ts e: 'a 6 b aI ts p l a ts
 PDF 'p e: 'd e: '? E f
-PEGEL 'p e: g @ l
+Pegel 'p e: g @ l
 Performancedaten p E 6 'f O 6 m @ n s d a: t @ n
 Performancetest p E 6 'f O 6 m @ n s 't E s t
 Personalbeschaffung 'p E 6 z o: n a: l b @ S a f U N
@@ -2003,7 +1978,6 @@ Services 's 9 6 v I s @ s
 Sharepoint 'S E 6 'p OY n t
 Shop 'S O p
 Sicherheitsüberprüfung 'z I C 6 h aI ts ? y: b 6 'p R y: f U N
-S-O-C '? E s '? O U 's i:
 Sofortlagen z o: 'f O 6 t l a: g @ n
 Software 's O f t v E: 6
 Softwarebereitstellung 's O f t v E: 6 b @ 'R aI t S t E l U N
@@ -2112,3 +2086,4789 @@ Zeitmanagement 'ts aI t m E n @ t S m @ n t
 Zentrale ts E n 't R a: l @
 Zugangs-Kontroll-System 'ts u: g a N s k O n t R O 'l z Y s 't e: m
 Zuwendungsmanagementsystem 'ts u: v E n d U N s m E n @ t S m @ n t z Y s t e: m
+die 'd i:
+der 'd E: 6
+und '? U n t
+in '? I n
+ist '? I s t
+das 'd a s
+den 'd e: n
+zu 'ts u:
+von 'f O n
+ein '? aI n
+nicht 'n I C t
+ich '? I C
+mit 'm I t
+sich 'z I C
+es '? E s
+auf '? aU f
+eine '? aI n @
+sie 'z i:
+im '? I m
+dem 'd e: m
+er '? e: 6
+des 'd E s
+für 'f y: 6
+als '? a l s
+auch '? aU x
+an '? a n
+wie 'v i:
+war 'v a: 6
+aus '? aU s
+nach 'n a: x
+so 'z o:
+wir 'v i: 6
+sind 'z I n t
+Hundert 'h U n d 6 t
+man 'm a n
+noch 'n O x
+werden 'v E 6 d @ n
+einen '? aI n @ n
+hat 'h a t
+aber '? a b 6
+wird 'v I 6 t
+dass 'd a s
+bei 'b aI
+wurde 'v U 6 d @
+nur 'n u: 6
+um '? U m
+du 'd u:
+zum 'ts u: m
+was 'v a s
+einer '? aI n 6
+Sie 'z i:
+durch 'd u: 6 C
+oder '? o: d 6
+haben '? h a: b @ n
+zwei 'ts v aI
+kann 'k a n
+über ? y: b 6
+am '? a m
+wenn 'v E n
+einem '? aI n @ m
+vor 'f o: 6
+bis 'b I s
+mir 'm i: 6
+sein 'z aI n
+zur 'ts u: 6
+daß 'd a s
+Tausend 't aU z @ n t
+hatte 'h a t @
+schon 'S o: n
+da 'd a:
+mehr 'm e: 6
+neunzehn 'n OY n ts e: n
+diese 'd i: z @
+Hauptstadt 'h aU p t S t a t
+mich 'm I C
+wieder 'v i: d 6
+unter '? U n t 6
+ihr '? i: 6
+seine 'z aI n @
+habe 'h a: b @
+doch 'd O x
+dieser 'd i: z 6
+dann 'd a n
+sehr 'z e: 6
+ihm '? i: m
+immer '? I m 6
+können 'k 9 n @ n
+alle '? a l @
+hier 'h i: 6
+drei 'd R aI
+uns '? U n s
+waren 'v a: R @ n
+vom 'f O m
+gibt 'g I p t
+ihn '? i: n
+wurden 'v U 6 d @ n
+eines '? aI n @ s
+jetzt 'j E ts t
+ja 'j a
+muss 'm U s
+null 'n U l
+keine 'k aI n @
+seiner 'z aI n 6
+ihre '? i: R @
+etwas '? E t v a s
+heute 'h OY t @
+denn 'd E n
+damit d a 'm I t
+Zeit 'ts aI t
+mal 'm a: l
+zwischen 'ts v I S @ n
+ganz 'g a n ts
+nun 'n u: n
+fünf 'f Y n f
+alles '? a l @ s
+möchte 'm 9 C t @
+viele 'f i: l @
+Menschen 'm E n S @ n
+will 'v I l
+vier 'f i: 6
+gut 'g u: t
+gegen 'g e: g @ n
+selbst 'z E l p s t
+wo 'v o:
+nichts 'n I C ts
+sollte 'z O l t @
+ab '? a p
+viel 'f i: l
+ohne '? o: n @
+sagte 'z a: k t @
+müssen 'm Y s @ n
+meine 'm aI n @
+seinen 'z aI n @ n
+S '? E s
+neun 'n OY n
+bitte 'b I t @
+mein 'm aI n
+geht 'g e: t
+kommt 'k O m t
+eins '? aI n s
+dies 'd i: s
+beim 'b aI m
+anderen '? a n d 6 R @ n
+konnte 'k O n t @
+dabei d a: 'b aI
+machen 'm a x @ n
+Stadt 'S t a t
+etwa '? E t v a:
+dieses 'd i: z @ s
+diesem 'd i: z @ m
+erst '? e: 6 s t
+kein 'k aI n
+sechs 'z E k s
+lassen 'l a s @ n
+jedoch j e: 'd O x
+Frau 'f R aU
+während 'v E: R @ n t
+wer 'v E 6
+ihren '? i: R @ n
+U '? u:
+soll 'z O l
+bereits b @ 'R aI ts
+seinem 'z aI n @ m
+ihrer '? i: R 6
+sondern 'z O n d 6 n
+Punkt 'p U N k t
+sei 'z aI
+acht '? a x t
+weil 'v aI l
+seit 'z aI t
+Die 'd i:
+Jahren 'j a: R @ n
+achtzehn '? a x t ts e: n
+andere '? a n d 6 R @
+einmal '? aI n m a: l
+dir 'd i: 6
+lange 'l a N @
+Komma 'k O m a:
+D 'd e:
+wäre 'v E: R @
+gerade g @ 'R a: d @
+würde 'v Y R d @
+ins '? I n s
+ersten '? E 6 s t @ n
+steht 'S t e: t
+dich 'd I C
+diesen 'd i: z @ n
+Herr 'h E 6
+I '? i:
+also '? a l z o:
+allem '? a l @ m
+hätte 'h E t @
+kam 'k a: m
+Ende '? E n d @
+ob '? O p
+Jahre 'j a: R @
+dort 'd O R t
+Jahr 'j a: 6
+dazu d a 'ts u:
+bin 'b I n
+wohl 'v o: l
+einige '? aI n I g @
+hatten 'h a t @ n
+Beispiel 'b aI S p i: l
+sieben 'z i: b @ n
+sehen 'z e: @ n
+heißt 'h aI s t
+sowie z o: 'v i:
+erste '? E 6 s t @
+A '? a:
+einfach '? aI n f a x
+neuen 'n OY @ n
+Augen '? aU g @ n
+wollte 'v O l t @
+gab 'g a: p
+neben 'n e: b @ n
+weiß 'v aI s
+zehn 'ts e: n
+weiter 'v aI t 6
+kommen 'k O m @ n
+hast 'h a s t
+gar 'g a: 6
+Der 'd E 6
+neue 'n OY @
+Meter 'm e: t 6
+sagen 'z a: g @ n
+Teil 't aI l
+denen 'd e: n @ n
+C 'ts e:
+ihnen '? i: n @ n
+allen '? a l @ n
+worden 'v O 6 d @ n
+Deutschland 'd OY t S l a n t
+jeder 'j e: d 6
+gehen 'g e: @ n
+natürlich n a 't y: 6 l I C
+wollen 'v O l @ n
+oft '? O f t
+großen 'g R o: s @ n
+darauf d a 'R aU f
+liegt 'l i: k t
+beiden 'b aI d @ n
+Hand 'h a n t
+sah 'z a:
+wirklich 'v I 6 k l I C
+ging 'g I N
+später 'S p E: t 6
+große 'g R o: s @
+nie 'n i:
+zurück ts u: 'R Y k
+Mann 'm a n
+davon d a 'f O n
+werde 'v E 6 d @
+Welt 'v E l t
+Erde '? e: 6 d @
+zwanzig 'ts v a n ts I C
+zwanzig 'ts v a n ts I k
+macht 'm a x t
+schnell 'S n E l
+gewesen g @ 'v e: z @ n
+welche 'v E l C @
+unsere '? U n z 6 R @
+P 'p e:
+dafür d a 'f y: 6
+Leben 'l e: b @ n
+Prozent p R o: 'ts E n t
+gleich 'g l aI C
+vielleicht f i: 'l aI C t
+sollten 'z O l t @ n
+besonders b @ 'z O n d 6 s
+meiner 'm aI n 6
+Tag 't a: k
+finden 'f I n d @ n
+N '? E n
+meist 'm aI s t
+hin 'h I n
+kannst 'k a n s t
+G 'g e:
+deren 'd e: R @ n
+Wasser 'v a s 6
+zwar 'ts v a: 6
+keinen 'k aI n @ n
+sogar z o: 'g a: 6
+Ihnen '? i: n @ n
+stand 'S t a n t
+ihrem '? i: R @ m
+allerdings ? a l 6 'd I N s
+deshalb 'd E s h a l p
+vielen 'f i: l @ n
+dessen 'd E s @ n
+zusammen ts u: 'z a m @ n
+Art '? a 6 t
+könnte 'k 9 n t @
+meisten 'm aI s t @ n
+besser 'b E s 6
+ganze 'g a n ts @
+nehmen 'n e: m @ n
+darf 'd a R f
+Weg 'v e: k
+lässt 'l E s t
+warum v a 'R U m
+eigentlich '? aI g E n t l I C
+fast 'f a s t
+Arbeit '? a 6 b aI t
+stehen 'S t e: @ n
+ließ 'l i: s
+Rom 'R o: m
+solche 'z O l C @
+genau g @ 'n aU
+tun 't u: n
+Geschichte g @ 'S I C t @
+letzten 'l E ts t @ n
+mehrere 'm e: R 6 R @
+weit 'v aI t
+euch '? OY C
+wenig 'v e: n I C
+wenig 'v e: n I k
+V 'f aU
+Entwicklung ? E n t 'v I k l U N
+daher 'd a: h e: 6
+machte 'm a x t @
+meinen 'm aI n @ n
+konnten 'k O n t @ n
+schließlich 'S l i: s l I C
+Das 'd a s
+B 'b e:
+M '? E m
+kurz 'k U R ts
+eigenen '? aI g @ n @ n
+gehört g @ 'h 2: 6 t
+kochen 'k O x @ n
+leicht 'l aI C t
+wissen 'v I s @ n
+Kommission k O m I 's j o: n
+je 'j e:
+Europa ? OY 'R o: p a:
+Kopf 'k O p f
+Ich '? I C
+kaum 'k aU m
+München 'm Y n C @ n
+nahm 'n a: m
+möglich 'm 2: k l I C
+alten '? a l t @ n
+fünfzig 'f Y n f ts I C
+fünfzig 'f Y n f ts I k
+Fall 'f a l
+Uhr '? u: 6
+kleine 'k l aI n @
+statt 'S t a t
+zwölf 'ts v 9 l f
+weniger 'v e: n I g 6
+bist 'b I s t
+sieht 'z i: t
+gerne 'g E R n @
+hören 'h 2: R @ n
+Straße 'S t R a: s @
+weitere 'v aI t 6 R @
+wegen 'v e: g @ n
+Hause 'h aU z @
+halten 'h a l t @ n
+Gesicht g @ 'z I C t
+musste 'm U s t @
+Krieg 'k R i: k
+sollen 'z O l @ n
+Land 'l a n t
+deutlich 'd OY t l I C
+Steinadler 'S t aI n '? a: d l 6
+bald 'b a l t
+Frage 'f R a: g @
+Namen 'n a: m @ n
+Er '? e: 6
+kleinen 'k l aI n @ n
+Ziel 'ts i: l
+gilt 'g I l t
+alte '? a l t @
+Haus 'h aU s
+Kinder 'k I n d 6
+nachdem 'n a: x 'd e: m
+her 'h e: 6
+glaube 'g l aU b @
+sonst 'z O n s t
+geben 'g e: b @ n
+Seite 'z aI t @
+lang 'l a N
+Nacht 'n a x t
+daran 'd a: R a n
+gemacht g @ 'm a x t
+eher '? e: j 6
+deutschen 'd OY t S @ n
+darüber 'd a 'R y: b 6
+vierzig 'f I 6 ts I C
+vierzig 'f I R ts I k
+nein 'n aI n
+dreißig 'd R aI s I C
+dreißig 'd R aI s I k
+insbesondere ? I n s b @ 'z O n d 6 R @
+Mensch 'm E n S
+paar 'p a: 6
+gegenüber g e: g @ n '? y: b 6
+gesehen g @ 'z e: @ n
+Leute 'l OY t @
+T 't e:
+Zentimeter 'ts E n t i: m e: t 6
+rief 'R i: f
+Millionen m I l 'j o: n @ n
+anderem '? a n d 6 R @ m
+wobei v o: 'b aI
+fragte 'f R a: k t @
+rund 'R U n t
+sicher 'z I C 6
+Luft 'l U f t
+stark 'S t a 6 k
+Artikel ? a 6 't i: k @ l
+Herrn 'h E 6 n
+neunzig 'n OY n ts I C
+neunzig 'n OY n ts I k
+allein ? a 'l aI n
+Rolle 'R O l @
+letzte 'l E ts t @
+Minuten m i: 'n u: t @ n
+Berlin b E 6 'l i: n
+ganzen 'g a n ts @ n
+endlich '? E n t l I C
+Rhön 'R 2: n
+Mutter 'm U t 6
+außerdem '? aU s 6 d e: m
+Union ? U n 'j o: n
+Wort 'v O R t
+liegen 'l i: g @ n
+muß 'm U s
+seines 'z aI n @ s
+findet 'f I n d @ t
+zunächst 'ts u: n E: k s t
+siebzehn 'z i: p ts e: n
+bleiben 'b l aI b @ n
+jeden 'j e: d @ n
+E '? e:
+Stück 'S t Y k
+Es '? E s
+fahren 'f a: R @ n
+voll 'f O l
+häufig 'h OY f I C
+häufig 'h OY f I g
+hoch 'h o: x
+fand 'f a n t
+dadurch 'd a d U R C
+Jahrhundert j a: 6 'h U n d 6 t
+Stunden 'S t U n d @ n
+Karthago k a 6 't a: g o:
+Stelle 'S t E l @
+Bericht b @ 'R I C t
+aller ? a l 6
+niemand 'n i: m a n t
+Licht 'l I C t
+freien 'f R aI @ n
+lag 'l a: k
+Lizenz l i: 'ts E n ts
+Sprache 'S p R a: x @
+blieb 'b l i: p
+gute 'g u: t @
+Form 'f O 6 m
+hinter 'h I n t 6
+Stimme 'S t I m @
+bekannt b @ 'k a n t
+fest 'f E s t
+deine 'd aI n @
+Boden 'b o: d @ n
+Gott 'g O t
+Mittel 'm I t @ l
+sprechen 'S p R E C @ n
+sechzig 'z E C ts I C
+sechzig 'z E C ts I k
+führte 'f y: 6 t @
+geworden g @ 'v O 6 d @ n
+F '? E f
+jemand 'j e: m a n t
+dein 'd aI n
+recht 'R E C t
+Weise 'v aI z @
+ebenfalls '? e: b @ n f a l s
+Sonne 'z O n @
+unserer '? U n z 6 R 6
+Unternehmen '? U n t 6 'n e: m @ n
+verwendet f E 6 'v E n d @ t
+besteht b @ 'S t e: t
+darum d a 'R U m
+größte 'g R 2: s t @
+erreicht ? E 6 'R aI C t
+Staaten 'S t a: t @ n
+erhalten ? E 6 'h a l t @ n
+sowohl z o: 'v o: l
+zog 'ts o: k
+setzte 'z E ts t @
+hinaus h I 'n aU s
+insgesamt ? I n s g @ 'z a m t
+schwer 'S v e: 6
+führt 'f y: 6 t
+Tage 't a: g @
+nächsten 'n E: C s t @ n
+plötzlich 'p l 9 ts l I C
+gleichzeitig 'g l aI C ts aI t I C
+gleichzeitig 'g l aI C ts aI t I g
+einigen '? aI n I g @ n
+genannt g @ 'n a n t
+sagt 'z a: k t
+Stunde 'S t U n d @
+stets 'S t e: ts
+eben '? e: b @ n
+überhaupt ? y: b 6 h aU p t
+gesagt g @ 'z a: k t
+beide 'b aI d @
+leider 'l aI d 6
+größten 'g R 2: s t @ n
+R '? E 6
+unser '? U n z 6
+O '? o:
+Bedeutung b @ 'd OY t U N
+hundert 'h U n d 6 t
+Lage 'l a: g @
+zeigt 'ts aI k t
+fort 'f O 6 t
+Mal 'm a: l
+klar 'k l a: 6
+innerhalb '? I n 6 h a l p
+würden 'v Y 6 d @ n
+sechzehn 'z E C ts e: n
+oben '? o: b @ n
+hielt 'h i: l t
+ebenso '? e: b @ n z o:
+Kind 'k I n t
+lieber 'l i: b 6
+stellen 'S t E l @ n
+bezeichnet b @ 'ts aI C n @ t
+genug g @ 'n u: k
+Stand 'S t a n t
+Zug 'ts u: k
+guten 'g u: t @ n
+sprach 'S p R a: x
+Blick 'b l I k
+Caspar 'k a s 'p a: 6
+zweite 'ts v aI t @
+Richtung 'R I C t U N
+damals 'd a: m a: l s
+Wikipedia 'v I k i: 'p e: d i: a:
+Wirtschaft 'v I 6 t S a f t
+Platz 'p l a ts
+Grund 'g R U n t
+zudem ts u: 'd e: m
+beispielsweise 'b aI S p i: l s v aI z @
+begann b @ 'g a n
+früher 'f R y: 6
+Tiere 't i: R @
+Mitgliedstaaten 'm I t g l i: t S t a: t @ n
+Bereich b @ 'R aI C
+meinem 'm aI n @ m
+Rücken 'R Y k @ n
+Anfang '? a n f a N
+Regierung R e: 'g i: R U N
+Gebäude g @ 'b OY d @
+Thema 't e: m a:
+Problem p R o: 'b l e: m
+trotz 't R O ts
+richtig 'R I C t I C
+richtig 'R I C t I k
+Abend '? a: b @ n t
+Folge 'f O l g @
+Hannibal h a 'n i: b a l
+stellte 'S t E l t @
+fiel 'f i: l
+beziehungsweise b @ 'ts i: U N s v aI z @
+hält 'h E l t
+mußte 'm U s t @
+achtzig '? a x ts I C
+achtzig '? a x ts I k
+keiner 'k aI n 6
+morgen 'm O 6 g @ n
+Vater 'f a: t 6
+Dinge 'd I N @
+jedes 'j e: d @ s
+indem ? I n 'd e: m
+elf '? E l f
+Park 'p a 6 k
+Film 'f I l m
+Roms 'R O m s
+Hilfe 'h I l f @
+fünfzehn 'f Y n f ts e: n
+obwohl '? O p 'v o: l
+laut 'l aU t
+manchmal 'm a n C m a: l
+In '? I n
+junge 'j U N @
+kamen 'k a: m @ n
+Reich 'R aI C
+Bevölkerung b @ 'f 9 l k 6 R U N
+Geld 'g E l t
+jedem 'j e: d @ m
+eigene '? aI g @ n @
+anders '? a n d 6 s
+direkt d i: 'R E k t
+ziehen 'ts i: @ n
+verlassen f E 6 'l a s @ n
+Oktober ? O k 't o: b 6
+Europäischen ? OY R o: 'p E: I S @ n
+läuft 'l OY f t
+stellt 'S t E l t
+all '? a l
+darin d a 'R I n
+erreichen ? E 6 'R aI C @ n
+befindet b @ 'f I n d @ t
+Natur n a 't u: 6
+lass 'l a s
+bekommen b @ 'k O m @ n
+suche 'z u: x @
+neu 'n OY
+aufgrund '? aU f g R U n t
+Spiel 'S p i: l
+Wagen 'v a: g @ n
+deutsche 'd OY t S @
+Sache 'z a x @
+Fenster 'f E n s t 6
+wichtig 'v I C t I k
+teilweise 't aI l v aI z @
+tragen 't R a: g @ n
+Woche 'v O x @
+freie 'f R aI @
+siebzig 'z i: p ts I C
+siebzig 'z i: p ts I k
+hohen 'h o: @ n
+schien 'S i: n
+Züge 'ts y: g @
+gehören g @ 'h 2: R @ n
+Zimmer 'ts I m 6
+jede 'j e: d @
+weder 'v e: d 6
+s '? E s
+Politik 'p O l i 't i k
+bringen 'b R I N @ n
+trat 't R a: t
+Worte 'v O R t @
+Parlament p a 6 l a 'm E n t
+dennoch 'd E n n O x
+Italien ? I 't a: l i: @ n
+handelt 'h a n d @ l t
+schlecht 'S l E C t
+Tür 't y: 6
+Regionen R e: g 'j o: n @ n
+denken 'd E N k @ n
+brauchen 'b R aU x @ n
+hätten 'h E t @ n
+versucht f E 6 'z u: x t
+gefunden g @ 'f U n d @ n
+König 'k 2: n I C
+König 'k 2: n I g
+Ihre '? i: R @
+langsam 'l a N z a: m
+Gesellschaft g @ 'z E l S a f t
+Kilometer k i: l o: 'm e: t 6
+sofort z o: 'f O 6 t
+Sicherheit 'z I C 6 h aI t
+zweiten 'ts v aI t @ n
+gelang g @ 'l a N
+frei 'f R aI
+Deutschen 'd OY t S @ n
+Enzyklopädie ? E n ts y: k l o: p E 'd i:
+Fuß 'f u: s
+gekommen g @ 'k O m @ n
+gesamten g @ 'z a m t @ n
+Schutz 'S U ts
+schön 'S 2: n
+einzige '? aI n ts I g @
+Mai 'm aI
+Gebiete g @ 'b i: t @
+Juli 'j u: l i:
+Musik m u: 'z i: k
+Brücke 'b R Y k @
+April ? a p 'R I l
+heraus h E 'R aU s
+Menge 'm E N @
+führen 'f y: R @ n
+Bayern 'b aI 6 n
+dürfen 'd Y 6 f @ n
+Einfluss '? aI n f l U s
+weiteren 'v aI t 6 R @ n
+Gegensatz 'g e: g @ n z a ts
+Meinung 'm aI n U N
+ihres '? i: R @ s
+verschiedenen f e 6 'S i: d @ n @ n
+braucht 'b R aU x t
+Macht 'm a x t
+welches 'v E l C @ s
+Ländern 'l E n d 6 n
+Und '? U n t
+Präsidentin p R E z i: 'd E n t I n
+Hände 'h E n d @
+Flug 'f l u: k
+Herz 'h E 6 ts
+Größe 'g R 2: s @
+bleibt 'b l aI p t
+anderer '? a n d 6 R 6
+glauben 'g l aU b @ n
+römischen 'R 2: m I S @ n
+EU '? e: '? u:
+Freund 'f R OY n t
+Kartoffelsuppe k a 6 't O f @ l z U p @
+Gebiet g @ 'b i: t
+Inhalt '? I n h a l t
+Raum 'R aU m
+Gedanken g @ 'd a N k @ n
+Frauen 'f R aU @ n
+Reihe 'R aI @
+Personen 'p E 6 z o: n @ n
+fällt 'f E l t
+Rahmen 'R a: m @ n
+leisten 'l aI s t @ n
+spielen 'S p i: l @ n
+Erfolg '? E 6 f O l k
+Feuer 'f OY 6
+Städte 'S t E: t @
+Höhe 'h 2: @
+Länder 'l E n d 6
+wann 'v a n
+Landes 'l a n d @ s
+Biosphärenreservates b i: o: s 'f E: R @ n R e: z 6 'v a: t @ s
+Bahn 'b a: n
+Auto '? aU t o:
+Euro '? OY R o:
+verschiedene f e 6 'S i: d @ n @
+L '? E l
+dagegen d a 'g e: g @ n
+dachte 'd a x t @
+manche 'm a n C @
+März 'm ? E: 6 ts
+Möglichkeit 'm 2: g l I C k aI t
+solchen 'z O l C @ n
+Liebe 'l i: b @
+Schwanz 'S v a n ts
+nimmt 'n I m t
+Wege 'v e: g @
+Sprachen 'S p R a: x @ n
+zeigen 'ts aI g @ n
+Frankfurt 'f R a N k f U 6 t
+Mitte 'm I t @
+leben 'l e: b @ n
+System z Y s 't e: m
+Grenzen 'g R E n ts @ n
+August ? aU 'g U s t
+Bild 'b I l t
+nächste 'n E: C s t @
+erschien ? E 6 'S i: n
+tatsächlich t a: t 'z E C l I C
+Nähe 'n E: @
+erkennen ? E 6 'k E n @ n
+Recht 'R E C t
+Bürger 'b Y 6 g 6
+bisher b I s 'h e: 6
+denke 'd E N k @
+pro 'p R o:
+langen 'l a N @ n
+Mit 'm I t
+dritte 'd R I t @
+Juni 'j u: n i:
+kleiner 'k l aI n 6
+dreizehn 'd R aI ts e: n
+Zukunft 'ts u: k U n f t
+unten '? U n t @ n
+W 'v e:
+relativ 'R e: l a t i: f
+wußte 'v U s t @
+Kirche 'k I 6 C @
+errichtet ? E 6 'R I C t @ t
+bevor b @ 'f o: 6
+Familie f a m i: l i: @
+Kraft 'k R a f t
+Januar 'j a n u: a: 6
+Gruppe 'g R U p @
+nämlich 'n E: m l I C
+brachte 'b R a x t @
+schreiben 'S R aI b @ n
+fährt 'f E: 6 t
+Ihr '? i: 6
+zahlreiche 'ts a: l R aI C @
+vierzehn 'f I 6 ts e: n
+welcher 'v E: l C 6
+versuchen f E 6 'z u: x @ n
+tut 't u: t
+Im '? I m
+Eindruck '? aI n d R U k
+Insel '? I n z @ l
+eingesetzt '? aI n g @ z E ts t
+Kosten 'k O s t @ n
+Teile 't aI l @
+völlig 'f 9 l I C
+völlig 'f 9 l I g
+erfolgreich ? E 6 'f O l k R aI C
+November n o: 'v E m b 6
+Ort '? O 6 t
+legte 'l e: k t @
+Europas ? OY 'R o: p a: s
+Ordnung '? O 6 d n U N
+verstehen f E 6 'S t e: @ n
+ach '? a x
+fuhr 'f u: 6
+Bahnhof 'b a: n h o: f
+groß 'g R o: s
+spielt 'S p i: l t
+großer 'g R o: s 6
+anderes '? a n d 6 R @ s
+wenige 'v e: n I g @
+andern '? a n d 6 n
+ziemlich 'ts i: m l I C
+seien 'z aI @ n
+wahrscheinlich 'v a: 6 S aI n l I C
+tausend 't aU z @ n t
+gehalten g @ 'h a l t @ n
+Mädchen 'm E: t C @ n
+genutzt g @ 'n U ts t
+Kaiser 'k aI z 6
+Dezember d e: 'ts E m b 6
+vergessen f E 6 'g E s @ n
+Idee ? I 'd e:
+fünfundzwanzig f Y n f ? U n t 'ts v a n ts I C
+fünfundzwanzig f Y n f ? U n t 'ts v a n ts I k
+Weibchen 'v aI b C @ n
+Du 'd u:
+wichtige 'v I C t I g @
+Grad 'g R a: t
+verloren f E 6 'l o: R @ n
+Augenblick '? aU g @ n b l I k
+Region R e: g 'j o: n
+Seele 'z e: l @
+Schritt 'S R I t
+Ziele 'ts i: l @
+besten 'b E s t @ n
+los 'l o: s
+Schweiz 'S v aI ts
+scheint 'S aI n t
+einzelnen '? aI n ts @ l n @ n
+alt '? a l t
+offenbar '? O f @ n 'b a: 6
+fertig 'f E R t I C
+fertig 'f E 6 t I g
+Sohn 'z o: n
+bestimmt b @ 'S t I m t
+Dokumentation d o: k u: m E n t a 'ts j o: n
+setzen 'z E ts @ n
+Antwort '? a n t v O 6 t
+Probleme p R o: 'b l e: m @
+schaffen 'S a f @ n
+zuerst ts u: '? e: 6 s t
+Qualität k v a l i: 't E: t
+kurze 'k U R ts @
+Landwirtschaft 'l a n t v I 6 t S a f t
+länger 'l E N 6
+zieht 'ts i: t
+Hälfte 'h E l f t @
+erhielt ? E 6 'h i: l t
+Tod 't ? o: t
+gegeben g @ 'g e: b @ n
+Beginn b @ 'g I n
+wieso v i: 'z o:
+Gefahr g @ 'f a: 6
+genommen g @ 'n O m @ n
+Hannover h a 'n o: f 6
+überall ? y: b 6 '? a l
+Wochen 'v O x @ n
+danach d a 'n a: x
+außer '? aU s 6
+Männchen 'm E n C @ n
+ähnlich '? E: n l I C
+Tom 't O m
+Naturschutz n a: 't u: 6 S U ts
+Präsident p R E z i: 'd E n t
+Entscheidung ? E n t 'S aI d U N
+Fragen 'f R a: g @ n
+hörte 'h 2: 6 t @
+dienen 'd i: n @ n
+Saltner 'z a l t n 6
+Auge '? aU g @
+dar 'd a 6
+Forschung 'f O 6 S U N
+vorher f o: 6 'h e: 6
+möglichst 'm 2: k l I C s t
+de 'd e: '? e:
+Jahrhunderts j a: 6 'h U n d 6 ts
+Maßnahmen 'm a: s n a: m @ n
+trägt 't R E: k t
+K 'k a:
+Vorschlag 'f o: 6 S l a: k
+arbeiten '? a 6 b aI t @ n
+Tschitschikow 't S I t S I k o:
+September z E p 't E m b 6
+Kultur k U l 't u: 6
+La 'l a:
+öffnen '? 9 f n @ n
+folgte 'f O l k t @
+befinden b @ 'f I n d @ n
+Freude 'f R OY d @
+gebracht g @ 'b R a: x t
+spricht 'S p R I C t
+gebaut g @ 'b aU t
+bestand b @ 'S t a n t
+Körper 'k 9 6 p 6
+beginnt b @ 'g I n t
+niemals 'n i: m a: l s
+Einsatz '? aI n z a ts
+Angst '? a N s t
+Leitlinien 'l aI t l i: n i: @ n
+habt 'h a: p t
+weg 'v E k
+See 'z e:
+Commons 'k O m @ n s
+suchen 'z u: x @ n
+deinen 'd aI n @ n
+Was 'v a s
+Anzahl '? a n ts a: l
+H 'h a:
+Situation z i: t u: a 'ts j o: n
+offen '? O f @ n
+Schiff 'S I f
+reichen 'R aI C @ n
+selten 'z E l t @ n
+Begriff b @ 'g R I f
+wenigstens 'v e: n I k s t @ n s
+Stacheln 'S t a x @ l n
+sogenannte 'z o: g @ n a n t @
+trug 't R u: g
+Windows 'v I n d O U s
+Eltern '? E l t 6 n
+Buch 'b u: x
+dient 'd i: n t
+bietet 'b i: t @ t
+Tisch 't I S
+essen '? E s @ n
+wenigen 'v e: n I g @ n
+bloß 'b l o: s
+Christus 'k R I s t U s
+Creative 'k r i: ? EI 't I v
+herum h E 'R U m
+erstmals '? E 6 s t m a: l s
+europäischen ? OY R o: 'p e: I S @ n
+inzwischen ? I n 'ts v I S @ n
+gern 'g E R n
+Glück 'g l Y k
+nahe 'n a: @
+ruhig 'R u: I k
+ruhig 'R U I C
+gesamte g @ 'z a m t @
+entstanden ? E n t 'S t a n d @ n
+schlug 'S l u: k
+Bau 'b aU
+daraus d a 'R aU s
+entstehen ? E n t 'S t e: @ n
+verstanden f E 6 'S t a n d @ n
+Lust 'l U s t
+tief 't i: f
+Verfügung f E 6 'f y: g U N
+Zeitpunkt 'ts aI t p U N k t
+könne 'k 9 n @
+Spieler 'S p i: l 6
+meistens 'm aI s t @ n s
+Lied 'l i: t
+Attribution ? a t R i: b u: 'ts j o: n
+Programm p R o: 'g R a m
+fünfundvierzig f Y n f ? U n t 'f I R ts I C
+fünfundvierzig f Y n f ? U n t 'f I R ts I k
+Zusammenarbeit ts u: 'z a m @ n ? a 6 b aI t
+Ruhe 'R u: @
+antwortete '? a n t v O R t @ t @
+jungen 'j U N @ n
+circa 'ts I R k a:
+kennt 'k E n t
+irgendwie '? I 6 g @ n t v i:
+Projekt p R o: 'j E k t
+bestehen b @ 'S t e: @ n
+Schaffung 'S a f U N
+Morgen 'm O 6 g @ n
+Nutzung 'n U ts U N
+Zweiten 'ts v aI t @ n
+Ein '? aI n
+Provinz p R o: 'v I n ts
+vorbei f o: 6 'b aI
+unterschiedlichen ? U n t 6 S i: t l I C @ n
+Share 'S E: 6
+Deutschlands 'd OY t S l a n ts
+höchste 'h 2: k s t @
+Himmel 'h I m @ l
+Hund 'h U n t
+helfen 'h E l f @ n
+Computer k O m 'p j u: t 6
+neunzehnte n OY n ts e: n t @
+gesprochen g @ 'S p R O x @ n
+saß 'z a: s
+mehreren 'm e: R 6 R @ n
+Alike ? a l i: k @
+gemeinsam g @ 'm aI n z a: m
+regelmäßig 'R e: g @ l m E: s I C
+regelmäßig 'R e: g @ l m E: s I g
+fühlte 'f y: l t @
+weltweit 'v E l t v aI t
+Energie ? E n E 6 'g i:
+Aber '? a b 6
+Aufmerksamkeit '? aU f m E 6 k z a: m k aI t
+Niederlage 'n i: d 6 l a: g @
+standen 'S t a n d @ n
+gleichen 'g l aI C @ n
+nennen 'n E n @ n
+Hamburg 'h a m b U 6 k
+derzeit 'd e: 6 ts aI t
+Großteil 'g R o: s t aI l
+dicht 'd I C t
+Deutsche 'd OY t S @
+vierundsechzig f i: 6 ? U n t 'z E C ts I C
+vierundsechzig f i: 6 ? U n t 'z E C ts I k
+mehrfach 'm e: 6 f a x
+Nudeln 'n u: d @ l n
+entfernt ? E n t 'f E R n t
+Doktor 'd O k t o: 6
+Verbindung f E 6 'b I n d U N
+Seiten 'z aI t @ n
+Gebieten g @ 'b i: t @ n
+gestern 'g E s t 6 n
+Ausdruck '? aU s d R U k
+Kühlschrank 'k y: l S R a N k
+Verkehr f E 6 'k e: 6
+mag 'm a: k
+na 'n a:
+somit 'z o: m I t
+Polizei p o l i 'ts aI
+Punischen 'p u: n I S @ n
+knapp 'k n a p
+Flotte 'f l O t @
+Verfahren f E 6 'f a: R @ n
+Tier 't i: 6
+Grundlage 'g R U n t l a: g @
+Unported '? a n p O 6 t @ d
+mindestens 'm I n d @ s t @ n s
+erklären ? E 6 'k l E: R @ n
+komplett k O m 'p l E t
+Verwendung f E 6 'v E n d U N
+Schule 'S u: l @
+Bundesrepublik b U n d @ s R e: p u: b l I k
+bedeutet b @ 'd OY t @ t
+fallen 'f a l @ n
+Regel 'R e: g @ l
+Geist 'g aI s t
+Dank 'd a N k
+spät 'S p E: t
+Herren 'h E R @ n
+Zahl 'ts a: l
+West 'v E s t
+deswegen d E s 'v e: g @ n
+Afrika '? a f R i: k a:
+Programme p R o: 'g R a m @
+Stein 'S t aI n
+Essen '? E s @ n
+Strecke 'S t R E k @
+willst 'v I l s t
+Sinne 'z I n @
+enthalten ? E n t 'h a l t @ n
+Möglichkeiten 'm 2: g l I C k aI t @ n
+könnten 'k 9 n t @ n
+Daten 'd a: t @ n
+römische 'R 2: m I S @
+weiterhin 'v aI t 6 h I n
+Tages 't a: g @ s
+reicht 'R aI C t
+Universität ? U n i: v E R z i: 't E: t
+Blut 'b l u: t
+Rechte 'R E C t @
+warf 'v a R f
+Rede 'R e: d @
+Westen 'v E s t @ n
+Griechenland 'g R i: C @ n l a n t
+Süden 'z y: d @ n
+zuvor ts u: 'f o: 6
+zeigte 'ts aI k t @
+Folgen 'f O l g @ n
+hört 'h 2: 6 t
+kennen 'k E n @ n
+Aufgabe '? aU f g a: b @
+heutigen 'h OY t I g @ n
+halb 'h a l p
+bilden 'b I l d @ n
+beobachtet b @ '? o: b a x t @ t
+Freiheit 'f R aI h aI t
+Sieg 'z i: k
+wichtigsten 'v I C t I k s t @ n
+stieg 'S t i: k
+Linie 'l i: n i: @
+Fahrrad 'f a: R a: t
+hohe 'h o: @
+hinein 'h I n aI n
+höher 'h 2: 6
+bekommt b @ 'k O m t
+funktioniert 'f U N k ts j o n i: 6 t
+Wilhelm 'v I l h E l m
+lesen 'l e: z @ n
+wahr 'v a: 6
+wirtschaftliche 'v I 6 t S a f t l I C @
+verlor f E 6 'l o: 6
+aufs '? aU f s
+Grenze 'g R E n ts @
+Februar 'f e: b R u: a: 6
+lediglich 'l e: d I k l I C
+Internet '? I n t 6 n E t
+Wald 'v a l t
+Richtlinie 'R I C t l i: n i: @
+trotzdem 't R O ts d e: m
+nutzen 'n U ts @ n
+falsch 'f a l S
+erster '? E 6 s t 6
+unseren '? U n z 6 R @ n
+Sicht 'z I C t
+ursprünglich '? u: 6 S p R Y N l I C
+Osten '? O s t @ n
+ergänzt '? E 6 'g E n ts t
+Meer 'm e: 6
+Frankreich 'f R a N k R aI C
+dahin 'd a: h I n
+Winter 'v I n t 6
+gingen 'g I N @ n
+Alter '? a l t 6
+Werk 'v E 6 k
+lernen 'l E 6 n @ n
+Hunger 'h U N 6
+Republik R e: p u: 'b l i: k
+Zeichen 'ts aI C @ n
+Martier 'm a 6 t i: 6
+rein 'R aI n
+benutzt b @ 'n U ts t
+meines 'm aI n @ s
+danke 'd a N k @
+Version v E 6 'z j o: n
+weshalb v E s 'h a l p
+Freunde 'f R OY n d @
+Garten 'g a 6 t @ n
+halt 'h a l t
+geschlossen g @ 'S l O s @ n
+Reise 'R aI z @
+miteinander 'm I t ? aI n a n d 6
+Männer 'm E n 6
+enthält ? E n t 'h E l t
+warten 'v a 6 t @ n
+Bewegung b @ 'v e: g U N
+Beute 'b OY t @
+Horste 'h O 6 s t @
+Ell '? E l
+Band 'b E: n d
+Band 'b a n t
+Schaden 'S a: d @ n
+Friedrich 'f R i: d R I C
+mache 'm a x @
+Römer 'R 2: m 6
+sicherlich 'z I C 6 l I C
+betrachtet b @ 't R a x t @ t
+seid 'z aI t
+entgegen ? E n t 'g e: g @ n
+Titel 't i: t @ l
+Worten 'v O 6 t @ n
+modernen m o: 'd E 6 n @ n
+Arten '? a 6 t @ n
+Ludwig 'l u: t v I C
+Ludwig 'l u: t v I g
+Fehler 'f e: l 6
+Papier p a 'p i: 6
+Sizilien z i: 'ts i: l j @ n
+Software 's O f t v E: 6
+erwarten ? E 6 'v a 6 t @ n
+verstehe f E 6 'S t e: @
+Kampf 'k a m p f
+oftmals '? O f t m a: l s
+Vergleich f E 6 'g l aI C
+of '? O f
+Nummer 'n U m 6
+Wohnung 'v o: n U N
+spielte 'S p i: l t @
+Prinzip p R I n 'ts i: p
+schließen 'S l i: s @ n
+musst 'm U s t
+Zahlen 'ts a: l @ n
+unterscheiden ? U n t 6 'S aI d @ n
+Brot 'b R o: t
+Bezeichnung b @ 'ts aI C n U N
+Ausschuss '? aU s S U s
+wirtschaftlichen 'v I 6 t S a f t l I C @ n
+Latein l a 't aI n
+Finger 'f I N 6
+Norden 'n O 6 d @ n
+Kollegen k o: 'l e: g @ n
+bewegen b @ 'v e: g @ n
+öffentlichen '? 9 f @ n t l I C @ n
+Fell 'f E l
+Vereinigten f E 6 '? aI n I C t @ n
+Vereinigten f E 6 '? aI n I g t @ n
+Teilen 't aI l @ n
+Sahne 'z a: n @
+Name 'n a: m @
+fragen 'f R a: g @ n
+Sekunden 'z e: k U n d @ n
+Tourismus t u: 'R I s m U s
+Da 'd a:
+einheitlichen '? aI n h aI t l I C @ n
+Markt 'm a 6 k t
+Rat 'R a: t
+jedenfalls 'j e: d @ n f a l s
+wesentlich 'v e: z @ n t l I C
+kräftigen 'k R E f t I g @ n
+zweihundert 'ts v aI h U n d 6 t
+Soldaten z O l 'd a: t @ n
+X '? I k s
+Produktion 'p R o: d U k ts j o: n
+ans '? a n s
+Umsetzung '? U m z E ts U N
+gestellt g @ 'S t E l t
+jener 'j e: n 6
+Tagen 't a: g @ n
+Text 't E k s t
+Tschun 't S u: n
+Weltkrieg 'v E l t k R i: k
+bringt 'b R I N t
+Arm '? a: 6 m
+geschrieben g @ 'S R i: b @ n
+Staat 'S t a: t
+deiner 'd aI n 6
+Entfernung ? E n t 'f E 6 n U N
+selber 'z E l b 6
+erlaubt ? E 6 'l aU p t
+Nase 'n a: z @
+fünfunddreißig f Y n f ? U n t 'd R aI s I C
+fünfunddreißig f Y n f ? U n t 'd R aI s I k
+offenen '? O f @ n @ n
+Fällen 'f E l @ n
+Wand 'v a n t
+darunter d a 'R U n t 6
+ehemaligen '? e: @ m a: l I g @ n
+beträgt b @ 't R E: k t
+Adler '? a: d l 6
+Schloss 'S l O s
+hingegen h I n 'g e: g @ n
+Amtssprache '? a m ts S p R a: x @
+zweiundvierzig ts v aI ? U n t 'f I R ts I C
+zweiundvierzig ts v aI ? U n t 'f I R ts I k
+Fahrt 'f a: 6 t
+Satz 'z a ts
+Lösung 'l 2: z U N
+Erfolge '? E 6 f O l g @
+Falle 'f a l @
+Mund 'm U n t
+warm 'v a 6 m
+geschehen g @ 'S e: @ n
+Ansicht '? a n z I C t
+treffen 't R E f @ n
+wandte 'v a n t @
+begonnen b @ 'g O n @ n
+Holz 'h O l ts
+entwickelt ? E n t 'v I k @ l t
+erfolgt ? E 6 'f O l k t
+gedacht g @ 'd a x t
+Europäische ? OY R o: 'p E: I S @
+geschaffen g @ 'S a f @ n
+t 't e:
+ständig 'S t E n d I C
+ständig 'S t E n d I g
+anzeigen '? a n ts aI g @ n
+finde 'f I n d @
+sozialen z o: 'ts j a: l @ n
+besondere b @ 'z O n d 6 R @
+wären 'v E: R @ n
+schlagen 'S l a: g @ n
+weißen 'v aI s @ n
+besitzt b @ 'z I ts t
+Person 'p E 6 z o: n
+Besitzungen b @ 'z I ts U N @ n
+Ozean '? o: ts e: a: n
+Druck 'd R U k
+Wahl 'v a: l
+Bremen 'b R e: m @ n
+versuchte f E 6 'z u: x t @
+blickte 'b l I k t @
+kaufen 'k aU f @ n
+gelten 'g E l t @ n
+So 'z o:
+mittlerweile 'm I t l 6 v aI l @
+verbunden f E 6 'b U n d @ n
+Temperaturen t E m p @ R a: t u: R @ n
+reden 'R e: d @ n
+jeweils 'j e: v aI l s
+bereit b @ 'R aI t
+fehlt 'f e: l t
+sage 'z a: g @
+Aufgaben '? aU f g a: b @ n
+wollten 'v O l t @ n
+Heinrich 'h aI n R I C
+stattdessen 'S t a t 'd E s @ n
+angesichts '? a n g @ z I C ts
+unbedingt '? U n b @ d I N t
+Peter 'p e: t 6
+Wie 'v i:
+behalten b @ 'h a l t @ n
+Gewicht g @ 'v I C t
+Österreich '? 2: s t 6 R aI C
+folgenden 'f O l g @ n d @ n
+Straßen 'S t R a: s @ n
+Bauch 'b aU x
+Mitglieder 'm I t g l i: d 6
+schrieb 'S R i: p
+Wir 'v i: 6
+Zusammenhang ts u: 'z a m @ n h a N
+Bett 'b E t
+welchem 'v E l C @ m
+Jahres 'j a: R @ s
+Arbeiten '? a 6 b aI t @ n
+Beitrag 'b aI t R a: k
+Flughafen 'f l u: k h a: f @ n
+außerordentlich '? aU s 6 '? O 6 d E n t l I C
+Tor 't o: 6
+Medien 'm e: d i: @ n
+setzt 'z E ts t
+Bereiche b @ 'R aI C @
+Mario m a: 'R i: o:
+Mond 'm o: n t
+Technik 't E C n I k
+komme k O m @
+Planeten p l a: 'n e: t @ n
+Marie m a 'R i:
+Änderungen '? E n d @ R U N @ n
+Dame 'd a: m @
+Handschwingen 'h a n t S v I N @ n
+Bruder 'b R u: d 6
+weitgehend 'v aI t g e: @ n t
+Kritik 'k R i: t i: k
+politischen p o: 'l i: t I S @ n
+still 'S t I l
+Münchner 'm Y n C n 6
+amerikanischen ? a m 6 R i: 'k a: n I S @ n
+wirkt 'v I 6 k t
+schöne 'S 2: n @
+geführt g @ 'f y: 6 t
+zuständig 'ts u: S t E n d I C
+zuständig 'ts u: S t E n d I g
+starke 'S t a 6 k @
+ermöglicht ? E 6 'm 2: k l I C t
+entstand ? E n t 'S t a n t
+woher v o: 'h e: 6
+Besucher b @ 'z u: x 6
+Lebens 'l e: b @ n s
+neuer 'n OY 6
+treten 't R e: t @ n
+Unterstützung '? U n t 6 'S t Y ts U N
+aufgenommen '? aU f g @ n O m @ n
+sehe 'z e: @
+zuletzt ts u: 'l E ts t
+Monate 'm o: n a t @
+soziale z o: 'ts j a: l @
+Wetter 'v E t 6
+gezogen g @ 'ts o: g @ n
+Philosophie 'f i: l o: z o: f i:
+sodass 'z o: 'd a s
+hinzu h I n 'ts u:
+freilich 'f R aI l I C
+entwickeln ? E n t 'v I k @ l n
+Unterschied '? U n t 6 S i: t
+privaten p R i: 'v a: t @ n
+befand b @ 'f a n t
+klein 'k l aI n
+sitzt 'z I ts t
+warst 'v a 6 s t
+zwanzigste 'ts v a n ts I C s t @
+zwanzigste 'ts v a n ts I k s t @
+Planet p l a 'n e: t
+Schmerzen 'S m E 6 ts @ n
+Herzen 'h E 6 ts @ n
+leise 'l aI z @
+karthagischen k a 6 't a: g I S @ n
+alleine ? a 'l aI n @
+Lippen 'l I p @ n
+weißt 'v aI s t
+Kunst 'k U n s t
+Bezug b @ 'ts u: k
+legen 'l e: g @ n
+längst 'l E N s t
+zumindest ts u: 'm I n d @ s t
+Brief 'b R i: f
+Moment m o: 'm E n t
+Partei p a 6 't aI
+beinahe b aI 'n a: @
+Tochter 't O x t 6
+Fläche 'f l E C @
+Zweifel 'ts v aI f @ l
+jene 'j e: n @
+sichern 'z I C 6 n
+wirst 'v i: 6 s t
+China 'C i: n a:
+Wesen 'v e: z @ n
+entsteht ? E n t 'S t e: t
+draußen 'd R aU s @ n
+Lager 'l a: g 6
+gehabt g @ 'h a p t
+schwarze 'S v a 6 ts @
+Diese 'd i: z @
+England '? E N l a n t
+sechste 'z E k s t @
+Gewalt g @ 'v a l t
+gewinnen g @ 'v I n @ n
+sobald z o: 'b a l t
+einzelne '? aI n ts @ l n @
+dritten 'd R I t @ n
+Kugel 'k u: g @ l
+Gestalt g @ 'S t a l t
+starken 'S t a 6 k @ n
+Opfer '? O p f 6
+brach 'b R a: x
+Wahrheit 'v a: 6 h aI t
+Information ? I n f O 6 m a ts 'j o: n
+erklärt ? E 6 'k l E: 6 t
+getan g @ 't a: n
+Brust 'b R U s t
+vollkommen f O l 'k O m @ n
+zunehmend 'ts u: n e: m @ n t
+versteht f E 6 'S t e: t
+Sinn 'z I n
+greifen 'g R aI f @ n
+Einwohner '? aI n v o: n 6
+Mittelmeer 'm I t @ l m e: 6
+a '? a:
+zugleich ts u: 'g l aI C
+Nachricht 'n a: x R I C t
+Schüler 'S y: l 6
+hilft 'h I l f t
+außerhalb '? aU s 6 h a l p
+vierundzwanzig f i: 6 ? U n t 'ts v a n ts I C
+vierundzwanzig f i: 6 ? U n t 'ts v a n ts I k
+Preis 'p R aI s
+bildet 'b I l d @ t
+Junge 'j U N @
+Landschaft 'l a n t S a f t
+hauptsächlich 'h aU p t z E C l I C
+kostenlos 'k O s t @ n l o: s
+schauen 'S aU @ n
+schönen 'S 2: n @ n
+Fahrgäste 'f a: 6 g E s t @
+notwendig 'n o: t v E n d I C
+notwendig 'n o: t v E n d I g
+rasch 'R a S
+erwartet ? E 6 'v a 6 t @ t
+übrigen '? y: b R I g @ n
+erwiderte ? E 6 'v i: d 6 t @
+seitdem 'z aI t d e: m
+Koch 'k O x
+passiert p a 's i: 6 t
+hellenistischen 'h E l e: 'n I s t I S @ n
+Verwaltung f E 6 'v a l t U N
+verboten f E 6 'b o: t @ n
+Monaten 'm o: n a t @ n
+Güter 'g y: t 6
+Ergebnis ? E 6 'g e: p n I s
+Händen 'h E n d @ n
+Hispanien 'h I s p a: n i: @ n
+Betrieb b @ 't R i: p
+Bäumen 'b OY m @ n
+Karl 'k a 6 l
+Auch '? aU x
+stehenden 'S t e: @ n d @ n
+Werke 'v E R k @
+Verbesserung f E 6 'b E s 6 R U N
+siebenundzwanzig 'z i: b @ n ? U n t 'ts v a n ts I C
+siebenundzwanzig 'z i: b @ n ? U n t 'ts v a n ts I k
+durchaus 'd U R C '? aU s
+entlang ? E n t 'l a N
+ergibt ? E 6 'g I p t
+weiße 'v aI s @
+gefällt g @ 'f E l t
+Mehrheit 'm e: 6 h aI t
+ehe '? e: @
+beschäftigt b @ 'S E f t I C t
+beschäftigt b @ 'S E f t i: g t
+ausgestattet '? aU s g @ S t a t @ t
+gewiß g @ 'v I s
+mussten 'm U s t @ n
+geschlagen g @ 'S l a: g @ n
+halte 'h a l t @
+verkauft f E 6 'k aU f t
+Vertreter f E 6 't R e: t 6
+Kindern 'k I n d 6 n
+welchen 'v E l C @ n
+vollständig 'f O l S t E n d I C
+vollständig 'f O l S t E n d I g
+allmählich ? a l 'm E: l I C
+Wenn 'v E n
+erzeugt ? E 6 'ts OY k t
+erzählt ? E 6 'ts E: l t
+Truppen 't R U p @ n
+Zeitung 'ts aI t U N
+John 'd Z O n
+wiederum 'v i: d 6 R U m
+allgemein ? a l g @ 'm aI n
+bestimmte b @ 'S t I m t @
+Grunde 'g R U n d @
+guter 'g u: t 6
+Strukturfonds S t R U k 't u: 6 f O~ s
+müsste 'm Y s t @
+gesetzt g @ 'z E ts t
+sowieso 'z o: v i: z o:
+Alte '? a l t @
+Öffentlichkeit '? 9 f @ n t l I C k aI t
+hervor h E 6 'f o: 6
+Eigenschaften '? aI g @ n S a f t @ n
+Spiele 'S p i: l @
+vertreten f E 6 't R e: t @ n
+zumeist ts u: 'm aI s t
+Sachen 'z a x @ n
+Kilogramm 'k i: l o: g R a m
+anschließend '? a n S l i: s @ n t
+suchte 'z u: x t @
+roten 'R o: t @ n
+rechts 'R E C ts
+Interesse ? I n t @ 'R E s @
+demnach d e: m 'n a: x
+Steuern 'S t OY 6 n
+Glas 'g l a: s
+eingerichtet '? aI n g @ R I C t @ t
+Gegner 'g e: g n 6
+betrifft b @ 't R I f t
+ländlichen 'l E n t l I C @ n
+politische p o: 'l i: t I S @
+Wert 'v E 6 t
+zweimal 'ts v aI m a: l
+entschieden ? E n t 'S i: d @ n
+kenne 'k E n @
+Innovation '? I n o: v a ts j o: n
+beeinflusst b @ '? aI n f l U s t
+Versuch f E 6 'z u: x
+Beine 'b aI n @
+Dresden 'd R e: s d @ n
+Mars 'm a 6 s
+angenommen '? a n g @ n O m @ n
+neunundneunzig n OY n ? U n t 'n OY n ts I C
+neunundneunzig n OY n ? U n t 'n OY n ts I k
+Schiffe 'S I f @
+kurzen 'k U R ts @ n
+Gefühl g @ 'f y: l
+kleines 'k l aI n @ s
+Kuchen 'k u: x @ n
+Grunthe 'g R U n t @
+gegründet g @ 'g R Y n d @ t
+machten 'm a x t @ n
+Plan 'p l a: n
+neues 'n OY @ s
+Haare 'h a: R @
+eigentliche '? aI g E n t l I C @
+Augsburg '? aU k s b U 6 k
+Main 'm aI n
+Juden 'j u: d @ n
+fanden 'f a n d @ n
+mitten 'm I t @ n
+echt '? E C t
+kommst 'k O m s t
+vermutlich f E 6 'm u: t l I C
+gespielt g @ 'S p i: l t
+gezeigt g @ 'ts aI k t
+Termin t E 6 'm i: n
+erklärte ? E 6 'k l E: 6 t @
+Firma 'f I 6 m a:
+Stoff 'S t O f
+entsprechend ? E n t 'S p R E C @ n t
+umfasst ? U m 'f a s t
+Strom 'S t R o: m
+beste 'b E s t @
+hoher 'h o: 6
+infolge ? I n 'f O l g @
+Jahrhunderte j a: 6 'h U n d 6 t @
+Wein 'v aI n
+gegangen g @ 'g a N @ n
+möglichen 'm 2: k l I C @ n
+unserem '? U n z 6 R @ m
+führten 'f y: 6 t @ n
+Industrie ? I n d U s 't R i:
+daraufhin d a R aU f 'h I n
+gewählt g @ 'v E: l t
+Mark 'm a 6 k
+Jobst 'j o: p s t
+Museum m u: 'z e: U m
+glaubt 'g l aU p t
+fühlen 'f y: l @ n
+weiteres 'v aI t 6 R @ s
+Schatten 'S a t @ n
+Z 'ts E t
+östlichen '? 9 s t l I C @ n
+Tat 't a: t
+achtzehnte '? a x t ts e: n t @
+verfolgt f E 6 'f O l k t
+einiger '? aI n I g 6
+Gelegenheit g @ 'l e: g @ n h aI t
+hinweg h I n 'v E k
+Ersten '? E 6 s t @ n
+sahen 'z a: @ n
+Darmstadt 'd a 6 m S t a t
+Boot 'b o: t
+sterben 'S t E 6 b @ n
+trugen 't R u: g @ n
+ökologisch '? 2: k o: 'l o: g I S
+Sommer 'z O m 6
+The 'T @
+Angriff '? a n g R I f
+Höhle 'h 2: l @
+bildeten 'b I l d @ t @ n
+ersetzt ? E 6 'z E ts t
+wolle 'v O l @
+geprägt g @ 'p R E: k t
+geöffnet g @ '? 9 f n @ t
+gelegentlich g @ 'l e: g E n t l I C
+Produkte p R o: 'd U k t @
+westlichen 'v E s t l I C @ n
+entweder '? E n t v e: d 6
+Großbritannien 'g R o: s b R i: 't a n i: @ n
+Verhandlungen f E 6 'h a n d l U N @ n
+Absicht '? a p z I C t
+gebe 'g e: b @
+Anblick '? a n b l I k
+angelegt '? a n g @ l e: k t
+Maschinen m a 'S i: n @ n
+meinte 'm aI n t @
+Ecke '? E k @
+Haar 'h a: 6
+wusste 'v U s t @
+Gedanke g @ 'd a N k @
+Hochschule 'h o: x S u: l @
+Paul 'p aU l
+fünfundneunzig f Y n f ? U n t 'n OY n ts I C
+glaubte 'g l aU p t @
+lagen 'l a: g @ n
+verwenden f E 6 'v E n d @ n
+daneben d a 'n e: b @ n
+sorgen z O 6 g @ n
+Ohren '? o: R @ n
+Spiegel 'S p ? i: g @ l
+Stimmen 'S t I m @ n
+Parks 'p a 6 k s
+Sklaven 's k l a: v @ n
+lief 'l i: f
+Gefühle g @ 'f y: l @
+abgeschlossen '? a p g @ S l O s @ n
+diente 'd i: n t @
+erheblich ? E 6 'h e: p l I C
+Otto '? O t o:
+Tatsache 't a t z a x @
+vermeiden f E 6 'm aI d @ n
+Suche 'z u: x @
+größere 'g R 2: s 6 R @
+alter '? a l t 6
+Wind 'v I n t
+tritt 't R I t
+ohnehin ? o: n @ 'h I n
+Fahrzeug 'f a: 6 ts OY k
+Volk 'f O l k
+Wirkung 'v I 6 k U N
+werfen 'v E 6 f @ n
+Bäume 'b OY m @
+früh 'f R y:
+entwickelte ? E n t 'v I k @ l t @
+aufgegeben '? aU f g @ g e: b @ n
+Meister 'm aI s t 6
+brauche 'b R aU x @
+London 'l O n d O n
+Japan 'j a: p a: n
+Tieren 't i: R @ n
+Teufel 't OY f @ l
+Damen 'd a: m @ n
+Knie 'k n i:
+d 'd e:
+Verordnung f E 6 '? O 6 d n U N
+gefallen g @ 'f a l @ n
+existieren ? E k s I s 't i: R @ n
+Masse 'm a s @
+ferner 'f E 6 n 6
+weiterer 'v aI t 6 R 6
+Kilometern k i: l o: 'm e: t 6 n
+wichtigen 'v I C t I g @ n
+Kreis 'k R aI s
+siehe 'z i: @
+Anwendung '? a n v E n d U N
+nahezu 'n a: @ ts u:
+jagen 'j a: g @ n
+Wunder 'v U n d 6
+Als '? a l s
+bestimmten b @ 'S t I m t @ n
+Zustand 'ts u: S t a n t
+gelernt g @ 'l E 6 n t
+Einführung '? aI n f y: R U N
+Änderung '? E n d 6 R U N
+Paar 'p a: 6
+Nürnberg 'n Y 6 n b E 6 k
+Mister 'm I s t 6
+gewonnen g @ 'v O n @ n
+bisschen 'b I s C @ n
+Fernsehen 'f E 6 n z e: n
+schlafen 'S l a: f @ n
+solcher 'z O l C 6
+Eine '? aI n @
+erneut ? E 6 'n OY t
+zerstört ts E 6 'S t 2: 6 t
+folgten 'f O l k t @ n
+laufen 'l aU f @ n
+Bauern 'b aU 6 n
+lautet 'l aU t @ t
+Hessen 'h E s @ n
+unmöglich ? U n 'm 2: k l I C
+Gold 'g O l t
+beginnen b @ 'g I n @ n
+aufmerksam '? aU f m E 6 k z a: m
+Isma ? I s m a:
+achtunddreißig ? a x t ? U n t 'd R aI s I C
+achtunddreißig ? a x t ? U n t 'd R aI s I k
+sucht 'z U x t
+schneller 'S n E l 6
+erhob ? E 6 'h o: p
+Reiches 'R aI C @ s
+bislang b I s 'l a N
+Hoffnung 'h O f n U N
+erzielt ? E 6 'ts i: l t
+per 'p e: 6
+Annahme '? a n a: m @
+Farbe 'f a 6 b @
+Seemacht 'z e: m a x t
+eng '? E N
+schwarzen 'S v a 6 ts @ n
+schwere 'S v e: R @
+einundvierzig ? aI n ? U n t 'f I R ts I C
+einundvierzig ? aI n ? U n t 'f I R ts I k
+veröffentlicht f E 6 '? 9 f @ n t l I C t
+sogleich z o: 'g l aI C
+sogenannten 'z o: g @ n a n t @ n
+gelesen g @ 'l e: z @ n
+Dingen 'd I N @ n
+hoffentlich 'h O f @ n t l I C
+gelangen g @ 'l a N @ n
+hierzu 'h i: 6 ts u:
+Länge 'l E N @
+Jagd 'j a: k t
+Bildung 'b I l d U N
+Wissenschaften 'v I s @ n S a f t @ n
+Bundestag 'b U n d @ s t a: k
+Von 'f O n
+vierunddreißig f i: 6 ? U n t 'd R aI s I C
+vierunddreißig f i: 6 ? U n t 'd R aI s I k
+genannten g @ 'n a n t @ n
+Inseln '? I n z @ l n
+Anspruch '? a n S p R U x
+Ufer '? u: f 6
+Gespräch g @ 'S p R E: C
+Hof 'h o: f
+Sturm 'S t U R m
+Braun 'b R aU n
+Dach 'd a x
+Arme '? a 6 m @
+zusätzlich 'ts u: z E ts l I C
+Fluss 'f l U s
+Begegnung b @ 'g e: g n U N
+bitten 'b I t @ n
+einzigen '? aI n ts I g @ n
+Regensburg 'R e: g @ n s b U 6 k
+stärker 'S t E 6 k 6
+App '? E p
+Zeiten 'ts aI t @ n
+achtundvierzig ? a x t ? U n t 'f I R ts I C
+achtundvierzig ? a x t ? U n t 'f I R ts I k
+links 'l I N k s
+egal '? e: g a: l
+tot 't ? o: t
+Hans 'h a n s
+zahlreichen 'ts a: l R aI C @ n
+erinnern ? E 6 '? I n 6 n
+einst '? aI n s t
+Reichtum 'R aI C t u: m
+erzählte ? E 6 'ts E: l t @
+Zentrum 'ts E n t R U m
+nieder 'n i: d 6
+gebildet g @ 'b I l d @ t
+Album '? a l b U m
+Schluss 'S l U s
+ausgerichtet '? aU s g @ R I C t @ t
+großes 'g R o: s @ s
+Ohr '? o: 6
+Fleisch 'f l aI S
+Treppe 't R E p @
+zweiundsiebzig ts v aI ? U n t 'z i: p ts I C
+zweiundsiebzig ts v aI ? U n t 'z i: p ts I k
+gelingt g @ 'l I N t
+tat 't a: t
+Ritter 'R I t 6
+sitzen 'z I ts @ n
+achten '? a x t @ n
+deinem 'd aI n @ m
+kaputt 'k a p U t
+Berliner b E 6 'l i: n 6
+betrachten b @ 't R a x t @ n
+Handel 'h a n d @ l
+Tränen 't R E: n @ n
+deutsch 'd OY t S
+unterstützen ? U n t 6 'S t Y ts @ n
+wichtiger 'v I C t I g 6
+Mut 'm u: t
+Zugang 'ts u: g a N
+Liste 'l I s t @
+Wien 'v i: n
+Schweden 'S v e: d @ n
+Aufnahme '? aU f n a: m @
+Schwierigkeiten 'S v i: R I C k aI t @ n
+ließen 'l i: s @ n
+Regeln 'R e: g @ l n
+benötigt b @ 'n 2: t I C t
+benötigt b @ 'n 2: t I k t
+Bundesregierung b U n d @ s R e: g i: R U N
+Bedingungen b @ 'd I N U N @ n
+regionalen 'R e: g i: o: 'n a: l @ n
+hängt 'h E N t
+gewann g @ 'v a n
+folgen 'f O l g @ n
+allgemeinen ? a l g @ 'm aI n @ n
+heißen 'h aI s @ n
+Tal 't a: l
+glücklich 'g l Y k l I C
+griff 'g R I f
+Schottland 'S O t l a n t
+zweiundzwanzig ts v aI ? U n t 'ts v a n ts I C
+zweiundzwanzig ts v aI ? U n t 'ts v a n ts I k
+Funktion f U N k ts j o: n
+Vorteil 'f o: 6 t aI l
+Beutetiere 'b OY t @ t i: R @
+Nein 'n aI n
+Stadion 'S t a: d i: O n
+Zehen 'ts e: @ n
+Lächeln 'l E C @ l n
+durchgeführt 'd U R C g @ f y: 6 t
+Flucht 'f l U x t
+elfte '? E l f t @
+vierundneunzig f i: 6 ? U n t 'n OY n ts I C
+vierundneunzig f i: 6 ? U n t 'n OY n ts I k
+ändert '? E n d 6 t
+lateinische l a: 't aI n I S @
+Mannschaften 'm a n S a f t @ n
+Professor p R o: 'f E s o: 6
+äußerst '? OY s 6 s t
+konkrete k O N 'k R e: t @
+Graf 'g R a: f
+eure '? OY R @
+erschienen ? E 6 'S i: n @ n
+Vergangenheit f E 6 'g a N @ n h aI t
+vierundvierzig f i: 6 ? U n t 'f I R ts I C
+vierundvierzig f i: 6 ? U n t 'f I R ts I k
+zweiunddreißig ts v aI ? U n t 'd R aI s I C
+zweiunddreißig ts v aI ? U n t 'd R aI s I k
+getrennt g @ 't R E n t
+Stellen 'S t E l @ n
+breite 'b R aI t @
+Ebene '? e: b @ n @
+Spanien 'S p a: n i: @ n
+Grundsatz 'g R U n t z a ts
+Serie 'z e: R i: @
+bedeckt b @ 'd E k t
+leer 'l e: 6
+Zweigen 'ts v aI g @ n
+anfangs '? a n f a N s
+Bei 'b aI
+Wachstum 'v a k s t u: m
+dank 'd a N k
+b 'b e:
+erreichte ? E 6 'R aI C t @
+ausschließlich '? aU s S l i: s l I C
+bemerkt b @ 'm E 6 k t
+Informationen ? I n f O 6 m a ts j o: n @ n
+fassen 'f a s @ n
+Bier 'b i: 6
+maßgeblich 'm a: s g e: p l I C
+zerstören ts E 6 'S t 2: R @ n
+steigt 'S t aI k t
+britischen 'b R i: t I S @ n
+Bücher 'b y: C 6
+Distanz d I s 't a n ts
+Vorschriften 'f o: 6 S R I f t @ n
+jederzeit j e: d 6 'ts aI t
+Minute 'm i: n u: t @
+dran 'd R a n
+Sachsen 'z a k s @ n
+Nach 'n a: x
+Schicksal 'S I k z a: l
+Ton 't o: n
+geraten g E 'R a: t @ n
+Klasse 'k l a s @
+überlassen ? y: b 6 'l a s @ n
+Spaghetti 'S p a: g E t i:
+Klein 'k l aI n
+Felix 'f e: l I k s
+Ingolstadt ? I n 'g O l S t a t
+Ball 'b a l
+Umgebung ? U m 'g e: b U N
+Wunsch 'v U n S
+Verhalten f E 6 'h a l t @ n
+verzichten f E 6 'ts I C t @ n
+trinken 't R I N k @ n
+lachte 'l a x t @
+praktisch 'p R a k t I S
+dreiunddreißig d R aI U n t 'd R aI s I C
+dreiunddreißig d R aI U n t 'd R aI s I k
+Zweck 'ts v E k
+Schwester 'S v E s t 6
+heutige 'h OY t I g @
+erscheint ? E 6 'S aI n t
+verhindern f E 6 'h I n d 6 n
+Besuch b @ 'z u: x
+getroffen g @ 't R O f @ n
+Pasta 'p a s t a:
+Kälte 'k E l t @
+verstärkten 'f E 6 'S t E 6 k t @ n
+Heimat 'h aI m a: t
+Jugend 'j u: g @ n t
+Wales 'v EI l z
+betreten b @ t R e: t @ n
+armen '? a 6 m @ n
+unterteilt ? U n t 6 't aI l t
+vierte 'f i: 6 t @
+Max 'm a k s
+müsse 'm Y s @
+hinsichtlich 'h I n z I C t l I C
+Sätze 'z E ts @
+Küche 'k Y C @
+Fraktion f R a k 'ts j o: n
+Gesetz g @ 'z E ts
+Vögel 'f 2: g @ l
+Vertrauen f E 6 't R aU @ n
+fühlt 'f y: l t
+gefährlicher g @ 'f E: 6 l I C 6
+Prozess p R o: 'ts E s
+blieben 'b l i: b @ n
+gelegt g @ 'l e: k t
+hart 'h a: 6 t
+ehrenamtliche '? e: R @ n a m t l I C @
+schrie 'S R i:
+Gründen 'g R Y n d @ n
+Behandlung b @ 'h a n d l U N
+folgt 'f O l k t
+Deutsch 'd OY t S
+bieten 'b i: t @ n
+jeweiligen 'j e: v aI l I g @ n
+teuer 't OY 6
+nochmal 'n O x m a: l
+erhoben ? E 6 'h o: b @ n
+sechsundneunzig z E k s ? U n t 'n OY n ts I C
+sechsundneunzig z E k s ? U n t 'n OY n ts I k
+selben 'z E l b @ n
+verließ f E 6 'l i: s
+Frieden 'f R i: d @ n
+Interessen ? I n t @ 'R E s @ n
+verläuft f E 6 'l OY f t
+gemeinsame g @ 'm aI n z a: m @
+Milch 'm I l C
+falls 'f a l s
+kostet 'k O s t @ t
+Verhältnis f E 6 'h E l t n I s
+Sterne 'S t E 6 n @
+gutes 'g u: t @ s
+Preise 'p R aI z @
+rufen 'R u: f @ n
+näher 'n E: 6
+geboren g @ 'b o: R @ n
+stieß 'S t i: s
+Leuten 'l OY t @ n
+erzählen ? E 6 'ts E: l @ n
+hinzufügen h I n 'ts u: f y: g @ n
+Spaß 'S p a: s
+Kerl 'k E 6 l
+Traum 't R aU m
+solange z o: 'l a N @
+Nachrichten 'n a: x R I C t @ n
+Luftraum 'l U f t R aU m
+Thomas 't o: m a s
+wodurch v o: 'd U R C
+freuen 'f R OY @ n
+einundzwanzig ? aI n ? U n t 'ts v a n ts I C
+einundzwanzig ? aI n ? U n t 'ts v a n ts I k
+bekam b @ 'k a: m
+entsprechende ? E n t 'S p R E C @ n d @
+Alpen '? a l p @ n
+irgendwann '? I 6 g @ n t v a n
+Provinzen p R o: 'v I n ts @ n
+Hals 'h a l s
+Mittelmeerraum 'm I t @ l m e: 6 R aU m
+täglich 't E: k l I C
+schmeckt 'S m E k t
+zweihundertfünfzig ts v aI h U n d 6 t 'f Y n f ts I C
+Dauer 'd aU 6
+Winkel 'v I N k @ l
+Bremerhaven b R e: m 6 'h a: f @ n
+rote 'R o: t @
+lauter 'l aU t 6
+Eva '? e: f a:
+fünfundachtzig f Y n f ? U n t '? a x ts I C
+fünfundachtzig f Y n f ? U n t '? a x ts I k
+besitzen b @ 'z I ts @ n
+frühen 'f R y: @ n
+Theater t e: '? a: t 6
+vorhanden f o: 6 'h a n d @ n
+Aussage '? aU s z a: g @
+Typ 't y: p
+Aussprache '? aU s S p R a: x @
+hinauf h I 'n aU f
+könnt 'k 9 n t
+unterstützt ? U n t 6 'S t Y ts t
+ungefähr '? U n g @ f E: 6
+Lebensjahr 'l e: b @ n s j a: 6
+passieren p a 's i: R @ n
+hauptamtliche 'h aU p t ? a m t l I C @
+kalt 'k a l t
+las 'l a: s
+inneren '? I n 6 R @ n
+deutscher 'd OY t S 6
+siebzehnte 'z i: p ts e: n t @
+mittels 'm I t @ l s
+wohin v o: 'h I n
+bestehende b @ 'S t e: @ n d @
+Philipp 'f I l I p
+fliegen 'f l i: g @ n
+Stirn 'S t I 6 n
+Gemeinde g @ 'm aI n d @
+Einklang '? aI n k l a N
+Gründe 'g R Y n d @
+größer 'g R 2: s 6
+Öl '? 2: l
+gib 'g I p
+erfolgte ? E 6 'f O l k t @
+Städten 'S t E: t @ n
+Stern 'S t E 6 n
+entsprechenden ? E n t 'S p R E C @ n d @ n
+manchen 'm a n C @ n
+Anforderungen '? a n f O 6 d 6 R U N @ n
+erreichbar '? E 6 'R aI C b a: 6
+eröffnet ? E 6 '? 9 f n @ t
+Waschmaschine 'v a S m a S i: n @
+Initiative '? i: n i: ts i: a t i: v @
+Hafen 'h a: f @ n
+Ergebnisse ? E 6 'g e: p n I s @
+Quandt 'k v a n t
+mach 'm a x
+Sowjetunion z O 'v j E t ? U n j o: n
+solle 'z O l @
+Willen 'v I l @ n
+achtundneunzig ? a x t ? U n t 'n OY n ts I C
+achtundneunzig ? a x t ? U n t 'n OY n ts I k
+achtundzwanzig ? a x t ? U n t 'ts v a n ts I C
+achtundzwanzig ? a x t ? U n t 'ts v a n ts I k
+Versuche f E 6 'z u: x @
+Leistung 'l aI s t U N
+schwierig 'S v i: R I C
+schwierig 'S v i: R I g
+scharf 'S a: 6 f
+neuem 'n OY @ m
+dürfte 'd Y 6 f t @
+entfernen ? E n t 'f E 6 n @ n
+Am '? a m
+Amt '? a m t
+entdeckt ? E n t 'd E k t
+dreiundzwanzig d R aI U n t 'ts v a n ts I C
+dreiundzwanzig d R aI U n t 'ts v a n ts I k
+vorsichtig 'f o: 6 z I C t I C
+vorsichtig 'f o: 6 z I C t I g
+Schlüssel 'S l Y s @ l
+Gallien 'g a l i: @ n
+zeige 'ts aI g @
+Eis 'aI s
+Handschwinge 'h a n t S v I N @
+Position p o: z i: 'ts j o: n
+Mitteleuropa 'm I t @ l ? OY R o: p a:
+Jungen 'j U N @ n
+Kernzonen 'k E 6 n ts o: n @ n
+Fremden 'f R E m d @ n
+neunundzwanzig n OY n ? U n t 'ts v a n ts I C
+neunundzwanzig n OY n ? U n t 'ts v a n ts I k
+Geburtstag g @ 'b U 6 ts t a: k
+lebt 'l e: p t
+Lord 'l O 6 t
+Gewerbe g @ 'v E 6 b @
+Nahrungsmitteln 'n a: R U N s m I t @ l n
+stehe 'S t e: @
+Ihren '? i: R @ n
+Künstler 'k Y n s t l 6
+fünfundsiebzig f Y n f ? U n t 'z i: p ts I C
+fünfundsiebzig f Y n f ? U n t 'z i: p ts I k
+Vielfalt 'f i: l f a l t
+danken 'd a N k @ n
+wollt 'v O l t
+Patentschutzes p a 't E n t S U ts @ s
+siebenundneunzig 'z i: b @ n ? U n t 'n OY n ts I C
+siebenundneunzig 'z i: b @ n ? U n t 'n OY n ts I k
+Dorf 'd O 6 f
+Lehrer 'l e: R 6
+Vorstellung 'f o: 6 S t E l U N
+Konsens 'k O n z E n s
+schweren 'S v e: R @ n
+arbeitet '? a 6 b aI t @ t
+Erfahrung '? E 6 f a: R U N
+nötig 'n 2: t I C
+nötig 'n 2: t I g
+Bilder 'b I l d 6
+erscheinen ? E 6 'S aI n @ n
+Schnee 'S n e:
+gehe 'g e: @
+dreiundvierzig d R aI ? U n t 'f I R ts I C
+dreiundvierzig d R aI ? U n t 'f I R ts I k
+drehte 'd R e: t @
+letztlich 'l E ts t l I C
+Hahn 'h a: n
+Fräulein 'f R OY l aI n
+fünfundfünfzig f Y n f ? U n t 'f Y n f ts I C
+fünfundfünfzig f Y n f ? U n t 'f Y n f ts I k
+Abstimmung '? a p S t I m U N
+tiefer 't i: f 6
+Kompromiss k O m p R o: 'm I s
+worauf v o: 'R aU f
+Regen 'R e: g @ n
+Super 'z u: p 6
+Schuhe 'S u: @
+Zuge 'ts u: g @
+gelöst g @ 'l 9 s t
+Arzt '? a 6 ts t
+erforderlich ? E 6 'f O 6 d 6 l I C
+Geschwindigkeit g @ 'S v I n d I C k aI t
+Nachbarn 'n a x b a 6 n
+handelte 'h a n d @ l t @
+rechten 'R E C t @ n
+heutzutage 'h OY t ts u: t a: g @
+repariert R e: p a 'R i: 6 t
+möchten 'm 9 C t @ n
+Wissenschaft 'v I s @ n S a f t
+erfahren ? E 6 'f a: R @ n
+Zähne 'ts E: n @
+Kern 'k E 6 n
+Gramm 'g R a m
+Französisch f R a n 'ts 2: z I S
+Stacheligel 'S t a x @ l '? i: g @ l
+früheren 'f R y: 6 R @ n
+Ausnahme '? aU s n a: m @
+Armee ? a 6 'm e:
+erkannte ? E 6 'k a n t @
+Ost '? O s t
+andererseits '? a n d 6 R 6 s aI ts
+unabhängig '? U n ? a p h E N I C
+unabhängig '? U n ? a p h E N I g
+hieß 'h i: z
+Münster 'm Y n s t 6
+Ding 'd I N
+Ach '? a x
+übernommen ? y: b 6 'n O m @ n
+Auf '? aU f
+Dollar 'd O l a 6
+unterwegs '? U n t 6 v e: k s
+Donau 'd o: n aU
+erwähnt ? E 6 'v E: n t
+Beziehungen b @ 'ts i: U N @ n
+Themen 't e: m @ n
+Paris p a 'R i: s
+Dienst 'd i: n s t
+höchstens 'h 2: k s t @ n s
+Spitze 'S p I ts @
+derselben d E 6 'z E l b @ n
+französischen f R a n 'ts 2: z I S @ n
+Nationalpark n a ts j o: 'n a: l p a: 6 k
+Ernst '? E 6 n s t
+halbe 'h a l b @
+gesichert g @ 'z I C 6 t
+erhöhte ? E 6 'h 2: t @
+Bürgern 'b Y 6 g 6 n
+zweiundneunzig ts v aI ? U n t 'n OY n ts I C
+zweiundneunzig ts v aI ? U n t 'n OY n ts I k
+Laufe 'l aU f @
+Pflicht 'p f l I C t
+verfügt f E 6 'f y: k t
+maximal m a k s i: 'm a: l
+Autobahn '? aU t o: b a: n
+Gäste 'g E s t @
+Fahrzeuge 'f a: 6 ts OY g @
+hoffe 'h O f @
+New 'n j u:
+stammt 'S t a m t
+Ihrer '? i: R 6
+Basis 'b a: z I s
+Weile 'v aI l @
+braun 'b R aU n
+Sand 'z a n t
+ernst '? E 6 n s t
+beobachten b @ '? o: b a x t @ n
+ähnlichen '? E: n l I C @ n
+rechnen 'R E C n @ n
+Gang 'g a N
+sprang 'S p R a N
+Sitz 'z I ts
+ansonsten ? a n 'z O n s t @ n
+Auswirkungen '? aU s v I 6 k U N @ n
+Rhein 'R aI n
+Haut 'h aU t
+Stil 's t i: l
+denkt 'd E N k t
+folgende 'f O l g @ n d @
+Anteil '? a n t aI l
+Römischen 'R 2: m I S @ n
+General 'g E n @ 'R a: l
+Ruf 'R u: f
+legt 'l e: k t
+gemeinsamen g @ 'm aI n z a: m @ n
+übernehmen '? y: b 6 'n e: m @ n
+gelben 'g E l b @ n
+Käse 'k E: z @
+fordern 'f O 6 d 6 n
+geblieben g @ 'b l i: b @ n
+Keller 'k E l 6
+Iran ? i: 'R a: n
+fünfzehnte 'f Y n f ts e: n t @
+Gottes 'g O t @ s
+längste 'l E N s t @
+Erinnerung ? E 6 '? I n 6 R U N
+Minister 'm i: 'n I s t 6
+liebe 'l i: b @
+hab 'h a: p
+irgend '? I 6 g @ n t
+Hotel h o: 't E l
+Herrschaft 'h E 6 S a f t
+Breite 'b R aI t @
+entspricht ? E n t 'S p R I C t
+ändern '? E n d 6 n
+nennt 'n E n t
+kannte 'k a n t @
+Häppchen 'h E p C @ n
+Scrooge 's k r u: dS
+keinem 'k aI n @ m
+Kino 'k i: n o:
+Regierungssitz R e: 'g i: R U N s z I ts
+gelaufen g @ 'l aU f @ n
+Bürgermeister 'b Y 6 g 6 m aI s t 6
+Johann j o: 'h a n
+Metern 'm e: t 6 n
+Gebrauch g @ 'b R aU x
+Celsius 'ts E l z i: U s
+Sport 'S p O R t
+dreiundneunzig d R aI U n t 'n OY n ts I C
+dreiundneunzig d R aI U n t 'n OY n ts I k
+überdies '? y: b 6 'd i: s
+wertvollen 'v E 6 t f O l @ n
+erfunden '? e: 6 f U n d @ n
+George 'd Z O 6 d Z
+Botschaft 'b o: t S a f t
+zentrale 'ts E n t R a: l @
+Spannung 'S p a n U N
+Jahrzehnten 'j a: 6 ts e: n t @ n
+zufrieden ts u: 'f R i: d @ n
+raus 'R aU s
+Verantwortung f E 6 '? a n t v O R t U N
+höheren 'h 2: 6 R @ n
+Kapitel k a 'p i: t @ l
+Ideen ? I 'd e: n
+einfacher '? aI n f a x 6
+läßt 'l E s t
+Baum 'b aU m
+benutzen b @ 'n U ts @ n
+Bank 'b a N k
+verstand f E 6 'S t a n t
+Igel '? i: g @ l
+lenken 'l E N k @ n
+fünfundsechzig f Y n f ? U n t 'z E C ts I C
+fünfundsechzig f Y n f ? U n t 'z E C ts I k
+Auftrag '? aU f t R a: k
+Tante 't a n t @
+typischen 't y: p I S @ n
+größtenteils 'g R 2: s t @ n t aI l s
+baute 'b aU t @
+Fußball 'f u: s b a l
+wenngleich v E n 'g l aI C
+gewaltigen g @ 'v a l t I g @ n
+behauptet b @ 'h aU p t @ t
+sechsundachtzig z E k s ? U n t '? a x ts I k
+sechsundachtzig z E k s ? U n t '? a x t ts I C
+gehörte g @ 'h 2: 6 t @
+Star 's t a: 6
+Hintergrund 'h I n t 6 g R U n t
+Fischer 'f I S 6
+grundsätzlich 'g R U n t z E ts l I C
+Förderung 'f 9 6 d 6 R U N
+länderübergreifende 'l E n d 6 ? y: b 6 g R aI f @ n d @
+galt 'g a l t
+Arbeiter '? a 6 b aI t 6
+Existenz ? E k s I s 't E n ts
+unseres '? U n z 6 R @ s
+Wissen 'v I s @ n
+Ereignisse ? E 6 '? aI g n I s @
+Zeitraum 'ts aI t R aU m
+Felsen 'f E l z @ n
+lösen 'l 2: z @ n
+dunkel 'd U N k @ l
+Gesteine g @ 'S t aI n @
+Transport t R a n s 'p O 6 t
+japanischen j a 'p a: n I S @ n
+Hunde 'h U n d @
+ausmachen '? aU s m a x @ n
+bodennahen ' b o: d @ n ' n a: @ n
+späteren 'S p E: t 6 R @ n
+Über '? y: b 6
+Wissenschaftler 'v I s @ n S a f t l 6
+Mittelpunkt 'm I t @ l p U N k t
+vorstellen 'f o: 6 S t E l @ n
+total t o: 't a: l
+hoffen 'h O f @ n
+Katze 'k a ts @
+derzeitige 'd e: 6 ts aI t I g @
+E-Mail '? i: 'm EI l
+Berichterstatterin b @ 'R I C t ? E 6 'S t a t @ R I n
+dreizehnte 'd R aI ts e: n t @
+bot 'b O t
+Station 'S t a ts 'j o: n
+Ausbildung '? aU s b I l d U N
+mehrmals 'm e: 6 m a: l s
+bekannte b @ 'k a n t @
+freue 'f R OY @
+diejenigen 'd i: j e: n I g @ n
+Route 'R u: t @
+Kontinent 'k O n t i: n E n t
+damaligen 'd a: m a: l I g @ n
+fördern 'f 9 6 d 6 n
+reich 'R aI C
+angegriffen '? a n g @ g R I f @ n
+organisiert ? O 6 g a n i: 'z i: 6 t
+Rechtsvorschriften 'R E C ts f o: 6 S R I f t @ n
+Modelle 'm o: d E l @
+gestorben g @ 'S t O R b @ n
+Klima 'k l i: m a:
+Untergang '? U n t 6 g a N
+Abwesenheit '? a p v e: z @ n h aI t
+Gruppen 'g R U p @ n
+bemerkte b @ 'm E 6 k t @
+voller 'f O l 6
+Formen 'f O 6 m @ n
+Mitarbeiter 'm I t ? a 6 b aI t 6
+Leipzig 'l aI p ts I C
+Leipzig 'l aI p ts I k
+Elbe '? E l b @
+Abschnitt '? a p S n I t
+voran 'f o: R a n
+Hersteller 'h E 6 S t E l 6
+Gericht g @ 'R I C t
+lieben 'l i: b @ n
+bezahlt b @ 'ts a: l t
+Durchmesser 'd U 6 C m E s 6
+Biosphärenreservat b i: o: s 'f E: R @ n R e: z 6 'v a: t
+Rand 'R a n t
+hinten 'h I n t @ n
+trifft 't R I f t
+insofern ? I n 'z o: f E 6 n
+Zuschauer 'ts u: S aU 6
+Publikum 'p U b l i: k U m
+verhindert f E 6 'h I n d 6 t
+anbieten '? a n b i: t @ n
+Regionalpolitik R e: g i: o: 'n a: l p o: l i: t I k
+Daumer 'd aU m 6
+Herbst 'h E 6 p s t
+getötet g @ 't 2: t @ t
+Theorie t e: o: 'R i:
+Mühe 'm y: @
+Tradition t R a d i: 'ts j o: n
+Schlaf 'S l a: f
+neunundachtzig n OY n ? U n t '? a x ts I C
+neunundachtzig n OY n ? U n t '? a x ts I k
+Maschine m a 'S i: n @
+töten 't 2: t @ n
+neunundsechzig n OY n ? U n t 'z E C ts I C
+neunundsechzig n OY n ? U n t 'z E C ts I k
+wirkte 'v I 6 k t @
+verkehrt f E 6 'k e: 6 t
+Gämsen 'g E: m z @ n
+Ahnung '? a: n U N
+genauso g @ 'n aU z o:
+verantwortlich f E 6 '? a n t v O 6 t l I C
+Ja 'j a:
+umfassenden ? U m 'f a s @ n d @ n
+Häuser 'h OY z 6
+Motor 'm o: t O 6
+vorne 'f O R n @
+Flasche 'f l a S @
+Regelungen 'R e: g @ l U N @ n
+böse 'b 2: z @
+kämpfen 'k E m p f @ n
+Praxis 'p R a k s I s
+angetrieben '? a n g @ t R i: b @ n
+Beförderung b @ 'f 9 6 d 6 R U N
+Monaco m o: 'n a k o:
+Hinsicht 'h I n z I C t
+neununddreißig 'n OY n ? U n t 'd R aI s I C
+neununddreißig 'n OY n ? U n t 'd R aI s I k
+interessiert ? I n t 6 R E 's i: 6 t
+sechsundzwanzig 'z E k s ? U n t 'ts v a n ts I C
+sechsundzwanzig 'z E k s ? U n t 'ts v a n ts I k
+Gattung 'g a t U N
+anrufen '? a n R u: f @ n
+aufstehen '? aU f S t e: @ n
+Gründung 'g R Y n d U N
+übrig '? y: b R I C
+übrig '? y: b R I g
+vieler 'f i: l 6
+Messer 'm E s 6
+verkaufen f E 6 'k aU f @ n
+allzu '? a l 'ts u:
+Freie 'f R aI @
+Zunge 'ts U N @
+Rhöner 'R 2: n 6
+Revolution R e: v o: l u: 'ts j o: n
+stolz 'S t O l ts
+durfte 'd U R f t @
+Kaffee 'k a f e:
+Schnitzel 'S n I ts @ l
+Armschwingen '? a 6 m S v I N @ n
+Landeshauptstadt 'l a n d @ s h aU p t S t a t
+Arbeitsplätze '? a 6 b aI ts p l E ts @
+achtundachtzig ? a x t ? U n t '? a x ts I C
+achtundachtzig ? a x t ? U n t '? a x ts I C
+überzeugt ? y: b 6 'ts OY k t
+Mail 'm EI l
+karthagische k a 6 't a: g I S @
+Besitz b @ 'z I ts
+bewegt b @ 'v e: k t
+obgleich '? O p g l aI C
+Entschädigung ? E n t 'S E: d I g U N
+Lachen 'l a x @ n
+sechsunddreißig 'z E k s ? U n t 'd R aI s I C
+sechsunddreißig 'z E k s ? U n t 'd R aI s I k
+erweitert '? e: 6 'v aI t 6 t
+Amerika ? a 'm e: R i: k a:
+the 'T @
+Runde 'R U n d @
+Handlung 'h a n d l U N
+entsprechen ? E n t 'S p R E C @ n
+meint 'm aI n t
+auffallend '? aU f f a l @ n t
+Sorge 'z O 6 g @
+oh '? o:
+kennst 'k E n s t
+höchsten 'h 2: k s t @ n
+rot 'R o: t
+Not 'n o: t
+einerseits '? aI n 6 s aI ts
+Ansatz '? a n z a ts
+gesperrt g @ 'S p E R t
+bedarf b @ 'd a 6 f
+Flügel 'f l y: g @ l
+lustig 'l U s t I C
+lustig l U s t I k
+zählen 'ts E: l @ n
+sechzehnte 'z E C ts e: n t @
+zwingen 'ts v I N @ n
+Stellung 'S t E l U N
+gewisse g @ 'v I s @
+Transparenz t R a n s p a 'R E n ts
+Parlaments p a 6 l a: 'm E n ts
+Flüge 'f l y: g @
+lieb 'l i: p
+vielmehr 'f i: l m e: 6
+ermöglichen ? E 6 'm 2: k l I C @ n
+Rauch 'R aU x
+umgesetzt '? U m g @ z E ts t
+fortan 'f O 6 t ? a: n
+Kleidung 'k l aI d U N
+Medizin m e: d i: 'ts i: n
+Odysseus '? o: d y s OY s
+Pflegezone 'p f l e: g @ ts o: n @
+Verlauf f E 6 'l aU f
+teils 't aI l s
+begannen b @ 'g a n @ n
+Schuld 'S U l t
+Charakter k a 'R a k t 6
+Mitglied 'm I t g l i: t
+fünfte 'f Y n f t @
+Ressourcen R e: 's U 6 s @ n
+geplant g @ 'p l a: n t
+dunkle 'd U N k l @
+Hauses 'h aU z @ s
+Mauer 'm aU 6
+drüben 'd R y: b @ n
+schützen 'S Y ts @ n
+äußeren 'OY s 6 R @ n
+neunundvierzig n OY n ? U n t 'f I R ts I C
+neunundvierzig n OY n ? U n t 'f I R ts I k
+Pflanzen 'p f l a n ts @ n
+einundneunzig '? aI n ? U n t 'n OY n ts I C
+einundneunzig ? aI n ? U n t 'n OY n ts I k
+veröffentlichte f E 6 '? 9 f @ n t l I C t @
+zählt 'ts E: l t
+internationalen ? I n t 6 n a ts j o: 'n a: l @ n
+diesmal 'd i: s m a: l
+größeren 'g R 2: s 6 R @ n
+Pferde 'p f e: 6 d @
+Inneren '? I n 6 R @ n
+hob 'h o: p
+Blumen 'b l u: m @ n
+Geschichten g @ 'S I C t @ n
+Freundin 'f R OY n d I n
+Fonds 'f O~ s
+verbreitet f E 6 'b R aI t @ t
+fehlen 'f e: l @ n
+quer 'k v e: 6
+schlechte 'S l E C t @
+wartet 'v a 6 t @ t
+Schritte 'S R I t @
+Luther 'l U t 6
+romanischen R o: 'm a: n I S @ n
+Punkte 'p U N k t @
+erreichten ? E 6 'R aI C t @ n
+nahmen 'n a: m @ n
+Bundeskanzler 'b U n d @ s k a n ts l 6
+Radio 'R a: d i: o:
+einiges '? aI n I g @ s
+Kanal k a 'n a: l
+elektrischen ? e: 'l E k t R I S @ n
+angebracht '? a n g @ b R a x t
+wem 'v e: m
+Torm 't O 6 m
+sechsundvierzig z E k s ? U n t 'f I R ts I C
+sechsundvierzig z E k s ? U n t 'f I R ts I k
+Gegend 'g e: g @ n t
+Grab 'g R a: p
+zufolge ts u: 'f O l g @
+erhält ? E 6 'h E l t
+leichter 'l aI C t 6
+Verfassung f E 6 'f a s U N
+dieselbe d i: 'z E l b @
+öffnete '? 9 f n @ t @
+Düsseldorf 'd Y s @ l d O 6 f
+Verbraucher f E 6 'b R aU x 6
+siebenunddreißig 'z i: b @ n ? U n t 'd R aI s I C
+siebenunddreißig 'z i: b @ n ? U n t 'd R aI s I k
+Stuttgart 'S t U t g a 6 t
+Körpers 'k 9 6 p 6 s
+Innern '? I n 6 n
+ausschalten '? aU s S a l t @ n
+Berichterstatter b @ 'R I C t ? E 6 S t a t 6
+Befehl b @ 'f e: l
+besonderen b @ 'z O n d 6 R @ n
+Zustimmung 'ts u: S t I m U N
+letztendlich 'l E ts t '? E n t l I C
+Tätigkeiten 't E: t I C k aI t @ n
+häufiger 'h OY f I g 6
+Kette 'k E t @
+unterhalb '? U n t 6 h a l p
+Gebirge g @ 'b I 6 g @
+Tunnel 't U n @ l
+letzter 'l E ts t 6
+Hut 'h u: t
+Mittelbetriebe 'm I t @ l b @ t R i: b @
+freundlich 'f R OY n t l I C
+Man 'm E n
+erinnert ? E 6 '? I n 6 t
+Glauben 'g l aU b @ n
+Rest 'R E s t
+schwerer 'S v e: R 6
+Darstellung 'd a 6 S t E l U N
+Wochenende 'v O x @ n ? E n d @
+nördlichen 'n 9 6 t l I C @ n
+Schulter 'S U l t 6
+griechischen 'g R i: C I S @ n
+davor d a 'f o: 6
+Dies 'd i: s
+Parteien p a 6 't aI @ n
+Beobachter b @ '? o: b a x t 6
+lehnte 'l e: n t @
+außen '? aU s @ n
+voneinander f O n ? aI n 'a n d 6
+altes '? a l t @ s
+genügend g @ 'n y: g @ n t
+unterscheidet ? U n t 6 'S aI d @ t
+beschränkt b @ 'S R E N k t
+schwarz 'S v a 6 ts
+zweier 'ts v aI 6
+zustande ts u: 'S t a n d @
+Täter 't E: t 6
+langweilig 'l a N v aI l I C
+langweilig 'l a N v aI l I g
+drauf 'd R aU f
+nördlich 'n 9 6 t l I C
+Präsidenten p R E z i: 'd E n t @ n
+Phase 'f a: z @
+bezeichnen b @ 'ts aI C n @ n
+ordentlich '? O 6 d @ n t l I C
+hebt 'h e: p t
+einunddreißig ? aI n ? U n t 'd R aI s I C
+einunddreißig ? aI n ? U n t 'd R aI s I k
+amerikanische ? a m 6 R i: 'k a: n I S @
+Erbe '? E 6 b @
+Insekten ? I n 'z E k t @ n
+effizient '? E f i: 'ts j E n t
+viertel 'f i: 6 t @ l
+Passau 'p a s aU
+Heer 'h e: 6
+Sir 's 9 6
+überlegen ? y: b 6 'l e: g @ n
+Geschwindigkeiten g @ 'S v I n d I C k aI t @ n
+Empfang ? E m 'p f a N
+gestimmt g @ 'S t I m t
+begrenzt b @ 'g R E n ts t
+Michael 'm I C a ? e: l
+irgendwo '? I 6 g E n d v o:
+erfüllt ? E 6 'f Y l t
+Müller 'm Y l 6
+fremden 'f R E m d @ n
+kreisfreie 'k R aI s f R aI @
+Stefenson 'S t E f @ n s @ n
+Zerstörung ts E 6 'S t 2: R U N
+tätig 't E: t I C
+tätig 't E: t I k
+schnellen 'S n E l @ n
+persönlich p E 6 's 2: n l I C
+Werbung 'v E 6 b U N
+achtundsechzig ? a x t ? U n t 'z E C ts I C
+achtundsechzig ? a x t ? U n t 'z E C ts I k
+Einbeziehung '? aI n b @ ts i: U N
+Halle 'h a l @
+schüttelte 'S Y t @ l t @
+Tode 't o: d @
+Standpunkt 'S t a n t p U N k t
+Figur f i: 'g u: 6
+Oder '? o: d 6
+solches 'z O l C @ s
+Randlage 'R a n t l a: g @
+Hradscheck 'h 'R a: t S E k
+Mangel 'm a N @ l
+vierundachtzig f i: 6 ? U n t '? a x ts I C
+vierundachtzig f i: 6 ? U n t '? a x ts I k
+transportiert t R a n s 'p O R 't i: 6 t
+einfache '? aI n f a x @
+Millimeter m I l i: 'm e: t 6
+hergestellt 'h e: 6 g @ S t E l t
+geeignet g @ '? aI g n @ t
+Verein f 6 '? aI n
+sichtbar 'z I C t b a: 6
+schaute 'S aU t @
+dreiundachtzig d R aI ? U n t '? a x ts I C
+dreiundachtzig d R aI ? U n t '? a x ts I k
+passen 'p a s @ n
+immerhin '? I m 6 'h I n
+gleicher 'g l aI C 6
+einander ? aI n 'a n d 6
+Bad 'b a: t
+Decke 'd E k @
+müde 'm y: d @
+Beamten b @ '? a m t @ n
+Freitag 'f R aI t a: k
+zweiundachtzig ts v aI ? U n t '? a x ts I C
+zweiundachtzig ts v aI ? U n t '? a x ts I k
+menschlichen 'm E n S l I C @ n
+Roman R o: 'm a: n
+aufgestellt '? aU f g @ S t E l t
+abhängig '? a p h E N I C
+schreibt 'S R aI p t
+fürs 'f y: 6 s
+Hügel 'h y: g @ l
+Feld 'f E l t
+Urteil '? U 6 t aI l
+Ferne 'f E 6 n @
+irgendwelche '? I 6 g @ n t v E l C @
+Million m I l 'j o: n
+gefordert g @ 'f O 6 d 6 t
+unterschiedlich ? U n t 6 S i: t l I C
+automatisch ? aU t o: 'm a: t I S
+Berg 'b E 6 k
+Filme 'f I l m @
+Autos '? aU t o: s
+normalerweise n O 6 'm a: l 6 v aI z @
+stimmt 'S t I m t
+Verkehrssicherheit f E 6 'k e: 6 s z I C 6 h aI t
+herein h E 'R aI n
+übernahm ? y: b 6 'n a: m
+erzielen ? E 6 'ts i: l @ n
+starb 'S t a: 6 p
+besaß b @ 'z a: s
+Figuren f i: 'g u: R @ n
+Verbreitung f E 6 'b R aI t U N
+Geschenk g @ 'S E N k
+Elisabeth ? e: 'l i: z a: b E t
+scheinbar 'S aI n b a: 6
+höhere 'h 2: 6 R @
+offene '? O f @ n @
+Nacken 'n a k @ n
+Alkohol '? a l k o: h o: l
+Beerdigung b @ '? e: 6 'd i: g U N
+Zeug 'ts OY k
+Schlacht 'S l a x t
+überwiegend ? y: b 6 v i: g @ n t
+katholischen k a 't o: l I S @ n
+neunte n OY n t @
+Diskussion d I s k U 's j o: n
+leiden 'l aI d @ n
+Erscheinung ? E 6 'S aI n U N
+Wiesbaden 'v i: s b a: d @ n
+Hinblick 'h I n b l I k
+zweifellos 'ts v aI f @ l l o: s
+froh f R o:
+Weib 'v aI p
+stell 'S t E l
+retten 'R E t @ n
+Monat 'm o: n a: t
+Belgien 'b E l g i: @ n
+Auswahl '? aU s v a: l
+nächstes 'n E: C s t @ s
+regionale R e: g i: o: 'n a: l @
+gegenseitig 'g e: g @ n s aI t I C
+gegenseitig 'g e: g @ n s aI t I k
+dramatisch 'd R a 'm a: t I S
+Garagentor g a 'R a: Z @ n t o: 6
+bevorzugt b @ 'f o: 6 ts u: k t
+Widerstand 'v i: d 6 S t a n t
+siebte 'z i: p t @
+Für 'f y: 6
+Aktion ? a k 'ts j o: n
+entscheiden ? E n t 'S aI d @ n
+Gegenwart 'g e: g @ n v a: 6 t
+gehandelt g @ 'h a n d @ l t
+Chance 'S O~ s
+Chance 'S a~ s @
+Joseph 'j o: z E f
+Farben 'f a 6 b @ n
+einundsiebzig ? aI n ? U n t 'z i: p ts I C
+einundsiebzig ? aI n ? U n t 'z i: p ts I k
+basiert b a 'z i: 6 t
+traten 't R a: t @ n
+Füßen 'f y: s @ n
+Köln 'k 9 l n
+wächst 'v E k s t
+vierzehnte 'f i: 6 ts e: n t @
+J 'j O t
+Waffen 'v a f @ n
+Berge 'b E 6 g @
+Geschäft g @ 'S E f t
+Anna '? a n a:
+Räuber 'R OY b 6
+CEN 's i: '? i: '? E n
+klare 'k l a: R @
+Verlust f E 6 'l U s t
+Russland 'R U s l a n t
+echte '? E C t @
+jenseits 'j e: n z aI ts
+angesehen '? a n g @ z e: @ n
+bauen 'b aU @ n
+weiten 'v aI t @ n
+Blatt 'b l a t
+gezielt g @ 'ts i: l t
+Hansestadt 'h a n z @ S t a t
+Konflikte k O n 'f l I k t @
+Samstag 'z a m s t a: k
+zweitens 'ts v aI t @ n s
+Änderungsanträge '? E n d 6 R U N s ? a n t R E: g @
+Studenten S t u: 'd E n t @ n
+Beschäftigung b @ 'S E f t I g U N
+chemische 'C e: m I S @
+mochte 'm O x t @
+ausreichend '? aU s R aI C @ n d
+hängen 'h E N @ n
+Automobil '? aU t o: m o: 'b i: l
+Commodore k O m o: 'd o: R @
+Atem '? a: t @ m
+siehst 'z i: s t
+beendet b @ '? E n d @ t
+Führung 'f y: R U N
+einundfünfzig ? aI n ? U n t 'f Y n f ts I C
+einundfünfzig ? aI n ? U n t 'f Y n f ts I k
+Bibel 'b i: b @ l
+stabil 'S t a b i: l
+Tiefe 't i: f @
+gegeneinander g e: g @ n ? aI 'n a n d 6
+berücksichtigen b @ 'R Y k z I C t I g @ n
+Steuer 'S t OY 6
+weich 'v aI C
+zwölfte 'ts v 9 l f t @
+achte '? a x t @
+zehnte 'ts e: n t @
+desto 'd E s t o:
+Bund 'b U n t
+holen 'h o: l @ n
+Bereichen b @ 'R aI C @ n
+passt 'p a s t
+Hamburger 'h a m b U 6 g 6
+Spielern 'S p i: l 6 n
+wozu 'v o: 'ts u:
+mitgebracht 'm I t g @ b R a x t
+entschuldigen ? E n t 'S U l d i: g @ n
+weiterschlafen 'v aI t ? E 6 S l a: f @ n
+unmittelbar '? U n m I t @ l b a: 6
+soweit z o: 'v aI t
+Lande 'l a n d @
+Literatur l I t 6 R a: 't U 6
+Thüringen 't y: R I N @ n
+eindeutig '? aI n d OY t I C
+eindeutig '? aI n d OY t I g
+Code 'k O U d
+praktischen 'p R a k t I S @ n
+Königs 'k 2: n I C s
+Königs 'k 2: n I k s
+offensichtlich '? O f @ n z I C t l I C
+betrachtete b @ 't R a x t @ t @
+gewissen g @ 'v I s @ n
+Turm 't U R m
+einsetzen '? aI n z E ts @ n
+Video 'v i: d e: o:
+Wirklichkeit 'v I 6 k l I C k aI t
+vorgegebenen 'f o: 6 g @ g e: b @ n @ n
+Milliarden m I l 'j a 6 d @ n
+erfordert ? E 6 'f O 6 d 6 t
+Brücken 'b R Y k @ n
+lachen 'l a x @ n
+einundsechzig ? aI n ? U n t 'z E C ts I C
+einundsechzig ? aI n ? U n t 'z E C ts I k
+entwickelten '? E n t v I k @ l t @ n
+sechsundfünfzig z E k s ? U n t 'f Y n f ts I C
+sechsundfünfzig z E k s ? U n t 'f Y n f ts I k
+dauert 'd aU 6 t
+Stärke 'S t E 6 k @
+keines 'k aI n @ s
+Bären 'b E: R @ n
+Diener d i: n 6
+Standort 'S t a n t ? O 6 t
+Straßenbahn 'S t R a: s @ n b a: n
+wen 'v e: n
+wohnt 'v o: n t
+verstärkt f E 6 'S t E 6 k t
+Küste 'k Y s t @
+Entdeckung ? E n t 'd E k U N
+Mittelalter 'm I t @ l ? a l t 6
+Prüfung 'p R y: f U N
+Angaben '? a n g a: b @ n
+erzeugen ? E 6 'ts OY g @ n
+damalige 'd a: m a: l I g @
+Krankheit 'k R a N k h aI t
+berücksichtigt b @ 'R Y k z I C t I C t
+berücksichtigt b @ 'R Y k z I C t I k t
+Konzept k O n 'ts E p t
+Pause 'p aU z @
+Modell m o: 'd E l
+glänzend 'g l E n ts @ n t
+erwecken '? e: 6 v E k @ n
+Motto 'm O t o:
+gleiche 'g l aI C @
+Kolonie k o: l o: 'n i:
+traf 't R a: f
+nannte 'n a n t @
+Beispiele 'b aI S p i: l @
+Lebensraum 'l e: b @ n s R aU m
+Steine 'S t aI n @
+Schale 'S a: l @
+Behinderung b @ 'h I n d 6 R U N
+ausbauen '? aU s b aU @ n
+steckt 'S t E k t
+Georg 'g e: O 6 k
+sechsundsechzig z E k s ? U n t 'z E C ts I C
+sechsundsechzig z E k s ? U n t 'z E C ts I k
+südlichen 'z y: t l I C @ n
+sechsundsiebzig z E k s ? U n t 'z i: p ts I C
+sechsundsiebzig z E k s ? U n t 'z i: p ts I k
+Ausdehnung '? aU s d e: n U N
+beschreiben b @ 'S R aI b @ n
+Beobachtungen b @ '? o: b a x t U N @ n
+positiv 'p o: z i: t i: f
+bessere 'b E s @ R @
+antiken '? a n t i: k @ n
+Anlagen '? a n l a: g @ n
+korrekt 'k o R E k t
+erledigt ? E 6 'l e: d I C t
+erledigt ? E 6 'l e: d I k t
+Alphabet ? a l f a 'b e: t
+Tasche 't a S @
+Beatles 'b i: t @ l s
+Polen 'p o: l @ n
+Königreich 'k 2: n I k R aI C
+dreiundsechzig d R aI U n t 'z E C ts I C
+dreiundsechzig d R aI U n t 'z E C ts I k
+englischen '? E N l I S @ n
+Laden 'l a: d @ n
+Voraussetzungen f o: 6 'R aU s z E ts U N @ n
+vergangenen f E 6 'g a N @ n @ n
+Schau 'S aU
+Mobilität m o: b i: l i: 't E: t
+hinab h I 'n a: p
+Rosenheim 'R o: z @ n h aI m
+Hitler 'h I t l 6
+Planung 'p l a: n U N
+ehemalige '? e: @ m a: l I g @
+Bewohner b @ 'v o: n 6
+darstellen 'd a 6 S t E l @ n
+private p R i: 'v a: t @
+wünschen 'v Y n S @ n
+Ring 'R I N
+nutzt 'n U ts t
+Mannes 'm a n @ s
+Generation g E n E R a ts 'j o: n
+Australien ? aU s 't R a: l i: @ n
+geschah g @ 'S a:
+Szene 's ts e: n @
+dynamischen d y: 'n a: m I S @ n
+lasse 'l a s @
+wonach v o: 'n a: x
+brennen 'b R E n @ n
+wünsche 'v Y n S @
+Beweis b @ 'v aI s
+hielten 'h i: l t @ n
+zusätzliche 'ts u: z E ts l I C @
+Ausgabe '? aU s g a: b @
+Karlsruhe 'k a 6 l s R u: @
+Hauptbahnhof 'h aU p t b a: n h o: f
+Imperiums ? I m 'p e: R i: U m s
+zogen 'ts o: g @ n
+zukünftige 'ts u: k Y n f t I g @
+bisherigen b I s 'h e: R I g @ n
+Nahrung 'n a: R U N
+technischen 't E C n I S @ n
+Ursache '? u: 6 z a x @
+siebenundachtzig 'z i: b @ n ? U n t '? a x ts I C
+siebenundachtzig 'z i: b @ n ? U n t '? a x ts I k
+Kontrolle k O n 't R O l @
+Plastik 'p l a s t I k
+elektrische ? e: 'l E k t R I S @
+empor ? E m 'p o: 6
+Pflege 'p f l e: g @
+arme '? a R m @
+siebenundfünfzig 'z i: b @ n ? U n t 'f Y n f ts I C
+siebenundfünfzig 'z i: b @ n ? U n t 'f Y n f ts I k
+Autoren ? aU 't o: R @ n
+Gegenstand 'g e: g @ n S t a n t
+Englisch '? E N l I S
+merken 'm E 6 k @ n
+Bauer 'b aU 6
+stecken 'S t E k @ n
+Aubing '? aU b I N
+südliche 'z y: t l I C @
+Krieges 'k R i: g @ s
+dreiundfünfzig d R aI U n t 'f Y n f ts I C
+dreiundfünfzig d R aI U n t 'f Y n f ts I k
+bewusst b @ 'v U s t
+reiner 'R aI n 6
+Königin 'k 2: n I g I n
+verlieren f E 6 'l i: R @ n
+Herausforderung h @ 'R aU s f O 6 d 6 R U N
+herunter h E 'R U n t 6
+bezahlen b @ 'ts a: l @ n
+Füße 'f y: s @
+ehemals '? e: @ m a: l s
+japanische j a 'p a: n I S @
+sag 'z a: k
+flog 'f l o: k
+Pläne 'p l E: n @
+Robert 'R o: b E 6 t
+Mitteln 'm I t @ l n
+südlich 'z y: t l I C
+wert 'v e: 6 t
+spezielle S p e: 'ts j E l @
+einundachtzig ? aI n ? U n t '? a x t ts I C
+einundachtzig ? aI n ? U n t '? a x ts I k
+Veröffentlichung f 6 '? 9 f @ n t l I C U N
+Planck 'p l a N k
+toten 't o: t @ n
+Harry 'h E r i:
+Barock b a 'R O k
+Linien 'l i: n i: j @ n
+langfristig 'l a N f R I s t I C
+langfristig 'l a N f R I s t I k
+sparen 'S p a: R @ n
+ergriff ? E 6 'g R I f
+Patienten p a 'ts j E n t @ n
+Feuerbach 'f OY 6 b a x
+freut 'f R OY t
+Schroedter 'S R 2: t 6
+Infrastruktur '? I n f R a S t R u: k t U 6
+akzeptieren '? a k ts E p 't i: R @ n
+Mannschaft 'm a n S a f t
+zweiundfünfzig 'ts v aI ? U n t 'f Y n f ts I C
+zweiundfünfzig 'ts v aI ? U n t 'f Y n f ts I k
+geschützt g @ 'S Y ts t
+erkannt ? E 6 'k a n t
+nachts 'n a x ts
+gelungen g @ 'l U N @ n
+Kooperation k o: O p @ R a 'ts j o: n
+übrigens '? y: b R I g @ n s
+gewisser g @ 'v I s 6
+annehmen '? a n n e: m @ n
+Regelung 'R e: g @ l U N
+Onkel '? O N k @ l
+fing 'f I N
+mußten 'm U s t @ n
+eigenes '? aI g @ n @ s
+u '? u:
+i '? i:
+Leitung 'l aI t U N
+umzusetzen '? U m ts u: z E ts @ n
+gespannt g @ 'S p a n t
+schloß 'S l O s
+Kriegserklärung 'k R i: k s ? E 6 'k l E: R U N
+Eroberung ? E 6 ? 'o: b 6 R U N
+offizielle ? O f i: 'ts j E l @
+Erklärung ? E 6 'k l E: R U N
+holte 'h o: l t @
+bekannten b @ 'k a n t @ n
+Rostock 'R O s t O k
+Quellen 'k v E l @ n
+Nachmittag 'n a: x m I t a: k
+Quelle 'k v E l @
+Microsoft 'm aI k r o s O f t
+Geruch g @ 'R U x
+Ausstellung '? aU s S t E l U N
+schöner 'S 2: n 6
+Flensburg 'f l E n s b U 6 k
+siebenundvierzig 'z i: b @ n ? U n t 'f I R ts I C
+siebenundvierzig 'z i: b @ n ? U n t 'f I R ts I k
+kleinere 'k l aI n 6 R @
+Oberfläche '? o: b 6 f l E C @
+wählen 'v E: l @ n
+Strategie S t R a t e: 'g i:
+fünften 'f Y n f t @ n
+Blätter 'b l E t 6
+erwachsen ? E 6 'v a k s @ n
+Muskeln 'm U s k @ l n
+klingt 'k l I N t
+Leib 'l aI p
+machst 'm a x s t
+eroberten ? E 6 '? o: b 6 t @ n
+Politiker p o: 'l i: t i: k 6
+Menschheit 'm E n S h aI t
+staatlichen 'S t a: t l I C @ n
+Richter 'R I C t 6
+Schönheit 'S 2: n h aI t
+überzeugen ? y: b 6 'ts OY g @ n
+überlegt ? y: b 6 'l e: k t
+gegessen g @ 'g E s @ n
+absolut ? a p z o: 'l u: t
+militärische m i: l i: 't E: R I S @
+leichte 'l aI C t @
+Partner 'p a 6 t n 6
+konzentrieren k O n ts E n 't R i: R @ n
+wiederholt 'v i: d 6 'h o: l t
+achtundsiebzig ? a x t ? U n t 'z i: p ts I C
+Geheimnis g @ 'h aI m n I s
+flüssig 'f l Y s I C
+flüssig 'f l Y s I k
+möglicherweise 'm 2: g l I C 6 'v aI z @
+positive 'p o: z i: t i: v @
+Abschluss '? a p S l U s
+Gesellschaften g @ 'z E l S a f t @ n
+öffentliche '? 9 f @ n t l I C @
+erlangen ? E 6 'l a N @ n
+oberen '? o: b 6 R @ n
+extra ? E k s t R a:
+Anlage '? a n l a: g @
+siebenundsechzig 'z i: b @ n ? U n t 'z E C ts I C
+siebenundsechzig 'z i: b @ n ? U n t 'z E C ts I k
+Ehre '? e: R @
+aufzuklären '? aU f ts u: k l E: R @ n
+löschen 'l 9 S @ n
+Schulen 'S u: l @ n
+allgemeine ? a l g @ 'm aI n @
+unterschiedliche ? U n t 6 S i: t l I C @
+Dieser 'd i: z 6
+langer 'l a N 6
+Umständen '? U m S t E n d @ n
+Gast 'g a s t
+Gerät g @ 'R E: t
+Films 'f I l m s
+Spur 'S p u: 6
+beides 'b aI d @ s
+Instrumente ? I n s t R u: 'm E n t @
+Träger 't R E: g 6
+Abgeordneten '? a p g @ ? O 6 d n @ t @ n
+Imperium ? I m 'p e: R I U m
+entgegnete ? E n t 'g e: g n @ t @
+errichtete ? E 6 'R I C t @ t @
+plus 'p l U s
+Element ? e: l @ 'm E n t
+Einheit '? aI n h aI t
+Debatte d e: 'b a t @
+Grafen 'g R a: f @ n
+hinunter 'h I n U n t 6
+singen 'z I N @ n
+flüsterte 'f l Y s t 6 t @
+Winterdiesel 'v I n t 6 d i: z @ l
+britische 'b R i: t I S @
+einundzwanzigste ? aI n ? U n t 'ts v a n ts I C s t @
+einundzwanzigste ? aI n ? U n t 'ts v a n ts I k s t @
+Tätigkeit 't E: t I C k aI t
+Tätigkeit 't E: t I g k aI t
+Vorbild 'f o: 6 b I l t
+Angebot '? a n g @ b o: t
+Bemühungen b @ 'm y: U N @ n
+Ägypten ? E 'g Y p t @ n
+Reaktion 'R e: a k ts j o: n
+Stille 'S t I l @
+Freiburg 'f R aI b U 6 k
+Schlangen 'S l a N @ n
+verändert f E 6 '? E n d 6 t
+kehrte 'k e: 6 t @
+Flora 'f l o: R a:
+Notwendigkeit n o: t 'v E n d I C k aI t
+Notwendigkeit n o: t 'v E n d I g k aI t
+krank 'k R a N k
+Weigerung 'v aI g @ R U N
+laß 'l a s
+Kohäsionsfonds k o: h E: 'z j o: n s f O~ s
+Dr 'd O k t o: 6
+Reichs 'R aI C s
+heran h E 'R a n
+einfachen '? aI n f a x @ n
+sicherte 'z I C 6 t @
+zufällig 'ts u: f E l I C
+zufällig 'ts u: f E l I k
+offiziell ? O f i: 'ts j E l
+keinerlei 'k aI n 6 l aI
+keineswegs 'k aI n @ s 'v e: k s
+nochmals 'n O x m a: l s
+Furcht 'f U 6 C t
+besuchen b @ 'z u: x @ n
+Nutzen 'n U ts @ n
+Fahrer 'f a: R 6
+fragt 'f R a: k t
+Rückgrat 'R Y k g R a: t
+lasst 'l a s t
+Huck 'h U k
+Vertrag f E 6 't R a: k
+Beziehung b @ 'ts i: U N
+Antrag '? a n t R a: k
+Martin 'm a 6 t i: n
+schafft 'S a f t
+Server 's 9 6 v 6
+Material m a t e: R i: 'a: l
+gefährlich g @ 'f E: 6 l I C
+Händler 'h E n d l 6
+Rahmenbedingungen 'R a: m @ n b @ d I N U N @ n
+Färbung 'f E 6 b U N
+herab h E 'R a p
+willkommen v I l 'k O m @ n
+würdest 'v Y 6 d @ s t
+müßte 'm y: s t @
+Franz 'f R a n ts
+lebte 'l e: p t @
+eingestellt '? aI n g @ S t E l t
+Übergang '? y: b 6 g a N
+Vielzahl 'f i: l ts a: l
+Wiesen 'v i: z @ n
+tiefe 't i: f @
+gelassen g @ 'l a s @ n
+Touristen t u: 'R I s t @ n
+Haupt 'h aU p t
+leid 'l aI t
+gebrochen g @ 'b R O x @ n
+traurig 't R aU R I C
+traurig 't R aU R I k
+Komm 'k O m
+weh 'v e:
+erfuhr '? e: 6 'f u: 6
+jährlich 'j E: 6 l I C
+dicken 'd I k @ n
+Pferd 'p f e: 6 t
+empfindlichen ? E m 'p f I n t l I C @ n
+fortwährend 'f O 6 t v E: R @ n t
+eingeschränkter '? aI n g @ S R E N k t 6
+bezeichnete b @ 'ts aI C n @ t @
+Nord n O 6 t
+öffentlich '? 9 f @ n t l I C
+rechtzeitig 'R E C t ts aI t I C
+rechtzeitig 'R E C t ts aI t I k
+schlechten 'S l E C t @ n
+breiten 'b R aI t @ n
+Schmerz 'S m E 6 ts
+Projekte p R o: 'j E k t @
+Toten 't o: t @ n
+begleitet b @ 'g l aI t @ t
+Tafel 't a: f @ l
+Rad 'R a: t
+abfahren '? a p f a: R @ n
+Fremde 'f R E m d @
+beteiligt b @ 't aI l I C t
+beteiligt b @ 't aI l I k t
+Elemente ? e: l @ 'm E n t @
+Frühjahr 'f R y: j a: 6
+richtete 'R I C t @ t @
+Joe 'd Z O U
+anscheinend '? a n S aI n @ n t
+Vogel 'f o: g @ l
+rechtlich 'R E C t l I C
+Loch 'l O x
+Stuhl 'S t u: l
+Hochschulen 'h o: x S u: l @ n
+Syrien 'z y: R i: @ n
+Schwarze 'S v a 6 ts @
+gesund g @ 'z U n t
+Blicke 'b l I k @
+Ausschusses '? aU s S U s @ s
+Territorien t e: R I 't o: R i: @ n
+bayerischen 'b aI @ R I S @ n
+Hier 'h i: 6
+geringer g @ 'R I N 6
+höchst 'h 2: k s t
+geschickt g @ 'S I k t
+Schrift 'S R I f t
+Service 's 9 6 v I s
+Karte 'k a: 6 t @
+Niveau 'n i: 'v o:
+nationalen n a ts j o: 'n a: l @ n
+Teppich 't E p I C
+Nachbarschaft 'n a x b a: 6 S a f t
+Wettbewerb 'v E t b @ v E 6 p
+erlebten ? E 6 'l e: p t @ n
+französische f R a n 'ts 2: z I S @
+erkennbar ? E 6 'k E n b a: 6
+Forscher 'f O 6 S 6
+Mathematik m a t @ m a 't i: k
+ganzes 'g a n ts @ s
+richtige 'R I C t I g @
+Rechnung 'R E C n U N
+abgenommen '? a p g @ n O m @ n
+Tore 't o: R @
+ausgesprochen '? aU s g @ S p R O x @ n
+Flugzeuge 'f l u: k ts OY g @
+Krallen 'k R a l @ n
+Organisation '? O 6 g a: n i: z a ts j o: n
+gemäß g @ 'm E: s
+Lauf 'l aU f
+erfüllen ? E 6 'f Y l @ n
+eigentlichen '? aI g E n t l I C @ n
+jeglicher 'j e: k l I C 6
+dreiundsiebzig d R aI U n t 'z i: p ts I C
+dreiundsiebzig d R aI U n t 'z i: p ts I k
+Sendung 'z E n d U N
+niedrigen 'n i: d R I g @ n
+Gegenteil 'g e: g @ n t aI l
+Sonntag z O n t a: k
+gekauft g @ 'k aU f t
+Ihrem '? i: R @ m
+vernünftig f E 6 'n Y n f t I C
+vernünftig f E 6 'n Y n f t I k
+dunkles 'd U N k l @ s
+einschalten '? aI n S a l t @ n
+gerundete g @ 'R U n d @ t @
+nickte 'n I k t @
+eingeführt '? aI n g @ f y: 6 t
+verursacht f E 6 '? u: 6 z a x t
+Kunden 'k U n d @ n
+Funktionen f U N k 'ts j o: n @ n
+stattfinden 'S t a t f I n d @ n
+herrscht 'h E 6 S t
+Wechselwirkung 'v E k s @ l v I 6 k U N
+vorwärts 'f o: 6 v E 6 ts
+Aspekte ? a s 'p E k t @
+herrschte 'h E 6 S t @
+womit v o: 'm I t
+umgekehrt '? U m g @ k e: 6 t
+behaupten b @ 'h aU p t @ n
+benannt b @ 'n a n t
+tiefen 't i: f @ n
+geringen g @ 'R I N @ n
+Paket 'p a k e: t
+verdient f E 6 'd i: n t
+vierten 'f i: 6 t @ n
+gebräuchlich g @ 'b R OY C l I C
+breit 'b R aI t
+Bogen 'b o: g @ n
+Lebensraumes 'l e: b @ n s R aU m @ s
+Dialog d i: a 'l o: k
+Gipfel 'g I p f @ l
+welch 'v E l C
+Fingerung 'f I N 6 R U N
+Schwerpunkt 'S v e: 6 p U N k t
+hierbei 'h i: 6 b aI
+wissenschaftlichen 'v I s @ n S a f t l I C @ n
+geradezu g @ 'R a: d @ ts u:
+Autor '? aU t o: 6
+Jungtiere 'j U N t i: R @
+geringe g @ 'R I N @
+Punkten 'p U N k t @ n
+Täler 't E: l 6
+angefangen '? a n g @ f a N @ n
+Instrument ? I n s t R u: 'm E n t
+Naturschutzgebieten n a: 't U 6 S U ts g @ b i: t @ n
+mögen 'm 2: g @ n
+außenpolitischen '? aU s @ n p o l i: t I S @ n
+gezwungen g @ 'ts v U N @ n
+Reisen 'R aI z @ n
+Vaters 'f a: t 6 s
+beschreibt b @ 'S R aI p t
+reichte 'R aI C t @
+Kräfte 'k R E f t @
+Gut 'g u: t
+verschwunden f E 6 'S v U n d @ n
+Zeugen 'ts OY g @ n
+Alten '? a l t @ n
+Anbetracht '? a n b @ 't R a x t
+viertes 'f i: 6 t @ s
+Neger 'n e: g 6
+aushalten '? aU s h a l t @ n
+Harmonisierung h a 6 'm o: n i: 'z i: R U N
+wies 'v i: s
+York 'j O 6 k
+Feind 'f aI n t
+Beiträge 'b aI t R E: g @
+vierundfünfzig 'f i: 6 ? U n t 'f Y n f ts I C
+vierundfünfzig 'f i: 6 ? U n t 'f Y n f ts I k
+irgendeine '? I 6 g @ n t ? aI n @
+auszuliefern '? aU s ts u: 'l i: f 6 n
+Ansehen '? a n z e: n
+Viertel 'f I R t @ l
+Vereine f E 6 '? aI n @
+auszugleichen '? aU s ts u: 'g l aI C @ n
+variiert v a R i: '? i: 6 t
+verschwinden f E 6 'S v I n d @ n
+Gewissen g @ 'v I s @ n
+genannte g @ 'n a n t @
+neunundsiebzig n OY n ? U n t 'z i: p ts I C
+neunundsiebzig n OY n ? U n t 'z i: p ts I k
+gemeint g @ 'm aI n t
+solch 'z O l C
+Nachfolger 'n a: x f O l g 6
+Wellen 'v E l @ n
+Eingang '? aI n g a N
+heimlich 'h aI m l I C
+Gier 'g i: 6
+Texte 't E k s t @
+fließt 'f l i: s t
+setzten 'z E ts t @ n
+Ticket 't I k @ t
+Tee 't e:
+zuweilen ts u: 'v aI l @ n
+Braunbrustigel 'b R aU n 'b R U s t 'i: g @ l
+Zustände 'ts u: S t E n d @
+Auftritt '? aU f t R I t
+moderne m o: 'd E 6 n @
+Lüge 'l y: g @
+versteckt f E 6 'S t E k t
+Vegetation v e: g e: t a ts 'j o: n
+maßvoll 'm a: s f O l
+Miene 'm i: n @
+lebe 'l e: b @
+bestellen b @ 'S t E l @ n
+zoologische ts o: o: 'l o: g I S @
+erb '? E 6 p
+Herstellung 'h E 6 S t E l U N
+Gottfried 'g O t f R i: t
+These 't e: z @
+Atlantik ? a t 'l a n t I k
+längere 'l E N 6 R @
+Seine 'z E: n
+Ehren '? e: R @ n
+voraus f o: 'R aU s
+Haltung 'h a l t U N
+Dichter 'd I C t 6
+dargestellt 'd a: 6 g @ S t E l t
+wichtigste 'v I C t I k s t @
+Prinz 'p R I n ts
+reagiert R e: ? a 'g i: 6 t
+hierfür 'h i: 6 f y: 6
+selbstverständlich 'z E l p s t f E 6 'S t E n t l I C
+erleichtern ? E 6 'l aI C t 6 n
+Eier '? aI 6
+Ausland '? aU s l a n t
+billig 'b I l I C
+billig 'b I l I k
+Gelände g @ 'l E n d @
+Bus 'b U s
+gewöhnen g @ 'v 2: n @ n
+Berichts b @ 'R I C ts
+Naturwacht n a: 't u: 6 v a x t
+Angelegenheiten '? a n g @ l e: g @ n h aI t @ n
+Weimarer 'v aI m a: R 6
+direkte d i: 'R E k t @
+Tonnen 't O n @ n
+Fritz 'f R I ts
+Wesentlichen 'v e: z @ n t l I C @ n
+belegt b @ 'l e: k t
+sozusagen z o: ts u: 'z a: g @ n
+Schnabel 'S n a: b @ l
+Sonnensystems 'z O n @ n z Y s t e: m s
+seltsam 'z E l t z a: m
+Maria m a 'R i: j a:
+zahlreicher 'ts a: l R aI C 6
+versehen 'f E 6 z e: @ n
+letztes 'l E ts t @ s
+Schweizer 'S v aI ts 6
+Patent p a 't E n t
+älteren '? E l t 6 R @ n
+Schrank 'S R a N k
+berührt b @ 'R y: 6 t
+schwimmt 'S v I m t
+schwache 'S v a x @
+Stärkung 'S t E 6 k U N
+Joachim j o: '? a x i: m
+Unternehmer '? U n t 6 'n e: m 6
+Friedensvertrag 'f R i: d @ n s f E 6 t R a: k
+Halt 'h a l t
+republikanische R e: p u: b l I 'k a: n I S @
+Gudmund 'g u: t m U n t
+fielen 'f i: l @ n
+Ankunft '? a n k U n f t
+entschied ? E n t 'S i: t
+Helden 'h E l d @ n
+ermöglichte ? E 6 'm 2: k l I C t @
+provoziert p R o: v o: 'ts i: 6 t
+geleitet g @ 'l aI t @ t
+Beruf b @ 'R u: f
+fürchte 'f Y 6 C t @
+schlägt 'S l E: k t
+Wolken 'v O l k @ n
+Hauptziel 'h aU p t ts i: l
+Kommunen k O 'm u: n @ n
+entgegentreten ? E n t 'g e: g @ n t R e: t @ n
+Besuchers b @ 's u: x 6 s
+Anschluss '? a n S l U s
+zweiundsechzig ts v aI ? U n t 'z E C ts I C
+zweiundsechzig ts v aI ? U n t 'z E C ts I k
+Problemen p R o: 'b l e: m @ n
+Donnerstag 'd O n 6 s t a: k
+grünen 'g R y: n @ n
+vorgenommen 'f O 6 g @ n O m @ n
+Siedlungen 'z i: t l U N @ n
+Presse 'p R E s @
+Vertretern f E 6 't R e: t 6 n
+stammen 'S t a m @ n
+wiegen v i: g @ n
+verbirgt f E 6 'b I 6 k t
+Streuobstwiesen 'S t R OY ? o: p s t v i: z @ n
+Romanum R o: 'm a: n U m
+Gebildeten g @ 'b I l d @ t @ n
+dreißigste 'd R aI s I k s t @
+bildete 'b I l d @ t @
+getragen g @ 't R a: g @ n
+zweitgrößte 'ts v aI t g R 2: s t @
+Religion R e: l i: g 'j o: n
+Fassung 'f a s U N
+Systems z Y s 't e: m s
+drückte 'd R Y k t @
+Ladung 'l a: d U N
+Berücksichtigung b @ 'R Y k z I C t I g U N
+europäische ? OY R o: 'p e: I S @
+Fürsten 'f Y 6 s t @ n
+Gas 'g a: s
+ward 'v a 6 t
+schonende 'S o: n @ n d @
+halbautonome h a l 'b ? aU t o: 'n o: m @
+Hauser 'h aU z 6
+regionaltypischen R e: g i: o: 'n a: l t y: p I S @ n
+Alfred '? a l f R e: t
+italienischen ? i: t a l 'j e: n I S @ n
+Wer 'v E 6
+menschliche 'm E n S l I C @
+steckte 'S t E k t @
+erfährt ? E 6 'f E: 6 t
+jenen 'j e: n @ n
+mittleren 'm I t l 6 R @ n
+Zeitungen 'ts aI t U N @ n
+Wüste 'v y: s t @
+globalen g l o: 'b a: l @ n
+werbewirksam 'v E 6 b @ 'v I 6 k z a: m
+verträgliche f E 6 't R E: k l I C @
+sieh 'z i:
+Bürgergemeinden 'b Y 6 g 6 g @ 'm aI n d @ n
+Steuererhebung 'S t OY 6 ? 6 'h e: b U N
+politisch p o: 'l i: t I S
+Gedächtnis g @ 'd E C t n I s
+angeboten '? a n g @ b o: t @ n
+Gliedmaßen 'g l i: t m a: s @ n
+erhöht ? E 6 'h 2: t
+unterhalten '? U n t 6 h a l t @ n
+reagieren R e: a 'g i: R @ n
+mußt 'm U s t
+nachher 'n a: x h e: 6
+heftig 'h E f t I C
+heftig 'h E f t I k
+Reparationen R e: p a R a 'ts j o: n @ n
+Energiekonzepte ? E n E 6 'g i: k O n ts E p t @
+Großvater 'g R o: s f a: t 6
+anerkannt '? a n ? E 6 k a n t
+widmen 'v I t m @ n
+dunklen 'd U N k l @ n
+Saison z E 'z O~
+Buchstaben 'b u: x S t a: b @ n
+teure 't OY R @
+Mantel 'm a n t @ l
+Vormachtstellung 'f o: 6 m a x t S t E l U N
+ausgelöst ? aU s g @ l 2: s t
+blauen 'b l aU @ n
+Male 'm a: l @
+Frühstück 'f R y: S t Y k
+Armeen ? a 6 'm e: n
+Oma '? o: m a:
+Schatz 'S a ts
+möchtest 'm 9 C t @ s t
+lächelte 'l E C @ l t @
+Christian 'k R I s t j a: n
+Richard 'R I C a 6 t
+Geburt g @ 'b U 6 t
+gelegen g @ 'l e: g @ n
+Weihnachten 'v aI n a x t @ n
+internationale ? I n t 6 n a ts j o: 'n a: l @
+wendet 'v E n d @ t
+Körperlänge 'k 9 6 p 6 l E N @
+dunkler 'd U N k l 6
+Balthasar 'b a l t h a: z a: 6
+Horst 'h O 6 s t
+kräftig 'k R E f t I C
+kräftig 'k R E f t I k
+soeben 'z o: e: b @ n
+fünftgrößte 'f Y n f t g R 2: s t @
+Sardinien z a 6 'd i: n i: @ n
+riß 'R I s
+fährst 'f E: 6 s t
+Hinführung 'h I n f y: R U N
+Totalreservats t o: 't a: l R e: z 6 'v a: ts
+Verbände f E 6 'b E n d @
+besetzt b @ 'z E ts t
+erlebt ? E 6 'l e: p t
+natürliche n a 't y: 6 l I C @
+beitragen 'b aI t R a: g @ n
+nacheinander n a: x ? aI n 'a n d 6
+Atmosphäre ? a t m O s f E: R @
+Realität R e: a: l i: 't E: t
+ursprünglichen '? u: 6 S p R Y N l I C @ n
+erinnerte ? E 6 '? I n 6 t @
+herangezogen h @ 'R a N g @ ts o: g @ n
+vieles 'f i: l @ s
+nehme 'n e: m @
+Nest 'n E s t
+Stau 'S t aU
+Dritten 'd R I t @ n
+römisch 'R 2: m I S
+Korsika 'k O 6 z i: k a:
+untersucht ? U n t 6 'z u: x t
+neunundfünfzig n OY n ? U n t 'f Y n f ts I C
+neunundfünfzig n OY n ? U n t 'f Y n f ts I k
+klassischen 'k l a s I S @ n
+Eröffnung ? E 6 '? 9 f n U N
+mächtige 'm E C t I g @
+diskutiert d I s k u: 't i: 6 t
+Team 't i: m
+Wechsel 'v E k s @ l
+Vorgaben 'f o: 6 g a: b @ n
+Geräte g @ 'R E: t @
+dazwischen d a 'ts v I S @ n
+arbeitete '? a 6 b aI t @ t @
+Karten 'k a 6 t @ n
+weite 'v aI t @
+Frühling 'f R y: l I N
+verschwand f E 6 'S v a n t
+Spanisch 'S p a: n I S
+komm 'k O m
+Sehnsucht 'z e: n z U x t
+Leine 'l aI n @
+Kontakt k O n 't a k t
+vierundsiebzig f i: 6 ? U n t 'z i: p ts I C
+vierundsiebzig f i: 6 ? U n t 'z i: p ts I k
+existiert ? E k s I s 't i: 6 t
+Johannes j o: 'h a n @ s
+sämtliche 'z E m t l I C @
+dauerte 'd aU 6 t @
+Leid 'l aI t
+Enterprise '? E n t 6 p r aI s
+verliert f E 6 'l i: 6 t
+gestaltet g @ 'S t a l t @ t
+Temperatur t E m p @ R a 't u: 6
+Kleinasien 'k l aI n '? a: z i: @ n
+gewöhnlich g @ 'v 2: n l I C
+wissenschaftliche 'v I s @ n S a f t l I C @
+Oberbayern '? o: b 6 b aI j 6 n
+warmen 'v a 6 m @ n
+Knaben 'k n a: b @ n
+Zusammenleben ts u: 'z a m @ n l e: b @ n
+Armen '? a 6 m @ n
+Flanken 'f l a N k @ n
+Stachel 'S t a x @ l
+Personalausweis p E 6 z o: 'n a: l ? aU s v aI s
+zweitausend 'ts v aI t aU z @ n t
+solcherart 'z O l C 6 ? a: 6 t
+dreiundzwanzigste d R aI U n t 'ts v a n ts I C s t @
+dreiundzwanzigste d R aI U n t 'ts v a n ts I k s t @
+Neustadt 'n OY S t a t
+Kapitän k a p i: 't E: n
+Großen 'g R o: s @ n
+Studie 'S t u: d i: @
+Netz 'n E ts
+beschrieben b @ 'S R i: b @ n
+indessen ? I n 'd E s @ n
+Körperteile 'k 9 6 p 6 t aI l @
+beigetragen 'b aI g @ t R a: g @ n
+Künste 'k Y n s t @
+Ostern '? o: s t 6 n
+Batterie b a t e: 'R i:
+Euch '? OY C
+beherrschte b @ 'h E R S t @
+klang 'k l a N
+Silberminen 'z I l b 6 m i: n @ n
+erodierte '? e: R o: 'd i: 6 t @
+angesiedelt '? a n g @ z i: d @ l t
+Herkunft 'h e: 6 k U n f t
+Rückkehr 'R Y k e: 6
+Aussagen '? aU s z a: g @ n
+Entwicklungen ? E n t 'v I k l U N @ n
+Herausforderungen h @ 'R aU s f O 6 d 6 R U N @ n
+aussehen '? aU s z e: @ n
+Spielen 'S p i: l @ n
+streng 'S t R E N
+Zufall 'ts u: f a l
+Biologie b i: o: l o: 'g i:
+faßte 'f a s t @
+Italienisch ? i: t a l 'j e: n I S
+unwahrscheinlich '? U n v a: 6 S aI n l I C
+Familien f a 'm i: l I @ n
+europäischer ? OY R o: 'p E: I S 6
+gesichtet g @ 'z I C t @ t
+Isar '? i: z a: 6
+Gustav 'g U S t a: f
+Kriterien k R i: 't e: R i: @ n
+Schwäche 'S v E C @
+Betriebssystem b @ 't R i: p s z Y s t e: m
+Start 'S t a 6 t
+Alternative '? a l t 6 n a 't i: v @
+ums '? U m s
+ausdrücken '? aU s d R Y k @ n
+zweiter 'ts v aI t 6
+trocken 't R O k @ n
+wirksame 'v I 6 k z a: m @
+Leser 'l e: z 6
+flach 'f l a x
+Last 'l a s t
+Napoleon n a 'p o: l e: O n
+Gelsenkirchen g E l z @ n 'k I 6 C @ n
+erstaunlich ? E 6 'S t aU n l I C
+Australiens ? aU s 't R a: l i: @ n s
+Atoms ? a: 't o: m s
+Übernahme '? y: b 6 n a: m @
+siebenundsiebzig 'z i: b @ n ? U n t 'z i: p ts I C
+siebenundsiebzig 'z i: b @ n ? U n t 'z i: p ts I k
+befanden b @ 'f a n d @ n
+Schlange 'S l a N @
+technische 't E C n I S @
+Feder 'f e: d 6
+dasselbe d a s 'z E l b @
+abschließend '? a p S l i: s @ n t
+Belagerung b @ 'l a: g @ R U N
+schritt 'S R I t
+Bochum 'b o: x U m
+Getränk g @ 't R E N k
+beschlossen b @ 'S l O s @ n
+gelegenen g @ 'l e: g @ n @ n
+Einheiten '? aI n h aI t @ n
+Abstand '? a p S t a n t
+bestätigt b @ 'S t E: t I C t
+bestätigt b @ 'S t E: t I k t
+Details d e: 't aI s
+historischen h I s 't o: R I S @ n
+Kommunikation k O m u: n i: k a ts 'j o: n
+verbessert f E 6 'b E s 6 t
+Behörden b @ 'h 9 6 d @ n
+beachten b @ '? a x t @ n
+vorgesehen 'f o: 6 g @ z e: @ n
+Schultern 'S U l t 6 n
+stürzte 'S t Y 6 ts t @
+denselben d e: n 'z E l b @ n
+Zylinder ts y: 'l I n d 6
+Umwelt '? U m v E l t
+erbauten ? E 6 'b aU t @ n
+Koblenz 'k o: b l E n ts
+Borg 'b O 6 k
+Großmächte 'g R o: s m E C t @
+Geschlechter g @ 'S l E C t 6
+elegant ? e: l @ 'g a n t
+Atomkerne ? a 't o: m k E 6 n @
+Mist 'm I s t
+Ansitz '? a n z I ts
+verpflichtet f E 6 'p f l I C t @ t
+berichtet b @ 'R I C t @ t
+Wels 'v E l s
+Süd 'z y: t
+Papst 'p a: p s t
+Drittel 'd R I t @ l
+Unglück '? U n g l Y k
+zentralen ts E n 't R a: l @ n
+absolute ? a p z o: 'l u: t @
+Mainz 'm aI n ts
+gerufen g @ 'R u: f @ n
+beinhaltete b @ '? I n h a l t @ t @
+hinterher h I n t 6 'h e: 6
+neugierig 'n OY g i: R I C
+neugierig 'n OY g i: R I k
+nachhaltige 'n a: x h a l t I g @
+Belgrad 'b E l g R a: t
+backen 'b a k @ n
+Vorhaben 'f o: 6 h a: b @ n
+Einrichtungen '? aI n R I C t U N @ n
+Gemeinden g @ 'm aI n d @ n
+erwies ? E 6 'v i: s
+Frist 'f R I s t
+falschen 'f a l S @ n
+Einstellung '? aI n S t E l U N
+and '? E: n d
+speziellen S p e: 'ts j E l @ n
+Sydney 's I d n EI
+isoliert ? i: z o: 'l i: 6 t
+Brunnen 'b R U n @ n
+Hitze 'h I ts @
+Beschreibung b @ 'S R aI b U N
+zahlen 'ts a: l @ n
+verstoßen f E 6 'S t o: s @ n
+hingewiesen 'h I n g @ v i: z @ n
+wenden 'v E n d @ n
+dumm 'd U m
+saßen 'z a: s @ n
+erwiesen '? e: 6 v i: z @ n
+Auffassung '? aU f a s U N
+Königreichs 'k 2: n I k R aI C s
+kritisiert k R i: t i: 'z i: 6 t
+übel '? y: b @ l
+Methode m e: 't o: d @
+Grönland 'g R 2: n l a n t
+Ehe '? e: @
+Kunde 'k U n d @
+dominiert d o m i: 'n i: 6 t
+Rechts 'R E C ts
+drin 'd R I n
+Single 's I N @ l
+dringend 'd R I N @ n t
+Daumen 'd aU m @ n
+Änderungsantrag '? E n d 6 R U N s ? a n t R a: k
+forderte 'f O 6 d 6 t @
+geprägte g @ 'p R E k t @
+sank 'z a N k
+Magen 'm a: g @ n
+Kamera 'k a m @ R a:
+Fälle 'f E l @
+Absatz '? a p z a ts
+Vergnügen f E 6 'g n y: g @ n
+schienen 'S i: n @ n
+hervorragenden h E 6 'f o: R a: g @ n d @ n
+blaue 'b l aU @
+vorliegenden 'f o: 6 l i: g @ n d @ n
+notfalls 'n o: t f a l s
+herzlich 'h E R ts l I C
+Alliierten ? a l i: 'i: 6 t @ n
+schlimm 'S l I m
+Kindheit 'k I n t h aI t
+Boote 'b o: t @
+verteilt f E 6 't aI l t
+Knochen 'k n O x @ n
+Gestaltung g @ 'S t a l t U N
+verbessern f E 6 'b E s 6 n
+schwarzes 'S v a R ts @ s
+ausgerichteten '? aU s g @ R I C t @ t @ n
+endete '? E n d @ t @
+Dann 'd a n
+Bursche 'b U R S @
+Zu 'ts u:
+Indien ? I n d i: j @ n
+Schreiben 'S R aI b @ n
+Stadtteil 'S t a t t aI l
+Stimmung 'S t I m U N
+typische 't y: p I S @
+übernachten ? y: b 6 'n a x t @ n
+geschafft g @ 'S a f t
+reisen 'R aI z @ n
+Ukraine ? u: k 'R aI n @
+Ukraine ? u: k 'R a: '? i: n @
+Energien ? E n E 6 'g i: @ n
+Lichtverschmutzung 'l I C t f E 6 S m U ts U N
+aufwendig '? aU f v E n d I C
+aufwendig '? aU f v E n d I k
+getrunken g @ 't R U N k @ n
+ausgeführt '? aU s g @ f y: 6 t
+Forderungen 'f o: 6 d @ R U N @ n
+Verhältnisse f E 6 'h E l t n I s @
+Kurt 'k U 6 t
+Orientierung ? o: R i: E n 't i: R U N
+übertragen ? y: b 6 't R a: g @ n
+wirken 'v I 6 k @ n
+verhält f E 6 'h E l t
+Wände 'v E n d @
+unglaublich '? U n g l aU p l I C
+äußere 'OY s 6 R @
+reicher 'R aI C 6
+merkte 'm E 6 k t @
+übertrifft ? y: b 6 t R I f t
+schwerste 'S v e: 6 s t @
+Brutsaison 'b R u: t z E: z O~
+U-Bahn '? u: 'b a: n
+sizilischen z i: ts i: l I S @ n
+Rattenigel 'R a t @ n '? i: g @ l
+Spitzmaus 'S p I ts m aU s
+Polsterung 'p O l s t 6 R U N
+Josef 'j o: z E f
+ähnliche '? E: n l I C @
+bemüht b @ 'm y: t
+beenden b @ '? E n d @ n
+schwach 'S v a x
+gejagt g @ j a: k t
+Einrichtung '? aI n R I C t U N
+bedient b @ 'd i: n t
+umgewandelt '? U m g @ v a n d @ l t
+Messe 'm E s @
+Stücke 'S t Y k @
+erstreckte ? E 6 'S t R E k t @
+Wut 'v u: t
+Omnibusunternehmen '? O m n i: 'b U s ? U n t 6 'n e: m @ n
+Erfüllung ? E 6 'f Y l U N
+Mörder 'm 9 6 d 6
+Bundestages 'b U n d @ s t a: g @ s
+Quartal k v a 6 't a: l
+Wild 'v I l t
+zurückzudrängen ts u: 'R Y k ts u: d R E N @ n
+Anstrengungen '? a n S t R E N U N @ n
+hing 'h I N
+Becher 'b E C 6
+einheitliches '? aI n h aI t l I C @ s
+Exklave '? E k s k l a: v @
+meinst 'm aI n s t
+versuchten f E 6 'z u: x t @ n
+vorüber f o: 'R y: b 6
+darstellt 'd a 6 S t E l t
+Bibliothek b i: b l i: o: t e: k
+Aktivitäten ? a k t i: v i: 't E: t @ n
+Brett 'b R E t
+falsche 'f a l S @
+Elementen ? e: l @ 'm E n t @ n
+äußerste '? OY s 6 s t @
+Aspekt ? a s 'p E k t
+Erhöhung ? E 6 'h 2: U N
+gebraucht g @ 'b R aU x t
+Burg 'b U 6 k
+Kurve 'k U 6 v @
+Untersuchung '? U n t 6 'z u: x U N
+besiegte b @ 'z i: k t @
+Speyer 'S p aI 6
+größeres 'g R 2: s 6 R @ s
+Lautsprecher 'l aU t S p R E C 6
+Rechtswissenschaft 'R E C ts v I s @ n S a f t
+Kommissar k O m I 's a: 6
+Sklaverei 's k l a: v @ 'R aI
+tote 't o: t @
+sowas 'z o: v a s
+Ballsportart 'b a l S p O 6 t ? a: 6 t
+schlechter 'S l E C t 6
+übte '? y: p t @
+kompliziert k O m p l i: 'ts i: 6 t
+Israel '? i: s R a: ? e l
+Katastrophe k a t a s 't R o: f @
+gering g @ 'R I N
+Festival 'f E s t I v @ l
+negativ 'n e: g a t i: f
+Kong 'k O N
+Ungarn '? U n g a: 6 n
+Bundespräsidenten b U n d @ s p R E z i: d E n t @ n
+Hütte 'h Y t @
+Vorsicht 'f o: 6 z I C t
+hierher 'h i: 6 h e: 6
+Mondes 'm o: n d @ s
+Nordpol n O 6 t p o: l
+Hermann 'h E 6 m a n
+jenem 'j e: n @ m
+Arbeitslosigkeit '? a 6 b aI ts l o: z I C k aI t
+Erfahrungen '? e 6 f a: R U N @ n
+Kopie k o: 'p i:
+zurecht ts u: 'R E C t
+Horizont h o: R i: 'ts O n t
+Mengen 'm E N @ n
+technisch 't E C n I S
+is '? I s
+Post 'p O s t
+aussprechen '? aU s S p R E C @ n
+Römisch 'R 2: m I S
+Landkreises 'l a n t k R aI z @ s
+beobachteten b @ '? o: b a x t @ t @ n
+Sekunde z e: k U n d @
+Mitleid 'm I t l aI t
+Pjöngjang 'p j 9 N j a N
+Firefox 'f aI 6 f O k s
+schönes 'S 2: n @ s
+höre 'h 2: R @
+Okay ? o: 'k EI
+Fatima 'f a: t i: m a:
+Aufbau '? aU f b aU
+üblichen '? y: p l I C @ n
+Voraussetzung f o: 6 'R aU s z E ts U N
+Persönlichkeit p E 6 'z 2: n l I C k aI t
+stimmen 'S t I m @ n
+angewiesen '? a n g @ v i: z @ n
+verfügen f E 6 'f y: g @ n
+berichten b @ 'R I C t @ n
+gearbeitet g @ '? a: 6 b aI t @ t
+botanische b o: 't a: n I S @
+lagern 'l a: g 6 n
+wachsen 'v a k s @ n
+mündet 'm Y n d @ t
+Schiene 'S i: n @
+Augsburger '? aU k s b U 6 g 6
+Kreuz 'k R OY ts
+Tanz 't a n ts
+Einmischung '? aI n m I S U N
+Fieber 'f i: b 6
+Wettbewerbsfähigkeit 'v E t b @ v E 6 p s f E: I C k aI t
+erstaunt ? E 6 'S t aU n t
+zweitausendfünf 'ts v aI t aU z @ n t f Y n f
+einunddreißigste ? aI n ? U n t 'd R aI s I k s t @
+einunddreißigste ? aI n ? U n t 'd R aI s I C s t @
+fünfundzwanzigste f Y n f ? U n t 'ts v a n ts I C s t @
+fünfundzwanzigste f Y n f ? U n t 'ts v a n ts I k s t @
+betrieben b @ 't R i: b @ n
+siebenundzwanzigste 'z i: b @ n ? U n t 'ts v a n ts I C s t @
+siebenundzwanzigste 'z i: b @ n ? U n t 'ts v a n ts I k s t @
+teil 't aI l
+Ferdinand 'f E 6 d i: n a n t
+Briefe 'b R i: f @
+Serbien 'z E 6 b i: @ n
+spätere 'S p E: t 6 R @
+Herzog 'h E 6 ts o: k
+wechseln 'v E k s @ l n
+Kauf 'k aU f
+international ? I n t 6 n a ts j o: 'n a: l
+morgens 'm O 6 g @ n s
+Türen 't y: R @ n
+langfristige 'l a N f R I s t I g @
+beschleunigen b @ 'S l OY n I g @ n
+gelangt g @ 'l a N t
+Beschluss b @ 'S l U s
+Iris '? i: R I s
+Hauptstädte 'h aU p t S t E t @
+ewig '? e: v I C
+ewig '? e: v I k
+Strategien S t R a t e: 'g i: @ n
+zustimmen 'ts u: S t I m @ n
+ausgewachsene '? aU s g @ v a k s @ n @
+weinen 'v aI n @ n
+solltest 'z O l t @ s t
+Nimm 'n I m
+Unterschiede '? U n t 6 'S i: d @
+teilte 't aI l t @
+erstes '? E 6 s t @ s
+Achtung '? a x t U N
+Kleine 'k l aI n @
+Nordsee 'n O 6 t z e:
+wahren 'v a: R @ n
+Büchern 'b y: C 6 n
+mögliche 'm 2: k l I C @
+Gegenstände 'g e: g @ n S t E n d @
+Beachtung b @ '? a x t U N
+parallel p a: R a: 'l e: l
+äußerte '? OY s 6 t @
+Rot 'R o: t
+Ereignis ? E 6 '? aI g n I s
+abzuwarten '? a p ts u: v a 6 t @ n
+gemieden g @ 'm i: d @ n
+Verbrechen f E 6 'b R E C @ n
+jüdischen 'j y: d I S @ n
+errichten ? E 6 'R I C t @ n
+Carl 'k a: 6 l
+Rechten 'R E C t @ n
+abgelehnt '? a p g @ l e: n t
+anhand ? a n 'h a n t
+extrem ? E k s 't R e: m
+zeigten 'ts aI k t @ n
+Dabei d a 'b aI
+auftauchen '? aU f t aU x @ n
+verschließen f E 6 'S l i: s @ n
+Benutzer b @ 'n U ts 6
+Spiels 'S p i: l s
+Sprecher 'S p R E C 6
+leitete 'l aI t @ t @
+Jahrzehnte j a: 6 'ts e: n t @
+Ernährung ? E 6 'n E: R U N
+friedliches f R i: t l I C @ s
+Fünfte 'f Y n f t @
+leichten 'l aI C t @ n
+Nächstes 'n E: C s t @ s
+Brüssel 'b R Y s @ l
+Feldherr 'f E l t h E 6
+Baden-Baden 'b a: d @ n 'b a: d @ n
+achttausend '? a x t aU z @ n t
+Verständnis f E 6 'S t E n t n I s
+Maß 'm a: s
+Chancen 'S O~ s @ n
+Untersuchungen '? U n t 6 'z u: x U N @ n
+Sammlung 'z a m l U N
+aktuelle ? a k t u: '? E l @
+englisch '? E N l I S
+Prozessen p R o: 'ts E s @ n
+Antarktis '? a n t a 6 k t I s
+Besitzer b @ 'z I ts 6
+Bewusstsein b @ 'v U s t z aI n
+starten 'S t a R t @ n
+rückwärts 'R Y k v E: 6 ts
+Galerie g a l e 'R i:
+Pflanzenarten 'p f l a n ts @ n '? a 6 t @ n
+eingeladen '? aI n g @ 'l a: d @ n
+widersprüchlichen 'v i: d 6 S p R Y C l I C @ n
+kauft 'k aU f t
+umher ? U m 'h e: 6
+irgendein '? I 6 g @ n t ? aI n
+neuerdings 'n OY 6 d I N s
+Warum v a 'R U m
+heulen 'h OY l @ n
+Verteidigungswaffe f E 6 't aI d I g U N s v a f @
+Steuerfedern 'S t OY 6 f e: d 6 n
+verlegt f E 6 'l e: k t
+erhielten ? E 6 'h i: l t @ n
+Gewässer g @ 'v E s 6
+verbindet f E 6 'b I n d @ t
+lernt 'l E 6 n t
+Englands '? E N l a n ts
+gefragt g @ 'f R a: k t
+doppelt 'd O p @ l t
+Symbol 'z Y m b o: l
+Fortschritte 'f O 6 t S R I t @
+erleben ? E 6 'l e: b @ n
+Amsterdam '? a m s t 6 d a m
+aufgebaut '? aU f g @ b aU t
+Kontinenten 'k O n t i: n E n t @ n
+überquerte ? y: b 6 'k v e: 6 t @
+geworfen g @ 'v O 6 f @ n
+Kulturlandschaft k U l 't u: 6 l a n t S a f t
+Sender 'z E n d 6
+sauber 'z aU b 6
+Unterfamilie '? U n t 6 'f a 'm i: l i: j @
+Syrischen 'z y: R I S @ n
+Pfeife 'p f aI f @
+Hilfegesuch 'h I l f @ g @ z u: x
+stellten 'S t E l t @ n
+umstritten ? U m 'S t R I t @ n
+Entstehung ? E n t 'S t e: U N
+Neues 'n OY @ s
+modifizierte m o: d i: f i: 'ts i: 6 t @
+sammeln 'z a m @ l n
+überrascht ? y: b 6 'R a S t
+bester 'b E s t 6
+Leiche 'l aI C @
+römischer 'R 2: m I S 6
+Dortmund 'd O 6 t m U n t
+intervenierte ? I n t 6 v e: 'n i: 6 t @
+Diskussionen d I s k U 's j o: n @ n
+Seelen 'z e: l @ n
+Pflegezonen 'p f l e: g @ ts o: n @ n
+Entwicklungszonen ? E n t 'v I k l U N s ts o: n @ n
+Außenwirkung '? aU s @ n v I 6 k U N
+ausgerechnet '? aU s g 6 R E C n @ t
+mitnehmen 'm I t n e: m @ n
+Überqueren ? y: b 6 'k v e: 6 R @ n
+Biotoppflege b i: o: 't o: p 'p f l e: g @
+hilf 'h I l f
+Valenzschale v a l E n ts 'S a: l @
+Ersatzteil ? E 6 'z a ts t aI l
+kleinasiatischer 'k l aI n '? a z i: 'a: t I S 6
+gehörten g @ 'h 2: 6 t @ n
+An '? a n
+Atlantische ? a t 'l a n t I S @
+Ursprung '? u: 6 S p R U N
+Wohnzimmer 'v o: n ts I m 6
+beliebt b @ 'l i: p t
+Bord 'b O 6 t
+Gefangenen g @ 'f a N @ n @ n
+demselben d e: m 'z E l b @ n
+Bürgermeisterin 'b Y 6 g 6 m aI s t 6 R I n
+Kabel 'k a: b @ l
+Ruck 'R U k
+Römische 'R 2: m I S @
+Grundfarbe 'g R U n t f a: 6 b @
+Pazifik p a 'ts i: f I k
+Aufregung '? aU f R e: g U N
+Wäsche 'v E S @
+Aufrichtemuskel '? aU f R I C t @ m U s k @ l
+eilte '? aI l t @
+Bolivien b o: 'l i: v i: @ n
+aufeinandertreffen ? aU f ? aI n 'a n d 6 t R E f @ n
+findest 'f I n d @ s t
+Farbladung 'f a 6 p l a: d U N
+vernichtete f E 6 'n I C t @ t @
+erbeutete ? E 6 'b OY t @ t @
+Münzgeldes 'm Y n ts g E l d @ s
+Artenschutzkonzepte '? a 6 t @ n S U ts k O n ts E p t @
+Naturschutzarbeit n a: 't U 6 S U ts ? a 6 b aI t
+Struktur S t R U k 't u: 6
+Priester 'p R i: s t 6
+Niederlande 'n i: d 6 l a n d @
+Führer 'f y: R 6
+Veränderungen f E 6 '? E n d 6 R U N @ n
+gerichtet g @ 'R I C t @ t
+Personal p E 6 z o: 'n a: l
+behandelt b @ 'h a n d @ l t
+vermochte f E 6 'm O x t @
+Restaurants 'R E s t o: 'R a~ s
+Plätze 'p l E ts @
+Interaktion ? I n t 6 ? a k 'ts j o: n
+Entscheidungen ? E n t 'S aI d U N @ n
+Fernbus 'f E 6 n b U s
+Mama 'm a: m a:
+Koordinierung k o: ? O 6 d i: 'n i: R U N
+unendlich ? U n '? E n t l I C
+euren '? OY R @ n
+Ästen ? E s t @ n
+Appetit '? a p @ t i: t
+Kriegsglück 'k R i: k s g l Y k
+Verkehrswegen f E 6 'k e: 6 s v e: g @ n
+Meier 'm aI j 6
+Kolkraben 'k O l k R a: b @ n
+ehrlich '? e: 6 l I C
+schweigend 'S v aI g @ n t
+Naturwaldreservate n a 't U 6 v a l t R e: z 6 'v a: t @
+Konfliktpotential k O n 'f l I k t p o: t E n 'ts j a: l
+verfolgenden f E 6 'f O l g @ n d @ n
+Signal z i: g 'n a: l
+verschiedener f E 6 'S i: d @ n 6
+bestätigen b @ 'S t E: t I g @ n
+Alexander ? a l E k 's a n d 6
+ausgesetzt '? aU s g @ z E ts t
+empfehlen ? E m 'p f e: l @ n
+Effekt ? e: 'f E k t
+Freunden 'f R OY n d @ n
+Bestandteil b @ 'S t a n t aI l
+wichtiges 'v I C t I g @ s
+gewechselt g @ 'v E k s @ l t
+Los 'l o: s
+weisen 'v aI z @ n
+produziert p R o: d u: 'ts i: 6 t
+Klarheit 'k l a: 6 h aI t
+Freundschaft 'f R OY n t S a f t
+Abbau '? a p b aU
+entwickelnden ? E n t 'v I k @ l n d @ n
+fehlte 'f e: l t @
+Regierungsbezirks R e: 'g i: R U N s b @ ts I 6 k s
+betrat b @ 't R a: t
+siebten 'z i: p t @ n
+bringe 'b R I N @
+Reifen 'R aI f @ n
+mischte 'm I S t @
+Steinbocks 'S t aI n b O k s
+Rückschlägen 'R Y k S l E: g @ n
+Verhaltensempfehlungen f E 6 'h a l t @ n s ? E m p f e: l U N @ n
+wendig 'v E n d I C
+wendig 'v E n d I k
+Antigoniden '? a n t I g o: 'n i: d @ n
+makedonischen 'm a k @ 'd o: n I S @ n
+Verwaltungssitz f E 6 'v a l t U N s z I ts
+Operation ? o: p 6 R a: 'ts j o: n
+traditionell t R a d i: ts j o: 'n E l
+germanischen g E 6 'm a: n I S @ n
+fühle 'f y: l @
+Epoche ? e: 'p O x @
+achtundfünfzig ? a x t ? U n t 'f Y n f ts I C
+achtundfünfzig ? a x t ? U n t 'f Y n f ts I k
+Konkurrenz k O N k U 'R E n ts
+ältere '? E l t 6 R @
+abends '? a: b @ n ts
+schmerzhaft 'S m E 6 ts h a f t
+wagte 'v a: k t @
+vorhandenen f o: 6 'h a n d @ n @ n
+Automat ? aU t o: 'm a: t
+dreimal 'd R aI m a: l
+elektrisch ? e: 'l E k t R I S
+Beschlüsse b @ 'S l Y s @
+Informationstafeln ? I n f O 6 m a 'ts j o: n s t a: f @ l n
+Saal 'z a: l
+erging '? e: 6 g I N
+Staffel 'S t a f @ l
+üppige '? Y p I g @
+eintragen '? aI n t R a: g @ n
+lächerlich 'l E C 6 l I C
+Antlitz '? a n t l I ts
+Sauerland 'z aU 6 l a n t
+zuckte ts U k t @
+wechselhaftem 'v E k s @ l h a f t @ m
+Kitze 'k I ts @
+Schweigen 'S v aI g @ n
+Institut ? I n s t i: 't u: t
+geplanten g @ 'p l a: n t @ n
+verbergen f E 6 'b E 6 g @ n
+wuchs 'v u: k s
+zweiundzwanzigste ts v aI ? U n t 'ts v a n ts I C s t @
+zweiundzwanzigste ts v aI ? U n t 'ts v a n ts I k s t @
+wirft 'v I 6 f t
+geschenkt g @ 'S E N k t
+versteckte f E 6 'S t E k t @
+elementare ? e: l @ m E n 't a: R @
+Niedersachsen 'n i: d 6 z a k s @ n
+innen '? I n @ n
+Höhlungen 'h 2: l U N @ n
+Bayerischen 'b aI R I S @ n
+Andreas ? a n 'd R e: a s
+gewartet g @ 'v a 6 t @ t
+unternommen ? U n t 6 'n O m @ n
+strafrechtliche 'S t R a: f R E C t l I C @
+maßen 'm a: s @ n
+heiß 'h aI s
+Körpergewicht 'k 9 6 p 6 g @ v I C t
+verrückt f E 6 'R Y k t
+Flügelspannweite 'f l y: g @ l S p a n v aI t @
+Durst 'd u: 6 s t
+mehrjährig 'm e: 6 j E: R I C
+mehrjährig 'm e: 6 j E: R I k
+Wechselhorste 'v E k s @ l h O 6 s t @
+neunzehnhundert n OY n ts e: n h U n d 6 t
+Goldadler 'g O l d '? a: d l 6
+Sohnes 'z o: n @ s
+notwendige 'n o: t v E n d I g @
+Studien 'S t u: d i: @ n
+Räume 'R OY m @
+Rock 'R O k
+Lieder 'l i: d 6
+messen 'm E s @ n
+Vereins f 6 '? aI n s
+ausgeschaltet '? aU s g @ S a l t @ t
+ziehenden 'ts i: @ n d @ n
+käme 'k E: m @
+Raumschiff 'R aU m S I f
+Klimaanlage 'k l i: m a: ? a n l a: g @
+jung 'j U N
+hohle 'h o: l @
+Landweg 'l a n t v e: k
+Gefieders g @ 'f i: d 6 s
+Jesus 'j e: z U s
+toll 't O l
+Flaschen 'f l a S @ n
+bißchen 'b I s C @ n
+Antarktika '? a n t a 6 k t I k a:
+Bratislava 'b R a 't I s 'l a: v a
+wirtschaftlich 'v I 6 t S a f t l I C
+Sein 'z aI n
+kurzer 'k U 6 ts 6
+durchführen 'd U 6 C f y: R @ n
+jüngste 'j Y N s t @
+sechsundzwanzigste z E k s ? U n t 'ts v a n ts I C s t @
+sechsundzwanzigste z E k s ? U n t 'ts v a n ts I k s t @
+gewachsen g @ 'v a k s @ n
+willen 'v I l @ n
+genügt g @ 'n y: k t
+bekannteste b @ 'k a n t @ s t @
+kleineren 'k l aI n 6 R @ n
+stimmte 'S t I m t @
+digitale d i: g i: 't a: l @
+respektive R e: s p E k 't i: v @
+Absender '? a p z E n d 6
+zugenommen 'ts u: g @ n O m @ n
+vergangen f E 6 'g a N @ n
+Philippinen 'f I l i: 'p i: n @ n
+Laune 'l aU n @
+Müll 'm Y l
+ok ? o: 'k EI
+Hunter 'h a n t 6
+erschrocken ? E 6 'S R O k @ n
+runter 'R U n t 6
+Machtspiel 'm a x t S p i: l
+Großreiche 'g R o: s R aI C @
+Ofenpassstrasse '? o: f @ n p a s S t R a s @
+Vinschgau 'v I n S g aU
+Naturraumgrenzen n a 't u 6 R aU m g R E n ts @ n
+befiedert b @ 'f i: d 6 t
+achtundzwanzigste ? a x t ? U n t 'ts v a n ts I C s t @
+achtundzwanzigste ? a x t ? U n t 'ts v a n ts I k s t @
+Lebensmittel 'l e: b @ n s m I t @ l
+beschäftigen b @ 'S E f t I g @ n
+Original ? o: R i: g i: 'n a: l
+diskutieren d I s k u: 't i: R @ n
+Fische f I S @
+älteste '? E l t @ s t @
+Erweiterung '? e: 6 'v aI t @ R U N
+Zusammenspiel ts u: 'z a m @ n S p i: l
+sprachen 'S p R a: x @ n
+finanziert f i: n a n 'ts i: 6 t
+Landschaften 'l a n t S a f t @ n
+kümmern 'k Y m 6 n
+Bonn 'b O n
+wesentlichen 'v e: z @ n t l I C @ n
+Kräften 'k R E f t @ n
+Ausstellungen '? aU s S t E l U N @ n
+kürzeste 'k Y 6 ts @ s t @
+wild 'v I l t
+fünfzehnten 'f Y n f ts e: n t @ n
+Benzin b E n 'ts i: n
+verbündet f E 6 'b Y n d @ t
+Elektroden ? e: 'l E k t R o: d @ n
+Akupunktur ? a 'k U p U N k t U 6
+Elektriker ? e: 'l E k t R I k 6
+Fachausdrücke 'f a x '? aU s d R Y k @
+Chef 'S E f
+Mitgliedern 'm I t g l i: d 6 n
+Moskau 'm O s k aU
+Angriffe '? a n g R I f @
+beweisen b @ 'v aI z @ n
+Walter 'v a l t 6
+Gesetze g @ 'z E ts @
+wiederholte 'v i: d 6 'h o: l t @
+verstärkte f E 6 'S t E 6 k t @
+endet '? E n d @ t
+Sauerstoff 'z aU 6 S t O f
+Wolfsburg 'v O l f s b U 6 k
+niemandem 'n i: m a n d @ m
+überraschen ? y: b 6 'R a S @ n
+Spuren 'S p u: R @ n
+Tansania 't a n z a n i: a:
+Vorschläge 'f o: 6 S l E: g @
+Großstadt 'g R o: s S t a t
+Muss 'm U s
+Ökosystems ? 2: k o z Y s t e: m s
+Kadaver k a 'd a: v 6
+Rechtsordnung 'R E C ts ? O 6 t n U N
+Kosovo 'k O s O v o:
+Pazifische p a 'ts i: f I S @
+eigener '? aI g @ n 6
+ermordet ? E 6 'm O R d @ t
+Verluste f E 6 'l U s t @
+Deckung 'd E k U N
+Rechner 'R E C n 6
+angegeben '? a n g @ g e: b @ n
+Nun 'n u: n
+auszuweisen '? aU s ts u: v aI z @ n
+Trick 't R I k
+gerissen g @ R I s @ n
+Gitarre g i: 't a R @
+Gras 'g R a: s
+jemanden 'j e: m a n d @ n
+Ärzte '? E 6 ts t @
+Nistplätze 'n I s t p l E ts @
+Na 'n a:
+brauchst 'b R aU x s t
+Ökosystem ? 2: k o z Y s t e: m
+hinüber h i: 'n y: b 6
+vergrämt f E 6 'g R E: m t
+durchsetzen 'd U 6 C z E ts @ n
+Griff 'g R I f
+Analyse ? a n a: 'l y: z @
+David 'd a: v I t
+teilen 't aI l @ n
+verdienen f E 6 'd i: n @ n
+lokalen l o: 'k a: l @ n
+komplette k O m 'p l E t @
+ausgerüstet '? aU s g @ 'R Y s t @ t
+angelangt '? a n g @ l a N t
+Dir 'd i: 6
+städtischen 'S t E t I S @ n
+gefahren g @ 'f a: R @ n
+kalte 'k a l t @
+Kammer 'k a m 6
+einziges '? aI n ts I g @ s
+versetzte f E 6 'z E ts t @
+Irland '? I 6 l a n t
+Schwert 'S v e: 6 t
+Job 'd Z O p
+frage 'f R a: g @
+schenken 'S E N k @ n
+gleiten 'g l aI t @ n
+irgendwas '? I 6 g @ n t v a s
+Stacheligeln 'S t a x @ l '? i: g @ l n
+zweihundertdreißig ts v aI h U n d 6 t d R aI s I C
+zweihundertdreißig ts v aI h U n d 6 t d R aI s I k
+Migrationsgast 'm i: g R a ts 'j o: n s g a s t
+Caspars 'k a s 'p a 6 s
+Rathaus 'R a: t h aU s
+Nicht 'n I C t
+genaue g @ 'n aU @
+Rätsel 'R E: ts @ l
+erkennt ? E 6 'k E n t
+rechte 'R E C t @
+gesellschaftlichen g @ 'z E l S a f t l I C @ n
+griechisch 'g R i: C I S
+reine 'R aI n @
+unternehmen ? U n t 6 'n e: m @ n
+zügig ts y: g I C
+zügig ts y: g I k
+Aufständen '? aU f S t E n d @ n
+Bundespräsident b U n d @ s p R E z i: d E n t
+Stecker 'S t E k 6
+blauer 'b l aU 6
+allerlei ? a l 6 l aI
+Tuch 't u: x
+eurer '? OY R 6
+Portugiesisch 'p O 6 t u: 'g i: z I S
+süße 'z y: s @
+leichteren 'l aI C t 6 R @ n
+Privatwirtschaft p R i: 'v a: t v I 6 t S a f t
+äußerster '? OY s 6 s t 6
+entfachen ? E n t 'f a x @ n
+hundertneunzig 'h U n d 6 t 'n OY n ts I C
+hundertneunzig 'h U n d 6 t 'n OY n ts I k
+zweihundertzehn ts v aI h U n d 6 t 'ts e: n
+Erbeutung '? E 6 b OY t U N
+Überhängen ? y: b 6 'h E N @ n
+Expositionen ? E k s p o: z i: 'ts j o: n @ n
+Hauptwindrichtung 'h aU p t v I n t R I C t U N
+ersetzen ? E 6 'z E ts @ n
+Anhänger '? a n h E N 6
+entscheidend ? E n t 'S aI d @ n t
+Aufteilung '? aU f t aI l U N
+Erfindung ? E 6 'f I n d U N
+Wärme 'v E 6 m @
+verletzt f E 6 'l E ts t
+Aufruf '? aU f R u: f
+Verteilung f E 6 't aI l U N
+erlassen ? E 6 'l a s @ n
+Hexe 'h E k s @
+verbinden f E 6 'b I n d @ n
+Stiftung 'S t I f t U N
+Felder 'f E l d 6
+Löwen 'l 2: v @ n
+wünschte 'v Y n S t @
+Strategen S t R a: 't e: g @ n
+Spätantike 'S p E: t ? a n t i: k @
+springen 'S p R I N @ n
+Universum ? U n i: 'v E 6 z U m
+Abteilung ? a p 't aI l U N
+Bundesland 'b U n d @ s l a n t
+Kormoranen 'k O 6 m o: R a: n @ n
+Belange b @ 'l a N @
+zivil ts i: 'v i: l
+entschlossen ? E n t 'S l O s @ n
+Ärger '? E 6 g 6
+Rechtsnormen 'R E C ts ? 'n O 6 m @ n
+slawischen 's l a: v I S @ n
+verwundert f E 6 'v U n d 6 t
+Weinsammlung 'v aI n z a m l U N
+Sternenlicht 'S t E 6 n @ n l I C t
+Durch 'd U 6 C
+angekommen '? a n g @ k O m @ n
+italienische ? i: t a l 'j e: n I S @
+Marco 'm a 6 k o:
+Vorstellungen 'f o: 6 S t E l U N @ n
+aufnehmen '? aU f n e: m @ n
+Metall m e: 't a l
+Aus '? aU s
+Vernunft f E 6 'n U n f t
+installieren ? I n s t a: 'l i: R @ n
+speziell S p e: 'ts j E l
+finanziell f i: n a n 'ts j E l
+üblich '? y: p l I C
+Brand 'b R a n t
+Schalter 'S a l t 6
+dahinter d a: 'h I n t 6
+dreiviertel 'd R aI f i: 6 t @ l
+übers '? y: b 6 s
+verlangt f E 6 'l a N t
+anhalten '? a n h a l t @ n
+Arbeitsplätzen '? a 6 b aI ts p l E ts @ n
+Duisburg 'd y: s b U 6 k
+Reservat R e: z E 6 v a: t
+Rechtswesen 'R E C ts v e: z @ n
+eingeflossen '? aI n g @ f l O s @ n
+Büscheln 'b Y S @ l n
+unheimlich '? U n h aI m l I C
+Operationen ? o: p 6 R a: 'ts j o: n @ n
+angeblich '? a n g e: p l I C
+Koalition k o: a l i: 'ts j o: n
+dichteste 'd I C t @ s t @
+lokale l o: 'k a: l @
+ernsthaft '? E R n s t h a f t
+Engel '? E N @ l
+Dich 'd I C
+festen 'f E s t @ n
+einziger '? aI n ts I g 6
+Voice 'v OY s
+Standard 'S t a n d a 6 t
+Schlussfolgerungen 'S l U s f O l g @ R U N @ n
+rechtliche 'R E C t l I C @
+Methoden m e: 't o: d @ n
+stillen 'S t I l @ n
+bereitet b @ 'R aI t @ t
+geschieht g @ 'S i: t
+Regierungen R e: 'g i: R U N @ n
+Teilnehmer 't aI l n e: m 6
+ausgehen '? aU s g e: @ n
+Matthias m a 't i: a: s
+dunkelbraun 'd U N k @ l b R aU n
+Song 's O N
+Allee ? a 'l e:
+Brandt 'b R a n t
+Einfall '? aI n f a l
+platt p l a t
+markierten m a 6 'k i: 6 t @ n
+belaubten b @ 'l aU p t @ n
+Britanniens 'b R i: t a n i: @ n s
+küssen 'k Y s @ n
+nimm 'n I m
+unsre '? U n s R @
+mager 'm a: g 6
+Verfahrensvorschriften f E 6 'f a: R @ n s f o: 6 S R I f t @ n
+Biosphärenreservats b i: o: s 'f E: R @ n R e: z E 6 v a ts
+Sternenpark 'S t E 6 n @ n p a 6 k
+Preußen 'p R OY s @ n
+Siegfried 'z i: k f R i: t
+wahre 'v a: R @
+Anordnungen '? a n ? O 6 d n U N @ n
+gaben 'g a: b @ n
+Aufklärung '? aU f k l E: R U N
+ausgezeichnet '? aU s g @ ts aI C n @ t
+Dunkelheit 'd U N k @ l h aI t
+erhöhen ? E 6 'h 2: @ n
+Melbourne 'm E l b 9 6 n
+innere '? I n 6 R @
+Typen 't y: p @ n
+Kanalisation k a n a l i: z a 'ts j o: n
+hindurch h I n 'd U R C
+Verzweiflung f E 6 'ts v aI f l U N
+Nebel 'n e: b @ l
+Trajan 't R a: j a: n
+Clara k l a: R a:
+enthielt ? E n t 'h i: l t
+Sitzheizung 'z I ts h aI ts U N
+durchs 'd U R C s
+Westfalen v E s t 'f a: l @ n
+Lübeck 'l y: b E k
+Simba z I m b a:
+melden 'm E l d @ n
+Lebensqualität 'l e: b @ n s k v a l i: t E: t
+Erreichung ? E 6 'R aI C U N
+euer '? OY 6
+Felsnester 'f E l s n E s t 6
+Baumhorste 'b aU m h O 6 s t @
+Einfacher '? aI n f a x 6
+Cedrik 's E d R I k
+Wolfgang 'v O l f g a N
+Demokratie d e: m o: k R a 't i:
+äußern '? OY s 6 n
+Gefahren g @ 'f a: R @ n
+Schäden 'S E: d @ n
+Götter 'g 9 t 6
+linken 'l I N k @ n
+vorn f O 6 n
+kostenlose 'k O s t @ n l o: z @
+zirka 'ts I 6 k a:
+vermuten f E 6 'm u: t @ n
+empfand ? E m 'p f a n t
+finanziellen f i: n a n 'ts j E l @ n
+grüne 'g R y: n @
+Donkey 'd O N k i:
+Naturschutzgebiete n a: 't U 6 S U ts g @ b i: t @
+Verdacht f E 6 'd a x t
+Jäger 'j E: g 6
+dehnte d e: n t @
+Braunbär 'b R aU n b E 6
+abgesetzte '? a p g @ z E ts t @
+unscheinbaren '? U n S aI n b a: R @ n
+Erika '? e: R I k a:
+geh 'g e:
+Nagel 'n a: g @ l
+Archie '? a 6 tS i:
+uneingeschränkten '? U n ? aI n g @ S R E N k t @ n
+Stoppuhr 'S t O p u: 6
+ortsansässiger '? O 6 ts ? a n z E s i: g 6
+Gesamtlebensraumes g @ 'z a m t l e: b @ n s R aU m @ s
+Kriegsgrund 'k R i: k s g R U n t
+Vermögen f E 6 'm 2: g @ n
+Anton '? a n t O n
+endgültig '? E n t g Y l t I C
+endgültig '? E n t g Y l t I k
+ergeben ? E 6 'g e: b @ n
+Seit 'z aI t
+bezüglich b @ 'ts y: k l I C
+Krone 'k R o: n @
+Physik f y: 'z I k
+gänzlich 'g E n ts l I C
+Vorgang 'f O 6 g a N
+spielten 'S p i: l t @ n
+heimischen 'h aI m I S @ n
+Fach 'f a x
+einschließlich '? aI n S l i: s l I C
+Priorität p R i: o: R i: 't E: t
+fuhren 'f u: R @ n
+gefangen g @ 'f a N @ n
+Kleinstlebewesen 'k l aI n s t l e: b @ v e: z @ n
+erledigen ? E 6 'l e: d I g @ n
+Kirchen 'k I 6 C @ n
+Kanada 'k a n a d a:
+ließe 'l i: s @
+passende 'p a s @ n d @
+Streifen 'S t R aI f @ n
+Schreibtisch 'S R aI p t I S
+Bein 'b aI n
+Volt 'v O l t
+Hybrid h y: b R i: t
+Balkon 'b a l k o: n
+Olympiastadion ? o: 'l Y m p i: a S t a d i: O n
+einsam '? aI n z a: m
+fängt 'f E N t
+strahlend 'S t R a: l @ n t
+schob 'S o: p
+Vormacht 'f o: 6 m a x t
+Fabian f a b i: a: n
+ausgepolstert '? aU s g @ p O l s t 6 t
+Auflösung '? aU f l 2: z U N
+vierundzwanzigste f i: 6 ? U n t 'ts v a n ts I C s t @
+vierundzwanzigste f i: 6 ? U n t 'ts v a n ts I k s t @
+Jakob 'j a: k O p
+Charlotte S a 6 'l O t @
+desselben d E s 'z E l b @ n
+Staub 'S t aU p
+Albert '? a l b 6 t
+schließt 'S l i: s t
+koreanische k o: R e: 'a: n I S @
+starker 'S t a R k 6
+aktiv ? a k 't i: f
+diverse d i: 'v E R z @
+Erkenntnis ? E 6 'k E n t n I s
+Motiv m o: 't i: v
+Versionen v E 6 'z j o: n @ n
+Mord 'm O 6 t
+Logik 'l o: g I k
+Sektor 'z E k t o: 6
+trage 't R a: g @
+eignen '? aI g n @ n
+Waren 'v a: R @ n
+Krise 'k R i: z @
+Verlängerung f E 6 'l E N 6 R U N
+benötigen b @ 'n 2: t I g @ n
+Rumänisch R u: 'm E: n I S
+Geräusch g @ 'R OY S
+vorbereitet 'f o: 6 b @ R aI t @ t
+Köpfe 'k 9 p f @
+Pfaden 'p f a: d @ n
+Ölwechsel '? 2: l v E k s @ l
+wiederholen 'v i: d 6 'h o: l @ n
+Libyen 'l y: b i: @ n
+Lehnwörter 'l e: n v 9 6 t 6
+probieren p R o: 'b i: R @ n
+Jüngling 'j Y N l I N
+verstopft f E 6 'S t O p f t
+kriegt 'k R i: k t
+gemäht g @ 'm E: t
+Fahrgastrechte 'f a: 6 g a s t 'R E C t @
+zweitausendsechs 'ts v aI t aU z @ n t z E k s
+Mantao 'm a n t a: o:
+scheinen 'S aI n @ n
+Gehirn g @ 'h I 6 n
+Gemeinschaft g @ 'm aI n S a f t
+jenes 'j e: n @ s
+beklagen b @ 'k l a: g @ n
+Luxus 'l U k s U s
+Umstände '? U m S t E n d @
+natürlichen n a 't y: 6 l I C @ n
+Nordafrika n O 6 t '? a f R i: k a:
+Verlassen f E 6 'l a s @ n
+Siege 'z i: g @
+verlegen f E 6 'l e: g @ n
+verbraucht f E 6 'b R aU x t
+Ausnutzung '? aU s n U ts U N
+Bundeswehr 'b U n d @ s v e: 6
+Fisch 'f I S
+Luftschiff 'l U f t S I f
+Agnes '? a: g n @ s
+alpine '? a l p i: n @
+Lupe 'l u: p @
+drittnächste 'd R I t 'n E: C s t @
+genüsslich g @ 'n Y s l I C
+Sicherheitsberater 'z I C 6 h aI ts b @ R a: t 6
+ausgebaut '? aU s g @ b aU t
+vergleichbar f E 6 'g l aI C b a: 6
+Nur 'n u: 6
+Ozeans '? o: ts e: a: n s
+Göttingen 'g 9 t I N @ n
+riesige 'R i: z I g @
+Reden 'R e: d @ n
+Leiden 'l aI d @ n
+Feinde 'f aI n d @
+Gedicht g @ 'd I C t
+Umgang '? U m g a N
+gegnerische 'g e: g n 6 R I S @
+beziehen b @ 'ts i: @ n
+Bewegungen b @ 'v e: g U N @ n
+Wirt 'v I 6 t
+möge 'm 2: g @
+antreten '? a n t R e: t @ n
+Anerkennung '? a n ? E 6 k E n U N
+Aufwand '? aU f v a n t
+frisch 'f R I S
+letztere 'l E ts t 6 R @
+echten '? E C t @ n
+Landkreise 'l a n t k R aI z @
+zehnmal 'ts e: n m a: l
+schwieg 'S v i: k
+Heizung 'h aI ts U N
+Ausprägung '? aU s p R E: g U N
+Manchester 'm E n t S E s t 6
+sagten 'z a: k t @ n
+Osnabrück '? O s n a b R Y k
+Teller 't E l 6
+gleichgültig 'g l aI C g Y l t I C
+gleichgültig 'g l aI C g Y l t I k
+Facto f a k t o:
+unmäßigen '? U n m E: s I g @ n
+gesamthaft g @ 'z a m t h a f t
+betroffen b @ 't R O f @ n
+Vor 'f o: 6
+Auskunft '? aU s k U n f t
+Muttersprache 'm U t 6 S p R a: x @
+Kollege k o 'l e: g @
+Schrecken 'S R E k @ n
+geriet g @ 'R i: t
+Krankheiten 'k R a N k h aI t @ n
+bekämpfen b @ 'k E m p f @ n
+gesucht g @ 'z u: x t
+wirklichen 'v I 6 k l I C @ n
+Beste 'b E s t @
+reiche 'R aI C @
+Konflikt k O n 'f l I k t
+klaren 'k l a: R @ n
+Takt 't a k t
+Unfall '? U n f a l
+steigen 'S t aI g @ n
+Flüsse 'f l Y s @
+Vereinbarung f E 6 '? aI n b a R U N
+auszuweiten '? aU s ts u: v aI t @ n
+Hängen 'h E N @ n
+schuld 'S U l t
+Ärmel '? E: 6 m @ l
+irgendeinem '? I 6 g @ n t ? aI n @ m
+Altgriechische '? a l t g R i: C I S @
+Steinadlers 'S t aI n '? a: d l 6 s
+Erb '? E 6 p
+Bitte 'b I t @
+Konrad 'k O n R a: t
+Systeme z Y s 't e: m @
+kalten 'k a l t @ n
+Berichte b @ 'R I C t @
+richten 'R I C t @ n
+Bayreuth b aI 'R OY t
+Reiter 'R aI t 6
+Reis 'R aI s
+nachweisen 'n a: x v aI z @ n
+Umweltschutz '? U m v E l t S U ts
+Erfurt '? e 6 f U 6 t
+beherrschten b @ 'h E R S t @ n
+dunkelgrau 'd U N k @ l g R aU
+Gneis 'g n aI s
+Schrei 'S R aI
+Joghurt 'j o: g U 6 t
+Reißverschlussverfahren 'R aI s f E 6 S l U s f 6 f a: R @ n
+Susi 'z u: z i:
+auslaugte '? aU s l aU k t @
+historische h I s 't o: R I S @
+Aufenthalt '? aU f E n t h a l t
+fliehen 'f l i: @ n
+Wurzel 'v U R ts @ l
+Kairo 'k aI R o:
+üblicherweise '? y: p l I C 6 'v aI z @
+Potter 'p O t 6
+handeln 'h a n d @ l n
+erstellen ? E 6 'S t E l @ n
+Fingern 'f I N 6 n
+durchquert 'd U R C 'k v e: 6 t
+Vorlesung 'f o: 6 l e: z U N
+Bauwerke 'b aU v E 6 k @
+Montag 'm o: n t a: k
+Chor 'k o: 6
+Unfällen '? U n f E l @ n
+anwesend '? a n v e: z @ n t
+französisch f R a n 'ts 2: z I S
+Kalkboden 'k a l k b o: d @ n
+komplexes k O m 'p l E k s @ s
+Binnenmarkt 'b I n @ n m a 6 k t
+Rettungsgasse 'R E t U N s g a s @
+Endbinde '? E n t b I n d @
+Schiffen 'S I f @ n
+Studium 'S t u: d i: U m
+persönlichen p E 6 's 2: n l I C @ n
+schloss 'S l O s
+Direktor d i: 'R E k t o: 6
+Erzählung ? E 6 'ts E: l U N
+Verlag f E 6 'l a: k
+Birmingham 'b 9 6 m I N h E m
+Betracht b @ 't R a x t
+Bomber 'b O m b 6
+Dateien 'd a 't aI @ n
+namens 'n a: m @ n s
+grundlegende 'g R U n t l e: g @ n d @
+traditionelle t R a d i: ts j o: 'n E l @
+beliebte b @ 'l i: p t @
+Küstenregionen 'k Y s t @ n R e: g 'j o: n @ n
+bedenken b @ 'd E N k @ n
+Ist '? I s t
+berechnet b @ 'R E C n @ t
+Frequenz f R e: 'k v E n ts
+steuert 'S t OY 6 t
+Stadtgebiet 'S t a t g @ b i: t
+Finanzen f i: 'n a n ts @ n
+Trek 't R E k
+lächelnd 'l E C @ l n t
+wünscht 'v Y n S t
+Hirn 'h I 6 n
+Handy 'h E n d i:
+unterbrach ? U n t 6 'b R a: x
+Peru 'p E R u:
+Fernen 'f E 6 n @ n
+Einkaufsliste '? aI n k aU f s l I s t @
