@@ -28,8 +28,13 @@ add_mailabs_data=true
 add_extra_words=true
 add_commonvoice_data=true
 
+add_train_text_to_lm=true
+
 extra_words_file=local/extra_words.txt
 extra_words_file=local/filtered_300k_vocab_de_wiki.txt
+extra_words_file=local/voc_600k.txt
+
+extra_voc_file=local/de_extra_lexicon.txt
 
 kaldi_tuda_de_corpus_server="http://speech.tools/kaldi_tuda_de/"
 
@@ -38,7 +43,7 @@ kaldi_tuda_de_corpus_server="http://speech.tools/kaldi_tuda_de/"
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_std
+dict_suffix=_std_big3
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -47,7 +52,7 @@ lang_dir_nosp=${lang_dir}_nosp${dict_suffix}
 format_lang_out_dir=${lang_dir}_test
 g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
-arpa_lm=${lm_dir}/4gram-mincount/lm_pr10.0.gz
+arpa_lm=${lm_dir}/4gram-mincount/lm_pr20.0.gz
 
 [ ! -L "steps" ] && ln -s ../../wsj/s5/steps
 [ ! -L "utils" ] && ln -s ../../wsj/s5/utils
@@ -199,6 +204,7 @@ if [ $stage -le 3 ]; then
       wget --directory-prefix=data/lexicon/ https://raw.githubusercontent.com/marytts/marytts-lexicon-de/master/modules/de/lexicon/de.txt
   #    echo "data/lexicon/train.txt">> data/lexicon_ids.txt
       echo "data/lexicon/de.txt">> data/lexicon_ids.txt
+      echo "$extra_voc_file" >> data/lexicon_ids.txt
   fi
 
   if [ use_BAS_dictionaries = true ] ; then
@@ -344,31 +350,7 @@ if [ $stage -le 6 ]; then
   echo "Done!"
 fi
 
-# Todo: download source sentence archive for LM building
-
 if [ $stage -le 7 ]; then
-  mkdir -p ${lm_dir}/
-
-  if [ ! -f ${lm_dir}/cleaned.gz ]
-  then
-      wget --directory-prefix=${lm_dir}/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
-      mv ${lm_dir}/German_sentences_8mil_filtered_maryfied.txt.gz ${lm_dir}/cleaned.gz
-  fi
-
-  # Prepare ARPA LM
-
-  # If you wont to build your own:
-  local/build_lm.sh --srcdir ${local_lang_dir} --dir ${lm_dir}
-
-  # Otherwise you can also use the supplied LM:
-  # wget speechdata-LM.arpa
-
-
-  # Transform LM into Kaldi LM format 
-  local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
-fi
-
-if [ $stage -le 8 ]; then
 	if [ "$add_swc_data" = true ] ; then
 		  echo "Generating features for tuda_train, swc_train, dev and test"
 		  # Making sure all swc files are C-sorted 
@@ -442,7 +424,50 @@ if [ $stage -le 8 ]; then
 	fi
 fi
 
+if [ $stage -le 8 ]; then
+
+  mkdir -p ${lm_dir}/
+
+  # Prepare ARPA LM
+
+  if [ "$build_own_lm" = true ] ; then
+	  # remove utterance ids, create (unique) text from train
+	  cut -f 1 -d ' ' --complement data/train/text | uniq | gzip > ${lm_dir}/train_text.gz
+
+	  if [ ! -f ${lm_dir}/cleaned_lm_text.gz ]
+	  then
+	      echo "No ${lm_dir}/cleaned_lm_text.gz found, downloading one ..."
+	      wget --directory-prefix=${lm_dir}/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
+	      mv ${lm_dir}/German_sentences_8mil_filtered_maryfied.txt.gz ${lm_dir}/cleaned_lm_text.gz
+	  fi
+
+	  if [ "$add_train_text_to_lm" = true ] ; then
+	      cat ${lm_dir}/cleaned_lm_text.gz ${lm_dir}/train_text.gz > ${lm_dir}/cleaned.gz
+	  else
+	      cp ${lm_dir}/cleaned_lm_text.gz ${lm_dir}/cleaned.gz
+	  fi
+
+	  lmstage=0
+  else
+	  # download prebuild LM
+	  cd ${lm_dir}/
+
+          # TODO: download here	  
+
+	  cd -
+
+	  # omit lm stage 0, i.e. only prune the LM to the desired pruning levels
+	  lmstage=1
+  fi
+
+  local/build_lm.sh --srcdir $local_lang_dir --dir $lm_dir --lmstage $lmstage
+
+  # Transform LM into Kaldi LM format 
+  local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
+fi
+
 exit
+
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
@@ -451,7 +476,7 @@ exit
 if [ -f data/train/feats.scp ]; then
   echo "data/train/feats.scp is available, continuing with AM training."
 else
-  echo "data/train/feats.scp is not available, something went wrong in feature generation. Not continuing with AM training."
+  echo "data/train/feats.scp is not available, something went wrong in feature generation. Look for any errors or warnings in the output. Not continuing with AM training!"
   exit -1
 fi
 
