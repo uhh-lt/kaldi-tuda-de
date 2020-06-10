@@ -13252,3 +13252,7 @@ theoretisch t e: o: 'R e: t I S
 Obwohl ? O p 'v o: l
 Corona k o: 'R o: n a:
 Coronavirus k o: 'R o: n a: v i: R U s
+Covid 'k o: v I t
+COVID 'k o: v I t
+SARS-CoV-zwei 'z a: R s 'k O f 'ts v aI
+SARS 'z a: R s
