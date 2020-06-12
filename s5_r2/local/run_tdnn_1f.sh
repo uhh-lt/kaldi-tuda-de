@@ -29,7 +29,7 @@ min_seg_len=1.55
 xent_regularize=0.1
 train_set=train_cleaned
 gmm=tri4_cleaned  # the gmm for the target data
-num_threads_ubm=1
+num_threads_ubm=2
 nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 
 # The rest are configs specific to this script.  Most of the parameters
@@ -49,10 +49,12 @@ num_chunk_per_minibatch=128
 leaky_hmm_coefficient=0.1
 l2_regularize=0.00005
 proportional_shrink=20
-num_hidden=2048
-num_epochs=4
+num_hidden=4096
+num_epochs=5
 
-lang_dir=data/lang_300k4
+lang_dir=data/lang_std_big3
+
+lang_dir=data/lang_std_small_test
 
 tdnn_affix=1f_${num_hidden}  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 
@@ -219,7 +221,10 @@ if [ $stage -le 18 ]; then
     --feat-dir $train_data_dir \
     --tree-dir $tree_dir \
     --lat-dir $lat_dir \
-    --dir $dir # Add this for restarting the training at a certain epoch, e.g. epoch 1542:
+    --dir $dir #\
+ #   --egs.stage 100 \
+ #   --stage 2374
+    # Add this for restarting the training at a certain epoch, e.g. epoch 1542:
 #\
 #    --egs.stage 100 \
 #    --stage 1542
@@ -231,7 +236,7 @@ if [ $stage -le 19 ]; then
   # Note: it might appear that this data/lang_chain directory is mismatched, and it is as
   # far as the 'topo' is concerned, but this script doesn't read the 'topo' from
   # the lang directory.
-  utils/mkgraph.sh --self-loop-scale 1.0 ${lang_dir}_test_pron $dir $dir/graph${decode_affix}
+  utils/mkgraph.sh --self-loop-scale 1.0 ${lang_dir} $dir $dir/graph${decode_affix}
 fi
 
 if [ $stage -le 20 ]; then
