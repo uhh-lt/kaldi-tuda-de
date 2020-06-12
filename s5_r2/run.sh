@@ -30,16 +30,20 @@ add_commonvoice_data=true
 
 add_train_text_to_lm=true
 
+# See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
+# Current default is to download a pretrained LM
+build_own_lm=false
+
 extra_words_file=local/extra_words.txt
 extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 extra_words_file=local/voc_600k.txt
 
 extra_voc_file=local/de_extra_lexicon.txt
 
-kaldi_tuda_de_corpus_server="http://speech.tools/kaldi_tuda_de/"
+kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/"
 
 # backup:
-# kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/"
+# kaldi_tuda_de_corpus_server="http://speech.tools/kaldi_tuda_de/"
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
@@ -431,13 +435,24 @@ if [ $stage -le 8 ]; then
   # Prepare ARPA LM
 
   if [ "$build_own_lm" = true ] ; then
+
+	  echo "Building LM from text sources..."
+
+	  echo "I will look for text data in: ${lm_dir}/cleaned_lm_text.gz (10 sec to cancel)"
+
+	  sleep 10
+
 	  # remove utterance ids, create (unique) text from train
 	  cut -f 1 -d ' ' --complement data/train/text | uniq | gzip > ${lm_dir}/train_text.gz
 
 	  if [ ! -f ${lm_dir}/cleaned_lm_text.gz ]
 	  then
-	      echo "No ${lm_dir}/cleaned_lm_text.gz found, downloading one ..."
-	      wget --directory-prefix=${lm_dir}/ http://speech.tools/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz
+	      
+	      echo "No ${lm_dir}/cleaned_lm_text.gz found, downloading one ... (10 sec to cancel)"
+
+	      sleep 10
+
+	      wget --directory-prefix=${lm_dir}/ http://$kaldi_tuda_de_corpus_server/German_sentences_8mil_filtered_maryfied.txt.gz
 	      mv ${lm_dir}/German_sentences_8mil_filtered_maryfied.txt.gz ${lm_dir}/cleaned_lm_text.gz
 	  fi
 
@@ -449,24 +464,33 @@ if [ $stage -le 8 ]; then
 
 	  lmstage=0
   else
+	  echo "Building LM-FST from Arpa... (10 sec to cancel)"	
+
+	  sleep 10
 	  # download prebuild LM
+
+	  # This is a pretrained German LM in ARPA format, trained with kaldi-lm as above but with a 100 million sentences
+	  # You can build a similar LM yourself by following the steps in https://github.com/bmilde/german-asr-lm-tools/
+
+	  if [ ! -f ${lm_dir}/pretrained_lm_de_may2020.tar.gz ]
+	  then
+       	        wget --directory-prefix=${lm_dir}/  http://$kaldi_tuda_de_corpus_server/pretrained_lm_de_may2020.tar.gz
+	  fi
+
 	  cd ${lm_dir}/
-
-          # TODO: download here	  
-
+	  tar xvfz pretrained_lm_de_may2020.tar.gz
 	  cd -
 
 	  # omit lm stage 0, i.e. only prune the LM to the desired pruning levels
 	  lmstage=1
   fi
 
-  local/build_lm.sh --srcdir $local_lang_dir --dir $lm_dir --lmstage $lmstage
+  # uncomment this if you want to prune with a different factor than 20.0
+  # local/build_lm.sh --srcdir $local_lang_dir --dir $lm_dir --lmstage $lmstage
 
   # Transform LM into Kaldi LM format 
   local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
 fi
-
-exit
 
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
