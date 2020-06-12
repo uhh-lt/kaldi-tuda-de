@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model_name=de_400k_nnet3chain_tdnn1f_2048_sp_bi
+model_name=de_683k_nnet3chain_tdnn1f_2048_sp_bi
 model_path=exp/chain_cleaned/tdnn1f_2048_sp_bi
 graph_dir=$model_path/graph
 ivector_extractor=exp/nnet3_cleaned/extractor
