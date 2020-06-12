@@ -61,6 +61,11 @@ if __name__ == '__main__':
         else:
             print('Warning!: No % entry found! Will add <UNK> -> usb mapping manually.')
             combinedDict['<UNK>'] = [{'pron': ['usb'], 'freq': 100, 'manual': True}]
+
+        if '<Lachen>' not in combinedDict:
+            print('Warning!: No <Lachen> entry found! Will add <Lachen> -> lau mapping manually.')
+            combinedDict['<Lachen>'] = [{'pron': ['lau'], 'freq': 100, 'manual': True}]
+
         for key in sorted(list(combinedDict.keys())):
             txt = generateEntry(key,combinedDict[key],args.sphinx_format)
             outfile.write(txt)
