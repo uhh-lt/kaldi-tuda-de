@@ -26,7 +26,7 @@ The scripts will ask you where to place larger files and can download all necess
 
 12 June 2020
 
-- We have added the Common Voice (de) dataset, the total amount of training data is totalling over 1000h now!
+- We have added the Common Voice (de) dataset, the total amount of training data is over 1000h now!
 - We now use a new LM based on 100 million German sentences, with recent data as well
 - We now ship a pre-trained ARPA for the language model, but you can also crawl and normalize your own data with the steps detailed in https://github.com/bmilde/german-asr-lm-tools/
 - Some errors in the phoneme inventory have been corrected (you will need to train the new model from scratch)
