@@ -115,7 +115,7 @@ In Kaldi trunk:
 2. Download and install OpenBLAS, build a non-multithreading (important!) library with:
 
 ```
-make USE_THREAD=0 FC=gfortran
+make USE_THREAD=0 USE_LOCKING=1 FC=gfortran
 ```
 
 Now follow the displayed instructions to install OpenBLAS headers and libs to a new and empty directory. 
