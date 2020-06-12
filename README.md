@@ -24,6 +24,15 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+12 June 2020
+
+- We have added the Common Voice (de) dataset, the total amount of training data is now 1000h.
+- We now use a new LM based on 100 million German sentences, with recent data as well
+- We now ship a pre-trained ARPA for the language model, but you can also crawl and normalize your own data with steps detailed in https://github.com/bmilde/german-asr-lm-tools/
+- Some errors in the phoneme inventory have been corrected
+- New pre-trained models will follow shortly
+- A new manual lexicon resource has been added to kaldi-tuda-de, with recent words as well. Adds 13K+ manually verified lexicon words in X-SAMPA-DE format.
+
 5 March 2019
 
 - A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
