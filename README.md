@@ -31,7 +31,8 @@ The scripts will ask you where to place larger files and can download all necess
 - We now ship a pre-trained ARPA for the language model, but you can also crawl and normalize your own data with the steps detailed in https://github.com/bmilde/german-asr-lm-tools/
 - Some errors in the phoneme inventory have been corrected (you will need to train the new model from scratch)
 - New pre-trained models will follow shortly
-- A new manual lexicon resource has been added to kaldi-tuda-de, with recent words as well. Adds 13K+ manually verified lexicon words in X-SAMPA-DE format.
+- A new manual lexicon resource has been added to kaldi-tuda-de, with recent words as well. Adds 13K+ manually verified lexicon words in X-SAMPA-DE format. See https://github.com/uhh-lt/kaldi-tuda-de/blob/master/s5_r2/local/de_extra_lexicon.txt
+- We created a lexicon editor to add and verify manual phoneme entries with active learning: https://github.com/uhh-lt/speech-lex-edit
 
 5 March 2019
 
