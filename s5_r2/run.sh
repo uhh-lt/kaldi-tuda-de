@@ -25,8 +25,13 @@ stage=0
 use_BAS_dictionaries=false
 add_swc_data=true
 add_mailabs_data=true
-add_extra_words=true
 add_commonvoice_data=true
+
+# You can set this to true and put your own training data in data/train_extra
+add_extra_data=false
+
+# this adds the extra vocabulary that comes with this distribution
+add_extra_words=true
 
 add_train_text_to_lm=true
 
@@ -211,7 +216,7 @@ if [ $stage -le 3 ]; then
       echo "$extra_voc_file" >> data/lexicon_ids.txt
   fi
 
-  if [ use_BAS_dictionaries = true ] ; then
+  if [ $use_BAS_dictionaries = true ] ; then
 
     # These lexicons are publicly available on BAS servers, but can probably not be used in a commercial setting.
     if [ ! -f data/lexicon/VM.German.Wordforms ]
@@ -290,6 +295,10 @@ if [ $stage -le 5 ]; then
 
     if [ "$add_commonvoice_data" = true ] ; then
       cat data/commonvoice_train/text >> ${g2p_dir}/complete_text
+    fi
+
+    if [ "$add_extra_data" = true ] ; then
+      cat data/extra_train/text >> ${g2p_dir}/complete_text
     fi
 
     if [ "$add_extra_words" = true ] ; then
@@ -425,6 +434,21 @@ if [ $stage -le 7 ]; then
 
 		echo "Done, now combining data (train commonvoice_train)."
 		./utils/combine_data.sh data/train data/train_without_commonvoice data/commonvoice_train
+	fi
+
+	if [ "$add_extra_data" = true ] ; then
+	    mv data/train data/train_without_extra || true
+	    echo "Now computing MFCC features for extra_train"
+	    # Now make MFCC features.
+	    x=extra_train
+	    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+	    steps/make_mfcc.sh --cmd "$train_cmd" --nj $nJobs data/$x exp/make_mfcc/$x $mfccdir
+	    utils/fix_data_dir.sh data/$x # some files fail to get mfcc for many reasons
+	    steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x $mfccdir
+	    utils/fix_data_dir.sh data/$x
+	    
+	    echo "Done, now combining data (train extra_train)."
+	    ./utils/combine_data.sh data/train data/train_without_extra data/extra_train
 	fi
 fi
 
@@ -717,5 +741,6 @@ fi
 if [ $stage -le 17 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
   echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
-#  ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
+  
+  ./local/run_tdnn_1f.sh --lang_dir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
