@@ -16,6 +16,7 @@ set -e # fail on error
 
 srcdir=data/local/lang
 dir=data/local/lm
+lmstage=0
 
 . ./utils/parse_options.sh
 
@@ -28,9 +29,11 @@ export LC_ALL=C
 
 #train_lm.sh
 
-mkdir -p $dir
+mkdir -p $dir || true
+
 . ./path.sh || exit 1; # for KALDI_ROOT
 export PATH=$KALDI_ROOT/tools/kaldi_lm:$PATH
+
 ( # First make sure the kaldi_lm toolkit is installed.
  cd $KALDI_ROOT/tools || exit 1;
  if [ -d kaldi_lm ]; then
@@ -47,52 +50,50 @@ export PATH=$KALDI_ROOT/tools/kaldi_lm:$PATH
  fi
 ) || exit 1;
 
-# OLDER version:
-
-
-# Get a wordlist-- keep everything but silence, which should not appear in
+#Get a wordlist-- keep everything but silence, which should not appear in
 # the LM.
 awk '{print $1}' $srcdir/lexiconp.txt | grep -v -w '!SIL' > $dir/wordlist.txt
 
-# Get training data with OOV words (w.r.t. our current vocab) replaced with  <UNK>
-echo "Getting training data with OOV words replaced with <UNK> (unkown word) (train_nounk.gz)"
-gunzip -c $dir/cleaned.gz | awk -v w=$dir/wordlist.txt \
-  'BEGIN{while((getline<w)>0) v[$1]=1;}
-  {for (i=1;i<=NF;i++) if ($i in v) printf $i" ";else printf "<UNK> ";print ""}'|sed 's/ $//g' \
-  | gzip -c > $dir/train_nounk.gz
+if [ $lmstage -le 1 ]; then
+	# Get training data with OOV words (w.r.t. our current vocab) replaced with  <UNK>
+	echo "Getting training data with OOV words replaced with <UNK> (unkown word) (train_nounk.gz)"
+	gunzip -c $dir/cleaned.gz | awk -v w=$dir/wordlist.txt \
+	  'BEGIN{while((getline<w)>0) v[$1]=1;}
+	  {for (i=1;i<=NF;i++) if ($i in v) printf $i" ";else printf "<UNK> ";print ""}'|sed 's/ $//g' \
+	  | gzip -c > $dir/train_nounk.gz
 
-# Get unigram counts (without bos/eos, but this doens't matter here, it's
-# only to get the word-map, which treats them specially & doesn't need their
-# counts).
-# Add a 1-count for each word in word-list by including that in the data,
-# so all words appear.
-gunzip -c $dir/train_nounk.gz | cat - $dir/wordlist.txt | \
-  awk '{ for(x=1;x<=NF;x++) count[$x]++; } END{for(w in count){print count[w], w;}}' | \
- sort -nr > $dir/unigram.counts
+	# Get unigram counts (without bos/eos, but this doens't matter here, it's
+	# only to get the word-map, which treats them specially & doesn't need their
+	# counts).
+	# Add a 1-count for each word in word-list by including that in the data,
+	# so all words appear.
+	gunzip -c $dir/train_nounk.gz | cat - $dir/wordlist.txt | \
+	  awk '{ for(x=1;x<=NF;x++) count[$x]++; } END{for(w in count){print count[w], w;}}' | \
+	 sort -nr > $dir/unigram.counts
 
-# Get "mapped" words-- a character encoding of the words that makes the common words very short.
-cat $dir/unigram.counts  | awk '{print $2}' | get_word_map.pl "<s>" "</s>" "<UNK>" > $dir/word_map
+	# Get "mapped" words-- a character encoding of the words that makes the common words very short.
+	cat $dir/unigram.counts  | awk '{print $2}' | get_word_map.pl "<s>" "</s>" "<UNK>" > $dir/word_map
 
-gunzip -c $dir/train_nounk.gz | awk -v wmap=$dir/word_map 'BEGIN{while((getline<wmap)>0)map[$1]=$2;}
-  { for(n=1;n<=NF;n++) { printf map[$n]; if(n<NF){ printf " "; } else { print ""; }}}' | gzip -c >$dir/train.gz
+	gunzip -c $dir/train_nounk.gz | awk -v wmap=$dir/word_map 'BEGIN{while((getline<wmap)>0)map[$1]=$2;}
+	  { for(n=1;n<=NF;n++) { printf map[$n]; if(n<NF){ printf " "; } else { print ""; }}}' | gzip -c >$dir/train.gz
 
-echo training kaldi_lm with 3gram-mincount
+	echo training kaldi_lm with 3gram-mincount
 
-rm -r data/local/lm/3gram-mincount/ || true
-train_lm.sh --arpa --lmtype 3gram-mincount $dir
-#prune_lm.sh --arpa 6.0 $dir/3gram-mincount/
-#prune_lm.sh --arpa 8.0 $dir/3gram-mincount/
-#prune_lm.sh --arpa 10.0 $dir/3gram-mincount/
-#prune_lm.sh --arpa 16.0 $dir/3gram-mincount/
-prune_lm.sh --arpa 10.0 $dir/3gram-mincount/
+	rm -r data/local/lm/3gram-mincount/ || true
+	train_lm.sh --arpa --lmtype 3gram-mincount $dir
+	train_lm.sh --arpa --lmtype 4gram-mincount $dir
+fi
+
+if [ $lmstage -le 2 ]; then
+	prune_lm.sh --arpa 20.0 $dir/3gram-mincount/
+	prune_lm.sh --arpa 30.0 $dir/3gram-mincount/
+
+	prune_lm.sh --arpa 20.0 $dir/4gram-mincount/
+	prune_lm.sh --arpa 30.0 $dir/4gram-mincount/
+fi
 
 # create unpruned const arpa for best path rescoring
 # utils/build_const_arpa_lm.sh data/local/lm/3gram-mincount/lm_unpruned.gz data/lang/ data/lang_const_arpa/
 
-# we could also train a 4 gram model (omitted by default)
-train_lm.sh --arpa --lmtype 4gram-mincount $dir
-prune_lm.sh --arpa 10.0 $dir/4gram-mincount
-
 echo done
-
 exit 0
