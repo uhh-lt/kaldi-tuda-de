@@ -27,12 +27,12 @@ The scripts will ask you where to place larger files and can download all necess
 12 June 2020
 
 - We have added the Common Voice (de) dataset, the total amount of training data is over 1000h now!
-- We now use a new LM based on 100 million German sentences, with recent data as well
-- We now ship a pre-trained ARPA for the language model, but you can also crawl and normalize your own data with the steps detailed in https://github.com/bmilde/german-asr-lm-tools/
-- Some errors in the phoneme inventory have been corrected (you will need to train the new model from scratch)
-- New pre-trained models will follow shortly
+- We added a new language model (LM) trained on 100 million normalized German sentences, with recent data as well
+- We now ship a pre-trained ARPA for the LM, but you can also crawl and normalize your own data with the steps detailed in https://github.com/bmilde/german-asr-lm-tools/
+- Some errors in the phoneme inventory have been corrected. You will need to train the new model from scratch, as the phoneme inventories are incompatible.
 - A new manual lexicon resource has been added to kaldi-tuda-de, with recent words as well. Adds 13K+ manually verified lexicon words in X-SAMPA-DE format. See https://github.com/uhh-lt/kaldi-tuda-de/blob/master/s5_r2/local/de_extra_lexicon.txt
 - We created a lexicon editor to add and verify manual phoneme entries with active learning: https://github.com/uhh-lt/speech-lex-edit
+- New pre-trained ASR models will follow shortly
 
 5 March 2019
 
