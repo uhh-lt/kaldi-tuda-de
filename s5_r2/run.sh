@@ -52,7 +52,7 @@ kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_std_big3
+dict_suffix=_std_big4
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -281,23 +281,28 @@ if [ $stage -le 5 ]; then
 
   if [ ! -f ${dict_dir}/oov_lexiconp.txt ]
   then
-    echo "Now finding OOV in train"
+    echo "Now renormalize data dirs and find OOV in train"
 
+    python3 local/renormalize_datadir_text.py -t data/tuda_train/text
     cp data/tuda_train/text ${g2p_dir}/complete_text
 
     if [ "$add_swc_data" = true ] ; then
+      python3 local/renormalize_datadir_text.py -t data/swc_train/text
       cat data/swc_train/text >> ${g2p_dir}/complete_text
     fi
 
     if [ "$add_mailabs_data" = true ] ; then
+      python3 local/renormalize_datadir_text.py -t data/m_ailabs_train/text
       cat data/m_ailabs_train/text >> ${g2p_dir}/complete_text
     fi
 
     if [ "$add_commonvoice_data" = true ] ; then
+      python3 local/renormalize_datadir_text.py -t data/commonvoice_train/text
       cat data/commonvoice_train/text >> ${g2p_dir}/complete_text
     fi
 
     if [ "$add_extra_data" = true ] ; then
+      python3 local/renormalize_datadir_text.py -t data/extra_train/text
       cat data/extra_train/text >> ${g2p_dir}/complete_text
     fi
 
@@ -506,15 +511,20 @@ if [ $stage -le 8 ]; then
 	  cd -
 
 	  # omit lm stage 0, i.e. only prune the LM to the desired pruning levels
-	  lmstage=1
+	  # lmstage=1
+
+	  # omit all LM stages, since we ship pruned LMs as well:
+          lmstage=2
   fi
 
   # uncomment this if you want to prune with a different factor than 20.0
-  # local/build_lm.sh --srcdir $local_lang_dir --dir $lm_dir --lmstage $lmstage
+  local/build_lm.sh --srcdir $local_lang_dir --dir $lm_dir --lmstage $lmstage
 
   # Transform LM into Kaldi LM format 
   local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
 fi
+
+#exit
 
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
