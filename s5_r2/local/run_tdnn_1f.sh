@@ -52,9 +52,9 @@ proportional_shrink=20
 num_hidden=4096
 num_epochs=5
 
-lang_dir=data/lang_std_big3
+lang_dir=data/lang_std_big4
 
-lang_dir=data/lang_std_small_test
+#lang_dir=data/lang_std_small_test
 
 tdnn_affix=1f_${num_hidden}  #affix for TDNN directory, e.g. "a" or "b", in case we change the configuration.
 
