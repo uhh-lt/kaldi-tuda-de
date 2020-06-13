@@ -19,6 +19,7 @@ import common_utils
 import normalize_sentences
 import spacy
 import shutil
+import time
 
 def process(text_kaldi_file):
     nlp = spacy.load('de')
@@ -26,8 +27,9 @@ def process(text_kaldi_file):
     normalize_cache = {}
     i=0
 
-    print('Making a backup of the original file:', text_kaldi_file, '=>', text_kaldi_file + '.orig')
-    shutil.copyfile(text_kaldi_file, text_kaldi_file + '.orig')
+    nonce = str(int(time.time()))
+    print('Making a backup of the original file:', text_kaldi_file, '=>', text_kaldi_file + '.orig' + nonce)
+    shutil.copyfile(text_kaldi_file, text_kaldi_file + '.orig' + nonce)
 
     print('Opening and processing', text_kaldi_file)
     with open(text_kaldi_file) as infile:
