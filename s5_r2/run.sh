@@ -163,7 +163,7 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/cv/ ]
     then
        mkdir -p data/wav/cv/
-       wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
+       wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
        cd data/wav/cv/
        tar xvfz cv-corpus-3-oct19-de.tar.gz
        cd ../../../
@@ -476,7 +476,7 @@ if [ $stage -le 8 ]; then
 
 	      sleep 10
 
-	      wget --directory-prefix=${lm_dir}/ http://$kaldi_tuda_de_corpus_server/German_sentences_8mil_filtered_maryfied.txt.gz
+	      wget --directory-prefix=${lm_dir}/ $kaldi_tuda_de_corpus_server/German_sentences_8mil_filtered_maryfied.txt.gz
 	      mv ${lm_dir}/German_sentences_8mil_filtered_maryfied.txt.gz ${lm_dir}/cleaned_lm_text.gz
 	  fi
 
@@ -498,7 +498,7 @@ if [ $stage -le 8 ]; then
 
 	  if [ ! -f ${lm_dir}/pretrained_lm_de_may2020.tar.gz ]
 	  then
-       	        wget --directory-prefix=${lm_dir}/  http://$kaldi_tuda_de_corpus_server/pretrained_lm_de_may2020.tar.gz
+       	        wget --directory-prefix=${lm_dir}/  $kaldi_tuda_de_corpus_server/pretrained_lm_de_may2020.tar.gz
 	  fi
 
 	  cd ${lm_dir}/
