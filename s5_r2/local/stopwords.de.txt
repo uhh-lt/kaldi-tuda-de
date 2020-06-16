@@ -531,7 +531,6 @@ zehnte
 zehnten
 zehnter
 zehntes
-zeit
 zu
 zuerst
 zugleich
