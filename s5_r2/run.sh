@@ -37,10 +37,10 @@ add_train_text_to_lm=true
 
 # See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
 # Current default is to download a pretrained LM
-build_own_lm=false
+build_own_lm=true
 
-extra_words_file=local/extra_words.txt
-extra_words_file=local/filtered_300k_vocab_de_wiki.txt
+#extra_words_file=local/extra_words.txt
+#extra_words_file=local/filtered_300k_vocab_de_wiki.txt
 extra_words_file=local/voc_600k.txt
 
 extra_voc_file=local/de_extra_lexicon.txt
@@ -52,7 +52,7 @@ kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_std_big4
+dict_suffix=_std_big_v5
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -278,7 +278,9 @@ if [ $stage -le 5 ]; then
   else
       echo "G2P model file $final_g2p_model already exists, not recreating it."
   fi
+fi
 
+if [ $stage -le 6 ]; then
   if [ ! -f ${dict_dir}/oov_lexiconp.txt ]
   then
     echo "Now renormalize data dirs and find OOV in train"
@@ -288,6 +290,8 @@ if [ $stage -le 5 ]; then
 
     if [ "$add_swc_data" = true ] ; then
       python3 local/renormalize_datadir_text.py -t data/swc_train/text
+      mv data/swc_train/text data/swc_train/text_before_000_fix
+      grep -v "null null null" data/swc_train/text_before_000_fix > data/swc_train/text
       cat data/swc_train/text >> ${g2p_dir}/complete_text
     fi
 
@@ -343,7 +347,7 @@ export LC_ALL=C
 export LANG=C
 export LANGUAGE=C
 
-if [ $stage -le 6 ]; then
+if [ $stage -le 7 ]; then
   # Sort the lexicon with C-encoding (Is this still needed?)
   sort -u ${dict_dir}/_lexiconp.txt ${dict_dir}/oov_lexiconp.txt > ${dict_dir}/lexiconp.txt
 
@@ -368,7 +372,7 @@ if [ $stage -le 6 ]; then
   echo "Done!"
 fi
 
-if [ $stage -le 7 ]; then
+if [ $stage -le 8 ]; then
 	if [ "$add_swc_data" = true ] ; then
 		  echo "Generating features for tuda_train, swc_train, dev and test"
 		  # Making sure all swc files are C-sorted 
@@ -457,7 +461,7 @@ if [ $stage -le 7 ]; then
 	fi
 fi
 
-if [ $stage -le 8 ]; then
+if [ $stage -le 9 ]; then
 
   mkdir -p ${lm_dir}/
 
@@ -524,8 +528,6 @@ if [ $stage -le 8 ]; then
   local/format_data.sh --arpa_lm $arpa_lm --lang_in_dir $lang_dir --lang_out_dir $format_lang_out_dir
 fi
 
-#exit
-
 # Here we start the AM
 # This is adapted from https://github.com/kaldi-asr/kaldi/blob/master/egs/swbd/s5c/run.sh
 
@@ -538,7 +540,7 @@ else
   exit -1
 fi
 
-if [ $stage -le 9 ]; then
+if [ $stage -le 10 ]; then
   # Use the first 4k sentences as dev set.  Note: when we trained the LM, we used
   # the 1st 10k sentences as dev set, so the 1st 4k won't have been used in the
   # LM training data.   However, they will be in the lexicon, plus speakers
@@ -600,13 +602,13 @@ if [ $stage -le 9 ]; then
   fi
 fi
 
-if [ $stage -le 10 ]; then
+if [ $stage -le 11 ]; then
   ## Starting basic training on MFCC features
   steps/train_mono.sh --nj $nJobs --cmd "$train_cmd" \
                       data/train_30kshort ${lang_dir_nosp} exp/mono
 fi
 
-if [ $stage -le 11 ]; then
+if [ $stage -le 12 ]; then
     steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
 
@@ -624,7 +626,7 @@ if [ $stage -le 11 ]; then
     
 fi
 
-if [ $stage -le 12 ]; then
+if [ $stage -le 13 ]; then
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
 
@@ -645,7 +647,7 @@ if [ $stage -le 12 ]; then
     done
 fi
 
-if [ $stage -le 13 ]; then
+if [ $stage -le 14 ]; then
   # The 100k_nodup data is used in the nnet2 recipe.
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
                     data/train_100k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_100k_nodup
@@ -669,7 +671,7 @@ if [ $stage -le 13 ]; then
   done
 fi
 
-if [ $stage -le 14 ]; then
+if [ $stage -le 15 ]; then
   # Now we compute the pronunciation and silence probabilities from training data,
   # and re-create the lang directory.
 
@@ -709,7 +711,7 @@ fi
 # compile-train-graphs --read-disambig-syms=${lang_dir}/phones/disambig.int exp/tri3_ali_nodup/tree exp/tri3_ali_nodup/final.mdl ${lang_dir}/L.fst 'ark:utils/sym2int.pl --map-oov  -f 2- ${lang_dir}/words.txt data/train_nodup/split16/10/text|' 'ark:|gzip -c >exp/tri3_ali_nodup/fsts.10.gz' 
 # the --map-oov option requires an argument at utils/sym2int.pl line 27.
 
-if [ $stage -le 15 ]; then
+if [ $stage -le 16 ]; then
   
   # Train tri4, which is LDA+MLLT+SAT, on all the (nodup) data.
   
@@ -743,12 +745,12 @@ if [ $stage -le 15 ]; then
  # ) &
 fi
 
-if [ $stage -le 16 ]; then
+if [ $stage -le 17 ]; then
   echo "Cleanup the corpus"
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir}
 fi
 
-if [ $stage -le 17 ]; then
+if [ $stage -le 18 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
   echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
   

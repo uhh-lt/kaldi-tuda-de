@@ -21,6 +21,18 @@ import spacy
 import shutil
 import time
 
+def load_lowercase_stopwords(filename='local/stopwords.de.txt'):
+    stopwords = {}
+    with open(filename) as stopwords_in:
+        for line in stopwords_in:
+            if line[-1] == '\n':
+                line = line[:-1]
+            if line.startswith('#'):
+                continue
+            stopwords[line] = True
+
+    return stopwords
+
 def process(text_kaldi_file):
     nlp = spacy.load('de')
     texts = []
@@ -30,6 +42,8 @@ def process(text_kaldi_file):
     nonce = str(int(time.time()))
     print('Making a backup of the original file:', text_kaldi_file, '=>', text_kaldi_file + '.orig' + nonce)
     shutil.copyfile(text_kaldi_file, text_kaldi_file + '.orig' + nonce)
+
+    stopwords = load_lowercase_stopwords()
 
     print('Opening and processing', text_kaldi_file)
     with open(text_kaldi_file) as infile:
@@ -42,13 +56,24 @@ def process(text_kaldi_file):
             if line[-1] == '\n':
                 line = line[:-1]
             split = line.split()
+
+            # first element in the split id the ID
             if len(split) > 1:
                 myid = split[0]
                 text = ' '.join(split[1:])
 
+                first_word = split[1]
+
                 if text not in normalize_cache:
+                    should_lowercase = first_word in stopwords
+
                     try:
                         normalized_text = normalize_sentences.normalize(nlp, text)
+                        # Npte the normalization step looks at POS tags to decide if the first word should be lowercased, but gets some 
+                        if should_lowercase:
+                            # check that the first word isnt in all upper case:
+                            if not normalized_text[1].isupper():
+                                normalized_text = normalized_text[0].lower() + normalized_text[1:]
                         normalize_cache[text] = normalized_text
                     except:
                         print('Warning, error normalizing:', text)

@@ -1,6 +1,6 @@
 import normalisierung
 
-satzzeichen = ',.?!:;<>()/\{}#"\'´`‚’‘_→[]-~«»'
+satzzeichen = ',.?!:;<>()/\{}#"\'´`‚’‘_→[]-~«»»«'
 
 exlude_zeichen = '*/=→[]."'
 
