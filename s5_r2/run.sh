@@ -37,7 +37,7 @@ add_train_text_to_lm=true
 
 # See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
 # Current default is to download a pretrained LM
-build_own_lm=true
+build_own_lm=false
 
 #extra_words_file=local/extra_words.txt
 #extra_words_file=local/filtered_300k_vocab_de_wiki.txt
@@ -505,13 +505,13 @@ if [ $stage -le 9 ]; then
 	  # This is a pretrained German LM in ARPA format, trained with kaldi-lm as above but with a 100 million sentences
 	  # You can build a similar LM yourself by following the steps in https://github.com/bmilde/german-asr-lm-tools/
 
-	  if [ ! -f ${lm_dir}/pretrained_lm_de_may2020.tar.gz ]
+	  if [ ! -f ${lm_dir}/pretrained_lm_de_may2020_v5.tar.gz ]
 	  then
-       	        wget --directory-prefix=${lm_dir}/  $kaldi_tuda_de_corpus_server/pretrained_lm_de_may2020.tar.gz
+       	        wget --directory-prefix=${lm_dir}/  $kaldi_tuda_de_corpus_server/pretrained_lm_de_may2020_v5.tar.gz
 	  fi
 
 	  cd ${lm_dir}/
-	  tar xvfz pretrained_lm_de_may2020.tar.gz
+	  tar xvfz pretrained_lm_de_may2020_v5.tar.gz
 	  cd -
 
 	  # omit lm stage 0, i.e. only prune the LM to the desired pruning levels
