@@ -24,6 +24,11 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+2 July 2020
+- We have added two new pretrained models: tuda_swc_mailabs_cv_voc683k and tuda_swc_mailabs_cv_voc683k_smaller_fst, both trained on 1000h of speech data and with our new LM.
+- The new model has a 13% lower WER on tuda-test. It also contains many more new and uptodate words and a better phoneme lexicon. See [pretrained models](#pretrained-models) for more details and download links.
+- You can also check out [kaldi-model-server](https://github.com/uhh-lt/kaldi-model-server), our PyKaldi based solution to easily load our Kaldi models.
+
 12 June 2020
 
 - We have added the Common Voice (de) dataset, the total amount of training data is over 1000h now!
