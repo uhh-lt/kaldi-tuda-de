@@ -92,7 +92,7 @@ The scripts will ask you where to place larger files and can download all necess
 | [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
 | [tuda_swc_mailabs_voc400k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h tuda+SWC+m-ailabs | 14.78 | 15.87 |
 | [tuda_swc_mailabs_cv_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h tuda+SWC+m-ailabs+cv | 12.26 | 13.79 |
-| [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2 )--- | 1000h tuda+SWC+m-ailabs+cv | 12.69 | 14.29 |
+| [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h tuda+SWC+m-ailabs+cv | 12.69 | 14.29 |
 
 All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
