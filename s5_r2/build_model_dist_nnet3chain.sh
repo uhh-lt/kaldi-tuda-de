@@ -28,6 +28,17 @@ echo "copying ivector extractor"
 mkdir $model_name/ivector_extractor/
 
 cp $ivector_extractor_conf/ivector_extractor.conf $model_name/ivector_extractor/
+
+# patch the ivector conf
+
+# it contains the hard coded paths: exp/nnet3_cleaned/ivectors_train_cleaned_sp_hires_comb/conf/online_cmvn.conf
+# and exp/nnet3_cleaned/extractor/
+
+# we are mapping both to models/$model_name/ivector_extractor/
+
+sed -i 's#exp/nnet3_cleaned/ivectors_train_cleaned_sp_hires_comb/conf/#models/'"$model_name"'/ivector_extractor/#g' $model_name/ivector_extractor/ivector_extractor.conf
+sed -i 's#exp/nnet3_cleaned/extractor/#models/'"$model_name"'/ivector_extractor/#g' $model_name/ivector_extractor/ivector_extractor.conf
+
 cp $ivector_extractor_conf/splice.conf $model_name/ivector_extractor/
 cp $ivector_extractor/final.mat $model_name/ivector_extractor/
 cp $ivector_extractor/final.dubm $model_name/ivector_extractor/
