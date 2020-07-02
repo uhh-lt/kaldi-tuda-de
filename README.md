@@ -101,7 +101,7 @@ The scripts will ask you where to place larger files and can download all necess
 
 All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
-We have developped a PyKaldi based solution to use the models with either a local microphone or network streaming in real time: https://github.com/uhh-lt/kaldi-model-server
+We have developed a PyKaldi based solution to use the models with either a local microphone or network streaming in real time: https://github.com/uhh-lt/kaldi-model-server
 
 Another option to use the models is the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server). You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI). There is a run_tuda_de.sh in the package that starts Kaldi gstreamer workers for tuda_de. You will need to modify the KALDI_ROOT variable in the script so that it finds your Kaldi installation properly.
 
