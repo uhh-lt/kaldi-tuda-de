@@ -121,7 +121,11 @@ In Kaldi trunk:
 
 1. go to tools/  and follow INSTALL instructions there.
 
-2. Download and install OpenBLAS, build a non-multithreading (important!) library with:
+2. Install a BLAS library. This can be Intel MKL, OpenBLAS or Atlas.
+
+If you have an Intel CPU the easist and now recommended library is to install Intel MKL. You can install it easily on Debian/Ubuntu by running extras/install_mkl.sh. You can then skip the rest of this section and go to section 3.
+
+Cross platform solution: Download and install OpenBLAS, build a non-multithreading (important!) library with:
 
 ```
 make USE_THREAD=0 USE_LOCKING=1 FC=gfortran
@@ -131,7 +135,7 @@ Now follow the displayed instructions to install OpenBLAS headers and libs to a 
 
 **Warning! It is imperative to build a single threaded OpenBLAS library**, otherwise you will encounter hard to debug problems with Kaldi as Kaldis parallelization interferes with the OpenBLAS one.
 
-3. go to src/ and follow INSTALL instructions there. Point the configure script to your OpenBLAS installation (see ./configure --help).
+3. go to src/ and follow INSTALL instructions there. Intel MKL is found automatically, if you installed with OpenBLAS point the configure script to your OpenBLAS installation (see ./configure --help).
 
 **Our scripts are meant to be placed into its own directory in KALDIs egs/ directory.** This is also where all the other recipes reside in. If you want to build DNN models, you probably want to enable CUDA in KALDI with the configure script in src/. You should have a relatively recent Nvidia GPU, at least one with the Kepler architecture.
 
