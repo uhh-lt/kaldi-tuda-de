@@ -749,7 +749,7 @@ fi
 
 if [ $stage -le 17 ]; then
   echo "Cleanup the corpus"
-  ./local/run_cleanup_segmentation.sh --langdir ${lang_dir}
+  ./local/run_cleanup_segmentation.sh --langdir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
 
 if [ $stage -le 18 ]; then
