@@ -71,7 +71,7 @@ if [ $stage -le 4 ]; then
 
   for dset in dev test; do
     steps/decode_fmllr.sh --nj $decode_nj --num-threads $decode_num_threads \
-       --cmd "$decode_cmd"  --num-threads 4 \
+       --cmd "$decode_cmd"\
        ${cleaned_dir}/graph data/${dset} ${cleaned_dir}/decode_${dset}
 #    steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" ${langdir} ${langdir}_rescore \
 #       data/${dset} ${cleaned_dir}/decode_${dset} ${cleaned_dir}/decode_${dset}_rescore
