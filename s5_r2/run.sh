@@ -114,7 +114,7 @@ if [ $stage -le 1 ]; then
     if [ ! -d data/wav/swc/german/ ]
     then
       mkdir -p data/wav/swc/
-      wget --directory-prefix=data/wav/swc/ https://www2.informatik.uni-hamburg.de/nats/pub/SWC/SWC_German.tar
+      wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
       cd data/wav/swc/
       tar xvf SWC_German.tar
       cd ../../../
