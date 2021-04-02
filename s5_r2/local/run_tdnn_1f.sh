@@ -49,7 +49,7 @@ num_chunk_per_minibatch=128
 leaky_hmm_coefficient=0.1
 l2_regularize=0.00005
 proportional_shrink=20
-num_hidden=4096
+num_hidden=2048
 num_epochs=5
 
 lang_dir=data/lang_std_big_v5
