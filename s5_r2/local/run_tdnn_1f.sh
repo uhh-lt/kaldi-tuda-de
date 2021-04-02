@@ -52,7 +52,7 @@ proportional_shrink=20
 num_hidden=4096
 num_epochs=5
 
-lang_dir=data/lang_std_big4
+lang_dir=data/lang_std_big_v5
 
 #lang_dir=data/lang_std_small_test
 
