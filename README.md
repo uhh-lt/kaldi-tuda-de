@@ -104,7 +104,7 @@ The scripts will ask you where to place larger files and can download all necess
 | [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h tuda+SWC+m-ailabs+cv | 12.69 | 14.29 |
 | + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
 
-All WER numbers are using Kaldi's FST for decoding without rescoring. Note that you can get an additional 10-15% relative improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
+Most WER numbers in the table are using Kaldi's FST for decoding without rescoring. We have now added results for rescoring as well, which improves the FST decoding results further as expected. Note that you can also get an additional improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
 We have developed a PyKaldi based solution to use the models with either a local microphone or network streaming in real time: https://github.com/uhh-lt/kaldi-model-server
 
