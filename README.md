@@ -25,7 +25,7 @@ The scripts will ask you where to place larger files and can download all necess
 ## News
 
 6 April 2021 
-- We have added const arpa language models for rescoring (trained on 100 million sentences). These did reduce error rates further, out best result on tuda-de test is 11.85% WER now.
+- We have added const arpa language models for rescoring (trained on 100 million sentences). These did reduce error rates further, out best result on tuda-de test is 11.85% WER now. A pre-trained RNN-LM will soon be available as well.
 
 2 July 2020
 - We have added two new pretrained models: tuda_swc_mailabs_cv_voc683k and tuda_swc_mailabs_cv_voc683k_smaller_fst, both trained on 1000h of speech data and with our new LM.
