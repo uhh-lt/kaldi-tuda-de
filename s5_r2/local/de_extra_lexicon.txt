@@ -1,3 +1,9 @@
+subtitle 'z u: b 't al t l
+BBB b i: b i: b i:
+BBB b ? e: b ? e: b ? e:
+moodle 'm u: d @ l
+BigBlueButton b I g 'b l u: b U t @ n
+pykaldi 'p aI 'k a l d i:
 Kaldi 'k a l d i:
 Kaldi 'k a l d I
 Dataset 'd EI t a s e t
