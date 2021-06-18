@@ -212,6 +212,7 @@ author={Benjamin Milde and Arne K{\"o}hn},
 title={Open Source Automatic Speech Recognition for German},
 booktitle={Proceedings of ITG 2018},
 year={2018},
+pages={251--255},
 }
 ```
 
