@@ -208,11 +208,12 @@ If you use our scripts and/or data in your academic work please cite:
 
 ```
 @InProceedings{milde-koehn-18-german-asr,
-author={Benjamin Milde and Arne K{\"o}hn},
-title={Open Source Automatic Speech Recognition for German},
-booktitle={Proceedings of ITG 2018},
-year={2018},
-pages={251--255}
+author = {Benjamin Milde and Arne K{\"o}hn},
+title = {Open Source Automatic Speech Recognition for German},
+booktitle = {Proceedings of ITG 2018},
+year = {2018},
+address = {Oldenburg, Germany}
+pages = {251--255}
 }
 ```
 
