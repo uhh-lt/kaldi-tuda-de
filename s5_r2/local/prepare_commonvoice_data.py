@@ -26,7 +26,7 @@ wav_scp_template = "sox $filepath -t wav -r 16k -b 16 -e signed - |"
 
 def process(corpus_path, output_datadir):
     common_utils.make_sure_path_exists(output_datadir)
-    nlp = spacy.load('de')
+    nlp = spacy.load('de_core_news_sm')
 
     # Common voice has repetitions and the text is not normalized
     # we cache text normalizations since they can be slow
