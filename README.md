@@ -116,7 +116,12 @@ If you want to adapt our models (add training data, augment training data, chang
 
 ## Prerequisites
 
-The scripts are only tested under Linux (Ubuntu 16.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
+The scripts are only tested under Linux (Ubuntu 16.04 - 20.04). Install at first some mandatory packages:
+```
+sudo apt install sox libsox-fmt-all
+```
+
+Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
 
 ```
  git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden
