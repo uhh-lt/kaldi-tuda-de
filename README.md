@@ -116,6 +116,12 @@ If you want to adapt our models (add training data, augment training data, chang
 
 ## Prerequisites
 
+Clone the repository with the submodule:
+```
+git clone --recurse-submodules https://github.com/uhh-lt/kaldi-tuda-de
+```
+
+
 The scripts are only tested under Linux (Ubuntu 16.04 - 20.04). Install at first some mandatory packages:
 ```
 sudo apt install sox libsox-fmt-all
