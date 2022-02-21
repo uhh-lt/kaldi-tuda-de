@@ -102,7 +102,7 @@ The scripts will ask you where to place larger files and can download all necess
 | [tuda_swc_mailabs_cv_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.26 | 13.79 |
 | + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | **10.47** | **11.85** |
 | [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.69 | 14.29 |
-| + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
+| + [lm_v5_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
 
 Most WER numbers in the table are using Kaldi's FST for decoding without rescoring. We have now added results for rescoring as well, which improves the FST decoding results further as expected. Note that you can also get an additional improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
