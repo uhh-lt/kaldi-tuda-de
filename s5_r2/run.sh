@@ -758,3 +758,8 @@ if [ $stage -le 18 ]; then
   
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
+
+if [ $stage -le 19 ]; then
+  echo "Build const arpa LM for rescoring "
+  utils/build_const_arpa_lm.sh data/local/lm_std_big_v5/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
+fi
