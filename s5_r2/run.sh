@@ -581,7 +581,7 @@ if [ $stage -le 10 ]; then
 
   # Finally, the full training set:
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
+  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 1619hr
 
   # todo take this for no swbd training:
 #  utils/subset_data_dir.sh --shortest data/train_nodev 30000 data/train_100kshort #(swbd default: 100k)
