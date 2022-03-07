@@ -543,13 +543,13 @@ else
 fi
 
 if [ $stage -le 10 ]; then
-  # Use the first 4k sentences as dev set.  Note: when we trained the LM, we used
+  # Use the first 4k sentences as dev set. Note: when we trained the LM, we used
   # the 1st 10k sentences as dev set, so the 1st 4k won't have been used in the
-  # LM training data.   However, they will be in the lexicon, plus speakers
+  # LM training data. However, they will be in the lexicon, plus speakers
   # may overlap, so it's still not quite equivalent to a test set.
   utils/subset_data_dir.sh --first data/train 4000 data/train_dev # 5hr 6min
   
-  # currently we do not have a  segments file as in swbd:
+  # currently we do not have a segments file as in swbd:
   if [ -f data/train/segments ]; then
     n=$[`cat data/train/segments | wc -l` - 4000]
   else
@@ -565,7 +565,7 @@ if [ $stage -le 10 ]; then
   # original swbd comment:
   # Now-- there are 260k utterances (313hr 23min), and we want to start the
   # monophone training on relatively short utterances (easier to align), but not
-  # only the shortest ones (mostly uh-huh).  So take the 100k shortest ones, and
+  # only the shortest ones (mostly uh-huh). So take the 100k shortest ones, and
   # then take 30k random utterances from those (about 12hr)
 
   # todo take this for no swbd training:
