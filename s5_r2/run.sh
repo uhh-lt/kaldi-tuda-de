@@ -569,15 +569,15 @@ if [ $stage -le 10 ]; then
   # then take 30k random utterances from those (about 12hr)
 
   # todo take this for no swbd training:
-  utils/subset_data_dir.sh --shortest data/train_nodev 150000 data/train_100kshort #(swbd default: 100k)
-  utils/subset_data_dir.sh data/train_100kshort 50000 data/train_30kshort #(swbd default: 30k)
+  utils/subset_data_dir.sh --shortest data/train_nodev 200000 data/train_200kshort #(swbd default: 100k)
+  utils/subset_data_dir.sh data/train_200kshort 80000 data/train_80kshort #(swbd default: 30k)
 
-  # Take the first 100k utterances (just under half the data); we'll use
+  # Take random 200k utterances (just under half the data); we'll use
   # this for later stages of training.
-  utils/subset_data_dir.sh --first data/train_nodev 100000 data/train_100k
+  utils/subset_data_dir.sh data/train_nodev 200000 data/train_200k
 
-  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_100k data/train_100k_nodup  # 110hr
+  # since there are are less repetitions in kaldi-tuda-de compared to swbd, we lowered the max repetitions 200 -> 10
+  utils/data/remove_dup_utts.sh 10 data/train_200k data/train_200k_nodup  # 301hr
 
   # Finally, the full training set:
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
@@ -607,15 +607,15 @@ fi
 if [ $stage -le 11 ]; then
   ## Starting basic training on MFCC features
   steps/train_mono.sh --nj $nJobs --cmd "$train_cmd" \
-                      data/train_30kshort ${lang_dir_nosp} exp/mono
+                      data/train_80kshort ${lang_dir_nosp} exp/mono
 fi
 
 if [ $stage -le 12 ]; then
     steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
+                    data/train_200k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
 
     steps/train_deltas.sh --cmd "$train_cmd" \
-                        3200 30000 data/train_100k_nodup ${lang_dir_nosp} exp/mono_ali exp/tri1
+                        3200 30000 data/train_200k_nodup ${lang_dir_nosp} exp/mono_ali exp/tri1
 
     graph_dir=exp/tri1/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
@@ -630,10 +630,10 @@ fi
 
 if [ $stage -le 13 ]; then
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
+                    data/train_200k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
 
   steps/train_deltas.sh --cmd "$train_cmd" \
-                        4000 70000 data/train_100k_nodup ${lang_dir_nosp} exp/tri1_ali exp/tri2
+                        4000 70000 data/train_200k_nodup ${lang_dir_nosp} exp/tri1_ali exp/tri2
 
     # The previous mkgraph might be writing to this file.  If the previous mkgraph
     # is not running, you can remove this loop and this mkgraph will create it.
@@ -650,9 +650,9 @@ if [ $stage -le 13 ]; then
 fi
 
 if [ $stage -le 14 ]; then
-  # The 100k_nodup data is used in the nnet2 recipe.
+  # The 200k_nodup data is used in the nnet2 recipe.
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_100k_nodup
+                    data/train_200k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_200k_nodup
 
   # From now, we start using all of the data (except some duplicates of common
   # utterances, which don't really contribute much).
