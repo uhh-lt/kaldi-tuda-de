@@ -198,7 +198,7 @@ if [ $stage -le 1 ]; then
 fi
 
 #adapt this to the Sprachdatenaufnahmen2014 folder on your disk
-RAWDATA=data/wav/german-speechdata-package-v2
+RAWDATA=data/wav/german-speechdata-package-v4
 
 # Filter by name
 FILTERBYNAME="*.xml"
