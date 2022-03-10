@@ -113,11 +113,17 @@ if [ $stage -le 1 ]; then
 
     if [ ! -d data/wav/swc/german/ ]
     then
-      mkdir -p data/wav/swc/
-      wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
-      cd data/wav/swc/
+      if [ -d data/wav/swc_temp/ ]
+      then
+        rm -r data/wav/swc_temp/
+      fi
+      mkdir -p data/wav/swc_temp/
+      wget --directory-prefix=data/wav/swc_temp/ $kaldi_tuda_de_corpus_server/SWC_German.tar
+      cd data/wav/swc_temp/
       tar xvf SWC_German.tar
-      cd ../../../
+      cd ../
+      mv swc_temp/ swc/
+      cd ../../
     fi
 
 # compute kaldi data dir from SWC export:   
@@ -145,11 +151,17 @@ if [ $stage -le 1 ]; then
   then
     if [ ! -d data/wav/m_ailabs/ ]
     then
-      mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
-      cd data/wav/m_ailabs/
+      if [ -d data/wav/m_ailabs_temp/ ]
+      then
+        rm -r data/wav/m_ailabs_temp
+      fi
+      mkdir -p data/wav/m_ailabs_temp/
+      wget --directory-prefix=data/wav/m_ailabs_temp/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
+      cd data/wav/m_ailabs_temp/
       tar xvfz m-ailabs.bayern.de_DE.tgz
-      cd ../../../
+      cd ../
+      mv m_ailabs_temp/ m_ailabs/
+      cd ../../
     fi
     if [ ! -d data/m_ailabs_train ]
     then
@@ -162,17 +174,24 @@ if [ $stage -le 1 ]; then
   then
     if [ ! -d data/wav/cv/ ]
     then
-       mkdir -p data/wav/cv/
-       wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
-       cd data/wav/cv/
-       tar xvfz cv-corpus-3-oct19-de.tar.gz
-       cd ../../../
+       if [ -d data/wav/cv/ ]
+       then
+        rm -r data/wav/cv_temp/
+       fi
+       mkdir -p data/wav/cv_temp/
+       wget --directory-prefix=data/wav/cv_temp/ $kaldi_tuda_de_corpus_server/cv-corpus-7.0-2021-07-21-de.tar.gz
+       cd data/wav/cv_temp/
+       tar -xvz --strip-component=2 -f cv-corpus-7.0-2021-07-21-de.tar.gz
+       cd ../
+       mv cv_temp/ cv/
+       cd ../../
     fi
     if [ ! -d data/commonvoice_train ]
     then
       # download spacy de_core_news_lg model
       python3 -m spacy download de_core_news_lg
       # make data directory data/commonvoice_train
+      cp --link local/german_asr_lm_tools/normalisierung.py local/normalisierung.py
       python3 local/prepare_commonvoice_data.py
     fi
   fi
@@ -186,7 +205,9 @@ FILTERBYNAME="*.xml"
 
 if [ $stage -le 2 ]; then
   # Move files, which would later produce errors. They are saved in backup location
-  python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+  # python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+  # not used in v4 anymore
+  # python3 local/move_files_to_skip.py data/wav/TudaDataset/train/
 
   find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
 
