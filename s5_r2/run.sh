@@ -36,8 +36,9 @@ add_extra_words=true
 add_train_text_to_lm=true
 
 # See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
+# Place the resulting gzipped file in data/local/lm_std_big_v5/cleaned_lm_text.gz
 # Current default is to download a pretrained LM
-build_own_lm=false
+build_own_lm=true
 
 #extra_words_file=local/extra_words.txt
 #extra_words_file=local/filtered_300k_vocab_de_wiki.txt
@@ -99,12 +100,13 @@ if [ $stage -le 1 ]; then
   # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
   python3 local/prepare_dir_structure.py
 
-  if [ ! -d data/wav/german-speechdata-package-v2 ]
+  if [ ! -d data/wav/TudaDatasetV4/ ]
   then
-      wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
-      cd data/wav/
-      tar xvfz german-speechdata-package-v2.tar.gz
-      cd ../../
+      mkdir -p data/wav/TudaDatasetV4/
+      wget --directory-prefix=data/wav/TudaDatasetV4/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v4.tar.gz
+      cd data/wav/TudaDatasetV4/
+      tar xvfz german-speechdata-package-v4.tar.gz
+      cd ../../../
   fi
 
   if [ "$add_swc_data" = true ]; then
@@ -179,9 +181,9 @@ if [ $stage -le 1 ]; then
         rm -r data/wav/cv_temp/
        fi
        mkdir -p data/wav/cv_temp/
-       wget --directory-prefix=data/wav/cv_temp/ $kaldi_tuda_de_corpus_server/cv-corpus-7.0-2021-07-21-de.tar.gz
+       wget --directory-prefix=data/wav/cv_temp/ $kaldi_tuda_de_corpus_server/cv-corpus-8.0-2022-01-19-de.tar.gz   
        cd data/wav/cv_temp/
-       tar -xvz --strip-component=2 -f cv-corpus-7.0-2021-07-21-de.tar.gz
+       tar -xvz --strip-component=2 -f cv-corpus-8.0-2022-01-19-de.tar.gz
        cd ../
        mv cv_temp/ cv/
        cd ../../
@@ -190,6 +192,9 @@ if [ $stage -le 1 ]; then
     then
       # download spacy de_core_news_lg model
       python3 -m spacy download de_core_news_lg
+      cd local/
+      git clone https://github.com/bmilde/german-asr-lm-tools german_asr_lm_tools
+      cd ..
       # make data directory data/commonvoice_train
       cp --link local/german_asr_lm_tools/normalisierung.py local/normalisierung.py
       python3 local/prepare_commonvoice_data.py
@@ -198,7 +203,7 @@ if [ $stage -le 1 ]; then
 fi
 
 #adapt this to the Sprachdatenaufnahmen2014 folder on your disk
-RAWDATA=data/wav/german-speechdata-package-v4
+RAWDATA=data/wav/TudaDatasetV4
 
 # Filter by name
 FILTERBYNAME="*.xml"
@@ -772,6 +777,8 @@ if [ $stage -le 17 ]; then
   echo "Cleanup the corpus"
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
+
+exit
 
 if [ $stage -le 18 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
