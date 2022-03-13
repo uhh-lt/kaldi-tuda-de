@@ -35,8 +35,14 @@ add_extra_words=true
 
 add_train_text_to_lm=true
 
-# See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
+# Language model instructions:
+# See https://github.com/bmilde/german-asr-lm-tools/ for instructions on getting recent German text data normalized
 # Place the resulting gzipped file in data/local/lm_std_big_v5/cleaned_lm_text.gz
+# Change the extra_words_file variable below into the vocabulary file genearted in the section 
+# 'Generate Kaldi vocabulary' in german-asr-lm-tools.
+# WARNING: The default vocabulary file local/voc_600k.txt may give suboptimal WER results,
+# if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file.
+
 # Current default is to download a pretrained LM
 build_own_lm=true
 
