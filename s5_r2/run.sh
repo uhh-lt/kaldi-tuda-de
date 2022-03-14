@@ -111,7 +111,7 @@ if [ $stage -le 1 ]; then
       mkdir -p data/wav/TudaDatasetV4/
       wget --directory-prefix=data/wav/TudaDatasetV4/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v4.tar.gz
       cd data/wav/TudaDatasetV4/
-      tar xvfz german-speechdata-package-v4.tar.gz
+      tar xfz german-speechdata-package-v4.tar.gz
       cd ../../../
   fi
 
@@ -128,7 +128,7 @@ if [ $stage -le 1 ]; then
       mkdir -p data/wav/swc_temp/
       wget --directory-prefix=data/wav/swc_temp/ $kaldi_tuda_de_corpus_server/SWC_German.tar
       cd data/wav/swc_temp/
-      tar xvf SWC_German.tar
+      tar xf SWC_German.tar
       cd ../
       mv swc_temp/ swc/
       cd ../../
@@ -139,7 +139,7 @@ if [ $stage -le 1 ]; then
 #    then
 #      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
 #      cd data/
-#      tar xvfz swc_kaldi_data.tar.gz
+#      tar xfz swc_kaldi_data.tar.gz
 #      cd ../
 #      python3 local/prepare_swc_german_wavscp.py
 #    fi
@@ -149,7 +149,7 @@ if [ $stage -le 1 ]; then
     then
       wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
       cd data/
-      tar xvfz swc_train_v2.tar.gz
+      tar xfz swc_train_v2.tar.gz
       cd ../
     fi
 
@@ -166,7 +166,7 @@ if [ $stage -le 1 ]; then
       mkdir -p data/wav/m_ailabs_temp/
       wget --directory-prefix=data/wav/m_ailabs_temp/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
       cd data/wav/m_ailabs_temp/
-      tar xvfz m-ailabs.bayern.de_DE.tgz
+      tar xfz m-ailabs.bayern.de_DE.tgz
       cd ../
       mv m_ailabs_temp/ m_ailabs/
       cd ../../
@@ -189,7 +189,7 @@ if [ $stage -le 1 ]; then
        mkdir -p data/wav/cv_temp/
        wget --directory-prefix=data/wav/cv_temp/ $kaldi_tuda_de_corpus_server/cv-corpus-8.0-2022-01-19-de.tar.gz   
        cd data/wav/cv_temp/
-       tar -xvz --strip-component=2 -f cv-corpus-8.0-2022-01-19-de.tar.gz
+       tar -xz --strip-component=2 -f cv-corpus-8.0-2022-01-19-de.tar.gz
        cd ../
        mv cv_temp/ cv/
        cd ../../
