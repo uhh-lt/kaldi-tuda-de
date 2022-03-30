@@ -248,8 +248,9 @@ if [ $stage -le 20 ]; then
           --online-ivector-dir exp/nnet3${nnet3_affix}/ivectors_${dset}_hires \
           --scoring-opts "--min-lmwt 5 " \
          $dir/graph${decode_affix} data/${dset}_hires $dir/decode_${dset}${decode_affix} || exit 1;
-    #  steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" data/lang data/lang_rescore \
-    #    data/${dset}_hires ${dir}/decode_${dset} ${dir}/decode_${dset}_rescore || exit 1
+      # now rescore with G.carpa
+      steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" ${lang_dir}_test ${lang_dir}_const_arpa/ \
+        data/${dset}_hires ${dir}/decode_${dset}${decode_affix} ${dir}/decode_${dset}${decode_affix}_rescore || exit 1;
   done
   if [ -f $dir/.error ]; then
     echo "$0: something went wrong in decoding"
