@@ -85,6 +85,13 @@ else
     exit
 fi
 
+if [ ! -d local/german_asr_lm_tools ]
+then
+    cd local/
+    git clone https://github.com/bmilde/german-asr-lm-tools german_asr_lm_tools
+    cd ..
+fi
+
 # mfccdir should be some place with a largish disk where you
 # want to store MFCC features.
 mfccdir=mfcc
@@ -753,13 +760,13 @@ if [ $stage -le 17 ]; then
 fi
 
 if [ $stage -le 18 ]; then
+  echo "Build const arpa LM for rescoring "
+  utils/build_const_arpa_lm.sh data/local/lm_std_big_v5/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
+fi
+
+if [ $stage -le 19 ]; then
   echo "Now running TDNN chain data preparation, i-vector training and TDNN-HMM training"
   echo ./local/run_tdnn_1f.sh --lang_dir ${lang_dir}
   
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
-fi
-
-if [ $stage -le 19 ]; then
-  echo "Build const arpa LM for rescoring "
-  utils/build_const_arpa_lm.sh data/local/lm_std_big_v5/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
 fi
