@@ -96,13 +96,15 @@ The scripts will ask you where to place larger files and can download all necess
 
 | Acoustic model + FST | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
 | --- | --- | --- | --- |
-|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h tuda+SWC | 20.30 | 21.43 |
-| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h tuda+SWC | 15.32 | 16.49 |
-| [tuda_swc_mailabs_voc400k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h tuda+SWC+m-ailabs | 14.78 | 15.87 |
-| [tuda_swc_mailabs_cv_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h tuda+SWC+m-ailabs+cv | 12.26 | 13.79 |
+|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h (tuda+SWC) | 20.30 | 21.43 |
+| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h (tuda+SWC) | 15.32 | 16.49 |
+| [tuda_swc_mailabs_voc400k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h (tuda+SWC+m-ailabs) | 14.78 | 15.87 |
+| [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.69 | 14.29 |
+| + [lm_v5_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
+| + [number rescoring](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig |  8.94  | 10.26 |
+| [tuda_swc_mailabs_cv_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.26 | 13.79 |
 | + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | **10.47** | **11.85** |
-| [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h tuda+SWC+m-ailabs+cv | 12.69 | 14.29 |
-| + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
+| + [number rescoring](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 8.61  | 9.85 |
 
 Most WER numbers in the table are using Kaldi's FST for decoding without rescoring. We have now added results for rescoring as well, which improves the FST decoding results further as expected. Note that you can also get an additional improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
 
@@ -116,7 +118,12 @@ If you want to adapt our models (add training data, augment training data, chang
 
 ## Prerequisites
 
-The scripts are only tested under Linux (Ubuntu 16.04). Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
+The scripts are only tested under Linux (Ubuntu 16.04 - 20.04). Install at first some mandatory packages:
+```
+sudo apt install sox libsox-fmt-all
+```
+
+Download and install Kaldi and follow the installation instructions. You can download a recent version using git:
 
 ```
  git clone https://github.com/kaldi-asr/kaldi.git kaldi-trunk --origin golden

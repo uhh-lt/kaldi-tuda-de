@@ -177,8 +177,8 @@ if [ $stage -le 1 ]; then
     fi
     if [ ! -d data/commonvoice_train ]
     then
-      # download spacy de model
-      python3 -m spacy download de
+      # download spacy de_core_news_lg model
+      python3 -m spacy download de_core_news_lg
       # make data directory data/commonvoice_train
       python3 local/prepare_commonvoice_data.py
     fi
