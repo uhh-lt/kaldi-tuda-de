@@ -1,2 +1,2 @@
 #!/bin/bash
-LC_ALL="en_US.UTF-8" python3 local/output_normalizer.py
+LC_ALL="en_US.UTF-8" python3 local/output_normalizer.py -w
