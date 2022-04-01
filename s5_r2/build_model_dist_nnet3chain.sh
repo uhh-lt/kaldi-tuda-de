@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model_name=de_683k_nnet3chain_tdnn1f_2048_sp_bi
+model_name=de_722k_nnet3chain_tdnn1f_2048_sp_bi
 model_path=exp/chain_cleaned/tdnn1f_2048_sp_bi
 graph_dir=$model_path/graph
 ivector_extractor=exp/nnet3_cleaned/extractor
@@ -17,6 +17,7 @@ echo "and ivector extractor $ivector_extractor"
 echo "copying model and fst to $model_name"
 
 cp $model_path/final.mdl $model_name/
+cp $model_path/tree $model_name/
 cp $model_path/cmvn_opts $model_name/
 cp -r $graph_dir/* $model_name/
 cp -r conf $model_name/
