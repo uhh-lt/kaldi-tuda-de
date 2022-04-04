@@ -24,6 +24,13 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+4 April 2022
+- We added the newest Common voice data (version 8), bringing the total training amount to 1700 hours! We also added a const arpa and rnn lm model for this new model. Our best result with rescoring is now a WER of 6.51 on Tuda-De dev and 7.43 on Tuda-De test!
+Currently, you can find the training scripts for this new model in the CV7 branch: https://github.com/uhh-lt/kaldi-tuda-de/tree/CV7
+We'll soon merge them to the master branch.
+
+The Tuda-De dataset also got updated to version 4, this release includes several fixed utterances. Thank you again, Sven Hartrumpf!
+
 6 April 2021 
 - We have added const arpa language models for rescoring (trained on 100 million sentences). These did reduce error rates further, our best result on tuda-de test is 11.85% WER now. A pre-trained RNN-LM will soon be available as well.
 
