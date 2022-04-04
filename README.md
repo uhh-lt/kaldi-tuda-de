@@ -101,7 +101,7 @@ The Tuda-De dataset also got updated to version 4, this release includes several
 
 ## Pretrained models
 
-| Acoustic model + FST | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
+| Acoustic model + FST | Training data | Tuda dev WER (FST) | Tuda test WER (FST) |
 | --- | --- | --- | --- |
 |[tuda_swc_voc126k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h (tuda+SWC) | 20.30 | 21.43 |
 | [tuda_swc_voc350k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h (tuda+SWC) | 15.32 | 16.49 |
