@@ -44,13 +44,13 @@ The scripts will ask you where to place larger files and can download all necess
 
 5 March 2019
 
-- A new pretrained model with a vocabulary of 400 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
+- A new pretrained model with a vocabulary of 400 thousand words is available: [download](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2)
 
 - We added more aligned speech data (630h total now), thanks to the [m-ailabs speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/). We also thank Pavel Denisov for sending us a Kaldi data preparation script for this new open source corpus.
 
 21 August 2018
 
-- A new pretrained model with a vocabulary of 350 thousand words is available: [download](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2)
+- A new pretrained model with a vocabulary of 350 thousand words is available: [download](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2)
 
 - This model is also the best performing one in [our paper](https://arxiv.org/abs/1807.10311).
 
@@ -68,11 +68,11 @@ The scripts will ask you where to place larger files and can download all necess
 
 - We moved the repository from tudarmstadt-lt to [language technologies](https://www.inf.uni-hamburg.de/en/inst/ab/lt/home.html) new uhh-lt github repository.
 
-- The ivector extractor had been missing from the acoustic model binary archive. You can download it separately from  http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k_ivector_extractor.tar.bz2 or redownload the [full archive](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2).
+- The ivector extractor had been missing from the acoustic model binary archive. You can download it separately from  https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k_ivector_extractor.tar.bz2 or redownload the [full archive](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2).
 
 31 May 2018
 
-- A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
+- A pre-trained TDNN-HMM chain model for German can now be downloaded from this address: https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2
 
 - Vocabulary: 126794 words, trained on tuda-de and SWC (268h combined). Contains all the content of the exp/chain_cleaned directory, also decoding lattices of tuda test/dev. See https://github.com/alumae/kaldi-gstreamer-server and https://github.com/jcsilva/docker-kaldi-gstreamer-server for a nice full-duplex server API for Kaldi models, you should be able to use our models there, too.
 
@@ -96,19 +96,19 @@ The scripts will ask you where to place larger files and can download all necess
 
 | Acoustic model + FST | Cleaned training data | Tuda dev WER (FST) | Tuda test WER (FST) |
 | --- | --- | --- | --- |
-|[tuda_swc_voc126k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h (tuda+SWC) | 20.30 | 21.43 |
-| [tuda_swc_voc350k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h (tuda+SWC) | 15.32 | 16.49 |
-| [tuda_swc_mailabs_voc400k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h (tuda+SWC+m-ailabs) | 14.78 | 15.87 |
-| [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.69 | 14.29 |
-| + [lm_v5_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
+|[tuda_swc_voc126k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/tdnn_chain_cleaned_tuda_swc_voc126k.tar.bz2) | 375h (tuda+SWC) | 20.30 | 21.43 |
+| [tuda_swc_voc350k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_350k_nnet3chain_tdnn1f_1024_sp_bi.tar.bz2) | 375h (tuda+SWC) | 15.32 | 16.49 |
+| [tuda_swc_mailabs_voc400k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) / [mirror](http://speech.tools/kaldi_tuda_de/de_400k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 630h (tuda+SWC+m-ailabs) | 14.78 | 15.87 |
+| [tuda_swc_mailabs_cv_voc683k_smaller_fst](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.69 | 14.29 |
+| + [lm_v5_voc683k_smaller_fst](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig |  8.94  | 10.26 |
-| [tuda_swc_mailabs_cv3_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv3) | 12.26 | 13.79 |
-| + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.47 | 11.85 |
+| [tuda_swc_mailabs_cv3_voc683k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv3) | 12.26 | 13.79 |
+| + [lm_v5_voc683k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.47 | 11.85 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 8.61  | 9.85 |
-| [tuda_swc_mailabs_cv3_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv3) | 10.94 | 12.09 |
-| + [lm_v5_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_const_arpa.tar.bz2) const arpa rescoring | 100 million sentences | 9.25 | 10.17 |
+| [tuda_swc_mailabs_cv3_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv3) | 10.94 | 12.09 |
+| + [lm_v5_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_const_arpa.tar.bz2) const arpa rescoring | 100 million sentences | 9.25 | 10.17 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 7.51 | 8.53 |
-| + [rnn_lm_lstm2x_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_rnnlm_lstm_2x.tar.bz2) rnnlm rescoring | 100 million sentences | **6.51** | **7.43** |
+| + [rnn_lm_lstm2x_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_rnnlm_lstm_2x.tar.bz2) rnnlm rescoring | 100 million sentences | **6.51** | **7.43** |
 
 New: We have now added results for rescoring as well, which improves the FST decoding results further as expected. This includes both const arpa models as well as RNN LMs, see also [our paper](https://arxiv.org/abs/1807.10311). 
 
@@ -179,14 +179,14 @@ You can of course also use and download our data resources separately.
 
 ### Speech corpus
 
-The corpus can be downloaded [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+The corpus can be downloaded [here](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/german-speechdata-package-v2.tar.gz). The license is [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 The run.sh script expects to find the corpus data extracted in data/wav/ and will download it for you automatically, if it does not find the data.
 
 Newer recipes also make use of [SWC data](https://nats.gitlab.io/swc/).
 
 ### German language texts
 
-Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz)
+Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz)
  
 The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
 
