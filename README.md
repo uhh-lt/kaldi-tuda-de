@@ -112,7 +112,7 @@ The Tuda-De dataset also got updated to version 4, this release includes several
 | [tuda_swc_mailabs_cv3_voc683k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv3) | 12.26 | 13.79 |
 | + [lm_v5_voc683k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.47 | 11.85 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 8.61  | 9.85 |
-| [tuda_swc_mailabs_cv3_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv3) | 10.94 | 12.09 |
+| [tuda_swc_mailabs_cv7_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv7) | 10.94 | 12.09 |
 | + [lm_v5_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_const_arpa.tar.bz2) const arpa rescoring | 100 million sentences | 9.25 | 10.17 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 7.51 | 8.53 |
 | + [rnn_lm_lstm2x_voc722k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_rnnlm_lstm_2x.tar.bz2) rnnlm rescoring | 100 million sentences | **6.51** | **7.43** |
