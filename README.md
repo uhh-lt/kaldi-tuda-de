@@ -102,19 +102,25 @@ The scripts will ask you where to place larger files and can download all necess
 | [tuda_swc_mailabs_cv_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi_smaller_fst.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.69 | 14.29 |
 | + [lm_v5_voc683k_smaller_fst](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.92 | 12.37 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig |  8.94  | 10.26 |
-| [tuda_swc_mailabs_cv_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv) | 12.26 | 13.79 |
-| + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | **10.47** | **11.85** |
+| [tuda_swc_mailabs_cv3_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_683k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1000h (tuda+SWC+m-ailabs+cv3) | 12.26 | 13.79 |
+| + [lm_v5_voc683k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/carpa_rescoring_language_model_v5_voc683k.tar.bz2) const arpa rescoring | 100 million sentences | 10.47 | 11.85 |
 | + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 8.61  | 9.85 |
+| [tuda_swc_mailabs_cv3_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv3) | 10.94 | 12.09 |
+| + [lm_v5_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_const_arpa.tar.bz2) const arpa rescoring | 100 million sentences | 9.25 | 10.17 |
+| + [reformat numbers](https://github.com/bmilde/german-asr-lm-tools/blob/master/normalize_numbers.py) | e.g. drei und sechzig -> dreiundsechzig | 7.51 | 8.53 |
+| + [rnn_lm_lstm2x_voc722k](http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_722k_rnnlm_lstm_2x.tar.bz2) rnnlm rescoring | 100 million sentences | **6.51** | **7.43** |
 
-Most WER numbers in the table are using Kaldi's FST for decoding without rescoring. We have now added results for rescoring as well, which improves the FST decoding results further as expected. Note that you can also get an additional improvement with a better language using RNN-LM rescoring, see [our paper](https://arxiv.org/abs/1807.10311) for more details. 
+New: We have now added results for rescoring as well, which improves the FST decoding results further as expected. This includes both const arpa models as well as RNN LMs, see also [our paper](https://arxiv.org/abs/1807.10311). 
 
 We have developed a PyKaldi based solution to use the models with either a local microphone or network streaming in real time: https://github.com/uhh-lt/kaldi-model-server
+
+For batch decoding of media files, we developped [subtitle2go](https://github.com/uhh-lt/subtitle2go) to automatically generate German subtitles.
 
 Another option to use the models is the [Kaldi gstreamer server project](https://github.com/alumae/kaldi-gstreamer-server). You can either stream audio and do online (real-time) recogniton with it or send wav files via http and get a JSON result back. See also the Kaldi + Gstreamer Server Software installation guide [here](https://raw.githubusercontent.com/bmilde/ambientsearch/master/INSTALL_KALDI). There is a run_tuda_de.sh in the package that starts Kaldi gstreamer workers for tuda_de. You will need to modify the KALDI_ROOT variable in the script so that it finds your Kaldi installation properly.
 
 # Training your own models
 
-If you want to adapt our models (add training data, augment training data, change vocabulary, ...), you will need to retrain our models. A workstation or server with more than 32GB memory might be needed, having access to a lot of CPU cores is recommended and a recent Nvidia GPU is needed to train neural models such as the TDNN-HMM.
+If you want to adapt our models (add training data, augment training data, change vocabulary, ...), you will need to retrain our models. A workstation or server with more than 64GB memory might be needed, having access to a lot of CPU cores is recommended and a recent Nvidia GPU is needed to train neural models such as the TDNN-HMM.
 
 ## Prerequisites
 
