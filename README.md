@@ -14,7 +14,7 @@
 
 This recipe and collection of scripts enables you to train large vocabulary German acoustic models for speaker-independent automatic speech recognition (ASR) with [Kaldi](http://kaldi.sourceforge.net/). The scripts currently use three freely available German speech corpora: The Tuda-De corpus is recorded with a Microsoft Kinect and two other microphones in parallel at Technische Universität Darmstadt and has been released under a permissive license [(CC-BY 4.0)](http://creativecommons.org/licenses/by/4.0/). This corpus compromises ~31h of training data per microphone and ~5h separated into development and test partitions. We also make use of the German subset from the [Spoken Wikipedia Corpora (SWC)](https://nats.gitlab.io/swc/), containing about 285h of additional data and the German subset of [m-ailabs read speech data corpus](http://www.m-ailabs.bayern/en/the-mailabs-speech-dataset/) [(mirror)](https://www.caito.de/2019/01/the-m-ailabs-speech-dataset/) (237h). Recently we also added the German Commonvoice corpus from Mozilla (https://commonvoice.mozilla.org/de) with 370h of data. We use the test/dev sets from Tuda-De for WER evaluations.
 
-The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data and M-ailabs by default, too, resulting in 630h of speech data in total after cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and WER results. More recent results are in the table in the [pretrained models](#pretrained-models) section.
+The newest recipe (s5\_r2) trains and tests on data from multiple microphones by default (all but Realtek - about 127h of audio in total). By editing run.sh you can also restrict it to a single microphone (e.g. only Kinect). It also trains on SWC data and M-ailabs by default, too, resulting in 630h of speech data in total after cleaning. See [our paper](https://arxiv.org/abs/1807.10311) for more information and WER results. More recent results are in the table in the [pretrained models](#Newest-pretrained-models) section.
 
 The old s5 recipe used in [our previous paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf) is also still available and trained only on the beamformed data of the Kinect microphone, checkout the README.md in the s5 directory if you want to reproduce the results of our old paper.  
 
@@ -23,6 +23,9 @@ The scripts will ask you where to place larger files and can download all necess
 **If you use our data, models or scripts in your academic work please cite our [paper](#references)!**
 
 ## News
+
+19 April 2022
+- We updated the LM (v6) and recrawled recent text data and extended the vocabulary. Our newest best result (with 140 million sentences) is 6.19% WER on Tuda-De Dev and 6.93% WER on Tuda-De Test. See our newest pre-trained models here: [pretrained models](#Newest-pretrained-models).
 
 4 April 2022
 - We added the newest Common voice data (version 8), bringing the total training amount to 1700 hours! We also added a const arpa and rnn lm model for this new model. Our best result with rescoring is now a WER of 6.51 on Tuda-De dev and 7.43 on Tuda-De test!
