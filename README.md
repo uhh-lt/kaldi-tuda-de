@@ -25,7 +25,7 @@ The scripts will ask you where to place larger files and can download all necess
 ## News
 
 19 April 2022
-- We updated the LM (v6) and recrawled recent text data and extended the vocabulary. Our newest best result (with 140 million sentences) is 6.19% WER on Tuda-De Dev and 6.93% WER on Tuda-De Test. See our newest pre-trained models here: [pretrained models](#Newest-pretrained-models).
+- We updated the LM (v6) and recrawled recent text data and extended the vocabulary (now 900k). Our newest best result (with 140 million sentences) is 6.19% WER on Tuda-De Dev and 6.93% WER on Tuda-De Test. See our newest pre-trained models here: [pretrained models](#Newest-pretrained-models). If you need a faster model, you can also replace the default HCLG with this much smaller one: [HCLG_s](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_HCLG_s.fst.bz2). 
 
 4 April 2022
 - We added the newest Common voice data (version 8), bringing the total training amount to 1700 hours! We also added a const arpa and rnn lm model for this new model. Our best result with rescoring is now a WER of 6.51 on Tuda-De dev and 7.43 on Tuda-De test!
