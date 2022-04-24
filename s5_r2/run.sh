@@ -37,10 +37,10 @@ add_train_text_to_lm=true
 
 # Language model instructions:
 # See https://github.com/bmilde/german-asr-lm-tools/ for instructions on getting recent German text data normalized
-# Place the resulting gzipped file in data/local/lm_std_big_v5/cleaned_lm_text.gz
+# Place the resulting gzipped file in data/local/lm_std_big_v6/cleaned_lm_text.gz
 # Change the extra_words_file variable below into the vocabulary file genearted in the section 
 # 'Generate Kaldi vocabulary' in german-asr-lm-tools.
-# WARNING: The default vocabulary file local/voc_600k.txt may give suboptimal WER results,
+# WARNING: The default vocabulary file local/voc_800k.txt may give suboptimal WER results,
 # if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file.
 
 # Current default is to download a pretrained LM
@@ -79,6 +79,16 @@ arpa_lm=${lm_dir}/4gram-mincount/lm_pr40.0.gz
 if [ -f cmd.sh ]; then
       . cmd.sh; else
          echo "missing cmd.sh"; exit 1;
+fi
+
+if [ ! -f ${lm_dir}/cleaned_lm_text.gz ]; then
+    echo "No language model text found!"
+    echo "Follow the instructions on https://github.com/bmilde/german-asr-lm-tools/ to obtain and normalize German text data."
+    echo "Place the resulting file in ${lm_dir}/cleaned_lm_text.gz"
+    echo
+    echo "WARNING: The default vocabulary file $extra_words_file may give suboptimal WER results, if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file."
+
+    exit -1
 fi
 
 if [ -f $sequitur_g2p ]
