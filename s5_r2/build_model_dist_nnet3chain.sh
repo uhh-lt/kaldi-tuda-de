@@ -1,8 +1,8 @@
 #!/bin/bash
 
-model_name=de_722k_nnet3chain_tdnn1f_2048_sp_bi
+model_name=de_900k_nnet3chain_tdnn1f_2048_sp_bi
 model_path=exp/chain_cleaned/tdnn1f_2048_sp_bi
-graph_dir=$model_path/graph
+graph_dir=$model_path/graphv6
 ivector_extractor=exp/nnet3_cleaned/extractor
 ivector_extractor_conf=exp/nnet3_cleaned/ivectors_train_cleaned_sp_hires_comb/conf
 

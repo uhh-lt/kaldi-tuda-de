@@ -36,7 +36,7 @@ nnet3_affix=_cleaned  # cleanup affix for nnet3 and chain dirs, e.g. _cleaned
 # are just hardcoded at this level, in the commands below.
 train_stage=-10
 tree_affix=  # affix for tree directory, e.g. "a" or "b", in case we change the configuration.
-decode_affix= #if you want to to change decoding parameters and decode into a different directory
+decode_affix=v6 #if you want to to change decoding parameters and decode into a different directory
 #tdnn_affix=1f
 common_egs_dir=  # you can set this to use previously dumped egs.
 
@@ -52,7 +52,7 @@ proportional_shrink=20
 num_hidden=2048
 num_epochs=5
 
-lang_dir=data/lang_std_big_v5
+lang_dir=data/lang_std_big_v6
 
 #lang_dir=data/lang_std_small_test
 

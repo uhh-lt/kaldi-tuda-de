@@ -28,7 +28,7 @@ if [ -f path.sh ]; then
    echo "missing path.sh"; exit 1;
 fi 
 
-arpa_lm=data/local/lm/4gram-mincount/lm_pr20.0.gz
+arpa_lm=data/local/lm/4gram-mincount/lm_pr40.0.gz
 lang_in_dir=data/lang
 lang_out_dir=data/lang_test
 

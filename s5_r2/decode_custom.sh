@@ -33,19 +33,37 @@ dir=exp/chain_cleaned/tdnn1f_2048_sp_bi/
 gmm_decode_stage=0
 tdnn_decode_stage=0
 
-decode_affix=_std_big
+dict_suffix=std_big_v5
+decode_affix= #_std_big_v5
 #langdir=data/lang_test_pron
-lang_dir=data/lang_std_big_test/
+lang_dir=data/lang_${dict_suffix}
 
 graph_dir=$gmmdir/graph_pron${decode_affix}
 
-decodedir=l2go_test
+decodedir=vm1_dev    #l2go_cut_test
+decodedir=l2go_cut_test
 
 mfccJobs=16
 
 # uncomment these if you would like to rescore only
 # gmm_decode_stage=6
 # tdnn_decode_stage=3
+
+old_lm=data/lang_${dict_suffix}_const_arpa
+rnn_dir=exp/rnnlm_lstm_1e_4x_${dict_suffix}
+
+#rnnlm_lstm_1e_4x_std_big_v5
+
+old_decode_dir_prefix=decode
+# rescore the already ARPA rescored dir:
+old_decode_dir_suffix=_rescore
+ac_model_dir=exp/chain_cleaned/tdnn1f_2048_sp_bi/
+decode_dir_suffix=rnnlm_1e
+ngram_order=4 # approximate the lattice-rescoring by limiting the max-ngram-order
+              # if it's set, it merges histories in the lattice if they share
+              # the same ngram history and this prevents the lattice from
+              # exploding exponentially
+pruned_rescore=true
 
 . utils/parse_options.sh
 
@@ -96,7 +114,7 @@ if [ $stage -le 2 ]; then
 fi
 
 if [ $stage -le 3 ]; then
-  utils/mkgraph.sh --self-loop-scale 1.0 $lang_dir $dir $dir/graph${decode_affix}
+  utils/mkgraph.sh --self-loop-scale 1.0 ${lang_dir}_test $dir $dir/graph${decode_affix}
 fi
 
 if [ $stage -le 4 ]; then
@@ -108,7 +126,28 @@ if [ $stage -le 4 ]; then
           --scoring-opts "--min-lmwt 5 " \
          $dir/graph${decode_affix} data/${dset}_hires $dir/decode${decode_affix}_${dset} || exit 1;
 
-      # rescore currently disabled:
-      #  steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" data/lang data/lang_rescore \
-      #    data/${dset}_hires ${dir}/decode_${dset} ${dir}/decode_${dset}_rescore || exit 1
+      # now rescore with G.carpa
+      steps/lmrescore_const_arpa.sh --cmd "$decode_cmd" ${lang_dir}_test ${lang_dir}_const_arpa/ \
+        data/${dset}_hires ${dir}/decode_${dset}${decode_affix} ${dir}/decode_${dset}${decode_affix}_rescore || exit 1;
+
+fi
+
+if [ $stage -le 5 ]; then
+  echo "$0: Perform lattice-rescoring on $ac_model_dir"
+  pruned=
+  if $pruned_rescore; then
+    pruned=_pruned
+  fi
+  #for decode_set in vm1_dev vm1_test; do
+   decode_set=$decodedir 
+   decode_dir=${dir}/${old_decode_dir_prefix}_${decode_set}${old_decode_dir_suffix}
+
+    # Lattice rescoring
+    rnnlm/lmrescore$pruned.sh \
+      --cmd "$decode_cmd --mem 4G" \
+      --weight 0.45 --max-ngram-order $ngram_order \
+      $old_lm $rnn_dir \
+      data/${decode_set}_hires ${decode_dir} \
+      ${decode_dir}_${decode_dir_suffix}_0.45
+  #done
 fi
