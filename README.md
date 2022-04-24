@@ -5,6 +5,7 @@
       * [Pretrained models](#pretrained-models)
    * [Training your own models](#training-your-own-models)
       * [Prerequisites](#prerequisites)
+      * [Get LM text data](#Get-LM-text-data)
       * [Building the acoustic models](#building-the-acoustic-models)
       * [Getting data files separately](#getting-data-files-separately)
          * [Speech corpus](#speech-corpus)
@@ -192,6 +193,12 @@ pip3 install beautifulsoup4 lxml spacy && python -m spacy download de_core_news_
 ```
 
 Additinally, the requests package was previously used to communicate with MaryTTS to generate phonemizations, however you won't need it if you run the standard setup.
+
+## Get LM text data
+
+See https://github.com/bmilde/german-asr-lm-tools/ for instructions on getting recent German text data normalized.
+Place the resulting gzipped file in ${lm_dir}/cleaned_lm_text.gz, with the defaults: data/local/lm_std_big_v6/cleaned_lm_text.gz
+WARNING: The default vocabulary file local/voc_800k.txt may give suboptimal WER results, if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file. If you forget this step, the run.sh script will compain about a missing LM text file.
 
 ## Building the acoustic models
 
