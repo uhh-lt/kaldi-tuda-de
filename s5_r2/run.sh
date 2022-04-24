@@ -48,7 +48,7 @@ build_own_lm=true
 
 #extra_words_file=local/extra_words.txt
 #extra_words_file=local/filtered_300k_vocab_de_wiki.txt
-extra_words_file=local/voc_600k.txt
+extra_words_file=local/voc_800k.txt
 
 extra_voc_file=local/de_extra_lexicon.txt
 
@@ -59,7 +59,7 @@ kaldi_tuda_de_corpus_server="http://ltdata1.informatik.uni-hamburg.de/kaldi_tuda
 
 # TODO: missing data/local/dict/silence_phones.txt data/local/dict/optional_silence.txt data/local/dict/nonsilence_phones.txt ?
 
-dict_suffix=_std_big_v5
+dict_suffix=_std_big_v6
 
 dict_dir=data/local/dict${dict_suffix}
 local_lang_dir=data/local/lang${dict_suffix}
@@ -68,7 +68,7 @@ lang_dir_nosp=${lang_dir}_nosp${dict_suffix}
 format_lang_out_dir=${lang_dir}_test
 g2p_dir=data/local/g2p${dict_suffix}
 lm_dir=data/local/lm${dict_suffix}
-arpa_lm=${lm_dir}/4gram-mincount/lm_pr20.0.gz
+arpa_lm=${lm_dir}/4gram-mincount/lm_pr40.0.gz
 
 [ ! -L "steps" ] && ln -s ../../wsj/s5/steps
 [ ! -L "utils" ] && ln -s ../../wsj/s5/utils
@@ -372,7 +372,6 @@ if [ $stage -le 6 ]; then
 fi
 
 # Now start preprocessing with KALDI scripts
-
 
 # Path also sets LC_ALL=C for Kaldi, otherwise you will experience strange (and hard to debug!) bugs. It should be set here, after the python scripts and not at the beginning of this script
 if [ -f path.sh ]; then
@@ -791,11 +790,9 @@ if [ $stage -le 17 ]; then
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
 
-exit
-
 if [ $stage -le 18 ]; then
   echo "Build const arpa LM for rescoring "
-  utils/build_const_arpa_lm.sh data/local/lm_std_big_v5/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
+  utils/build_const_arpa_lm.sh ${lm_dir}/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
 fi
 
 if [ $stage -le 19 ]; then
@@ -804,3 +801,9 @@ if [ $stage -le 19 ]; then
   
   ./local/run_tdnn_1f.sh --lang_dir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
+
+if [ $stage -le 20 ]; then
+  echo "Now train RNNLM"
+  ./local/train_rnnlm.sh
+fi
+
