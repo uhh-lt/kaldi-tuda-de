@@ -90,6 +90,9 @@ if [ $lmstage -le 2 ]; then
 
 	prune_lm.sh --arpa 20.0 $dir/4gram-mincount/
 	prune_lm.sh --arpa 30.0 $dir/4gram-mincount/
+  prune_lm.sh --arpa 40.0 $dir/4gram-mincount/
+  prune_lm.sh --arpa 50.0 $dir/4gram-mincount/
+  prune_lm.sh --arpa 100.0 $dir/4gram-mincount/
 fi
 
 # create unpruned const arpa for best path rescoring
