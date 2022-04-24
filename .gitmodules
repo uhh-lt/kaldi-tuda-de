@@ -1,0 +1,3 @@
+[submodule "s5_r2/local/german_asr_lm_tools"]
+	path = s5_r2/local/german_asr_lm_tools
+	url = https://github.com/bmilde/german-asr-lm-tools/

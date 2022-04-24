@@ -24,24 +24,26 @@
 # Begin configuration section.
 
 
-dict_suffix=300k4
+dict_suffix=std_big_v5
 langdir=data/lang_${dict_suffix}/
-old_lm=data/lang_${dict_suffix}_test_${dict_suffix}
+# By default, use const_arpa as lang dir 
+old_lm=data/lang_${dict_suffix}_const_arpa
 dir=exp/rnnlm_lstm_1e_${dict_suffix}
 embedding_dim=1024
 lstm_rpd=256
 lstm_nrpd=256
 stage=-10
 train_stage=-10
-train_stage=24
 
 # variables for lattice rescoring
 run_lat_rescore=true
 run_nbest_rescore=true
 run_backward_rnnlm=false
 
-old_decode_dir=decode_${dict_suffix}
-ac_model_dir=exp/chain_cleaned/tdnn1f_2048_sp_bi/  #exp/nnet3/tdnn_lstm_1a_adversarial0.3_epochs12_ld5_sp
+old_decode_dir_prefix=decode
+# rescore the already ARPA rescored dir:
+old_decode_dir_suffix=_rescore
+ac_model_dir=exp/chain_cleaned/tdnn1f_2048_sp_bi/ 
 decode_dir_suffix=rnnlm_1e
 ngram_order=4 # approximate the lattice-rescoring by limiting the max-ngram-order
               # if it's set, it merges histories in the lattice if they share
@@ -121,8 +123,10 @@ if [ $stage -le 2 ]; then
 fi
 
 if [ $stage -le 3 ]; then
-  rnnlm/train_rnnlm.sh --num-jobs-initial 1 --num-jobs-final 1 \
-                  --stage $train_stage --num-epochs 10 --cmd "$train_cmd" $dir
+
+  rnnlm/train_rnnlm.sh --num-jobs-initial 1 --num-jobs-final 1 --initial-effective-lrate 0.0009 --final_effective_lrate 0.0001 \
+                  --num-samples 1024 --embedding-l2 0.008 --num-egs-threads 10 \
+                  --stage $train_stage --num-epochs 3 --cmd "$train_cmd" $dir
 fi
 
 if [ $stage -le 4 ] && $run_lat_rescore; then
@@ -132,7 +136,7 @@ if [ $stage -le 4 ] && $run_lat_rescore; then
     pruned=_pruned
   fi
   for decode_set in dev test; do
-    decode_dir=${ac_model_dir}/${old_decode_dir}_${decode_set}
+    decode_dir=${ac_model_dir}/${old_decode_dir_prefix}_${decode_set}${old_decode_dir_suffix}
 
     # Lattice rescoring
     rnnlm/lmrescore$pruned.sh \
@@ -144,10 +148,12 @@ if [ $stage -le 4 ] && $run_lat_rescore; then
   done
 fi
 
+exit
+
 if [ $stage -le 5 ] && $run_nbest_rescore; then
   echo "$0: Perform nbest-rescoring on $ac_model_dir"
   for decode_set in dev test; do
-    decode_dir=${ac_model_dir}/${old_decode_dir}_${decode_set}
+    decode_dir=${ac_model_dir}/${old_decode_dir_prefix}_${decode_set}
 
     # Lattice rescoring
     rnnlm/lmrescore_nbest.sh \

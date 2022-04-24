@@ -144,6 +144,12 @@ If you want to adapt our models (add training data, augment training data, chang
 
 ## Prerequisites
 
+Clone the repository with the submodule:
+```
+git clone --recurse-submodules https://github.com/uhh-lt/kaldi-tuda-de
+```
+
+
 The scripts are only tested under Linux (Ubuntu 16.04 - 20.04). Install at first some mandatory packages:
 ```
 sudo apt install sox libsox-fmt-all
@@ -182,7 +188,7 @@ You also need Sequitur G2P (https://www-i6.informatik.rwth-aachen.de/web/Softwar
 You will also need a recent version of Python 3. Package requirements are:
 
 ```
-pip3 install beautifulsoup4 lxml
+pip3 install beautifulsoup4 lxml spacy && python -m spacy download de_core_news_lg
 ```
 
 Additinally, the requests package was previously used to communicate with MaryTTS to generate phonemizations, however you won't need it if you run the standard setup.

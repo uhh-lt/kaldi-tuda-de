@@ -35,9 +35,16 @@ add_extra_words=true
 
 add_train_text_to_lm=true
 
-# See the instructions on https://github.com/bmilde/german-asr-lm-tools/ to get recent German text data normalized
+# Language model instructions:
+# See https://github.com/bmilde/german-asr-lm-tools/ for instructions on getting recent German text data normalized
+# Place the resulting gzipped file in data/local/lm_std_big_v5/cleaned_lm_text.gz
+# Change the extra_words_file variable below into the vocabulary file genearted in the section 
+# 'Generate Kaldi vocabulary' in german-asr-lm-tools.
+# WARNING: The default vocabulary file local/voc_600k.txt may give suboptimal WER results,
+# if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file.
+
 # Current default is to download a pretrained LM
-build_own_lm=false
+build_own_lm=true
 
 #extra_words_file=local/extra_words.txt
 #extra_words_file=local/filtered_300k_vocab_de_wiki.txt
@@ -106,12 +113,13 @@ if [ $stage -le 1 ]; then
   # Prepares KALDI dir structure and asks you where to store mfcc vectors and the final models (both can take up significant space)
   python3 local/prepare_dir_structure.py
 
-  if [ ! -d data/wav/german-speechdata-package-v2 ]
+  if [ ! -d data/wav/TudaDatasetV4/ ]
   then
-      wget --directory-prefix=data/wav/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v2.tar.gz
-      cd data/wav/
-      tar xvfz german-speechdata-package-v2.tar.gz
-      cd ../../
+      mkdir -p data/wav/TudaDatasetV4/
+      wget --directory-prefix=data/wav/TudaDatasetV4/ $kaldi_tuda_de_corpus_server/german-speechdata-package-v4.tar.gz
+      cd data/wav/TudaDatasetV4/
+      tar xfz german-speechdata-package-v4.tar.gz
+      cd ../../../
   fi
 
   if [ "$add_swc_data" = true ]; then
@@ -120,11 +128,17 @@ if [ $stage -le 1 ]; then
 
     if [ ! -d data/wav/swc/german/ ]
     then
-      mkdir -p data/wav/swc/
-      wget --directory-prefix=data/wav/swc/ $kaldi_tuda_de_corpus_server/SWC_German.tar
-      cd data/wav/swc/
-      tar xvf SWC_German.tar
-      cd ../../../
+      if [ -d data/wav/swc_temp/ ]
+      then
+        rm -r data/wav/swc_temp/
+      fi
+      mkdir -p data/wav/swc_temp/
+      wget --directory-prefix=data/wav/swc_temp/ $kaldi_tuda_de_corpus_server/SWC_German.tar
+      cd data/wav/swc_temp/
+      tar xf SWC_German.tar
+      cd ../
+      mv swc_temp/ swc/
+      cd ../../
     fi
 
 # compute kaldi data dir from SWC export:   
@@ -132,7 +146,7 @@ if [ $stage -le 1 ]; then
 #    then
 #      wget --directory-prefix=data/ http://speech.tools/kaldi_tuda_de/swc_kaldi_data.tar.gz
 #      cd data/
-#      tar xvfz swc_kaldi_data.tar.gz
+#      tar xfz swc_kaldi_data.tar.gz
 #      cd ../
 #      python3 local/prepare_swc_german_wavscp.py
 #    fi
@@ -142,7 +156,7 @@ if [ $stage -le 1 ]; then
     then
       wget --directory-prefix=data/ $kaldi_tuda_de_corpus_server/swc_train_v2.tar.gz
       cd data/
-      tar xvfz swc_train_v2.tar.gz
+      tar xfz swc_train_v2.tar.gz
       cd ../
     fi
 
@@ -152,11 +166,17 @@ if [ $stage -le 1 ]; then
   then
     if [ ! -d data/wav/m_ailabs/ ]
     then
-      mkdir -p data/wav/m_ailabs/
-      wget --directory-prefix=data/wav/m_ailabs/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
-      cd data/wav/m_ailabs/
-      tar xvfz m-ailabs.bayern.de_DE.tgz
-      cd ../../../
+      if [ -d data/wav/m_ailabs_temp/ ]
+      then
+        rm -r data/wav/m_ailabs_temp
+      fi
+      mkdir -p data/wav/m_ailabs_temp/
+      wget --directory-prefix=data/wav/m_ailabs_temp/ $kaldi_tuda_de_corpus_server/m-ailabs.bayern.de_DE.tgz
+      cd data/wav/m_ailabs_temp/
+      tar xfz m-ailabs.bayern.de_DE.tgz
+      cd ../
+      mv m_ailabs_temp/ m_ailabs/
+      cd ../../
     fi
     if [ ! -d data/m_ailabs_train ]
     then
@@ -169,31 +189,43 @@ if [ $stage -le 1 ]; then
   then
     if [ ! -d data/wav/cv/ ]
     then
-       mkdir -p data/wav/cv/
-       wget --directory-prefix=data/wav/cv/ $kaldi_tuda_de_corpus_server/cv-corpus-3-oct19-de.tar.gz
-       cd data/wav/cv/
-       tar xvfz cv-corpus-3-oct19-de.tar.gz
-       cd ../../../
+       if [ -d data/wav/cv/ ]
+       then
+        rm -r data/wav/cv_temp/
+       fi
+       mkdir -p data/wav/cv_temp/
+       wget --directory-prefix=data/wav/cv_temp/ $kaldi_tuda_de_corpus_server/cv-corpus-8.0-2022-01-19-de.tar.gz   
+       cd data/wav/cv_temp/
+       tar -xz --strip-component=2 -f cv-corpus-8.0-2022-01-19-de.tar.gz
+       cd ../
+       mv cv_temp/ cv/
+       cd ../../
     fi
     if [ ! -d data/commonvoice_train ]
     then
       # download spacy de_core_news_lg model
       python3 -m spacy download de_core_news_lg
+      cd local/
+      git clone https://github.com/bmilde/german-asr-lm-tools german_asr_lm_tools
+      cd ..
       # make data directory data/commonvoice_train
+      cp --link local/german_asr_lm_tools/normalisierung.py local/normalisierung.py
       python3 local/prepare_commonvoice_data.py
     fi
   fi
 fi
 
 #adapt this to the Sprachdatenaufnahmen2014 folder on your disk
-RAWDATA=data/wav/german-speechdata-package-v2
+RAWDATA=data/wav/TudaDatasetV4
 
 # Filter by name
 FILTERBYNAME="*.xml"
 
 if [ $stage -le 2 ]; then
   # Move files, which would later produce errors. They are saved in backup location
-  python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+  # python3 local/move_files_to_skip.py data/wav/german-speechdata-package-v2/train/
+  # not used in v4 anymore
+  # python3 local/move_files_to_skip.py data/wav/TudaDataset/train/
 
   find $RAWDATA/*/$FILTERBYNAME -type f > data/waveIDs.txt
 
@@ -550,13 +582,13 @@ else
 fi
 
 if [ $stage -le 10 ]; then
-  # Use the first 4k sentences as dev set.  Note: when we trained the LM, we used
+  # Use the first 4k sentences as dev set. Note: when we trained the LM, we used
   # the 1st 10k sentences as dev set, so the 1st 4k won't have been used in the
-  # LM training data.   However, they will be in the lexicon, plus speakers
+  # LM training data. However, they will be in the lexicon, plus speakers
   # may overlap, so it's still not quite equivalent to a test set.
   utils/subset_data_dir.sh --first data/train 4000 data/train_dev # 5hr 6min
   
-  # currently we do not have a  segments file as in swbd:
+  # currently we do not have a segments file as in swbd:
   if [ -f data/train/segments ]; then
     n=$[`cat data/train/segments | wc -l` - 4000]
   else
@@ -572,23 +604,23 @@ if [ $stage -le 10 ]; then
   # original swbd comment:
   # Now-- there are 260k utterances (313hr 23min), and we want to start the
   # monophone training on relatively short utterances (easier to align), but not
-  # only the shortest ones (mostly uh-huh).  So take the 100k shortest ones, and
+  # only the shortest ones (mostly uh-huh). So take the 100k shortest ones, and
   # then take 30k random utterances from those (about 12hr)
 
   # todo take this for no swbd training:
-  utils/subset_data_dir.sh --shortest data/train_nodev 150000 data/train_100kshort #(swbd default: 100k)
-  utils/subset_data_dir.sh data/train_100kshort 50000 data/train_30kshort #(swbd default: 30k)
+  utils/subset_data_dir.sh --shortest data/train_nodev 200000 data/train_200kshort #(swbd default: 100k)
+  utils/subset_data_dir.sh data/train_200kshort 80000 data/train_80kshort #(swbd default: 30k)
 
-  # Take the first 100k utterances (just under half the data); we'll use
+  # Take random 200k utterances (just under half the data); we'll use
   # this for later stages of training.
-  utils/subset_data_dir.sh --first data/train_nodev 100000 data/train_100k
+  utils/subset_data_dir.sh data/train_nodev 200000 data/train_200k
 
-  # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 200 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_100k data/train_100k_nodup  # 110hr
+  # since there are are less repetitions in kaldi-tuda-de compared to swbd, we lowered the max repetitions 200 -> 10
+  utils/data/remove_dup_utts.sh 10 data/train_200k data/train_200k_nodup  # 301hr
 
   # Finally, the full training set:
   # since there are more repetitions in kaldi-tuda-de compared to swbd, we upped the max repetitions a bit 300 -> 1000
-  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 286hr
+  utils/data/remove_dup_utts.sh 1000 data/train_nodev data/train_nodup  # 1619hr
 
   # todo take this for no swbd training:
 #  utils/subset_data_dir.sh --shortest data/train_nodev 30000 data/train_100kshort #(swbd default: 100k)
@@ -614,15 +646,15 @@ fi
 if [ $stage -le 11 ]; then
   ## Starting basic training on MFCC features
   steps/train_mono.sh --nj $nJobs --cmd "$train_cmd" \
-                      data/train_30kshort ${lang_dir_nosp} exp/mono
+                      data/train_80kshort ${lang_dir_nosp} exp/mono
 fi
 
 if [ $stage -le 12 ]; then
     steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
+                    data/train_200k_nodup ${lang_dir_nosp} exp/mono exp/mono_ali
 
     steps/train_deltas.sh --cmd "$train_cmd" \
-                        3200 30000 data/train_100k_nodup ${lang_dir_nosp} exp/mono_ali exp/tri1
+                        3200 30000 data/train_200k_nodup ${lang_dir_nosp} exp/mono_ali exp/tri1
 
     graph_dir=exp/tri1/graph_nosp
     $train_cmd $graph_dir/mkgraph.log \
@@ -637,10 +669,10 @@ fi
 
 if [ $stage -le 13 ]; then
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
+                    data/train_200k_nodup ${lang_dir_nosp} exp/tri1 exp/tri1_ali
 
   steps/train_deltas.sh --cmd "$train_cmd" \
-                        4000 70000 data/train_100k_nodup ${lang_dir_nosp} exp/tri1_ali exp/tri2
+                        4000 70000 data/train_200k_nodup ${lang_dir_nosp} exp/tri1_ali exp/tri2
 
     # The previous mkgraph might be writing to this file.  If the previous mkgraph
     # is not running, you can remove this loop and this mkgraph will create it.
@@ -657,9 +689,9 @@ if [ $stage -le 13 ]; then
 fi
 
 if [ $stage -le 14 ]; then
-  # The 100k_nodup data is used in the nnet2 recipe.
+  # The 200k_nodup data is used in the nnet2 recipe.
   steps/align_si.sh --nj $nJobs --cmd "$train_cmd" \
-                    data/train_100k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_100k_nodup
+                    data/train_200k_nodup ${lang_dir_nosp} exp/tri2 exp/tri2_ali_200k_nodup
 
   # From now, we start using all of the data (except some duplicates of common
   # utterances, which don't really contribute much).
@@ -758,6 +790,8 @@ if [ $stage -le 17 ]; then
   echo "Cleanup the corpus"
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
+
+exit
 
 if [ $stage -le 18 ]; then
   echo "Build const arpa LM for rescoring "

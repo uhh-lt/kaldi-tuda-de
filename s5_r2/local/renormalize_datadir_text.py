@@ -16,7 +16,8 @@
 
 import argparse
 import common_utils
-import normalize_sentences
+#import normalize_sentences
+import german_asr_lm_tools.normalize_sentences as normalize_sentences
 import spacy
 import shutil
 import time
