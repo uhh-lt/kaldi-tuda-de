@@ -198,7 +198,7 @@ Additinally, the requests package was previously used to communicate with MaryTT
 
 See https://github.com/bmilde/german-asr-lm-tools/ for instructions on getting recent German text data normalized. 
 Place the resulting gzipped file in ${lm_dir}/cleaned_lm_text.gz, with the defaults: data/local/lm_std_big_v6/cleaned_lm_text.gz
-If you forget this step, the run.sh script will compain about a missing LM text file.
+If you forget this step, the run.sh script will complain about a missing LM text file.
 Warning: The default vocabulary file local/voc_800k.txt may give suboptimal WER results, if you pair it with your own crawled data, so make sure to replace it with your own vocabulary file. 
 
 ## Building the acoustic models
