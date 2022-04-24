@@ -33,7 +33,7 @@ The scripts will ask you where to place larger files and can download all necess
 Currently, you can find the training scripts for this new model in the CV7 branch: https://github.com/uhh-lt/kaldi-tuda-de/tree/CV7
 We'll soon merge them to the master branch.
 
-The Tuda-De dataset also got updated to version 4, this release includes several fixed utterances. Thank you again, Sven Hartrumpf!
+- The Tuda-De dataset also got updated to version 4, this release includes several fixed utterances. Thank you again, Sven Hartrumpf!
 
 6 April 2021 
 - We have added const arpa language models for rescoring (trained on 100 million sentences). These did reduce error rates further, our best result on tuda-de test is 11.85% WER now. A pre-trained RNN-LM will soon be available as well.
