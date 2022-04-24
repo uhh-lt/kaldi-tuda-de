@@ -24,7 +24,7 @@
 # Begin configuration section.
 
 
-dict_suffix=std_big_v5
+dict_suffix=std_big_v6
 langdir=data/lang_${dict_suffix}/
 # By default, use const_arpa as lang dir 
 old_lm=data/lang_${dict_suffix}_const_arpa
