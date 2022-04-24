@@ -791,8 +791,6 @@ if [ $stage -le 17 ]; then
   ./local/run_cleanup_segmentation.sh --langdir ${lang_dir} --nj $nJobs --decode_nj $nDecodeJobs
 fi
 
-exit
-
 if [ $stage -le 18 ]; then
   echo "Build const arpa LM for rescoring "
   utils/build_const_arpa_lm.sh data/local/lm_std_big_v5/4gram-mincount/lm_unpruned.gz ${lang_dir} ${lang_dir}_const_arpa
