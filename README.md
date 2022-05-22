@@ -220,21 +220,7 @@ Newer recipes also make use of [SWC data](https://nats.gitlab.io/swc/).
 
 ### German language texts
 
-This section contains old instructions, see https://github.com/bmilde/german-asr-lm-tools/ for new instructions to obtain much better LM text data.
-
-Preprocessed read sentences from the [German Wikipedia](https://de.wikipedia.org/), the [European Parliament Proceedings Parallel Corpus](http://www.statmt.org/europarl/) and a crawled corpus of direct speech can be found [here](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/German_sentences_8mil_filtered_maryfied.txt.gz)
- 
-The scripts expect to find one gzipped text file containing all the sentences (each on its own line) in data/local/lm/cleaned.gz
-
-The preproccesing with [MARY](http://mary.dfki.de/) canonicalizes numbers, literals and abbreviations and removes all punctuation. E.g. 51 is changed into "einundfünfzig". Spelling is currently not canonicalized, but rules to translate from old German spellings (pre-1996 and pre-2004/06) are planned for a later release.
-
-If you want to preprocess your own texts, you can use s5/local/maryfy\_corpus.py.
-
-```
-python s5/local/maryfy_corpus.py --help
-```
-
-should point you into the right direction. You need to supply the path of the MARY server start script. MARY will unfortunately have problems if you try to process millions of lines of text in one go and it might become unresponsive with all its processing threads being stuck in endless loops. The current quick hack implemented in maryfy_corpus.py will routinely call "killall java" and then restart MARY. This of course only works, if you have no other Java programs running under your username besides MARY. 
+See https://github.com/bmilde/german-asr-lm-tools/ for new instructions to obtain a large amount of German LM text data.
 
 ### German phoneme dictionary
 
