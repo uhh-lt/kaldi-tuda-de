@@ -240,6 +240,22 @@ python3 s5_r2/local/export_lexicon.py --help
 # References
 
 If you use our scripts and/or data in your academic work please cite:
+```
+@inproceedings{geislinger-etal-2022-improved,
+    title = "Improved Open Source Automatic Subtitling for Lecture Videos",
+    author = "Geislinger, Robert  and
+      Milde, Benjamin  and
+      Biemann, Chris",
+    booktitle = "Proceedings of the 18th Conference on Natural Language Processing (KONVENS 2022)",
+    month = "12--15 " # sep,
+    year = "2022",
+    address = "Potsdam, Germany",
+    publisher = "KONVENS 2022 Organizers",
+    url = "https://aclanthology.org/2022.konvens-1.11",
+    pages = "98--103",
+}
+```
+You can additionaly cite our older papers:
 
 ```
 @InProceedings{milde-koehn-18-german-asr,
@@ -254,7 +270,7 @@ pages = {251--255}
 
 An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version)
 
-You can also additionaly cite our [older paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
+Or the [first paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
 
 ```
 @InProceedings{Radeck-Arneth2015,
