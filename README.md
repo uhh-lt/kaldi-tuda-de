@@ -25,6 +25,9 @@ The scripts will ask you where to place larger files and can download all necess
 
 ## News
 
+19 April 2023
+- As an alternative to the German Kaldi models in this repository, checkout [speechcatcher](https://github.com/speechcatcher-asr). Speechcatcher models are trained end-to-end with punctuation, support streaming and run fast on CPU as well.
+
 19 April 2022
 - We updated the LM (v6) and recrawled recent text data and extended the vocabulary (now 900k). Our newest best result (with 140 million sentences) is 6.19% WER on Tuda-De Dev and 6.93% WER on Tuda-De Test. See our newest pre-trained models here: [pretrained models](#Newest-pretrained-models). If you need an overall faster model, you can also replace the default HCLG with this much smaller one: [HCLG_s](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_HCLG_s.fst.bz2). 
 
