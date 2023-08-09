@@ -243,6 +243,20 @@ python3 s5_r2/local/export_lexicon.py --help
 # References
 
 If you use our scripts and/or data in your academic work please cite:
+
+```
+@InProceedings{milde-koehn-18-german-asr,
+author = {Benjamin Milde and Arne K{\"o}hn},
+title = {Open Source Automatic Speech Recognition for {German}},
+booktitle = {Proceedings of ITG 2018},
+year = {2018},
+address = {Oldenburg, Germany},
+pages = {251--255}
+}
+```
+
+and
+
 ```
 @inproceedings{geislinger-etal-2022-improved,
     title = "Improved Open Source Automatic Subtitling for Lecture Videos",
@@ -257,23 +271,12 @@ If you use our scripts and/or data in your academic work please cite:
     url = "https://aclanthology.org/2022.konvens-1.11",
     pages = "98--103",
 }
-```
-You can additionaly cite our older papers:
 
-```
-@InProceedings{milde-koehn-18-german-asr,
-author = {Benjamin Milde and Arne K{\"o}hn},
-title = {Open Source Automatic Speech Recognition for {German}},
-booktitle = {Proceedings of ITG 2018},
-year = {2018},
-address = {Oldenburg, Germany},
-pages = {251--255}
-}
-```
+An open access Arxiv preprint of "Open Source Automatic Speech Recognition for German" is also available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version).
 
-An open access Arxiv preprint is available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version)
+We have also previously published on German open source ASR in 2015:
 
-Or the [first paper](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf), if you like: 
+[Open Source German Distant Speech Recognition: Corpus and Acoustic Model](https://www.inf.uni-hamburg.de/en/inst/ab/lt/publications/2015-radeck-arnethetal-tsd2015-speechcorpus.pdf): 
 
 ```
 @InProceedings{Radeck-Arneth2015,
