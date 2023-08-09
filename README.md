@@ -271,6 +271,7 @@ and
     url = "https://aclanthology.org/2022.konvens-1.11",
     pages = "98--103",
 }
+```
 
 An open access Arxiv preprint of "Open Source Automatic Speech Recognition for German" is also available here: https://arxiv.org/abs/1807.10311 (same content as the ITG version).
 
