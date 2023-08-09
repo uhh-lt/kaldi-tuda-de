@@ -108,9 +108,9 @@ We'll soon merge them to the master branch.
 
 ## Newest pretrained models
 
-| Acoustic model + FST | Training data | Tuda dev WER (FST) | Tuda test WER (FST) |
+| Acoustic model + FST | Training data | Tuda dev WER | Tuda test WER |
 | --- | --- | --- | --- |
-| [tuda_swc_mailabs_cv8_voc900k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv8) | 9.30  | 10.17 |
+| [tuda_swc_mailabs_cv8_voc900k (FST)](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_nnet3chain_tdnn1f_2048_sp_bi.tar.bz2) | 1700h (tuda+SWC+m-ailabs+cv8) | 9.30  | 10.17 |
 | + [lm_v6_voc900k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_const_arpa.tar.bz2) const arpa rescoring | 140 million sentences | 7.23 | 7.96  |
 | + [rnn_lmv6_lstm4x_voc900k](https://ltdata1.informatik.uni-hamburg.de/kaldi_tuda_de/de_900k_rnnlm_lstm_4x.tar.bz2) rnnlm rescoring | 140 million sentences | **6.19** | **6.93** |
 
